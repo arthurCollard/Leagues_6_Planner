@@ -1,0 +1,92 @@
+export const CAPE = [
+  {
+    name: 'Infernal Cape',
+    slot: 'cape',
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 4, slash: 4, crush: 4, magic: 1, ranged: 1 },
+      defence: { stab: 12, slash: 12, crush: 12, magic: 12, ranged: 12 },
+      other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+  },
+  {
+    name: "Dizana's Quiver (charged)",
+    slot: 'cape',
+    requirements: [{ skill: 'Ranged', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 3, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Masori Assembler',
+    slot: 'cape',
+    requirements: [{ skill: 'Ranged', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Imbued God Cape',
+    slot: 'cape',
+    requirements: [{ skill: 'Magic', level: 60 }],
+    bonuses: {
+      attack:  { stab: 3, slash: 3, crush: 0, magic: 15, ranged: 0 },
+      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
+    },
+  },
+  {
+    name: 'Fire Cape',
+    slot: 'cape',
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 1, slash: 1, crush: 1, magic: 1, ranged: 1 },
+      defence: { stab: 11, slash: 11, crush: 11, magic: 11, ranged: 11 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+  },
+  {
+    name: "Ava's Assembler",
+    slot: 'cape',
+    requirements: [{ skill: 'Ranged', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Mythical Cape',
+    slot: 'cape',
+    requirements: [{ skill: 'Defence', level: 20 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 6, magic: 0, ranged: 0 },
+      defence: { stab: 8, slash: 8, crush: 8, magic: 8, ranged: 8 },
+      other:   { meleeStrength: 1, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Cape of Accomplishment (Trimmed)',
+    slot: 'cape',
+    requirements: [{ skill: 'Any', level: 99 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
+    },
+  },
+  {
+    name: 'Cape of Legends',
+    slot: 'cape',
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 7, slash: 7, crush: 7, magic: 7, ranged: 7 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+];

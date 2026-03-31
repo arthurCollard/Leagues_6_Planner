@@ -1,0 +1,142 @@
+export const HEAD = [
+  {
+    name: 'Torva Full Helm',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 80 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },
+      defence: { stab: 59, slash: 60, crush: 62, magic: -2, ranged: 57 },
+      other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 1 },
+    },
+  },
+  {
+    name: 'Justiciar Faceguard',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
+      defence: { stab: 60, slash: 63, crush: 59, magic: -6, ranged: 67 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+  },
+  {
+    name: 'Virtus Mask',
+    slot: 'head',
+    requirements: [{ skill: 'Magic', level: 80 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: -3 },
+      defence: { stab: 15, slash: 14, crush: 16, magic: 6, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 1 },
+    },
+  },
+  {
+    name: 'Masori Mask (f)',
+    slot: 'head',
+    requirements: [{ skill: 'Ranged', level: 80 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -1, ranged: 12 },
+      defence: { stab: 3, slash: 4, crush: 3, magic: 6, ranged: 4 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Ancestral Hat',
+    slot: 'head',
+    requirements: [{ skill: 'Magic', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: -2 },
+      defence: { stab: 12, slash: 11, crush: 13, magic: 5, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 3, prayer: 0 },
+    },
+  },
+  {
+    name: 'Neitiznot Faceguard',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 36, slash: 34, crush: 38, magic: 3, ranged: 34 },
+      other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 3 },
+    },
+  },
+  {
+    name: "Inquisitor's Great Helm",
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 60 }],
+    bonuses: {
+      attack:  { stab: -2, slash: -2, crush: 8, magic: -5, ranged: -5 },
+      defence: { stab: 19, slash: 10, crush: 21, magic: 0, ranged: 12 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 1 },
+    },
+  },
+  {
+    name: 'Serpentine Helm',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },
+      defence: { stab: 52, slash: 55, crush: 58, magic: 0, ranged: 50 },
+      other:   { meleeStrength: 5, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Dharok's Helm",
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
+      defence: { stab: 45, slash: 48, crush: 44, magic: -1, ranged: 51 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragon Full Helm',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 60 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -3 },
+      defence: { stab: 45, slash: 48, crush: 41, magic: -1, ranged: 46 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Slayer Helmet (i)',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
+      defence: { stab: 30, slash: 32, crush: 27, magic: -1, ranged: 30 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Helm of Neitiznot',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 31, slash: 29, crush: 34, magic: 3, ranged: 30 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 3 },
+    },
+  },
+  {
+    name: 'Obsidian Helmet',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 25, slash: 23, crush: 26, magic: 0, ranged: 24 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Berserker Helm',
+    slot: 'head',
+    requirements: [{ skill: 'Defence', level: 45 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },
+      defence: { stab: 31, slash: 29, crush: 33, magic: 0, ranged: 30 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+];
