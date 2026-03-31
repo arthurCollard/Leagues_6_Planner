@@ -377,6 +377,12 @@ body {
   color: #1a1612;
 }
 
+.close-btn:disabled, .reset-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
 .combo-active {
   background: linear-gradient(135deg, #b8a282, #d0bd97);
   color: #1a1612;
@@ -409,4 +415,144 @@ body {
   font-size: 12px;
   font-weight: bold;
   color: #1a1612;
+}
+
+.section-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  margin-bottom: 1.5rem;
+}
+
+.collapse-chevron {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2.5px solid #aaa;
+  border-bottom: 2.5px solid #aaa;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease, border-color 0.2s ease;
+  flex-shrink: 0;
+  margin-bottom: 3px;
+}
+
+.collapse-chevron.open {
+  transform: rotate(225deg);
+}
+
+.section-header:hover .collapse-chevron {
+  border-color: #d8ccb4;
+}
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.collapsible-body.open {
+  max-height: 4000px;
+  opacity: 1;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Mastery Tree ──────────────────────────────────── */
+.mastery-pts-badge {
+  font-size: 0.8rem;
+  background: rgba(184, 162, 130, 0.15);
+  border: 1px solid #b8a282;
+  color: #d8ccb4;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.mastery-row-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.mastery-row-grid .relic-btn {
+  padding: 0.5rem;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+
+.mastery-row-grid .relic-info {
+  min-width: 0;
+}
+
+.mastery-row-grid .relic-info strong {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.mastery-row-grid .relic-info small {
+  font-size: 0.62rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mastery-available {
+  border-style: dashed !important;
+  opacity: 0.75;
+}
+
+.mastery-available:hover {
+  border-style: solid !important;
+  opacity: 1;
+}
+
+.mastery-locked {
+  opacity: 0.3;
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.mastery-diamond {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #b8a282, #d0bd97);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 2px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.mastery-row-grid .relic-btn.selected .mastery-diamond {
+  background: linear-gradient(135deg, #d0bd97, #e8d9b8);
+  box-shadow: 0 0 8px rgba(216, 204, 180, 0.5);
+}
+
+.mastery-roman {
+  transform: rotate(-45deg);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #1a1612;
+  display: block;
 }

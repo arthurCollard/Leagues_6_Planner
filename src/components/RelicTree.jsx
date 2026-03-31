@@ -1,34 +1,13 @@
 import React, { useState } from 'react';
 import { RELICS } from '../data/relics';
-
-function RelicIcon({ src, name, className = "relic-icon" }) {
-  const [error, setError] = useState(false);
-
-  if (error) {
-    return (
-      <div className={`${className} relic-fallback`} title={name}>
-        {name[0].toUpperCase()}
-      </div>
-    );
-  }
-
-  return (
-    <img
-      src={src}
-      alt={name}
-      className={className}
-      onError={() => setError(true)}
-      loading="lazy"
-    />
-  );
-}
+import RelicIcon from './RelicIcon';
 
 function RelicSettings({ relic, weights, onChange, onClose }) {
   return (
     <div className="relic-settings-panel">
       <div className="relic-settings-header">
         <strong>
-          <RelicIcon src={relic.icon} name={relic.name} /> 
+          <RelicIcon src={relic.icon} name={relic.name} />
           {relic.name} Weights
         </strong>
         <button className="close-btn" onClick={onClose}>✕</button>
@@ -116,34 +95,42 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange }) {
 }
 
 export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights, onRelicWeightsChange }) {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <main className="relic-tree">
-      <h2>Relic Tree</h2>
-      {Object.entries(RELICS).map(([tier, relics]) => (
-        <div key={tier} className="tier-block">
-          <div className="tier-label">
-            <span>Tier {tier}</span>
-            {selectedRelics[tier] && (
-              <span className="tier-chosen">
-                <RelicIcon src={selectedRelics[tier].icon} name={selectedRelics[tier].name} />
-                {selectedRelics[tier].name}
-              </span>
-            )}
+      <h2 className="section-header" onClick={() => setIsOpen(o => !o)}>
+        Relic Tree
+        <div className={`collapse-chevron ${isOpen ? 'open' : ''}`} />
+      </h2>
+
+      <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>
+        {Object.entries(RELICS).map(([tier, relics]) => (
+          <div key={tier} className="tier-block">
+            <div className="tier-label">
+              <span>Tier {tier}</span>
+              {selectedRelics[tier] && (
+                <span className="tier-chosen">
+                  <RelicIcon src={selectedRelics[tier].icon} name={selectedRelics[tier].name} />
+                  {selectedRelics[tier].name}
+                </span>
+              )}
+            </div>
+            <div className="relic-row">
+              {relics.map(relic => (
+                <RelicButton
+                  key={relic.name}
+                  relic={relic}
+                  selected={selectedRelics[tier]?.name === relic.name}
+                  onSelect={() => onSelectRelic(tier, relic)}
+                  weights={relicWeights?.[relic.name] ?? {}}
+                  onWeightsChange={w => onRelicWeightsChange(relic.name, w)}
+                />
+              ))}
+            </div>
           </div>
-          <div className="relic-row">
-            {relics.map(relic => (
-              <RelicButton
-                key={relic.name}
-                relic={relic}
-                selected={selectedRelics[tier]?.name === relic.name}
-                onSelect={() => onSelectRelic(tier, relic)}
-                weights={relicWeights?.[relic.name] ?? {}}
-                onWeightsChange={w => onRelicWeightsChange(relic.name, w)}
-              />
-            ))}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </main>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 import { computeScores } from './logic/computeScores';
@@ -8,6 +8,8 @@ import ComboBanner from './components/ComboBanner';
 import SkillsPanel from './components/SkillsPanel';
 import RelicTree from './components/RelicTree';
 import { COMBO_BONUSES } from './data/combos';
+import MasteryTree from './components/MasteryTree';
+import RegionTree from './components/RegionTree';
 
 const DEFAULT_SETTINGS = {
   solvedThreshold: 3,
@@ -19,6 +21,17 @@ export default function App() {
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [showSettings, setShowSettings] = useState(false);
   const [relicWeights, setRelicWeights] = useState({});
+  const [selectedMasteries, setSelectedMasteries] = useState({ Melee: 0, Range: 0, Magic: 0 });
+  const [selectedRegions, setSelectedRegions] = useState({});
+
+  const handleSelectMastery = (branch, depth) =>
+    setSelectedMasteries(prev => ({ ...prev, [branch]: depth }));
+
+  const handleSelectRegion = (tier, region) =>
+    setSelectedRegions(prev => ({
+      ...prev,
+      [tier]: prev[tier]?.name === region.name ? null : region,
+    }));
 
   const handleRelicWeightsChange = (relicName, weights) => {
     setRelicWeights(prev => ({ ...prev, [relicName]: weights }));
@@ -70,12 +83,17 @@ export default function App() {
 
       <div className="main-layout">
         <SkillsPanel skills={skills} extras={extras} />
-        <RelicTree
-          selectedRelics={selectedRelics}
-          onSelectRelic={selectRelic}
-          relicWeights={relicWeights}
-          onRelicWeightsChange={handleRelicWeightsChange}
-        />
+
+        <div className="right-panel">
+          <RelicTree
+            selectedRelics={selectedRelics}
+            onSelectRelic={selectRelic}
+            relicWeights={relicWeights}
+            onRelicWeightsChange={handleRelicWeightsChange}
+          />
+          <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
+          <RegionTree selectedRegions={selectedRegions} onSelectRegion={handleSelectRegion} />
+        </div>
       </div>
     </div>
   );
