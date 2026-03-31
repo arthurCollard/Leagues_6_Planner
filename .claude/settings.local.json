@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python -c \"print\\(''hello''\\)\")",
-      "Bash(py -c \"print\\(''hello''\\)\")"
+      "Bash(py -c \"print\\(''hello''\\)\")",
+      "Bash(py -c \":*)",
+      "WebFetch(domain:oldschool.runescape.wiki)"
     ]
   }
 }

@@ -22,17 +22,17 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [relicWeights, setRelicWeights] = useState({});
   const [selectedMasteries, setSelectedMasteries] = useState({ Melee: 0, Range: 0, Magic: 0 });
-  const [selectedRegions, setSelectedRegions] = useState({});
+  const [selectedRegions, setSelectedRegions] = useState([]);
 
   const handleSelectMastery = (branch, depth) =>
     setSelectedMasteries(prev => ({ ...prev, [branch]: depth }));
 
-  const handleSelectRegion = (tier, region) =>
-    setSelectedRegions(prev => ({
-      ...prev,
-      [tier]: prev[tier]?.name === region.name ? null : region,
-    }));
-
+  const handleSelectRegion = (regionName) =>
+    setSelectedRegions(prev =>
+      prev.includes(regionName)
+        ? prev.filter(n => n !== regionName)
+        : prev.length < 3 ? [...prev, regionName] : prev
+    );
   const handleRelicWeightsChange = (relicName, weights) => {
     setRelicWeights(prev => ({ ...prev, [relicName]: weights }));
   };
@@ -70,8 +70,14 @@ export default function App() {
       <Header
         relicCount={Object.keys(selectedRelics).length}
         solvedCount={solvedCount}
+        masteryPoints={Object.values(selectedMasteries).reduce((a, b) => a + b, 0)}
+        regionCount={selectedRegions.length}
         onToggleSettings={() => setShowSettings(s => !s)}
-        onReset={() => setSelectedRelics({})}
+        onReset={() => {
+          setSelectedRelics({});
+          setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 });
+          setSelectedRegions([]);
+        }}
       />
 
       {showSettings && (
@@ -92,7 +98,7 @@ export default function App() {
             onRelicWeightsChange={handleRelicWeightsChange}
           />
           <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
-          <RegionTree selectedRegions={selectedRegions} onSelectRegion={handleSelectRegion} />
+          <RegionTree selectedRegions={selectedRegions} onSelectRegion={handleSelectRegion} onReset={() => setSelectedRegions([])} />
         </div>
       </div>
     </div>

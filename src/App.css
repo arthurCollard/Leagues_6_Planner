@@ -456,6 +456,56 @@ body {
 .collapsible-body.open {
   max-height: 4000px;
   opacity: 1;
+  overflow: visible;
+}
+
+/* ── Region Tooltip ──────────────────────────────── */
+.region-card-wrapper {
+  position: relative;
+}
+
+.region-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  background: #231e18;
+  border: 1px solid #b8a282;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  z-index: 200;
+  min-width: 200px;
+  max-width: 260px;
+  max-height: 280px;
+  overflow-y: auto;
+  text-align: left;
+  pointer-events: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.region-tooltip strong {
+  display: block;
+  color: #d8ccb4;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #b8a282;
+  padding-bottom: 0.3rem;
+}
+
+.region-tooltip ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.region-tooltip li {
+  font-size: 0.72rem;
+  color: #b8a282;
+  padding: 0.18rem 0;
+  border-bottom: 1px solid rgba(184, 162, 130, 0.1);
+}
+
+.region-tooltip li:last-child {
+  border-bottom: none;
 }
 
 .main-layout {
