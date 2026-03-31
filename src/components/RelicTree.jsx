@@ -1,11 +1,36 @@
 import React, { useState } from 'react';
 import { RELICS } from '../data/relics';
 
+function RelicIcon({ src, name, className = "relic-icon" }) {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return (
+      <div className={`${className} relic-fallback`} title={name}>
+        {name[0].toUpperCase()}
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={name}
+      className={className}
+      onError={() => setError(true)}
+      loading="lazy"
+    />
+  );
+}
+
 function RelicSettings({ relic, weights, onChange, onClose }) {
   return (
     <div className="relic-settings-panel">
       <div className="relic-settings-header">
-        <strong>{relic.icon} {relic.name} Weights</strong>
+        <strong>
+          <RelicIcon src={relic.icon} name={relic.name} /> 
+          {relic.name} Weights
+        </strong>
         <button className="close-btn" onClick={onClose}>✕</button>
       </div>
 
@@ -62,7 +87,7 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange }) {
         className={`relic-btn ${selected ? 'selected' : ''}`}
         onClick={onSelect}
       >
-        <span className="relic-emoji">{relic.icon}</span>
+        <RelicIcon src={relic.icon} name={relic.name} />
         <div className="relic-info">
           <strong>{relic.name}</strong>
           <small>{relic.desc}</small>
@@ -100,7 +125,8 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
             <span>Tier {tier}</span>
             {selectedRelics[tier] && (
               <span className="tier-chosen">
-                {selectedRelics[tier].icon} {selectedRelics[tier].name}
+                <RelicIcon src={selectedRelics[tier].icon} name={selectedRelics[tier].name} />
+                {selectedRelics[tier].name}
               </span>
             )}
           </div>

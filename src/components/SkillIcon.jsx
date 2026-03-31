@@ -13,7 +13,12 @@ export default function SkillIcon({ skill, score, status }) {
         boxShadow: score > 0 ? `0 0 14px ${style.glow}` : 'none',
       }}
     >
-      <span className="skill-emoji">{skill.icon}</span>
+      <img
+        src={skill.icon}
+        alt={skill.name}
+        className="skill-emoji"
+        onError={e => { e.currentTarget.style.display = 'none'; }}
+      />
       <span className="skill-name">{skill.name}</span>
       <span className="skill-score" style={{ color: style.border }}>
         {score > 0 ? score : '—'}
