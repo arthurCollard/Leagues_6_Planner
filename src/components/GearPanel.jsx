@@ -23,6 +23,24 @@ const LAYOUT = [
 
 const ZERO_BONUSES = { attack: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 }, defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 }, other: { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 } };
 
+const SET_BONUSES = {
+  elite_void_mage: {
+    requiredItems: ['Void Mage Helm', 'Elite Void Top', 'Elite Void Robe', 'Void Knight Gloves'],
+    bonuses: [{ category: 'other', stat: 'magicDamage', value: 2.5 }],
+    description: 'Elite Void Mage: +2.5% magic damage',
+  },
+  elite_void_range: {
+    requiredItems: ['Void Ranger Helm', 'Elite Void Top', 'Elite Void Robe', 'Void Knight Gloves'],
+    bonuses: [{ category: 'other', stat: 'rangedStrength', value: 2.5 }],
+    description: 'Elite Void Ranged: +2.5% ranged str',
+  },
+  elite_void_melee: {
+    requiredItems: ['Void Melee Helm', 'Elite Void Top', 'Elite Void Robe', 'Void Knight Gloves'],
+    bonuses: [{ category: 'other', stat: 'meleeStrength', value: 2.5 }],
+    description: 'Elite Void Melee: +2.5% melee str',
+  },
+};
+
 function getRegionFiltered(slot, selectedRegions) {
   const allItems = ITEMS_BY_SLOT[slot] || [];
   const activeRegions = [...new Set([...selectedRegions, ...UNIVERSAL_REGION_NAMES])];
@@ -48,6 +66,10 @@ function getOptimizedGear(stat, selectedRegions) {
 
 function sumBonuses(gear) {
   const totals = { attack: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 }, defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 }, other: { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 } };
+  const equippedNames = new Set(Object.values(gear).filter(Boolean).map(i => i.name));
+  const activeEffects = [];
+
+  // Sum base bonuses
   Object.values(gear).forEach(item => {
     if (!item) return;
     ['attack', 'defence', 'other'].forEach(cat => {
@@ -56,7 +78,29 @@ function sumBonuses(gear) {
       });
     });
   });
-  return totals;
+
+  // Apply item-level multiplier effects (e.g. Tumeken's Shadow)
+  Object.values(gear).forEach(item => {
+    if (!item?.effect) return;
+    if (item.effect.type === 'multiply_totals') {
+      item.effect.stats.forEach(({ category, stat, factor }) => {
+        totals[category][stat] = Math.round(totals[category][stat] * factor);
+      });
+      activeEffects.push(item.effect.description);
+    }
+  });
+
+  // Apply set bonuses
+  Object.values(SET_BONUSES).forEach(set => {
+    if (set.requiredItems.every(name => equippedNames.has(name))) {
+      set.bonuses.forEach(({ category, stat, value }) => {
+        totals[category][stat] += value;
+      });
+      activeEffects.push(set.description);
+    }
+  });
+
+  return { totals, activeEffects };
 }
 
 function SlotPicker({ slot, selected, selectedRegions, onSelect }) {
@@ -150,7 +194,7 @@ const OPT_BUTTONS = [
 
 export default function GearPanel({ selectedGear, selectedRegions, onSelectGear, onReset }) {
   const [open, setOpen] = useState(true);
-  const totals = sumBonuses(selectedGear);
+  const { totals, activeEffects } = sumBonuses(selectedGear);
   const hasAny = Object.values(selectedGear).some(Boolean);
 
   function applyOptimized(stat) {
@@ -235,8 +279,21 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
               <BonusRow label="Ranged Str"  value={totals.other.rangedStrength} />
               <BonusRow label="Magic Dmg %" value={totals.other.magicDamage} />
               <BonusRow label="Prayer"      value={totals.other.prayer} />
+              {selectedGear.weapon?.speed != null && (
+                <div className="bonus-row">
+                  <span className="bonus-label">Atk Speed</span>
+                  <span className="bonus-value bonus-zero">{selectedGear.weapon.speed}</span>
+                </div>
+              )}
             </div>
           </div>
+          {activeEffects.length > 0 && (
+            <div className="active-effects">
+              {activeEffects.map(desc => (
+                <div key={desc} className="active-effect-tag">{desc}</div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </main>

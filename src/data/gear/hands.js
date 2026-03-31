@@ -86,6 +86,7 @@ export const HANDS = [
       defence: { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
+    sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],
   },
   {
     name: 'Rune Gloves',

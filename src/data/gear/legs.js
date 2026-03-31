@@ -130,6 +130,7 @@ export const LEGS = [
       defence: { stab: 30, slash: 30, crush: 30, magic: 30, ranged: 30 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
+    sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],
   },
   {
     name: 'Proselyte Cuisse',

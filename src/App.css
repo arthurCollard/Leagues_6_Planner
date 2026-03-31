@@ -868,3 +868,19 @@ body {
   border-color: rgba(184, 162, 130, 0.55);
   color: #e8c98e;
 }
+
+.active-effects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.active-effect-tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(126, 203, 126, 0.12);
+  border: 1px solid rgba(126, 203, 126, 0.35);
+  color: #7ecb7e;
+}

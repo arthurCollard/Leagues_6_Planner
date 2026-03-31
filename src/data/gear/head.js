@@ -153,4 +153,41 @@ export const HEAD = [
       other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
+  // ── Void helms (universal) ─────────────────────────────────────────────────
+  {
+    name: 'Void Mage Helm',
+    slot: 'head',
+    regions: [],
+    requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+    sets: ['elite_void_mage'],
+  },
+  {
+    name: 'Void Ranger Helm',
+    slot: 'head',
+    regions: [],
+    requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 3 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+    sets: ['elite_void_range'],
+  },
+  {
+    name: 'Void Melee Helm',
+    slot: 'head',
+    regions: [],
+    requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+    sets: ['elite_void_melee'],
+  },
 ];
