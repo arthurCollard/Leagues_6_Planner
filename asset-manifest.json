@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/leagues-vi-planner/static/css/main.eb795931.css",
-    "main.js": "/leagues-vi-planner/static/js/main.f67fb3be.js",
-    "static/js/453.29d8f9d8.chunk.js": "/leagues-vi-planner/static/js/453.29d8f9d8.chunk.js",
-    "index.html": "/leagues-vi-planner/index.html",
-    "main.eb795931.css.map": "/leagues-vi-planner/static/css/main.eb795931.css.map",
-    "main.f67fb3be.js.map": "/leagues-vi-planner/static/js/main.f67fb3be.js.map",
-    "453.29d8f9d8.chunk.js.map": "/leagues-vi-planner/static/js/453.29d8f9d8.chunk.js.map"
+    "main.css": "/leagues-6-planner/static/css/main.eb795931.css",
+    "main.js": "/leagues-6-planner/static/js/main.6feed259.js",
+    "static/js/453.29d8f9d8.chunk.js": "/leagues-6-planner/static/js/453.29d8f9d8.chunk.js",
+    "index.html": "/leagues-6-planner/index.html",
+    "main.eb795931.css.map": "/leagues-6-planner/static/css/main.eb795931.css.map",
+    "main.6feed259.js.map": "/leagues-6-planner/static/js/main.6feed259.js.map",
+    "453.29d8f9d8.chunk.js.map": "/leagues-6-planner/static/js/453.29d8f9d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eb795931.css",
-    "static/js/main.f67fb3be.js"
+    "static/js/main.6feed259.js"
   ]
 }
