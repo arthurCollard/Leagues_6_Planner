@@ -2,6 +2,7 @@ export const HEAD = [
   {
     name: 'Torva Full Helm',
     slot: 'head',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },
@@ -12,6 +13,7 @@ export const HEAD = [
   {
     name: 'Justiciar Faceguard',
     slot: 'head',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
@@ -22,6 +24,7 @@ export const HEAD = [
   {
     name: 'Virtus Mask',
     slot: 'head',
+    regions: ['Varlamore', 'Asgarnia', 'Fremennik', 'Desert'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: -3 },
@@ -32,6 +35,7 @@ export const HEAD = [
   {
     name: 'Masori Mask (f)',
     slot: 'head',
+    regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -1, ranged: 12 },
@@ -42,6 +46,7 @@ export const HEAD = [
   {
     name: 'Ancestral Hat',
     slot: 'head',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: -2 },
@@ -52,6 +57,7 @@ export const HEAD = [
   {
     name: 'Neitiznot Faceguard',
     slot: 'head',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -62,6 +68,7 @@ export const HEAD = [
   {
     name: "Inquisitor's Great Helm",
     slot: 'head',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: -2, slash: -2, crush: 8, magic: -5, ranged: -5 },
@@ -72,6 +79,7 @@ export const HEAD = [
   {
     name: 'Serpentine Helm',
     slot: 'head',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },
@@ -82,6 +90,7 @@ export const HEAD = [
   {
     name: "Dharok's Helm",
     slot: 'head',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
@@ -92,6 +101,7 @@ export const HEAD = [
   {
     name: 'Dragon Full Helm',
     slot: 'head',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -3 },
@@ -102,6 +112,7 @@ export const HEAD = [
   {
     name: 'Slayer Helmet (i)',
     slot: 'head',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
@@ -112,6 +123,7 @@ export const HEAD = [
   {
     name: 'Helm of Neitiznot',
     slot: 'head',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -122,6 +134,7 @@ export const HEAD = [
   {
     name: 'Obsidian Helmet',
     slot: 'head',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -132,6 +145,7 @@ export const HEAD = [
   {
     name: 'Berserker Helm',
     slot: 'head',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Defence', level: 45 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },

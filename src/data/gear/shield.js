@@ -3,6 +3,7 @@ export const SHIELD = [
   {
     name: 'Tome of Earth',
     slot: 'shield',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Magic', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
@@ -14,6 +15,7 @@ export const SHIELD = [
   {
     name: 'Toktz-ket-xil',
     slot: 'shield',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -25,6 +27,7 @@ export const SHIELD = [
   {
     name: 'Dragon Defender',
     slot: 'shield',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 60 }, { skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 25, slash: 24, crush: 23, magic: 0, ranged: 0 },
@@ -36,6 +39,7 @@ export const SHIELD = [
   {
     name: 'Dragonfire Shield',
     slot: 'shield',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: -5 },
@@ -46,6 +50,7 @@ export const SHIELD = [
   {
     name: 'Ancient Wyvern Shield',
     slot: 'shield',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Magic', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
@@ -57,6 +62,7 @@ export const SHIELD = [
   {
     name: "Elidinis' Ward (f)",
     slot: 'shield',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Magic', level: 80 }, { skill: 'Prayer', level: 80 }, { skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
@@ -67,6 +73,7 @@ export const SHIELD = [
   {
     name: "Elidinis' Ward",
     slot: 'shield',
+    regions: ['Desert'],
     requirements: [{ skill: 'Magic', level: 80 }, { skill: 'Prayer', level: 80 }, { skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
@@ -77,6 +84,7 @@ export const SHIELD = [
   {
     name: 'Tome of Water',
     slot: 'shield',
+    regions: ['Desert'],
     requirements: [{ skill: 'Magic', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
@@ -88,6 +96,7 @@ export const SHIELD = [
   {
     name: 'Avernic Defender',
     slot: 'shield',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 30, slash: 29, crush: 28, magic: 0, ranged: 0 },
@@ -95,9 +104,11 @@ export const SHIELD = [
       other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
+  // ── Wilderness ─────────────────────────────────────────────────────────────
   {
     name: 'Arcane Spirit Shield',
     slot: 'shield',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }, { skill: 'Magic', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
@@ -108,6 +119,7 @@ export const SHIELD = [
   {
     name: 'Spectral Spirit Shield',
     slot: 'shield',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }, { skill: 'Magic', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
@@ -118,6 +130,7 @@ export const SHIELD = [
   {
     name: 'Elysian Spirit Shield',
     slot: 'shield',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -125,10 +138,10 @@ export const SHIELD = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
   },
-  // ── Wilderness ─────────────────────────────────────────────────────────────
   {
     name: 'Malediction Ward',
     slot: 'shield',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -139,6 +152,7 @@ export const SHIELD = [
   {
     name: 'Odium Ward',
     slot: 'shield',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
@@ -146,10 +160,11 @@ export const SHIELD = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
-  // ── Kandarin / general ─────────────────────────────────────────────────────
+  // ── Tirannwn ───────────────────────────────────────────────────────────────
   {
     name: 'Crystal Shield',
     slot: 'shield',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -157,9 +172,11 @@ export const SHIELD = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
+  // ── Fremennik ──────────────────────────────────────────────────────────────
   {
     name: 'Dragonfire Ward',
     slot: 'shield',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 10 },

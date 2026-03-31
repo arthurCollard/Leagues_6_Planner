@@ -3,6 +3,7 @@ export const WEAPON = [
   {
     name: 'Eclipse Atlatl',
     slot: 'weapon',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Ranged', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 40 },
@@ -13,6 +14,7 @@ export const WEAPON = [
   {
     name: 'Dual Macuahuitl',
     slot: 'weapon',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Attack', level: 75 }, { skill: 'Strength', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 75, crush: 70, magic: 0, ranged: 0 },
@@ -23,6 +25,7 @@ export const WEAPON = [
   {
     name: 'Blue Moon Spear',
     slot: 'weapon',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Attack', level: 80 }, { skill: 'Strength', level: 80 }, { skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 88, slash: 88, crush: 0, magic: 0, ranged: 0 },
@@ -33,16 +36,18 @@ export const WEAPON = [
   {
     name: 'Glacial Temotli',
     slot: 'weapon',
-    requirements: [{ skill: 'Ranged', level: 75 }, { skill: 'Defence', level: 75 }],
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'attack', level: 55 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 61 },
+      attack:  { stab: 11, slash: 0, crush: 72, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 62, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 64, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
   },
   {
     name: 'Sulphur Blades',
     slot: 'weapon',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Attack', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 90, crush: 0, magic: 0, ranged: 0 },
@@ -53,6 +58,7 @@ export const WEAPON = [
   {
     name: 'Dragon Hunter Wand',
     slot: 'weapon',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
@@ -63,6 +69,7 @@ export const WEAPON = [
   {
     name: 'Tonalztics of Ralos',
     slot: 'weapon',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 55 },
@@ -73,6 +80,7 @@ export const WEAPON = [
   {
     name: 'Soulreaper Axe',
     slot: 'weapon',
+    regions: ['Asgarnia', 'Fremennik', 'Desert'],
     requirements: [{ skill: 'Attack', level: 90 }, { skill: 'Strength', level: 80 }, { skill: 'Defence', level: 90 }, { skill: 'Hitpoints', level: 80 }],
     bonuses: {
       attack:  { stab: 80, slash: 100, crush: 80, magic: 0, ranged: 0 },
@@ -84,6 +92,7 @@ export const WEAPON = [
   {
     name: 'Tzhaar-ket-om',
     slot: 'weapon',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Attack', level: 60 }, { skill: 'Strength', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 84, magic: 0, ranged: 0 },
@@ -94,6 +103,7 @@ export const WEAPON = [
   {
     name: 'Toktz-xil-ul',
     slot: 'weapon',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Ranged', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 47 },
@@ -104,6 +114,7 @@ export const WEAPON = [
   {
     name: 'Toktz-mej-tal',
     slot: 'weapon',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
@@ -114,6 +125,7 @@ export const WEAPON = [
   {
     name: 'Toktz-xil-ak',
     slot: 'weapon',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 45, slash: 67, crush: 0, magic: 0, ranged: 0 },
@@ -124,6 +136,7 @@ export const WEAPON = [
   {
     name: 'Toktz-xil-ek',
     slot: 'weapon',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 45, slash: 35, crush: 0, magic: 0, ranged: 0 },
@@ -135,6 +148,7 @@ export const WEAPON = [
   {
     name: 'Armadyl Godsword',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 132, crush: 0, magic: 0, ranged: 0 },
@@ -145,6 +159,7 @@ export const WEAPON = [
   {
     name: 'Bandos Godsword',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 132, crush: 0, magic: 0, ranged: 0 },
@@ -155,6 +170,7 @@ export const WEAPON = [
   {
     name: 'Saradomin Sword',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 70 }],
     bonuses: {
       attack:  { stab: 5, slash: 84, crush: 82, magic: 0, ranged: 0 },
@@ -165,6 +181,7 @@ export const WEAPON = [
   {
     name: 'Armadyl Crossbow',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 100 },
@@ -175,6 +192,7 @@ export const WEAPON = [
   {
     name: 'Steam Battlestaff',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
       attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -185,6 +203,7 @@ export const WEAPON = [
   {
     name: 'Zamorakian Spear',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 70 }],
     bonuses: {
       attack:  { stab: 75, slash: 0, crush: 70, magic: 0, ranged: 0 },
@@ -195,6 +214,7 @@ export const WEAPON = [
   {
     name: 'Staff of the Dead',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 75 }, { skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 10, slash: 0, crush: 0, magic: 17, ranged: 0 },
@@ -205,6 +225,7 @@ export const WEAPON = [
   {
     name: 'Ancient Godsword',
     slot: 'weapon',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 132, crush: 0, magic: 0, ranged: 0 },
@@ -216,6 +237,7 @@ export const WEAPON = [
   {
     name: 'Dragon Axe',
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 35, slash: 72, crush: 35, magic: 0, ranged: 0 },
@@ -226,6 +248,7 @@ export const WEAPON = [
   {
     name: 'Leaf-bladed Battleaxe',
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 65 }, { skill: 'Slayer', level: 55 }],
     bonuses: {
       attack:  { stab: 52, slash: 72, crush: 52, magic: 0, ranged: 0 },
@@ -236,6 +259,7 @@ export const WEAPON = [
   {
     name: 'Brine Sabre',
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 46, crush: 0, magic: 0, ranged: 0 },
@@ -246,6 +270,7 @@ export const WEAPON = [
   {
     name: "Leviathan's Lure",
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 90 }, { skill: 'Strength', level: 90 }, { skill: 'Defence', level: 90 }, { skill: 'Hitpoints', level: 90 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 100, magic: 0, ranged: 0 },
@@ -256,6 +281,7 @@ export const WEAPON = [
   {
     name: "Siren's Staff",
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Magic', level: 75 }, { skill: 'Hitpoints', level: 90 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
@@ -266,6 +292,7 @@ export const WEAPON = [
   {
     name: 'Eye of the Duke',
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 80 }, { skill: 'Strength', level: 80 }, { skill: 'Slayer', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 110, magic: 0, ranged: 0 },
@@ -276,6 +303,7 @@ export const WEAPON = [
   {
     name: "Executioner's Axe",
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 75 }, { skill: 'Strength', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 101, crush: 0, magic: 0, ranged: 0 },
@@ -286,6 +314,7 @@ export const WEAPON = [
   {
     name: 'Mud Battlestaff',
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
       attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -296,6 +325,7 @@ export const WEAPON = [
   {
     name: 'Ancient Sceptre',
     slot: 'weapon',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Magic', level: 62 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
@@ -307,6 +337,7 @@ export const WEAPON = [
   {
     name: 'Trident of the Seas',
     slot: 'weapon',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
@@ -317,6 +348,7 @@ export const WEAPON = [
   {
     name: 'Smoke Battlestaff',
     slot: 'weapon',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
       attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -325,18 +357,9 @@ export const WEAPON = [
     },
   },
   {
-    name: 'Dragon Chainbody',
-    slot: 'weapon',
-    requirements: [{ skill: 'Defence', level: 60 }],
-    bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 80, slash: 85, crush: 72, magic: 0, ranged: 55 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
-    },
-  },
-  {
     name: 'Mist Battlestaff',
     slot: 'weapon',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
       attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -347,6 +370,7 @@ export const WEAPON = [
   {
     name: 'Warped Sceptre',
     slot: 'weapon',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Magic', level: 62 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
@@ -358,6 +382,7 @@ export const WEAPON = [
   {
     name: "Osmumten's Fang",
     slot: 'weapon',
+    regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 80 }],
     bonuses: {
       attack:  { stab: 105, slash: 65, crush: 0, magic: 0, ranged: 0 },
@@ -368,6 +393,7 @@ export const WEAPON = [
   {
     name: "Tumeken's Shadow (uncharged)",
     slot: 'weapon',
+    regions: ['Desert'],
     requirements: [{ skill: 'Magic', level: 85 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
@@ -378,6 +404,7 @@ export const WEAPON = [
   {
     name: 'Dragon Pickaxe',
     slot: 'weapon',
+    regions: ['Desert', 'Fremennik', 'Wilderness'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 35, slash: 40, crush: 0, magic: 0, ranged: 0 },
@@ -388,6 +415,7 @@ export const WEAPON = [
   {
     name: 'Dragon 2h Sword',
     slot: 'weapon',
+    regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 93, crush: 45, magic: 0, ranged: 0 },
@@ -398,6 +426,7 @@ export const WEAPON = [
   {
     name: 'Dust Battlestaff',
     slot: 'weapon',
+    regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
       attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -408,6 +437,7 @@ export const WEAPON = [
   {
     name: 'Dragon Harpoon',
     slot: 'weapon',
+    regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 35, slash: 55, crush: 0, magic: 0, ranged: 0 },
@@ -419,6 +449,7 @@ export const WEAPON = [
   {
     name: 'Scythe of Vitur (uncharged)',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 80 }, { skill: 'Strength', level: 80 }],
     bonuses: {
       attack:  { stab: 45, slash: 75, crush: 35, magic: 0, ranged: 0 },
@@ -429,6 +460,7 @@ export const WEAPON = [
   {
     name: 'Sanguinesti Staff',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
@@ -439,6 +471,7 @@ export const WEAPON = [
   {
     name: 'Ghrazi Rapier',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 80 }],
     bonuses: {
       attack:  { stab: 94, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -449,6 +482,7 @@ export const WEAPON = [
   {
     name: 'Nightmare Staff',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Magic', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 16, ranged: 0 },
@@ -459,6 +493,7 @@ export const WEAPON = [
   {
     name: "Inquisitor's Mace",
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 95, magic: 0, ranged: 0 },
@@ -469,6 +504,7 @@ export const WEAPON = [
   {
     name: 'Granite Maul',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 50 }, { skill: 'Strength', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 81, magic: 0, ranged: 0 },
@@ -479,6 +515,7 @@ export const WEAPON = [
   {
     name: 'Granite Hammer',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Strength', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 64, magic: 0, ranged: 0 },
@@ -489,6 +526,7 @@ export const WEAPON = [
   {
     name: 'Noxious Halberd',
     slot: 'weapon',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 80 }, { skill: 'Slayer', level: 90 }],
     bonuses: {
       attack:  { stab: 0, slash: 116, crush: 0, magic: 0, ranged: 0 },
@@ -500,6 +538,7 @@ export const WEAPON = [
   {
     name: 'Toxic Blowpipe',
     slot: 'weapon',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 30 },
@@ -510,6 +549,7 @@ export const WEAPON = [
   {
     name: 'Uncharged Toxic Trident',
     slot: 'weapon',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
@@ -520,6 +560,7 @@ export const WEAPON = [
   {
     name: 'Dark Bow',
     slot: 'weapon',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Ranged', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 95 },
@@ -531,6 +572,7 @@ export const WEAPON = [
   {
     name: "Viggora's Chainmace (u)",
     slot: 'weapon',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 55, magic: 0, ranged: 0 },
@@ -541,6 +583,7 @@ export const WEAPON = [
   {
     name: "Craw's Bow (u)",
     slot: 'weapon',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Ranged', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 60 },
@@ -551,6 +594,7 @@ export const WEAPON = [
   {
     name: "Thammaron's Sceptre (u)",
     slot: 'weapon',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
@@ -561,6 +605,7 @@ export const WEAPON = [
   {
     name: 'Voidwaker',
     slot: 'weapon',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 65, slash: 65, crush: 0, magic: 0, ranged: 0 },
@@ -571,6 +616,7 @@ export const WEAPON = [
   {
     name: 'Abyssal Whip',
     slot: 'weapon',
+    regions: ['Morytania', 'Kourend', 'Wilderness'],
     requirements: [{ skill: 'Attack', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 82, crush: 0, magic: 0, ranged: 0 },
@@ -581,6 +627,7 @@ export const WEAPON = [
   {
     name: 'Abyssal Dagger',
     slot: 'weapon',
+    regions: ['Morytania', 'Kourend', 'Wilderness'],
     requirements: [{ skill: 'Attack', level: 70 }],
     bonuses: {
       attack:  { stab: 75, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -592,6 +639,7 @@ export const WEAPON = [
   {
     name: 'Twisted Bow',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 70 },
@@ -602,6 +650,7 @@ export const WEAPON = [
   {
     name: 'Dragon Hunter Crossbow',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Ranged', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 95 },
@@ -612,6 +661,7 @@ export const WEAPON = [
   {
     name: 'Dragon Claws',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 41, slash: 57, crush: 0, magic: 0, ranged: 0 },
@@ -622,6 +672,7 @@ export const WEAPON = [
   {
     name: 'Elder Maul',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Attack', level: 75 }, { skill: 'Strength', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 135, magic: 0, ranged: 0 },
@@ -632,6 +683,7 @@ export const WEAPON = [
   {
     name: 'Kodai Wand',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
@@ -642,6 +694,7 @@ export const WEAPON = [
   {
     name: 'Dragon Hunter Lance',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Attack', level: 78 }],
     bonuses: {
       attack:  { stab: 85, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -652,6 +705,7 @@ export const WEAPON = [
   {
     name: 'Dragon Warhammer',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 95, magic: 0, ranged: 0 },
@@ -662,6 +716,7 @@ export const WEAPON = [
   {
     name: 'Sarachnis Cudgel',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Attack', level: 55 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 65, magic: 0, ranged: 0 },
@@ -672,6 +727,7 @@ export const WEAPON = [
   {
     name: 'Dragon Sword',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: 40, slash: 67, crush: 0, magic: 0, ranged: 0 },
@@ -682,6 +738,7 @@ export const WEAPON = [
   {
     name: 'Dragon Knife',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Ranged', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 40 },
@@ -692,6 +749,7 @@ export const WEAPON = [
   {
     name: 'Dragon Thrownaxe',
     slot: 'weapon',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Ranged', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 28 },

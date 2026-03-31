@@ -2,6 +2,7 @@ export const NECK = [
   {
     name: 'Amulet of Torture',
     slot: 'neck',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 15, slash: 15, crush: 15, magic: 0, ranged: 0 },
@@ -12,6 +13,7 @@ export const NECK = [
   {
     name: 'Necklace of Anguish',
     slot: 'neck',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 15 },
@@ -22,6 +24,7 @@ export const NECK = [
   {
     name: 'Occult Necklace',
     slot: 'neck',
+    regions: ['Kandarin'],
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -32,6 +35,7 @@ export const NECK = [
   {
     name: 'Amulet of Blood Fury',
     slot: 'neck',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 10, slash: 10, crush: 10, magic: 10, ranged: 10 },
@@ -42,6 +46,7 @@ export const NECK = [
   {
     name: 'Amulet of Rancour',
     slot: 'neck',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 25, slash: 25, crush: 25, magic: -6, ranged: -8 },
@@ -52,6 +57,7 @@ export const NECK = [
   {
     name: 'Amulet of Fury',
     slot: 'neck',
+    regions: ['Karamja'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 10, slash: 10, crush: 10, magic: 10, ranged: 10 },
@@ -62,6 +68,7 @@ export const NECK = [
   {
     name: 'Bonecrusher Necklace',
     slot: 'neck',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Prayer', level: 70 }],
     bonuses: {
       attack:  { stab: 10, slash: 10, crush: 10, magic: 0, ranged: 0 },
@@ -72,6 +79,7 @@ export const NECK = [
   {
     name: 'Berserker Necklace',
     slot: 'neck',
+    regions: ['Karamja'],
     requirements: [],
     bonuses: {
       attack:  { stab: -10, slash: -10, crush: -10, magic: 0, ranged: 0 },
@@ -82,6 +90,7 @@ export const NECK = [
   {
     name: 'Amulet of Glory',
     slot: 'neck',
+    regions: [],
     requirements: [],
     bonuses: {
       attack:  { stab: 10, slash: 10, crush: 10, magic: 0, ranged: 0 },
@@ -92,6 +101,7 @@ export const NECK = [
   {
     name: 'Dragonbone Necklace',
     slot: 'neck',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Prayer', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

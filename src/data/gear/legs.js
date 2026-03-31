@@ -2,6 +2,7 @@ export const LEGS = [
   {
     name: 'Torva Platelegs',
     slot: 'legs',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -12,6 +13,7 @@ export const LEGS = [
   {
     name: 'Justiciar Legguards',
     slot: 'legs',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -22,6 +24,7 @@ export const LEGS = [
   {
     name: 'Virtus Robe Bottom',
     slot: 'legs',
+    regions: ['Varlamore', 'Asgarnia', 'Fremennik', 'Desert'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 26, ranged: 0 },
@@ -32,6 +35,7 @@ export const LEGS = [
   {
     name: 'Masori Chaps (f)',
     slot: 'legs',
+    regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 27 },
@@ -42,6 +46,7 @@ export const LEGS = [
   {
     name: 'Ancestral Robe Bottom',
     slot: 'legs',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 26, ranged: 0 },
@@ -52,6 +57,7 @@ export const LEGS = [
   {
     name: 'Bandos Tassets',
     slot: 'legs',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -62,6 +68,7 @@ export const LEGS = [
   {
     name: "Inquisitor's Plateskirt",
     slot: 'legs',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 12, magic: 0, ranged: 0 },
@@ -72,6 +79,7 @@ export const LEGS = [
   {
     name: "Dharok's Platelegs",
     slot: 'legs',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -82,6 +90,7 @@ export const LEGS = [
   {
     name: 'Dragon Platelegs',
     slot: 'legs',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -92,6 +101,7 @@ export const LEGS = [
   {
     name: 'Crystal Legs',
     slot: 'legs',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
@@ -102,6 +112,7 @@ export const LEGS = [
   {
     name: "Black D'hide Chaps",
     slot: 'legs',
+    regions: [],
     requirements: [{ skill: 'Ranged', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 17 },
@@ -112,6 +123,7 @@ export const LEGS = [
   {
     name: 'Elite Void Robe',
     slot: 'legs',
+    regions: [],
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -122,6 +134,7 @@ export const LEGS = [
   {
     name: 'Proselyte Cuisse',
     slot: 'legs',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 30 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

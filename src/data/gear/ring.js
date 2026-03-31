@@ -2,6 +2,7 @@ export const RING = [
   {
     name: 'Ultor Ring',
     slot: 'ring',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -12,6 +13,7 @@ export const RING = [
   {
     name: 'Venator Ring',
     slot: 'ring',
+    regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -22,6 +24,7 @@ export const RING = [
   {
     name: 'Magus Ring',
     slot: 'ring',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
@@ -32,6 +35,7 @@ export const RING = [
   {
     name: 'Bellator Ring',
     slot: 'ring',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 20, crush: 0, magic: 0, ranged: 0 },
@@ -42,6 +46,7 @@ export const RING = [
   {
     name: 'Ring of Suffering (i)',
     slot: 'ring',
+    regions: ['Tirannwn', 'Kourend'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -52,6 +57,7 @@ export const RING = [
   {
     name: 'Berserker Ring (i)',
     slot: 'ring',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -62,6 +68,7 @@ export const RING = [
   {
     name: 'Archers Ring (i)',
     slot: 'ring',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
@@ -72,6 +79,7 @@ export const RING = [
   {
     name: 'Seers Ring (i)',
     slot: 'ring',
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 12, ranged: 0 },
@@ -82,6 +90,7 @@ export const RING = [
   {
     name: 'Ring of the Gods (i)',
     slot: 'ring',
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -92,6 +101,7 @@ export const RING = [
   {
     name: 'Brimstone Ring',
     slot: 'ring',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Slayer', level: 75 }],
     bonuses: {
       attack:  { stab: 4, slash: 4, crush: 4, magic: 0, ranged: 4 },
@@ -102,6 +112,7 @@ export const RING = [
   {
     name: 'Lightbearer',
     slot: 'ring',
+    regions: ['Desert'],
     requirements: [],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -112,6 +123,7 @@ export const RING = [
   {
     name: 'Ring of Endurance',
     slot: 'ring',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Agility', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

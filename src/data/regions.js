@@ -90,7 +90,7 @@ export const UNLOCKABLE_REGIONS = [
     name: 'Tirannwn',
     icon: '',
     drops: [
-      'Elven signet', 'Crystal armour seed', 'Crystal weapon seed',
+      'Elven signet', 'Crystal Body', 'Crystal weapon seed',
       'Enhanced crystal weapon seed', 'Crystal tool seed', 'Zalcano shard',
       'Tanzanite fang', 'Serpentine visage', 'Uncharged toxic trident',
       'Uncut onyx', 'Dark bow', 'Dragonstone full helm', 'Dragonstone platebody',

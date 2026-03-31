@@ -2,6 +2,7 @@ export const FEET = [
   {
     name: 'Primordial Boots',
     slot: 'feet',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 2, slash: 2, crush: 2, magic: -4, ranged: -1 },
@@ -12,6 +13,7 @@ export const FEET = [
   {
     name: 'Avernic Treads',
     slot: 'feet',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 5, slash: 5, crush: 5, magic: 11, ranged: 15 },
@@ -22,6 +24,7 @@ export const FEET = [
   {
     name: 'Pegasian Boots',
     slot: 'feet',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
@@ -32,6 +35,7 @@ export const FEET = [
   {
     name: 'Eternal Boots',
     slot: 'feet',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
@@ -42,6 +46,7 @@ export const FEET = [
   {
     name: 'Echo Boots',
     slot: 'feet',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: -1 },
@@ -52,6 +57,7 @@ export const FEET = [
   {
     name: 'Guardian Boots',
     slot: 'feet',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -60,8 +66,20 @@ export const FEET = [
     },
   },
   {
+    name: 'Aranea Boots',
+    slot: 'feet',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Magic', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      defence: { stab: 10, slash: 11, crush: 12, magic: 8, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+    },
+  },
+  {
     name: 'Dragon Boots',
     slot: 'feet',
+    regions: ['Asgarnia', 'Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -72,6 +90,7 @@ export const FEET = [
   {
     name: 'Bandos Boots',
     slot: 'feet',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -82,6 +101,7 @@ export const FEET = [
   {
     name: 'Granite Boots',
     slot: 'feet',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -92,6 +112,7 @@ export const FEET = [
   {
     name: 'Rune Boots',
     slot: 'feet',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

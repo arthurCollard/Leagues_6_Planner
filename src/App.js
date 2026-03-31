@@ -10,6 +10,9 @@ import RelicTree from './components/RelicTree';
 import { COMBO_BONUSES } from './data/combos';
 import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
+import GearPanel from './components/GearPanel';
+
+const EMPTY_GEAR = { head: null, cape: null, neck: null, weapon: null, body: null, shield: null, legs: null, hands: null, feet: null, ring: null };
 
 const DEFAULT_SETTINGS = {
   solvedThreshold: 3,
@@ -23,6 +26,7 @@ export default function App() {
   const [relicWeights, setRelicWeights] = useState({});
   const [selectedMasteries, setSelectedMasteries] = useState({ Melee: 0, Range: 0, Magic: 0 });
   const [selectedRegions, setSelectedRegions] = useState([]);
+  const [selectedGear, setSelectedGear] = useState(EMPTY_GEAR);
 
   const handleSelectMastery = (branch, depth) =>
     setSelectedMasteries(prev => ({ ...prev, [branch]: depth }));
@@ -86,7 +90,6 @@ export default function App() {
 
       <ComboBanner activeCombos={activeCombos} pendingCombos={pendingCombos} />
 
-
       <div className="main-layout">
         <SkillsPanel skills={skills} extras={extras} />
 
@@ -99,6 +102,12 @@ export default function App() {
           />
           <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
           <RegionTree selectedRegions={selectedRegions} onSelectRegion={handleSelectRegion} onReset={() => setSelectedRegions([])} />
+          <GearPanel
+            selectedGear={selectedGear}
+            selectedRegions={selectedRegions}
+            onSelectGear={(slot, item) => setSelectedGear(prev => ({ ...prev, [slot]: item }))}
+            onReset={() => setSelectedGear(EMPTY_GEAR)}
+          />
         </div>
       </div>
     </div>

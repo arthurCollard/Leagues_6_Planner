@@ -2,6 +2,7 @@ export const CAPE = [
   {
     name: 'Infernal Cape',
     slot: 'cape',
+    regions: ['Karamja'],
     requirements: [],
     bonuses: {
       attack:  { stab: 4, slash: 4, crush: 4, magic: 1, ranged: 1 },
@@ -12,6 +13,7 @@ export const CAPE = [
   {
     name: "Dizana's Quiver (charged)",
     slot: 'cape',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
@@ -20,8 +22,20 @@ export const CAPE = [
     },
   },
   {
+    name: 'Obsidian Cape',
+    slot: 'cape',
+    regions: ['Karamja'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
     name: 'Masori Assembler',
     slot: 'cape',
+    regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
@@ -32,6 +46,7 @@ export const CAPE = [
   {
     name: 'Imbued God Cape',
     slot: 'cape',
+    regions: [],
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
       attack:  { stab: 3, slash: 3, crush: 0, magic: 15, ranged: 0 },
@@ -42,6 +57,7 @@ export const CAPE = [
   {
     name: 'Fire Cape',
     slot: 'cape',
+    regions: ['Karamja'],
     requirements: [],
     bonuses: {
       attack:  { stab: 1, slash: 1, crush: 1, magic: 1, ranged: 1 },
@@ -52,6 +68,7 @@ export const CAPE = [
   {
     name: "Ava's Assembler",
     slot: 'cape',
+    regions: [],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
@@ -62,6 +79,7 @@ export const CAPE = [
   {
     name: 'Mythical Cape',
     slot: 'cape',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 20 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 6, magic: 0, ranged: 0 },
@@ -72,6 +90,7 @@ export const CAPE = [
   {
     name: 'Cape of Accomplishment (Trimmed)',
     slot: 'cape',
+    regions: [],
     requirements: [{ skill: 'Any', level: 99 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -82,6 +101,7 @@ export const CAPE = [
   {
     name: 'Cape of Legends',
     slot: 'cape',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

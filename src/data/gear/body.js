@@ -2,6 +2,7 @@ export const BODY = [
   {
     name: 'Torva Platebody',
     slot: 'body',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -12,6 +13,7 @@ export const BODY = [
   {
     name: 'Justiciar Chestguard',
     slot: 'body',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -22,6 +24,7 @@ export const BODY = [
   {
     name: 'Virtus Robe Top',
     slot: 'body',
+    regions: ['Varlamore', 'Asgarnia', 'Fremennik', 'Desert'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
@@ -32,6 +35,7 @@ export const BODY = [
   {
     name: 'Masori Body (f)',
     slot: 'body',
+    regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 45 },
@@ -42,6 +46,7 @@ export const BODY = [
   {
     name: 'Ancestral Robe Top',
     slot: 'body',
+    regions: ['Kourend'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
@@ -52,6 +57,7 @@ export const BODY = [
   {
     name: 'Bandos Chestplate',
     slot: 'body',
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -62,6 +68,7 @@ export const BODY = [
   {
     name: "Inquisitor's Hauberk",
     slot: 'body',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: -3, slash: -3, crush: 12, magic: 0, ranged: 0 },
@@ -72,6 +79,7 @@ export const BODY = [
   {
     name: "Dharok's Platebody",
     slot: 'body',
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -80,8 +88,20 @@ export const BODY = [
     },
   },
   {
+    name: 'Dragon Chainbody',
+    slot: 'body',
+    regions: ['Kandarin', 'Wilderness'],
+    requirements: [{ skill: 'Defence', level: 60 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 80, slash: 85, crush: 72, magic: 0, ranged: 55 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
     name: 'Dragon Platebody',
     slot: 'body',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -92,6 +112,7 @@ export const BODY = [
   {
     name: 'Fighter Torso',
     slot: 'body',
+    regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -102,6 +123,7 @@ export const BODY = [
   {
     name: 'Crystal Body',
     slot: 'body',
+    regions: ['Tirannwn'],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 40 },
@@ -110,8 +132,9 @@ export const BODY = [
     },
   },
   {
-    name: 'Black D\'hide Body',
+    name: "Black D'hide Body",
     slot: 'body',
+    regions: [],
     requirements: [{ skill: 'Ranged', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 30 },
@@ -122,6 +145,7 @@ export const BODY = [
   {
     name: 'Elite Void Top',
     slot: 'body',
+    regions: [],
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -132,6 +156,7 @@ export const BODY = [
   {
     name: 'Sunfire Fanatic Cuirass',
     slot: 'body',
+    regions: ['Varlamore'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
