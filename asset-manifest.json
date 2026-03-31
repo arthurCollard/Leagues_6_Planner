@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Leagues_6_Planner/static/css/main.d17f2259.css",
-    "main.js": "/Leagues_6_Planner/static/js/main.7f469acf.js",
-    "static/js/453.29d8f9d8.chunk.js": "/Leagues_6_Planner/static/js/453.29d8f9d8.chunk.js",
-    "index.html": "/Leagues_6_Planner/index.html",
-    "main.d17f2259.css.map": "/Leagues_6_Planner/static/css/main.d17f2259.css.map",
-    "main.7f469acf.js.map": "/Leagues_6_Planner/static/js/main.7f469acf.js.map",
-    "453.29d8f9d8.chunk.js.map": "/Leagues_6_Planner/static/js/453.29d8f9d8.chunk.js.map"
+    "main.css": "/static/css/main.8f2d20ac.css",
+    "main.js": "/static/js/main.3f6e6aa3.js",
+    "static/js/453.29d8f9d8.chunk.js": "/static/js/453.29d8f9d8.chunk.js",
+    "index.html": "/index.html",
+    "main.8f2d20ac.css.map": "/static/css/main.8f2d20ac.css.map",
+    "main.3f6e6aa3.js.map": "/static/js/main.3f6e6aa3.js.map",
+    "453.29d8f9d8.chunk.js.map": "/static/js/453.29d8f9d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d17f2259.css",
-    "static/js/main.7f469acf.js"
+    "static/css/main.8f2d20ac.css",
+    "static/js/main.3f6e6aa3.js"
   ]
 }
