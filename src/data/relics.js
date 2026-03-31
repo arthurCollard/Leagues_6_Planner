@@ -36,6 +36,13 @@ export const RELICS = {
       skills: { hunting: 3, firemaking: 2, fletching: 3, farming: 1 },
       extras: { seed_access: 2, herb_supply: 2 },
     },
+        {
+      name: 'Hotfoot',
+      icon: `${process.env.PUBLIC_URL}/relics/Hotfoot.png`,
+      desc: '100% Hunter success, auto-burn logs (toggle), instant Fletching, trapped implings noted & doubled',
+      skills: { agility: 2, cooking: 3, smithing: 2, farming: 1 },
+      extras: { gp_source: 2 },
+    },
   ],
   3: [
     {

@@ -5,4 +5,10 @@ export const COMBO_BONUSES = [
     extras: {},
     label: 'Endless Harvest + Woodsman Combo',
   },
+    {
+    relics: ['Endless Harvest', 'Hotfoot'],
+    bonuses: { smithing: 1, cooking: 1},
+    extras: {},
+    label: 'Endless Harvest + Hotfoot',
+  },
 ];
