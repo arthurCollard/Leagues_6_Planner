@@ -194,13 +194,19 @@ export const WEAPON = [
     name: 'Tzhaar-ket-om',
     slot: 'weapon',
     regions: ['Karamja'],
-    requirements: [{ skill: 'Attack', level: 60 }, { skill: 'Strength', level: 60 }],
+    requirements: [{ skill: 'Strength', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 80, magic: -4, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 85, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    combatStyle: {
+      pound: 7,
+      pummel: 7,
+      block: 7,
+    },
+    sets: []
   },
   {
     name: 'Toktz-xil-ul',
@@ -208,23 +214,36 @@ export const WEAPON = [
     regions: ['Karamja'],
     requirements: [{ skill: 'Ranged', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 47 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 69 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 5, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 49, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    combatStyle: {
+      accurate: 4,
+      rapid: 3,
+      longrange: 4,
+    },
+    sets: []
   },
   {
     name: 'Toktz-mej-tal',
     slot: 'weapon',
     regions: ['Karamja'],
-    requirements: [{ skill: 'Magic', level: 60 }],
+    requirements: [{ skill: 'Magic', level: 60 }, { skill: 'attack', level: 60 }],
     bonuses: {
       attack:  { stab: 15, slash: -1, crush: 55, magic: 15, ranged: 0 },
       defence: { stab: 10, slash: 15, crush: 5, magic: 15, ranged: 0 },
       other:   { meleeStrength: 55, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
-    speed: 6,
+    speed: 5,
+    combatStyle: {
+      bash: 6,
+      pound: 6,
+      focus: 6,
+      def_spell: 5,
+      spell: 5
+    },
   },
   {
     name: 'Toktz-xil-ak',
@@ -232,11 +251,17 @@ export const WEAPON = [
     regions: ['Karamja'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
-      attack:  { stab: 45, slash: 67, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 66, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 47, slash: 38, crush: -2, magic: 0, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 49, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
-    speed: 5,
+    speed: 4,
+    combatStyle: {
+      stab: 4,
+      lunge: 4,
+      slash: 4,
+      block: 4
+    },
   },
   {
     name: 'Toktz-xil-ek',
@@ -244,11 +269,17 @@ export const WEAPON = [
     regions: ['Karamja'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
-      attack:  { stab: 45, slash: 35, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 16, slash: 48, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 71, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 39, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    combatStyle: {
+      chop: 4,
+      slash: 4,
+      lunge: 4,
+      block: 4
+    },
   },
   // ── Asgarnia ───────────────────────────────────────────────────────────────
   {
@@ -262,6 +293,12 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    combatStyle: {
+      chop: 6,
+      slash: 6,
+      smash: 6,
+      block: 6
+    },
   },
   {
     name: 'Bandos Godsword',
@@ -274,6 +311,12 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    combatStyle: {
+      chop: 6,
+      slash: 6,
+      smash: 6,
+      block: 6
+    },
   },
   {
     name: 'Saradomin Sword',
@@ -286,6 +329,12 @@ export const WEAPON = [
       other:   { meleeStrength: 82, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    combatStyle: {
+      chop: 4,
+      slash: 4,
+      smash: 4,
+      block: 4
+    },
   },
   {
     name: 'Armadyl Crossbow',
@@ -298,6 +347,11 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
     speed: 5,
+    combatStyle: {
+      accurate: 6,
+      rapid: 5,
+      longrange: 6,
+    },
   },
   {
     name: 'Steam Battlestaff',
@@ -305,11 +359,18 @@ export const WEAPON = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
-      attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 7, slash: -1, crush: 28, magic: 12, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 12, ranged: 0 },
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    combatStyle: {
+      bash: 5,
+      pound: 5,
+      focus: 5,
+      def_spell: 5,
+      spelll: 5
+    },
   },
   {
     name: 'Zamorakian Spear',
@@ -322,6 +383,12 @@ export const WEAPON = [
       other:   { meleeStrength: 75, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    combatStyle: {
+      lunge: 4,
+      swipe: 4,
+      pound: 4,
+      block: 4
+    },
   },
   {
     name: 'Staff of the Dead',
@@ -329,11 +396,18 @@ export const WEAPON = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 75 }, { skill: 'Magic', level: 75 }],
     bonuses: {
-      attack:  { stab: 10, slash: 0, crush: 0, magic: 17, ranged: 0 },
-      defence: { stab: 2, slash: 3, crush: 1, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 15, prayer: 0 },
+      attack:  { stab: 55, slash: 70, crush: 0, magic: 17, ranged: 0 },
+      defence: { stab: 0, slash: 3, crush: 3, magic: 17, ranged: 0 },
+      other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 15, prayer: 0 },
     },
     speed: 5,
+    combatStyle: {
+      jab: 4,
+      swipe: 4,
+      fend: 4,
+      def_spell: 5,
+      spelll: 5
+    },
   },
   {
     name: 'Ancient Godsword',
@@ -346,6 +420,12 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    combatStyle: {
+      chop: 6,
+      slash: 6,
+      smash: 6,
+      block: 6
+    },
   },
   // ── Fremennik ──────────────────────────────────────────────────────────────
   {
