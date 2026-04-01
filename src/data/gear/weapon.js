@@ -389,7 +389,7 @@ export const WEAPON = [
       focus: 5,
       def_spell: 5,
       spell: 5
-    },
+    }
   },
   {
     name: 'Zamorakian Spear',
@@ -518,7 +518,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
-    twoHanded: true,
+    twoHanded: false,
     combatStyle: {
       bash: 5,
       pound: 5,
@@ -595,7 +595,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
-    twoHanded: true,
+    twoHanded: false,
     combatStyle: {
       bash: 5,
       pound: 5,
@@ -630,12 +630,17 @@ export const WEAPON = [
     regions: ['Kandarin'],
     requirements: [{ skill: 'Magic', level: 62 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 12, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 12, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 12, prayer: 0 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      accurate: 4,
+      accurate: 4,
+      longrange: 4
+    },
   },
   {
     name: 'Heavy Ballista',
@@ -649,6 +654,11 @@ export const WEAPON = [
     },
     speed: 7,
     twoHanded: true,
+    combatStyle: {
+      accurate: 7,
+      rapid: 6,
+      longrange: 7
+    },
   },
   {
     name: 'Light Ballista',
@@ -662,6 +672,11 @@ export const WEAPON = [
     },
     speed: 7,
     twoHanded: true,
+    combatStyle: {
+      accurate: 7,
+      rapid: 6,
+      longrange: 7
+    },
   },
   // ── Desert ─────────────────────────────────────────────────────────────────
   {
@@ -670,12 +685,23 @@ export const WEAPON = [
     regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 80 }],
     bonuses: {
-      attack:  { stab: 105, slash: 65, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 105, slash: 75, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 97, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 103, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      stab: 5,
+      lunge: 5,
+      slash: 5,
+      block: 5
+    },
+    effect: {
+      type: 'multiply_totals',
+      stats: [],
+      description: "Osmumten's Fang: re-rolls accuracy on an unsuccessful hit",
+    },
   },
   {
     name: "Tumeken's Shadow (uncharged)",
@@ -685,7 +711,7 @@ export const WEAPON = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
     effect: {
       type: 'multiply_totals',
@@ -697,6 +723,11 @@ export const WEAPON = [
     },
     speed: 5,
     twoHanded: true,
+        combatStyle: {
+      accurate: 5,
+      accurate: 5,
+      longrange: 5
+    },
   },
   {
     name: 'Dragon Pickaxe',
@@ -704,12 +735,18 @@ export const WEAPON = [
     regions: ['Desert', 'Fremennik', 'Wilderness'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
-      attack:  { stab: 35, slash: 40, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 38, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 38, slash: -2, crush: 32, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 1, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 42, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      spike: 5,
+      impale: 5,
+      smash: 5,
+      block: 5
+    },
   },
   {
     name: 'Dragon 2h Sword',
@@ -718,11 +755,17 @@ export const WEAPON = [
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
       attack:  { stab: -4, slash: 92, crush: 80, magic: -4, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: -1 },
       other:   { meleeStrength: 93, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
     twoHanded: true,
+    combatStyle: {
+      chop: 7,
+      slash: 7,
+      smash: 7,
+      block: 7
+    },
   },
   {
     name: 'Dust Battlestaff',
@@ -730,12 +773,19 @@ export const WEAPON = [
     regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
-      attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 7, slash: -1, crush: 28, magic: 12, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 12, ranged: 0 },
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
-    twoHanded: true,
+    twoHanded: false,
+    combatStyle: {
+      bash: 5,
+      pound: 5,
+      focus: 5,
+      def_spell: 5,
+      spell: 5
+    }
   },
   {
     name: 'Dragon Harpoon',
@@ -743,12 +793,18 @@ export const WEAPON = [
     regions: ['Desert'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
-      attack:  { stab: 35, slash: 55, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 50, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 38, slash: 32, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 1, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 42, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      stab: 5,
+      lunge: 5,
+      slash: 5,
+      block: 5
+    }
   },
   // ── Morytania ──────────────────────────────────────────────────────────────
   {
