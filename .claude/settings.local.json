@@ -4,7 +4,13 @@
       "Bash(python -c \"print\\(''hello''\\)\")",
       "Bash(py -c \"print\\(''hello''\\)\")",
       "Bash(py -c \":*)",
-      "WebFetch(domain:oldschool.runescape.wiki)"
+      "WebFetch(domain:oldschool.runescape.wiki)",
+      "Bash(node -c src/data/gear/weapon.js)",
+      "Bash(grep -A 8 \"name: ''Eclipse Atlatl''\" src/data/gear/weapon.js)",
+      "Bash(grep -A 8 \"name: ''Dual Macuahuitl''\" src/data/gear/weapon.js)",
+      "Bash(grep -A 8 \"name: ''Noxious Halberd''\" src/data/gear/weapon.js)",
+      "Bash(grep -A 8 \"name: ''Saradomin Godsword''\" src/data/gear/weapon.js)",
+      "Bash(grep -A 8 \"name: ''Dharok\" src/data/gear/weapon.js)"
     ]
   }
 }
