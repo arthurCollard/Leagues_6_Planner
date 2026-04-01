@@ -161,8 +161,8 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 25 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 80, ranged: 75 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: 30 },
+      defence: { stab: 47, slash: 42, crush: 50, magic: 65, ranged: 57 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -172,9 +172,9 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Magic', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: -10 },
+      defence: { stab: 52, slash: 37, crush: 63, magic: 30, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
     },
   },
   {
@@ -183,9 +183,9 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 93, slash: 85, crush: 90, magic: 0, ranged: 86 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
+      defence: { stab: 81, slash: 95, crush: 85, magic: 0, ranged: 81 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
   },
   {
@@ -194,8 +194,8 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 97, slash: 88, crush: 95, magic: 0, ranged: 107 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -30, ranged: -10 },
+      defence: { stab: 122, slash: 120, crush: 107, magic: -6, ranged: 132 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -205,8 +205,8 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 93, slash: 84, crush: 91, magic: 0, ranged: 96 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -30, ranged: -10 },
+      defence: { stab: 122, slash: 120, crush: 107, magic: -6, ranged: 132 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -215,11 +215,11 @@ export const BODY = [
     name: 'Masori Body',
     slot: 'body',
     regions: ['Desert'],
-    requirements: [{ skill: 'Ranged', level: 80 }],
+    requirements: [{ skill: 'Ranged', level: 80 }, { skill: 'Defence', level: 30 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 20 },
-      defence: { stab: 0, slash: 0, crush: 29, magic: 38, ranged: 31 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -4, ranged: 43 },
+      defence: { stab: 37, slash: 35, crush: 38, magic: 25, ranged: 33 },
+      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -228,8 +228,8 @@ export const BODY = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Strength', level: 50 }, { skill: 'Defence', level: 50 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 84, slash: 94, crush: 77, magic: 0, ranged: 73 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -22, ranged: -5 },
+      defence: { stab: 87, slash: 84, crush: 79, magic: -6, ranged: 97 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -237,10 +237,10 @@ export const BODY = [
     name: 'Proselyte Hauberk',
     slot: 'body',
     regions: [],
-    requirements: [{ skill: 'Defence', level: 30 }],
+    requirements: [{ skill: 'Defence', level: 30 }, { skill: 'Prayer', level: 20 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 48, slash: 46, crush: 44, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -30, ranged: -15 },
+      defence: { stab: 65, slash: 63, crush: 55, magic: -6, ranged: 63 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
   },
@@ -248,11 +248,11 @@ export const BODY = [
     name: 'Infinity Top',
     slot: 'body',
     regions: [],
-    requirements: [{ skill: 'Magic', level: 50 }],
+    requirements: [{ skill: 'Magic', level: 50 }, { skill: 'Defence', level: 25 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 28, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
     },
   },
   {
@@ -261,9 +261,9 @@ export const BODY = [
     regions: ['Varlamore'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 80, slash: 80, crush: 80, magic: 0, ranged: 75 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -30, ranged: -15 },
+      defence: { stab: 82, slash: 80, crush: 72, magic: -6, ranged: 80 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 10 },
     },
   },
 ];

@@ -11,7 +11,7 @@ export const CAPE = [
     },
   },
   {
-    name: "Dizana's Quiver (charged)",
+    name: "Dizana's Quiver",
     slot: 'cape',
     regions: ['Varlamore'],
     requirements: [{ skill: 'Ranged', level: 75 }],
@@ -44,12 +44,34 @@ export const CAPE = [
     },
   },
   {
-    name: 'Imbued God Cape',
+    name: 'Imbued Saradomin Cape',
     slot: 'cape',
-    regions: [],
+    regions: ['Wilderness'],
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
-      attack:  { stab: 3, slash: 3, crush: 0, magic: 15, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
+      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
+    },
+  },
+    {
+    name: 'Imbued Guthix Cape',
+    slot: 'cape',
+    regions: ['Wilderness'],
+    requirements: [{ skill: 'Magic', level: 60 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
+      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
+    },
+  },
+    {
+    name: 'Imbued Zamorak Cape',
+    slot: 'cape',
+    regions: ['Wilderness'],
+    requirements: [{ skill: 'Magic', level: 60 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
       defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
@@ -68,7 +90,7 @@ export const CAPE = [
   {
     name: "Ava's Assembler",
     slot: 'cape',
-    regions: [],
+    regions: ['Fremennik'],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
@@ -102,11 +124,11 @@ export const CAPE = [
     name: "Ava's Accumulator",
     slot: 'cape',
     regions: [],
-    requirements: [{ skill: 'Ranged', level: 30 }],
+    requirements: [{ skill: 'Ranged', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 4 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 1 },
-      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
+      defence: { stab: 0, slash: 1, crush: 0, magic: 4, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -115,9 +137,9 @@ export const CAPE = [
     regions: [],
     requirements: [{ skill: 'Ranged', level: 99 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 2 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -126,9 +148,9 @@ export const CAPE = [
     regions: [],
     requirements: [{ skill: 'Magic', level: 99 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 2, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -139,18 +161,18 @@ export const CAPE = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 8 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
     },
   },
   {
     name: 'Max Cape',
     slot: 'cape',
-    regions: [],
+    regions: ['Asgarnia'],
     requirements: [{ skill: 'Any', level: 99 }],
     bonuses: {
-      attack:  { stab: 1, slash: 1, crush: 1, magic: 1, ranged: 1 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
-      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 4 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
     },
   },
   {
@@ -159,9 +181,9 @@ export const CAPE = [
     regions: ['Kandarin'],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 10, slash: 10, crush: 10, magic: 10, ranged: 10 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
+      attack:  { stab: 6, slash: 0, crush: 0, magic: 6, ranged: 0 },
+      defence: { stab: 6, slash: 0, crush: 0, magic: 6, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 6 },
     },
   },
   {

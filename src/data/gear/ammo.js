@@ -6,9 +6,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 1 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 7, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -17,9 +17,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 2 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -28,9 +28,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 3 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 16, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -39,9 +39,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 5 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 7, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 22, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -50,9 +50,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 7 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 31, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -61,9 +61,9 @@ export const AMMO = [
     regions: [],
     requirements: [{ skill: 'Slayer', level: 55 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 28, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -72,9 +72,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 14, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 49, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -83,9 +83,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 11 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 16, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 55, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -94,9 +94,9 @@ export const AMMO = [
     regions: ['Tirannwn'],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 13 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 60, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -105,7 +105,7 @@ export const AMMO = [
     regions: ['Morytania'],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 100 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 55, magicDamage: 0, prayer: 0 },
     },
@@ -117,9 +117,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 1 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -128,9 +128,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 2 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 46, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -139,9 +139,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 3 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 64, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -150,9 +150,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 5 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 7, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 82, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -161,9 +161,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 7 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 100, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -172,9 +172,9 @@ export const AMMO = [
     regions: [],
     requirements: [{ skill: 'Slayer', level: 55 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 100, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -183,9 +183,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 15, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 115, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -194,9 +194,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 14, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 103, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -205,9 +205,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 13, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 105, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -216,9 +216,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 117, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -227,9 +227,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 120, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -238,9 +238,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 13 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 122, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -249,9 +249,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 13 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 117, magicDamage: 0, prayer: 0 },
     },
   },
   // ── Darts ─────────────────────────────────────────────────────────────────
@@ -261,9 +261,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 14 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 14, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 17, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -272,9 +272,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 18, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 26, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -283,9 +283,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 20 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 28, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -294,7 +294,7 @@ export const AMMO = [
     regions: ['Tirannwn'],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 25 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 35, magicDamage: 0, prayer: 0 },
     },
@@ -306,9 +306,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 64 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 124, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -317,9 +317,9 @@ export const AMMO = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 78 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 28, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 135, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -328,9 +328,9 @@ export const AMMO = [
     regions: ['Tirannwn'],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 95 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 55, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 150, magicDamage: 0, prayer: 0 },
     },
   },
 ];

@@ -181,7 +181,7 @@ export const SHIELD = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 6, prayer: 0 },
     },
   },
   {
@@ -190,7 +190,7 @@ export const SHIELD = [
     regions: [],
     requirements: [{ skill: 'Prayer', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
@@ -201,9 +201,9 @@ export const SHIELD = [
     regions: [],
     requirements: [{ skill: 'Prayer', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 2, crush: 6, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
   },
   {
@@ -213,8 +213,8 @@ export const SHIELD = [
     requirements: [{ skill: 'Prayer', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
   },
   {
@@ -223,8 +223,8 @@ export const SHIELD = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 55, slash: 57, crush: 55, magic: 0, ranged: 53 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -8, ranged: -3 },
+      defence: { stab: 44, slash: 48, crush: 46, magic: -1, ranged: 46 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -235,7 +235,7 @@ export const SHIELD = [
     requirements: [],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 7, slash: 7, crush: 7, magic: 0, ranged: 7 },
+      defence: { stab: 10, slash: 10, crush: 10, magic: 0, ranged: 10 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -246,7 +246,7 @@ export const SHIELD = [
     requirements: [{ skill: 'Defence', level: 70 }, { skill: 'Prayer', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 52, slash: 55, crush: 53, magic: 0, ranged: 55 },
+      defence: { stab: 53, slash: 55, crush: 73, magic: 2, ranged: 52 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
   },

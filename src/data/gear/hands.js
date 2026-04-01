@@ -92,11 +92,11 @@ export const HANDS = [
     name: 'Infinity Gloves',
     slot: 'hands',
     regions: [],
-    requirements: [{ skill: 'Magic', level: 25 }],
+    requirements: [{ skill: 'Magic', level: 25 }, { skill: 'Defence', level: 25 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
     },
   },
   {
@@ -107,7 +107,7 @@ export const HANDS = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -116,9 +116,9 @@ export const HANDS = [
     regions: [],
     requirements: [],
     bonuses: {
-      attack:  { stab: 7, slash: 7, crush: 7, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+      attack:  { stab: 7, slash: 7, crush: 7, magic: 3, ranged: 7 },
+      defence: { stab: 5, slash: 5, crush: 5, magic: 3, ranged: 5 },
+      other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -127,9 +127,9 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 7, slash: 7, crush: 7, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 7, slash: 7, crush: 7, magic: 4, ranged: 7 },
+      defence: { stab: 7, slash: 7, crush: 7, magic: 4, ranged: 7 },
+      other:   { meleeStrength: 7, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -138,9 +138,9 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 5, slash: 5, crush: 5, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 6, slash: 6, crush: 6, magic: 3, ranged: 6 },
+      defence: { stab: 6, slash: 6, crush: 6, magic: 3, ranged: 6 },
+      other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -149,9 +149,9 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 8, slash: 8, crush: 8, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 8, slash: 8, crush: 8, magic: 4, ranged: 8 },
+      defence: { stab: 8, slash: 8, crush: 8, magic: 4, ranged: 8 },
+      other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
 ];

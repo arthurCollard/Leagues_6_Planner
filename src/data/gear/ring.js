@@ -149,7 +149,7 @@ export const RING = [
     requirements: [{ skill: 'Defence', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 4, slash: 4, crush: 4, magic: 0, ranged: 8 },
+      defence: { stab: 4, slash: 4, crush: 4, magic: -4, ranged: 24 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -159,9 +159,9 @@ export const RING = [
     regions: ['Desert'],
     requirements: [],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 4 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 4 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 4, slash: 4, crush: 4, magic: 5, ranged: 4 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
   },
   {

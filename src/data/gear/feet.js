@@ -116,7 +116,7 @@ export const FEET = [
     requirements: [{ skill: 'Prayer', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 9, slash: 9, crush: 9, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
   },
@@ -126,8 +126,8 @@ export const FEET = [
     regions: ['Kourend'],
     requirements: [{ skill: 'Slayer', level: 44 }, { skill: 'Magic', level: 44 }, { skill: 'Defence', level: 44 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
-      defence: { stab: 8, slash: 9, crush: 10, magic: 3, ranged: 0 },
+      attack:  { stab: 3, slash: 0, crush: 0, magic: 3, ranged: 5 },
+      defence: { stab: 10, slash: 10, crush: 10, magic: 5, ranged: 5 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -135,10 +135,10 @@ export const FEET = [
     name: 'Infinity Boots',
     slot: 'feet',
     regions: [],
-    requirements: [{ skill: 'Magic', level: 50 }],
+    requirements: [{ skill: 'Magic', level: 50 }, { skill: 'Defence', level: 25 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
-      defence: { stab: 3, slash: 3, crush: 3, magic: 3, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -148,7 +148,7 @@ export const FEET = [
     regions: [],
     requirements: [{ skill: 'Magic', level: 20 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
@@ -159,8 +159,8 @@ export const FEET = [
     regions: [],
     requirements: [{ skill: 'Ranged', level: 30 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 4 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 3 },
+      defence: { stab: 1, slash: 1, crush: 2, magic: 1, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -170,7 +170,7 @@ export const FEET = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
       defence: { stab: 12, slash: 13, crush: 14, magic: 0, ranged: 0 },
       other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
