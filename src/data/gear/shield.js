@@ -172,6 +172,84 @@ export const SHIELD = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
+  // ── Universal ──────────────────────────────────────────────────────────────
+  {
+    name: 'Tome of Fire',
+    slot: 'shield',
+    regions: ['Kourend'],
+    requirements: [{ skill: 'Magic', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 0 },
+    },
+  },
+  {
+    name: 'Book of Law',
+    slot: 'shield',
+    regions: [],
+    requirements: [{ skill: 'Prayer', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
+    },
+  },
+  {
+    name: 'Book of War',
+    slot: 'shield',
+    regions: [],
+    requirements: [{ skill: 'Prayer', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 2, crush: 6, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Book of Darkness',
+    slot: 'shield',
+    regions: [],
+    requirements: [{ skill: 'Prayer', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Rune Kiteshield',
+    slot: 'shield',
+    regions: [],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 55, slash: 57, crush: 55, magic: 0, ranged: 53 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Anti-dragon Shield',
+    slot: 'shield',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 7, slash: 7, crush: 7, magic: 0, ranged: 7 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Blessed Spirit Shield',
+    slot: 'shield',
+    regions: ['Wilderness'],
+    requirements: [{ skill: 'Defence', level: 70 }, { skill: 'Prayer', level: 60 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 52, slash: 55, crush: 53, magic: 0, ranged: 55 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
+    },
+  },
   // ── Fremennik ──────────────────────────────────────────────────────────────
   {
     name: 'Dragonfire Ward',

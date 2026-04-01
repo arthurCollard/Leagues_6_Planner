@@ -132,6 +132,118 @@ export const LEGS = [
     },
     sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],
   },
+  // ── Barrows legs (Morytania) ───────────────────────────────────────────────
+  {
+    name: "Karil's Leatherskirt",
+    slot: 'legs',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 55, ranged: 52 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Ahrim's Robeskirt",
+    slot: 'legs',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Magic', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Verac's Plateskirt",
+    slot: 'legs',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 72, slash: 67, crush: 72, magic: 0, ranged: 77 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Torag's Platelegs",
+    slot: 'legs',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 82, slash: 77, crush: 78, magic: 0, ranged: 84 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Guthan's Chainskirt",
+    slot: 'legs',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 67, slash: 62, crush: 62, magic: 0, ranged: 67 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Other region legs ──────────────────────────────────────────────────────
+  {
+    name: 'Masori Chaps',
+    slot: 'legs',
+    regions: ['Desert'],
+    requirements: [{ skill: 'Ranged', level: 80 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 19 },
+      defence: { stab: 0, slash: 0, crush: 24, magic: 31, ranged: 26 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Granite Legs',
+    slot: 'legs',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 54, slash: 62, crush: 50, magic: 0, ranged: 50 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Infinity Bottoms',
+    slot: 'legs',
+    regions: [],
+    requirements: [{ skill: 'Magic', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Obsidian Platelegs',
+    slot: 'legs',
+    regions: ['Karamja'],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 20, slash: 18, crush: 21, magic: 0, ranged: 19 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Sunfire Fanatic Chausses',
+    slot: 'legs',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 68, slash: 65, crush: 62, magic: 0, ranged: 60 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
   {
     name: 'Proselyte Cuisse',
     slot: 'legs',

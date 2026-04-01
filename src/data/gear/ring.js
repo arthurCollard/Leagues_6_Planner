@@ -121,6 +121,61 @@ export const RING = [
     },
   },
   {
+    name: 'Treasonous Ring (i)',
+    slot: 'ring',
+    regions: ['Wilderness'],
+    requirements: [{ skill: 'Attack', level: 75 }],
+    bonuses: {
+      attack:  { stab: 8, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 8, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Tyrannical Ring (i)',
+    slot: 'ring',
+    regions: ['Wilderness'],
+    requirements: [{ skill: 'Attack', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 8, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 8, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Granite Ring (i)',
+    slot: 'ring',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 4, slash: 4, crush: 4, magic: 0, ranged: 8 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Ring of Shadows',
+    slot: 'ring',
+    regions: ['Desert'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 4 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 4 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Ring of Recoil',
+    slot: 'ring',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
     name: 'Ring of Endurance',
     slot: 'ring',
     regions: ['Morytania'],

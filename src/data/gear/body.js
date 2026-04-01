@@ -154,6 +154,107 @@ export const BODY = [
     },
     sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],
   },
+  // ── Barrows bodies (Morytania) ─────────────────────────────────────────────
+  {
+    name: "Karil's Leathertop",
+    slot: 'body',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 25 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 80, ranged: 75 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Ahrim's Robetop",
+    slot: 'body',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Magic', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Verac's Brassard",
+    slot: 'body',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 93, slash: 85, crush: 90, magic: 0, ranged: 86 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Torag's Platebody",
+    slot: 'body',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 97, slash: 88, crush: 95, magic: 0, ranged: 107 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Guthan's Platebody",
+    slot: 'body',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 93, slash: 84, crush: 91, magic: 0, ranged: 96 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Other region bodies ────────────────────────────────────────────────────
+  {
+    name: 'Masori Body',
+    slot: 'body',
+    regions: ['Desert'],
+    requirements: [{ skill: 'Ranged', level: 80 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 20 },
+      defence: { stab: 0, slash: 0, crush: 29, magic: 38, ranged: 31 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Granite Body',
+    slot: 'body',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Strength', level: 50 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 84, slash: 94, crush: 77, magic: 0, ranged: 73 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Proselyte Hauberk',
+    slot: 'body',
+    regions: [],
+    requirements: [{ skill: 'Defence', level: 30 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 48, slash: 46, crush: 44, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 8 },
+    },
+  },
+  {
+    name: 'Infinity Top',
+    slot: 'body',
+    regions: [],
+    requirements: [{ skill: 'Magic', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 28, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
   {
     name: 'Sunfire Fanatic Cuirass',
     slot: 'body',

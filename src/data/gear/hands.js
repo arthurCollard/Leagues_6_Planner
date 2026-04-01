@@ -89,6 +89,61 @@ export const HANDS = [
     sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],
   },
   {
+    name: 'Infinity Gloves',
+    slot: 'hands',
+    regions: [],
+    requirements: [{ skill: 'Magic', level: 25 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Ranger Gloves',
+    slot: 'hands',
+    regions: [],
+    requirements: [{ skill: 'Ranged', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Combat Bracelet',
+    slot: 'hands',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 7, slash: 7, crush: 7, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+  },
+  {
+    name: 'Adamant Gloves',
+    slot: 'hands',
+    regions: [],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 7, slash: 7, crush: 7, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Mithril Gloves',
+    slot: 'hands',
+    regions: [],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 5, slash: 5, crush: 5, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
     name: 'Rune Gloves',
     slot: 'hands',
     regions: [],

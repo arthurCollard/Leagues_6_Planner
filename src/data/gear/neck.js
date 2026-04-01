@@ -99,6 +99,61 @@ export const NECK = [
     },
   },
   {
+    name: 'Salve Amulet (ei)',
+    slot: 'neck',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
+      defence: { stab: 3, slash: 3, crush: 3, magic: 3, ranged: 3 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Amulet of the Damned',
+    slot: 'neck',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 10, slash: 10, crush: 10, magic: 10, ranged: 10 },
+      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Holy Necklace',
+    slot: 'neck',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Prayer', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 8 },
+    },
+  },
+  {
+    name: 'Amulet of Strength',
+    slot: 'neck',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 10, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Amulet of Power',
+    slot: 'neck',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
+      defence: { stab: 1, slash: 1, crush: 1, magic: 1, ranged: 1 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
     name: 'Dragonbone Necklace',
     slot: 'neck',
     regions: ['Fremennik'],

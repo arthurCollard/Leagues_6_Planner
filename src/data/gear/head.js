@@ -153,6 +153,163 @@ export const HEAD = [
       other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
+  // ── Barrows helms (Morytania) ─────────────────────────────────────────────
+  {
+    name: "Karil's Coif",
+    slot: 'head',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 10 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Ahrim's Hood",
+    slot: 'head',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Magic', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 6, ranged: 0 },
+      defence: { stab: 3, slash: 3, crush: 3, magic: 3, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Verac's Helm",
+    slot: 'head',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -3 },
+      defence: { stab: 45, slash: 47, crush: 43, magic: -3, ranged: 50 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Torag's Helm",
+    slot: 'head',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -3 },
+      defence: { stab: 42, slash: 44, crush: 40, magic: -3, ranged: 47 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: "Guthan's Helm",
+    slot: 'head',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -3 },
+      defence: { stab: 41, slash: 43, crush: 39, magic: -3, ranged: 46 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Fremennik helms ────────────────────────────────────────────────────────
+  {
+    name: 'Warrior Helm',
+    slot: 'head',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Defence', level: 45 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -5 },
+      defence: { stab: 29, slash: 27, crush: 32, magic: 3, ranged: 28 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Archer Helm',
+    slot: 'head',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Ranged', level: 45 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: 3 },
+      defence: { stab: 29, slash: 27, crush: 32, magic: -5, ranged: 28 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Farseer Helm',
+    slot: 'head',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Magic', level: 45 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: -5 },
+      defence: { stab: 29, slash: 27, crush: 32, magic: 3, ranged: 28 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Other region helms ─────────────────────────────────────────────────────
+  {
+    name: 'Robin Hood Hat',
+    slot: 'head',
+    regions: ['Kandarin'],
+    requirements: [{ skill: 'Ranged', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: 8 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 6, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Crystal Helm',
+    slot: 'head',
+    regions: ['Tirannwn'],
+    requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 18, ranged: 19 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Masori Mask',
+    slot: 'head',
+    regions: ['Desert'],
+    requirements: [{ skill: 'Ranged', level: 80 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -1, ranged: 7 },
+      defence: { stab: 2, slash: 3, crush: 2, magic: 4, ranged: 2 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Sunfire Fanatic Helm',
+    slot: 'head',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 20, slash: 20, crush: 20, magic: 0, ranged: 18 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Proselyte Sallet',
+    slot: 'head',
+    regions: [],
+    requirements: [{ skill: 'Defence', level: 30 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 12, slash: 10, crush: 8, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
+    },
+  },
+  {
+    name: 'Black Mask (i)',
+    slot: 'head',
+    regions: [],
+    requirements: [{ skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
+      defence: { stab: 30, slash: 32, crush: 27, magic: -1, ranged: 30 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
   // ── Void helms (universal) ─────────────────────────────────────────────────
   {
     name: 'Void Mage Helm',

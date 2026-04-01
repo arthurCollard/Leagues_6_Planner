@@ -110,6 +110,61 @@ export const FEET = [
     },
   },
   {
+    name: 'Devout Boots',
+    slot: 'feet',
+    regions: ['Morytania'],
+    requirements: [{ skill: 'Prayer', level: 60 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 9, slash: 9, crush: 9, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
+    },
+  },
+  {
+    name: 'Boots of Brimstone',
+    slot: 'feet',
+    regions: ['Kourend'],
+    requirements: [{ skill: 'Slayer', level: 44 }, { skill: 'Magic', level: 44 }, { skill: 'Defence', level: 44 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
+      defence: { stab: 8, slash: 9, crush: 10, magic: 3, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Infinity Boots',
+    slot: 'feet',
+    regions: [],
+    requirements: [{ skill: 'Magic', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
+      defence: { stab: 3, slash: 3, crush: 3, magic: 3, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Wizard Boots',
+    slot: 'feet',
+    regions: [],
+    requirements: [{ skill: 'Magic', level: 20 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 4, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Snakeskin Boots',
+    slot: 'feet',
+    regions: [],
+    requirements: [{ skill: 'Ranged', level: 30 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 4 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
     name: 'Rune Boots',
     slot: 'feet',
     regions: [],
