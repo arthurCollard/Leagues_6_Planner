@@ -136,6 +136,13 @@ body {
   margin-bottom: 1.2rem;
 }
 
+.coverage-pct {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7ecb7e;
+  margin-left: 0.5rem;
+}
+
 .toggle-btn {
   background: #b8a282;
   border: 1px solid #d0bd97;
@@ -213,6 +220,38 @@ body {
   margin-bottom: 0.8rem;
 }
 
+.reloaded-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.8rem;
+  background: rgba(216, 204, 180, 0.05);
+  border-top: 1px solid rgba(184, 162, 130, 0.3);
+  border-radius: 0 0 6px 6px;
+}
+
+.reloaded-picker-label {
+  font-size: 0.85rem;
+  color: #b8a282;
+  white-space: nowrap;
+}
+
+.reloaded-picker-select {
+  background: #2a2418;
+  border: 1px solid #b8a282;
+  border-radius: 4px;
+  color: #d8ccb4;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.reloaded-picker-select:focus {
+  outline: none;
+  border-color: #d8ccb4;
+}
+
 .tier-label span:first-child {
   background: #b8a282;
   padding: 0.2rem 0.8rem;
@@ -287,6 +326,37 @@ body {
 
 .relic-btn-wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.relic-btn-wrapper.relic-btn-wrapper-reloaded {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  border: 2px solid #d8ccb4;
+  background: rgba(208, 189, 151, 0.2);
+  box-shadow: 0 0 20px rgba(216, 204, 180, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.relic-btn-wrapper.relic-btn-wrapper-reloaded .relic-btn-row .relic-btn {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  flex: 1;
+}
+
+.relic-btn-wrapper.relic-btn-wrapper-reloaded .relic-btn-row .relic-btn:hover {
+  background: rgba(216, 204, 180, 0.08);
+  box-shadow: none;
+  transform: none;
+}
+
+.relic-btn-row {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -394,6 +464,25 @@ body {
   background: #2a231b;
   color: #b8a282;
   border: 1px dashed #b8a282;
+  position: relative;
+}
+
+.combo-pending[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1209;
+  color: #ffd966;
+  text-shadow: 0 0 6px #ffd966, 0 0 12px rgba(255, 200, 50, 0.5);
+  border: 1px solid #b8a282;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .relic-icon {

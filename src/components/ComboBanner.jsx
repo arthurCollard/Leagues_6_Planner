@@ -1,7 +1,8 @@
 import React from 'react';
+import { EXTRAS } from '../data/skills';
 
-export default function ComboBanner({ activeCombos, pendingCombos }) {
-  if (activeCombos.length === 0 && pendingCombos.length === 0) return null;
+export default function ComboBanner({ activeCombos, pendingCombos, activeThresholds = [], pendingThresholds = [], extras = {} }) {
+  if (activeCombos.length === 0 && pendingCombos.length === 0 && activeThresholds.length === 0 && pendingThresholds.length === 0) return null;
 
   return (
     <div className="combo-banner">
@@ -11,10 +12,23 @@ export default function ComboBanner({ activeCombos, pendingCombos }) {
         </span>
       ))}
       {pendingCombos.map(c => (
-        <span key={c.label} className="combo-tag combo-pending" title={`Needs: ${c.missing.join(', ')}`}>
+        <span key={c.label} className="combo-tag combo-pending" data-tooltip={`Needs: ${c.missing.join(', ')}`}>
           🔗 {c.label} ({c.matched}/{c.total})
         </span>
       ))}
+      {activeThresholds.map(t => (
+        <span key={t.extra} className="combo-tag combo-active">
+          ⚡ {t.label || t.extra}
+        </span>
+      ))}
+      {pendingThresholds.map(t => {
+        const extraName = EXTRAS.find(x => x.id === t.extra)?.name || t.extra;
+        return (
+          <span key={t.extra} className="combo-tag combo-pending" data-tooltip={`Need ${t.threshold} ${extraName}`}>
+            🔗 {t.label || t.extra} ({extras[t.extra]?.score || 0}/{t.threshold})
+          </span>
+        );
+      })}
     </div>
   );
 }

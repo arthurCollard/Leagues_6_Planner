@@ -8,6 +8,8 @@ import ComboBanner from './components/ComboBanner';
 import SkillsPanel from './components/SkillsPanel';
 import RelicTree from './components/RelicTree';
 import { COMBO_BONUSES } from './data/combos';
+import { EXTRAS } from './data/skills';
+import { EXTRA_THRESHOLDS } from './data/thresholds';
 import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
@@ -21,6 +23,7 @@ const DEFAULT_SETTINGS = {
 
 export default function App() {
   const [selectedRelics, setSelectedRelics] = useState({});
+  const [reloadedRelic, setReloadedRelic] = useState(null);
   const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   const [showSettings, setShowSettings] = useState(false);
   const [relicWeights, setRelicWeights] = useState({});
@@ -46,25 +49,64 @@ export default function App() {
       if (prev[tier]?.name === relic.name) {
         const next = { ...prev };
         delete next[tier];
+        if (tier === '7') setReloadedRelic(null);
         return next;
       }
+      if (tier === '7' && prev[tier]?.name !== relic.name) setReloadedRelic(null);
+      if (tier !== '7' && reloadedRelic?.name === relic.name) setReloadedRelic(null);
       return { ...prev, [tier]: relic };
     });
   };
 
-  const { skills, extras, activeCombos } = computeScores(selectedRelics, settings, relicWeights);
+  const { skills, extras, activeCombos } = computeScores(selectedRelics, settings, relicWeights, reloadedRelic, selectedMasteries, selectedRegions);
 
   const selectedNames = Object.values(selectedRelics).filter(Boolean).map(r => r.name);
 
   const pendingCombos = COMBO_BONUSES
     .filter(c => !activeCombos.includes(c))
-    .map(c => ({
-      ...c,
-      matched: c.relics.filter(r => selectedNames.includes(r)).length,
-      missing: c.relics.filter(r => !selectedNames.includes(r)),
-      total: c.relics.length,
-    }))
+    .map(c => {
+      const extraConditions = (c.requiredExtras || []).map(e =>
+        typeof e === 'string' ? `${e} > 0` : `${e.extra} ≥ ${e.min}`
+      );
+      const extraMatched = (c.requiredExtras || []).filter(e => {
+        const score = extras[typeof e === 'string' ? e : e.extra]?.score || 0;
+        return typeof e === 'string' ? score > 0 : score >= e.min;
+      });
+      const extraMissing = (c.requiredExtras || [])
+        .filter(e => {
+          const score = extras[typeof e === 'string' ? e : e.extra]?.score || 0;
+          return typeof e === 'string' ? score === 0 : score < e.min;
+        })
+        .map(e => {
+          const id = typeof e === 'string' ? e : e.extra;
+          const name = EXTRAS.find(x => x.id === id)?.name || id;
+          return typeof e === 'string' ? name : `${name} (${extras[id]?.score || 0}/${e.min})`;
+        });
+
+      const allConditions = [
+        ...(c.relics || []).filter(Boolean),
+        ...(c.regions || []).map(r => `Region: ${r}`),
+        ...extraConditions,
+      ];
+      const matched = [
+        ...(c.relics || []).filter(r => r && selectedNames.includes(r)),
+        ...(c.regions || []).filter(r => selectedRegions.includes(r)),
+        ...extraMatched,
+      ].length;
+      const missing = [
+        ...(c.relics || []).filter(r => r && !selectedNames.includes(r)),
+        ...(c.regions || []).filter(r => !selectedRegions.includes(r)).map(r => `Region: ${r}`),
+        ...extraMissing,
+      ];
+      return { ...c, matched, missing, total: allConditions.length };
+    })
     .filter(c => c.matched > 0);
+
+  const activeThresholds = EXTRA_THRESHOLDS.filter(t => (extras[t.extra]?.score || 0) > t.threshold);
+  const pendingThresholds = EXTRA_THRESHOLDS.filter(t => {
+    const score = extras[t.extra]?.score || 0;
+    return score > 0 && score <= t.threshold;
+  });
 
   const solvedCount = Object.values(skills)
     .filter(s => s.status === 'solved' || s.status === 'oversolved').length;
@@ -88,10 +130,10 @@ export default function App() {
         <SettingsPanel settings={settings} onChange={setSettings} />
       )}
 
-      <ComboBanner activeCombos={activeCombos} pendingCombos={pendingCombos} />
+      <ComboBanner activeCombos={activeCombos} pendingCombos={pendingCombos} activeThresholds={activeThresholds} pendingThresholds={pendingThresholds} extras={extras} />
 
       <div className="main-layout">
-        <SkillsPanel skills={skills} extras={extras} />
+        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} />
 
         <div className="right-panel">
           <RelicTree
@@ -99,6 +141,8 @@ export default function App() {
             onSelectRelic={selectRelic}
             relicWeights={relicWeights}
             onRelicWeightsChange={handleRelicWeightsChange}
+            reloadedRelic={reloadedRelic}
+            onSelectReloadedRelic={setReloadedRelic}
           />
           <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
           <RegionTree selectedRegions={selectedRegions} onSelectRegion={handleSelectRegion} onReset={() => setSelectedRegions([])} />

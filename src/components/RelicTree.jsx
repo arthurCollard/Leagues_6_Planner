@@ -56,31 +56,42 @@ function RelicSettings({ relic, weights, onChange, onClose }) {
   );
 }
 
-function RelicButton({ relic, selected, onSelect, weights, onWeightsChange }) {
+function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic }) {
   const [showSettings, setShowSettings] = useState(false);
   const hasCustomWeights = Object.keys(weights).length > 0;
+  const isReloaded = relic.special === 'reloaded';
 
   return (
-    <div className="relic-btn-wrapper">
-      <button
-        className={`relic-btn ${selected ? 'selected' : ''}`}
-        onClick={onSelect}
-      >
-        <RelicIcon src={relic.icon} name={relic.name} />
-        <div className="relic-info">
-          <strong>{relic.name}</strong>
-          <small>{relic.desc}</small>
-        </div>
-        {selected && <span className="check">✓</span>}
-      </button>
+    <div className={`relic-btn-wrapper ${selected && isReloaded ? 'relic-btn-wrapper-reloaded' : ''}`}>
+      <div className="relic-btn-row">
+        <button
+          className={`relic-btn ${selected ? 'selected' : ''}`}
+          onClick={onSelect}
+        >
+          <RelicIcon src={relic.icon} name={relic.name} />
+          <div className="relic-info">
+            <strong>{relic.name}</strong>
+            <small>{relic.desc}</small>
+          </div>
+          {selected && <span className="check">✓</span>}
+        </button>
 
-      <button
-        className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
-        onClick={e => { e.stopPropagation(); setShowSettings(s => !s); }}
-        title="Adjust relic weights"
-      >
-        ⚙️
-      </button>
+        <button
+          className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
+          onClick={e => { e.stopPropagation(); setShowSettings(s => !s); }}
+          title="Adjust relic weights"
+        >
+          ⚙️
+        </button>
+      </div>
+
+      {selected && isReloaded && (
+        <ReloadedPicker
+          selectedRelics={selectedRelics}
+          reloadedRelic={reloadedRelic}
+          onSelectReloadedRelic={onSelectReloadedRelic}
+        />
+      )}
 
       {showSettings && (
         <RelicSettings
@@ -94,7 +105,39 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange }) {
   );
 }
 
-export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights, onRelicWeightsChange }) {
+function ReloadedPicker({ selectedRelics, reloadedRelic, onSelectReloadedRelic }) {
+  // Gather all relics from tiers 1-6 that aren't already selected
+  const options = Object.entries(RELICS)
+    .filter(([tier]) => Number(tier) < 7)
+    .flatMap(([tier, relics]) =>
+      relics
+        .filter(r => selectedRelics[tier]?.name !== r.name)
+        .map(r => ({ ...r, tier }))
+    );
+
+  return (
+    <div className="reloaded-picker">
+      <label className="reloaded-picker-label">Reloaded:</label>
+      <select
+        className="reloaded-picker-select"
+        value={reloadedRelic?.name ?? ''}
+        onChange={e => {
+          const found = options.find(r => r.name === e.target.value) ?? null;
+          onSelectReloadedRelic(found);
+        }}
+      >
+        <option value="">— Choose a relic —</option>
+        {options.map(r => (
+          <option key={r.name} value={r.name}>
+            T{r.tier}: {r.name}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights, onRelicWeightsChange, reloadedRelic, onSelectReloadedRelic }) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -112,7 +155,9 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
               {selectedRelics[tier] && (
                 <span className="tier-chosen">
                   <RelicIcon src={selectedRelics[tier].icon} name={selectedRelics[tier].name} />
-                  {selectedRelics[tier].name}
+                  {selectedRelics[tier].special === 'reloaded' && reloadedRelic
+                    ? `Reloaded (${reloadedRelic.name})`
+                    : selectedRelics[tier].name}
                 </span>
               )}
             </div>
@@ -125,6 +170,9 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
                   onSelect={() => onSelectRelic(tier, relic)}
                   weights={relicWeights?.[relic.name] ?? {}}
                   onWeightsChange={w => onRelicWeightsChange(relic.name, w)}
+                  selectedRelics={selectedRelics}
+                  reloadedRelic={reloadedRelic}
+                  onSelectReloadedRelic={onSelectReloadedRelic}
                 />
               ))}
             </div>

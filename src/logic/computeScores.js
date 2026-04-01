@@ -1,14 +1,35 @@
 import { SKILLS, EXTRAS } from '../data/skills';
 import { COMBO_BONUSES } from '../data/combos';
+import { EXTRA_THRESHOLDS } from '../data/thresholds';
 
-export function computeScores(selectedRelics, settings, relicWeights = {}) {
+const MASTERY_SKILLS = {
+  Melee: { attack: 1, strength: 1, defence: 1, hitpoints: 1 },
+  Range:  { ranged: 1, defence: 1, hitpoints: 1 },
+  Magic:  { magic: 1, defence: 1, hitpoints: 1 },
+};
+
+function comboMatches(combo, selectedRelicNames, selectedRegions, extraScores) {
+  const extrasOk = (combo.requiredExtras || []).every(e => {
+    if (typeof e === 'string') return (extraScores[e] || 0) > 0;
+    return (extraScores[e.extra] || 0) >= e.min;
+  });
+  return (
+    (combo.relics  || []).every(r => !r || selectedRelicNames.includes(r)) &&
+    (combo.regions || []).every(r => selectedRegions.includes(r)) &&
+    extrasOk
+  );
+}
+
+export function computeScores(selectedRelics, settings, relicWeights = {}, reloadedRelic = null, selectedMasteries = {}, selectedRegions = []) {
   const { solvedThreshold, oversolvedFactor } = settings;
   const oversolvedThreshold = solvedThreshold * oversolvedFactor;
 
   const skillScores = {};
   const extraScores = {};
 
-  Object.values(selectedRelics).forEach(relic => {
+  const relicsToScore = [...Object.values(selectedRelics), reloadedRelic].filter(Boolean);
+
+  relicsToScore.forEach(relic => {
     if (!relic) return;
     const customWeights = relicWeights[relic.name] || {};
 
@@ -24,19 +45,35 @@ export function computeScores(selectedRelics, settings, relicWeights = {}) {
 
   });
 
-  const selectedNames = Object.values(selectedRelics)
-    .filter(Boolean)
-    .map(r => r.name);
+  // Apply mastery points: each point adds +1 to the branch's skills
+  Object.entries(MASTERY_SKILLS).forEach(([branch, skills]) => {
+    const depth = selectedMasteries[branch] || 0;
+    if (depth === 0) return;
+    Object.entries(skills).forEach(([id, val]) => {
+      skillScores[id] = (skillScores[id] || 0) + val * depth;
+    });
+  });
+
+  const selectedNames = relicsToScore.map(r => r.name);
 
   COMBO_BONUSES.forEach(combo => {
-    if (combo.relics.every(r => selectedNames.includes(r))) {
+    if (comboMatches(combo, selectedNames, selectedRegions, extraScores)) {
       Object.entries(combo.bonuses || {}).forEach(([id, val]) => {
         skillScores[id] = (skillScores[id] || 0) + val;
       });
-      Object.entries(combo.extras || {}).forEach(([id, val]) => {
+      Object.entries(combo.thresholds || {}).forEach(([id, val]) => {
         extraScores[id] = (extraScores[id] || 0) + val;
       });
     }
+  });
+
+  // Apply extra thresholds: bonus per point above threshold
+  EXTRA_THRESHOLDS.forEach(({ extra, threshold, perPoint }) => {
+    const overflow = (extraScores[extra] || 0) - threshold;
+    if (overflow <= 0) return;
+    Object.entries(perPoint).forEach(([id, val]) => {
+      skillScores[id] = (skillScores[id] || 0) + val * overflow;
+    });
   });
 
   const getStatus = score => {
@@ -61,7 +98,7 @@ export function computeScores(selectedRelics, settings, relicWeights = {}) {
       }])
     ),
     activeCombos: COMBO_BONUSES.filter(c =>
-      c.relics.every(r => selectedNames.includes(r))
+      comboMatches(c, selectedNames, selectedRegions, extraScores)
     ),
   };
 }

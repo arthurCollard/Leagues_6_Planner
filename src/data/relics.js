@@ -5,7 +5,7 @@ export const RELICS = {
       icon: `${process.env.PUBLIC_URL}/relics/Endless_Harvest.png`,
       desc: 'Resources sent to bank, endless gathering from depleted sources',
       skills: { woodcutting: 3, mining: 3, fishing: 3 },
-      extras: {},
+      extras: { food_source: 1 },
     },
     {
       name: 'Barbarian Gatherer',
@@ -80,7 +80,16 @@ export const RELICS = {
       extras: {},
     },
   ],
-  7: [],
+  7: [
+    {
+      name: 'Reloaded',
+      icon: `${process.env.PUBLIC_URL}/relics/Reloaded.png`,
+      desc: 'Choose another relic from any tier below this one',
+      skills: {},
+      extras: {},
+      special: 'reloaded',
+    },
+  ],
   8: [
     {
       name: 'Minion',

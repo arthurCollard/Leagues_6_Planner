@@ -2,13 +2,29 @@ export const COMBO_BONUSES = [
   {
     relics: ['Endless Harvest', 'Woodsman'],
     bonuses: { firmaking: 2, fletching: 1},
-    extras: {},
+    thresholds: {},
     label: 'Endless Harvest + Woodsman Combo',
   },
-    {
+  {
     relics: ['Endless Harvest', 'Hotfoot'],
     bonuses: { smithing: 1, cooking: 1},
-    extras: {},
+    thresholds: {},
     label: 'Endless Harvest + Hotfoot',
+  },
+  {
+    relics: [],
+    regions: ['Fremennik'],
+    requiredExtras: [{ extra: 'gp_source', min: 3 }],
+    bonuses: { smithing: 2 },
+    thresholds: {},
+    label: 'Fremennik + GP Source',
+  },
+  {
+    relics: ['Endless Harvest'],
+    regions: ['Kourend'],
+    requiredExtras: [],
+    bonuses: { firemaking: 2 },
+    thresholds: {},
+    label: 'Wintertodt + Endless Harvest',
   },
 ];
