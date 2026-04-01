@@ -705,7 +705,7 @@ export const WEAPON = [
     },
   },
   {
-    name: "Tumeken's Shadow (uncharged)",
+    name: "Tumeken's Shadow",
     slot: 'weapon',
     regions: ["Desert"],
     requirements: [{ skill: "Magic", level: 85 }],
@@ -816,14 +816,14 @@ export const WEAPON = [
     },
   },
   {
-    name: "Scythe of Vitur (uncharged)",
+    name: "Scythe of Vitur",
     slot: 'weapon',
     regions: ["Morytania"],
-    requirements: [{ skill: "Attack", level: 80 }, { skill: "Strength", level: 80 }],
+    requirements: [{ skill: "Attack", level: 80 }, { skill: "Strength", level: 90 }],
     bonuses: {
-      attack:  { stab: 50, slash: 75, crush: 10, magic: -6, ranged: 0 },
-      defence: { stab: -2, slash: 6, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 50, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 75, slash: 125, crush: 30, magic: -6, ranged: 0 },
+      defence: { stab: -2, slash: 8, crush: 10, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 75, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
     twoHanded: true,

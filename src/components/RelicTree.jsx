@@ -62,8 +62,8 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, sele
   const isReloaded = relic.special === 'reloaded';
 
   return (
-    <div className={`relic-btn-wrapper ${selected && isReloaded ? 'relic-btn-wrapper-reloaded' : ''}`}>
-      <div className="relic-btn-row">
+    <div className="relic-btn-outer">
+      <div className={`relic-btn-wrapper ${selected && isReloaded ? 'relic-btn-wrapper-reloaded' : ''}`}>
         <button
           className={`relic-btn ${selected ? 'selected' : ''}`}
           onClick={onSelect}
@@ -76,22 +76,22 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, sele
           {selected && <span className="check">✓</span>}
         </button>
 
-        <button
-          className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
-          onClick={e => { e.stopPropagation(); setShowSettings(s => !s); }}
-          title="Adjust relic weights"
-        >
-          ⚙️
-        </button>
+        {selected && isReloaded && (
+          <ReloadedPicker
+            selectedRelics={selectedRelics}
+            reloadedRelic={reloadedRelic}
+            onSelectReloadedRelic={onSelectReloadedRelic}
+          />
+        )}
       </div>
 
-      {selected && isReloaded && (
-        <ReloadedPicker
-          selectedRelics={selectedRelics}
-          reloadedRelic={reloadedRelic}
-          onSelectReloadedRelic={onSelectReloadedRelic}
-        />
-      )}
+      <button
+        className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
+        onClick={e => { e.stopPropagation(); setShowSettings(s => !s); }}
+        title="Adjust relic weights"
+      >
+        ⚙️
+      </button>
 
       {showSettings && (
         <RelicSettings

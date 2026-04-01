@@ -59,6 +59,44 @@ function getRegionFiltered(slot, selectedRegions) {
 function getOptimizedGear(stat, selectedRegions) {
   const result = {};
 
+  if (stat === 'magicDamage') {
+    // First find best non-weapon gear for magicDamage (ranking doesn't change under a multiplier)
+    const nonWeaponGear = {};
+    let nonWeaponTotal = 0;
+    Object.keys(ITEMS_BY_SLOT).forEach(s => {
+      if (s === 'weapon' || s === 'ammo') return;
+      const items = getRegionFiltered(s, selectedRegions);
+      let best = null, bestVal = 0;
+      items.forEach(item => {
+        const val = item.bonuses.other.magicDamage || 0;
+        if (val > bestVal) { bestVal = val; best = item; }
+      });
+      nonWeaponGear[s] = best;
+      nonWeaponTotal += bestVal;
+    });
+
+    // Evaluate each weapon: its own magicDamage + nonWeaponTotal, applying any multiply_totals effect
+    const weapons = getRegionFiltered('weapon', selectedRegions);
+    let bestWeapon = null, bestTotal = -Infinity;
+    weapons.forEach(weapon => {
+      const weaponVal = weapon.bonuses.other.magicDamage || 0;
+      let total = weaponVal + nonWeaponTotal;
+      if (weapon.effect?.type === 'multiply_totals') {
+        weapon.effect.stats.forEach(({ category, stat: s, factor }) => {
+          if (category === 'other' && s === 'magicDamage') {
+            total = weaponVal + nonWeaponTotal * factor;
+          }
+        });
+      }
+      if (total > bestTotal) { bestTotal = total; bestWeapon = weapon; }
+    });
+
+    result.weapon = bestWeapon;
+    result.ammo = null;
+    Object.assign(result, nonWeaponGear);
+    return result;
+  }
+
   if (stat === 'rangedStrength') {
     // Weapon and ammo must be evaluated as a pair
     const weapons = getRegionFiltered('weapon', selectedRegions);

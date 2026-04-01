@@ -88,7 +88,7 @@ export const RELICS = {
       skills: {},
       extras: {},
       special: 'reloaded',
-    },
+    }
   ],
   8: [
     {

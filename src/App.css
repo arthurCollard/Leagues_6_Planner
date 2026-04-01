@@ -324,17 +324,26 @@ body {
   .skill-grid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); }
 }
 
-.relic-btn-wrapper {
+.relic-btn-outer {
   position: relative;
   display: flex;
   align-items: center;
   gap: 4px;
+  width: 100%;
+}
+
+.relic-btn-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.relic-btn-wrapper .relic-btn {
+  width: 100%;
 }
 
 .relic-btn-wrapper.relic-btn-wrapper-reloaded {
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
   border: 2px solid #d8ccb4;
   background: rgba(208, 189, 151, 0.2);
   box-shadow: 0 0 20px rgba(216, 204, 180, 0.4);
@@ -342,24 +351,17 @@ body {
   overflow: hidden;
 }
 
-.relic-btn-wrapper.relic-btn-wrapper-reloaded .relic-btn-row .relic-btn {
+.relic-btn-wrapper.relic-btn-wrapper-reloaded .relic-btn {
   border: none;
   background: transparent;
   box-shadow: none;
   border-radius: 0;
-  flex: 1;
 }
 
-.relic-btn-wrapper.relic-btn-wrapper-reloaded .relic-btn-row .relic-btn:hover {
+.relic-btn-wrapper.relic-btn-wrapper-reloaded .relic-btn:hover {
   background: rgba(216, 204, 180, 0.08);
   box-shadow: none;
   transform: none;
-}
-
-.relic-btn-row {
-  display: flex;
-  align-items: center;
-  gap: 4px;
 }
 
 .relic-cog {
@@ -796,6 +798,8 @@ body {
 
 .slot-picker-wrapper {
   position: relative;
+  width: 72px;
+  flex-shrink: 0;
 }
 
 .slot-btn {
