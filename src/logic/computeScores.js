@@ -1,6 +1,10 @@
 import { SKILLS, EXTRAS } from '../data/skills';
 import { COMBO_BONUSES } from '../data/combos';
 import { EXTRA_THRESHOLDS } from '../data/thresholds';
+import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/regions';
+
+const ALL_REGIONS = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
+const REGION_BY_NAME = Object.fromEntries(ALL_REGIONS.map(r => [r.name, r]));
 
 const MASTERY_SKILLS = {
   Melee: { attack: 1, strength: 1, defence: 1, hitpoints: 1 },
@@ -43,6 +47,22 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
       extraScores[id] = (extraScores[id] || 0) + weight; // add weight directly, no multiply
     });
 
+  });
+
+  // Apply region bonuses (universal regions always apply, selected unlockable regions also apply)
+  const activeRegionNames = [
+    ...UNIVERSAL_REGIONS.map(r => r.name),
+    ...selectedRegions,
+  ];
+  activeRegionNames.forEach(name => {
+    const region = REGION_BY_NAME[name];
+    if (!region) return;
+    Object.entries(region.skills || {}).forEach(([id, val]) => {
+      skillScores[id] = (skillScores[id] || 0) + val;
+    });
+    Object.entries(region.extras || {}).forEach(([id, val]) => {
+      extraScores[id] = (extraScores[id] || 0) + val;
+    });
   });
 
   // Apply mastery points: each point adds +1 to the branch's skills

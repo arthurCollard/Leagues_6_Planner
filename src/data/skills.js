@@ -25,12 +25,24 @@ export const SKILLS = [
 ];
 
 export const EXTRAS = [
-  { id: 'gp_source',   name: 'GP Source',         icon: '💰' },
-  { id: 'food_source', name: 'Food Source',        icon: '🍖' },
-  { id: 'travel',      name: 'Travel / Teleport',  icon: '🗺️' },
-  { id: 'ammo_source', name: 'Ammo Source',        icon: '🏹' },
-  { id: 'seed_access', name: 'Seed Access',        icon: '🌾' },
-  { id: 'herb_supply', name: 'Herb Supply',        icon: '🧪' },
+  { id: 'gp_source',              name: 'GP Source',               icon: '💰' },
+  { id: 'food_source',            name: 'Food Source',             icon: '🍖' },
+  { id: 'travel',                 name: 'Travel / Teleport',       icon: '🗺️' },
+  { id: 'ammo_source',            name: 'Ammo Source',             icon: '🏹' },
+  { id: 'seed_access',            name: 'Seed Access',             icon: '🌾' },
+  { id: 'herb_supply',            name: 'Herb Supply',             icon: '🧪' },
+  { id: 'herb_patches',           name: 'Herb Patches',            icon: '🌱' },
+  { id: 'allotment_patches',      name: 'Allotment Patches',       icon: '🥬' },
+  { id: 'limpwurt',               name: 'Limpwurt Root',           icon: '🌿' },
+  { id: 'white_berries',          name: 'White Berries',           icon: '🍇' },
+  { id: 'eye_of_newt',            name: 'Eye of Newt',             icon: '👁️' },
+  { id: 'prayer_pot_primary',     name: 'Prayer Pot (Primary)',    icon: '🙏' },
+  { id: 'prayer_pot_secondary',   name: 'Prayer Pot (Secondary)',  icon: '🙏' },
+  { id: 'anti_venoms_primary',    name: 'Antivenoms (Primary)',    icon: '🐍' },
+  { id: 'anti_venoms_secondary',  name: 'Antivenoms (Secondary)',  icon: '🐍' },
+  { id: 'antifires_primary',      name: 'Antifires (Primary)',     icon: '🔥' },
+  { id: 'antifires_secondary',    name: 'Antifires (Secondary)',   icon: '🔥' },
+  { id: 'mega_rares',             name: 'Mega Rares Access',       icon: '💎' },
 ];
 
 export const CATEGORIES = {
