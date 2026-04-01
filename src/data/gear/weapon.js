@@ -11,6 +11,7 @@ export const WEAPON = [
       other:   { meleeStrength: 40, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       accurate: 4,
       rapid: 3,
@@ -30,6 +31,7 @@ export const WEAPON = [
       other:   { meleeStrength: 81, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       pound: 4,
       pummel: 4,
@@ -54,6 +56,7 @@ export const WEAPON = [
       other:   { meleeStrength: 71, rangedStrength: 0, magicDamage: 5, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
     combatStyle: {
       jab: 5,
       swipe: 5,
@@ -74,6 +77,7 @@ export const WEAPON = [
       other:   { meleeStrength: 64, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       pound: 4,
       crush: 4,
@@ -96,6 +100,7 @@ export const WEAPON = [
       other:   { meleeStrength: 64, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       chop: 4,
       slash: 4,
@@ -119,6 +124,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
     combatStyle: {
       bash: 4,
       pound: 4,
@@ -143,6 +149,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 55, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: false,
     combatStyle: {
       accurate: 7,
       rapid: 6,
@@ -160,6 +167,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 40, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       accurate: 5,
       rapid: 4,
@@ -182,6 +190,7 @@ export const WEAPON = [
       other:   { meleeStrength: 121, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
     combatStyle: {
       chop: 5,
       hack: 5,
@@ -201,6 +210,7 @@ export const WEAPON = [
       other:   { meleeStrength: 85, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
     combatStyle: {
       pound: 7,
       pummel: 7,
@@ -219,6 +229,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 49, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
     combatStyle: {
       accurate: 4,
       rapid: 3,
@@ -237,6 +248,7 @@ export const WEAPON = [
       other:   { meleeStrength: 55, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
     speed: 5,
+    twoHanded: true,
     combatStyle: {
       bash: 6,
       pound: 6,
@@ -256,6 +268,7 @@ export const WEAPON = [
       other:   { meleeStrength: 49, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
     combatStyle: {
       stab: 4,
       lunge: 4,
@@ -274,6 +287,7 @@ export const WEAPON = [
       other:   { meleeStrength: 39, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
     combatStyle: {
       chop: 4,
       slash: 4,
@@ -293,6 +307,7 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    twoHanded: true,
     combatStyle: {
       chop: 6,
       slash: 6,
@@ -311,6 +326,7 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    twoHanded: true,
     combatStyle: {
       chop: 6,
       slash: 6,
@@ -329,6 +345,7 @@ export const WEAPON = [
       other:   { meleeStrength: 82, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       chop: 4,
       slash: 4,
@@ -347,6 +364,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
     speed: 5,
+    twoHanded: false,
     combatStyle: {
       accurate: 6,
       rapid: 5,
@@ -364,6 +382,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
     combatStyle: {
       bash: 5,
       pound: 5,
@@ -383,6 +402,7 @@ export const WEAPON = [
       other:   { meleeStrength: 75, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    twoHanded: true,
     combatStyle: {
       lunge: 4,
       swipe: 4,
@@ -401,6 +421,7 @@ export const WEAPON = [
       other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 15, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
     combatStyle: {
       jab: 4,
       swipe: 4,
@@ -420,6 +441,7 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    twoHanded: true,
     combatStyle: {
       chop: 6,
       slash: 6,
@@ -439,6 +461,7 @@ export const WEAPON = [
       other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Leaf-bladed Battleaxe',
@@ -451,6 +474,7 @@ export const WEAPON = [
       other:   { meleeStrength: 62, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Brine Sabre',
@@ -463,6 +487,7 @@ export const WEAPON = [
       other:   { meleeStrength: 44, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: "Executioner's Axe",
@@ -475,6 +500,7 @@ export const WEAPON = [
       other:   { meleeStrength: 106, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: false,
   },
   {
     name: 'Mud Battlestaff',
@@ -487,6 +513,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Ancient Sceptre',
@@ -499,6 +526,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Venator Bow',
@@ -511,6 +539,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   // ── Kandarin ───────────────────────────────────────────────────────────────
   {
@@ -524,6 +553,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 20, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Smoke Battlestaff',
@@ -536,6 +566,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Mist Battlestaff',
@@ -548,6 +579,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Warped Sceptre',
@@ -560,6 +592,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 12, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Heavy Ballista',
@@ -572,6 +605,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 15, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Light Ballista',
@@ -584,6 +618,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   // ── Desert ─────────────────────────────────────────────────────────────────
   {
@@ -597,6 +632,7 @@ export const WEAPON = [
       other:   { meleeStrength: 97, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: "Tumeken's Shadow (uncharged)",
@@ -617,6 +653,7 @@ export const WEAPON = [
       description: "Tumeken's Shadow: ×3 magic attack & magic damage %",
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Dragon Pickaxe',
@@ -629,6 +666,7 @@ export const WEAPON = [
       other:   { meleeStrength: 38, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Dragon 2h Sword',
@@ -641,6 +679,7 @@ export const WEAPON = [
       other:   { meleeStrength: 93, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Dust Battlestaff',
@@ -653,6 +692,7 @@ export const WEAPON = [
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Dragon Harpoon',
@@ -665,6 +705,7 @@ export const WEAPON = [
       other:   { meleeStrength: 50, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   // ── Morytania ──────────────────────────────────────────────────────────────
   {
@@ -678,6 +719,7 @@ export const WEAPON = [
       other:   { meleeStrength: 75, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Sanguinesti Staff',
@@ -690,6 +732,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 23, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Ghrazi Rapier',
@@ -702,6 +745,7 @@ export const WEAPON = [
       other:   { meleeStrength: 89, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Karil\'s Crossbow',
@@ -714,6 +758,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Nightmare Staff',
@@ -726,6 +771,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 15, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: "Inquisitor's Mace",
@@ -738,6 +784,7 @@ export const WEAPON = [
       other:   { meleeStrength: 89, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Granite Maul',
@@ -750,6 +797,7 @@ export const WEAPON = [
       other:   { meleeStrength: 79, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: false,
   },
   {
     name: 'Granite Hammer',
@@ -762,6 +810,7 @@ export const WEAPON = [
       other:   { meleeStrength: 82, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Noxious Halberd',
@@ -774,6 +823,7 @@ export const WEAPON = [
       other:   { meleeStrength: 142, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   // ── Tirannwn ───────────────────────────────────────────────────────────────
   {
@@ -787,6 +837,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
     },
     speed: 3,
+    twoHanded: true,
   },
   {
     name: 'Uncharged Toxic Trident',
@@ -799,6 +850,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 15, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Dark Bow',
@@ -811,6 +863,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 9,
+    twoHanded: true,
   },
   {
     name: 'Bow of Faerdhinen (c)',
@@ -823,6 +876,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 106, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Crystal Bow',
@@ -835,6 +889,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 78, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   // ── Wilderness ─────────────────────────────────────────────────────────────
   {
@@ -848,6 +903,7 @@ export const WEAPON = [
       other:   { meleeStrength: 55, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: "Craw's Bow (u)",
@@ -860,6 +916,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 60, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Webweaver Bow',
@@ -872,6 +929,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 65, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: "Thammaron's Sceptre (u)",
@@ -884,6 +942,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Voidwaker',
@@ -896,6 +955,7 @@ export const WEAPON = [
       other:   { meleeStrength: 85, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Abyssal Whip',
@@ -908,6 +968,7 @@ export const WEAPON = [
       other:   { meleeStrength: 82, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Abyssal Dagger',
@@ -920,6 +981,7 @@ export const WEAPON = [
       other:   { meleeStrength: 75, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   // ── Kourend ────────────────────────────────────────────────────────────────
   {
@@ -933,6 +995,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: true,
   },
   {
     name: 'Dragon Hunter Crossbow',
@@ -945,6 +1008,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Dragon Claws',
@@ -957,6 +1021,7 @@ export const WEAPON = [
       other:   { meleeStrength: 56, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Elder Maul',
@@ -969,6 +1034,7 @@ export const WEAPON = [
       other:   { meleeStrength: 147, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: false,
   },
   {
     name: 'Kodai Wand',
@@ -981,6 +1047,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 15, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Dragon Hunter Lance',
@@ -993,6 +1060,7 @@ export const WEAPON = [
       other:   { meleeStrength: 65, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Dragon Warhammer',
@@ -1005,6 +1073,7 @@ export const WEAPON = [
       other:   { meleeStrength: 92, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: false,
   },
   {
     name: 'Sarachnis Cudgel',
@@ -1017,6 +1086,7 @@ export const WEAPON = [
       other:   { meleeStrength: 82, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: false,
   },
   {
     name: 'Dragon Sword',
@@ -1029,6 +1099,7 @@ export const WEAPON = [
       other:   { meleeStrength: 66, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Dragon Knife',
@@ -1041,6 +1112,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
     },
     speed: 3,
+    twoHanded: false,
   },
   {
     name: 'Dragon Thrownaxe',
@@ -1053,6 +1125,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 30, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   // ── Missing Weapons (Added) ────────────────────────────────────────────────────
   {
@@ -1066,6 +1139,7 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    twoHanded: true,
   },
   {
     name: 'Zamorak Godsword',
@@ -1078,6 +1152,7 @@ export const WEAPON = [
       other:   { meleeStrength: 132, rangedStrength: 0, magicDamage: 0, prayer: 8 },
     },
     speed: 6,
+    twoHanded: true,
   },
   {
     name: 'Crystal Halberd',
@@ -1090,6 +1165,7 @@ export const WEAPON = [
       other:   { meleeStrength: 118, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: "Dharok's Greataxe",
@@ -1102,6 +1178,7 @@ export const WEAPON = [
       other:   { meleeStrength: 105, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Barrelchest Anchor',
@@ -1114,6 +1191,7 @@ export const WEAPON = [
       other:   { meleeStrength: 100, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: false,
   },
   {
     name: 'Colossal Blade',
@@ -1126,6 +1204,7 @@ export const WEAPON = [
       other:   { meleeStrength: 100, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: true,
   },
   {
     name: 'Dragon Halberd',
@@ -1138,6 +1217,7 @@ export const WEAPON = [
       other:   { meleeStrength: 89, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: "Saradomin's Blessed Sword",
@@ -1150,6 +1230,7 @@ export const WEAPON = [
       other:   { meleeStrength: 88, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Abyssal Bludgeon',
@@ -1162,6 +1243,7 @@ export const WEAPON = [
       other:   { meleeStrength: 85, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Tzhaar-ket-om (t)',
@@ -1174,6 +1256,7 @@ export const WEAPON = [
       other:   { meleeStrength: 85, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: false,
   },
   {
     name: "Torag's Hammers",
@@ -1186,6 +1269,7 @@ export const WEAPON = [
       other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: "Verac's Flail",
@@ -1198,6 +1282,7 @@ export const WEAPON = [
       other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 0, prayer: 6 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Black Salamander',
@@ -1210,6 +1295,7 @@ export const WEAPON = [
       other:   { meleeStrength: 71, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Tecu Salamander',
@@ -1222,6 +1308,7 @@ export const WEAPON = [
       other:   { meleeStrength: 91, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Rune Halberd',
@@ -1234,6 +1321,7 @@ export const WEAPON = [
       other:   { meleeStrength: 68, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Dragon Felling Axe',
@@ -1246,6 +1334,7 @@ export const WEAPON = [
       other:   { meleeStrength: 67, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Crystal Felling Axe',
@@ -1258,6 +1347,7 @@ export const WEAPON = [
       other:   { meleeStrength: 67, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Earthbound Tecpatl',
@@ -1270,6 +1360,7 @@ export const WEAPON = [
       other:   { meleeStrength: 64, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Dragon Spear',
@@ -1282,6 +1373,7 @@ export const WEAPON = [
       other:   { meleeStrength: 60, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Leaf-bladed Spear',
@@ -1294,6 +1386,7 @@ export const WEAPON = [
       other:   { meleeStrength: 50, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Red Salamander',
@@ -1306,6 +1399,7 @@ export const WEAPON = [
       other:   { meleeStrength: 49, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Adamant Halberd',
@@ -1318,6 +1412,7 @@ export const WEAPON = [
       other:   { meleeStrength: 42, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 7,
+    twoHanded: true,
   },
   {
     name: 'Gilded Spear',
@@ -1330,6 +1425,7 @@ export const WEAPON = [
       other:   { meleeStrength: 42, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Rune Spear',
@@ -1342,6 +1438,7 @@ export const WEAPON = [
       other:   { meleeStrength: 42, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Katana',
@@ -1354,6 +1451,7 @@ export const WEAPON = [
       other:   { meleeStrength: 40, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: 'Rune Claws',
@@ -1366,6 +1464,7 @@ export const WEAPON = [
       other:   { meleeStrength: 39, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: false,
   },
   {
     name: "Dinh's Bulwark",
@@ -1378,6 +1477,7 @@ export const WEAPON = [
       other:   { meleeStrength: 38, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   // ── Universal ──────────────────────────────────────────────────────────────────
   {
@@ -1391,6 +1491,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Magic Shortbow (i)',
@@ -1403,6 +1504,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Magic Comp Bow',
@@ -1415,6 +1517,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
+    twoHanded: true,
   },
   {
     name: 'Bone Shortbow',
@@ -1427,6 +1530,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
   {
     name: 'Magic Longbow',
@@ -1439,6 +1543,7 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 6,
+    twoHanded: true,
   },
   {
     name: 'Magic Shortbow',
@@ -1451,5 +1556,6 @@ export const WEAPON = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
+    twoHanded: true,
   },
 ];
