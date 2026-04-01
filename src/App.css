@@ -702,11 +702,77 @@ body {
   overflow: visible;
 }
 
+.combat-style-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0 4px;
+  flex-wrap: wrap;
+}
+
+.combat-style-label {
+  font-size: 0.75rem;
+  color: #8a7a62;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.combat-style-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.combat-style-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 10px;
+  background: #1e1a12;
+  border: 1px solid #4a3f2a;
+  border-radius: 5px;
+  color: #b8a282;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.combat-style-btn:hover {
+  background: #2a2318;
+  border-color: #b8a282;
+}
+
+.combat-style-btn.active {
+  background: #3a2e1a;
+  border-color: #d4aa50;
+  color: #ffd966;
+}
+
+.combat-style-speed {
+  font-size: 0.65rem;
+  color: #8a7a62;
+}
+
+.combat-style-btn.active .combat-style-speed {
+  color: #b8943a;
+}
+
 .gear-panel-inner {
   display: flex;
+  flex-direction: row;
   gap: 24px;
   padding: 12px 0;
   align-items: flex-start;
+}
+
+.gear-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
   flex-wrap: wrap;
 }
 

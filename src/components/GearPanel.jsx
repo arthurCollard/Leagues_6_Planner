@@ -194,8 +194,22 @@ const OPT_BUTTONS = [
 
 export default function GearPanel({ selectedGear, selectedRegions, onSelectGear, onReset }) {
   const [open, setOpen] = useState(true);
+  const [selectedStyle, setSelectedStyle] = useState(null);
   const { totals, activeEffects } = sumBonuses(selectedGear);
   const hasAny = Object.values(selectedGear).some(Boolean);
+
+  const weapon = selectedGear.weapon;
+  const combatStyles = weapon?.combatStyle ? Object.entries(weapon.combatStyle) : [];
+  const activeStyleSpeed = selectedStyle && weapon?.combatStyle?.[selectedStyle] != null
+    ? weapon.combatStyle[selectedStyle]
+    : weapon?.speed ?? null;
+
+  // Reset style when weapon changes to one that doesn't have the current style
+  useEffect(() => {
+    if (selectedStyle && (!weapon?.combatStyle || weapon.combatStyle[selectedStyle] == null)) {
+      setSelectedStyle(null);
+    }
+  }, [weapon]);
 
   function applyOptimized(stat) {
     const optimized = getOptimizedGear(stat, selectedRegions);
@@ -255,45 +269,65 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
             ))}
           </div>
 
-          {/* Bonuses */}
-          <div className="bonuses-panel">
-            <div className="bonuses-col">
-              <div className="bonuses-col-header">Offensive</div>
-              <BonusRow label="Stab"   value={totals.attack.stab} />
-              <BonusRow label="Slash"  value={totals.attack.slash} />
-              <BonusRow label="Crush"  value={totals.attack.crush} />
-              <BonusRow label="Magic"  value={totals.attack.magic} />
-              <BonusRow label="Ranged" value={totals.attack.ranged} />
+          {/* Right side: bonuses + style selector */}
+          <div className="gear-right-col">
+            <div className="bonuses-panel">
+              <div className="bonuses-col">
+                <div className="bonuses-col-header">Offensive</div>
+                <BonusRow label="Stab"   value={totals.attack.stab} />
+                <BonusRow label="Slash"  value={totals.attack.slash} />
+                <BonusRow label="Crush"  value={totals.attack.crush} />
+                <BonusRow label="Magic"  value={totals.attack.magic} />
+                <BonusRow label="Ranged" value={totals.attack.ranged} />
+              </div>
+              <div className="bonuses-col">
+                <div className="bonuses-col-header">Defensive</div>
+                <BonusRow label="Stab"   value={totals.defence.stab} />
+                <BonusRow label="Slash"  value={totals.defence.slash} />
+                <BonusRow label="Crush"  value={totals.defence.crush} />
+                <BonusRow label="Magic"  value={totals.defence.magic} />
+                <BonusRow label="Ranged" value={totals.defence.ranged} />
+              </div>
+              <div className="bonuses-col">
+                <div className="bonuses-col-header">Other</div>
+                <BonusRow label="Melee Str"   value={totals.other.meleeStrength} />
+                <BonusRow label="Ranged Str"  value={totals.other.rangedStrength} />
+                <BonusRow label="Magic Dmg %" value={totals.other.magicDamage} />
+                <BonusRow label="Prayer"      value={totals.other.prayer} />
+                {activeStyleSpeed != null && (
+                  <div className="bonus-row">
+                    <span className="bonus-label">Atk Speed</span>
+                    <span className="bonus-value bonus-zero">{activeStyleSpeed}t</span>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="bonuses-col">
-              <div className="bonuses-col-header">Defensive</div>
-              <BonusRow label="Stab"   value={totals.defence.stab} />
-              <BonusRow label="Slash"  value={totals.defence.slash} />
-              <BonusRow label="Crush"  value={totals.defence.crush} />
-              <BonusRow label="Magic"  value={totals.defence.magic} />
-              <BonusRow label="Ranged" value={totals.defence.ranged} />
-            </div>
-            <div className="bonuses-col">
-              <div className="bonuses-col-header">Other</div>
-              <BonusRow label="Melee Str"   value={totals.other.meleeStrength} />
-              <BonusRow label="Ranged Str"  value={totals.other.rangedStrength} />
-              <BonusRow label="Magic Dmg %" value={totals.other.magicDamage} />
-              <BonusRow label="Prayer"      value={totals.other.prayer} />
-              {selectedGear.weapon?.speed != null && (
-                <div className="bonus-row">
-                  <span className="bonus-label">Atk Speed</span>
-                  <span className="bonus-value bonus-zero">{selectedGear.weapon.speed}</span>
+            {activeEffects.length > 0 && (
+              <div className="active-effects">
+                {activeEffects.map(desc => (
+                  <div key={desc} className="active-effect-tag">{desc}</div>
+                ))}
+              </div>
+            )}
+            {combatStyles.length > 0 && (
+              <div className="combat-style-selector">
+                <span className="combat-style-label">Style</span>
+                <div className="combat-style-buttons">
+                  {combatStyles.map(([style, speed]) => (
+                    <button
+                      key={style}
+                      className={`combat-style-btn ${selectedStyle === style ? 'active' : ''}`}
+                      onClick={() => setSelectedStyle(prev => prev === style ? null : style)}
+                      title={`${speed} ticks`}
+                    >
+                      {style.replace(/_/g, ' ')}
+                      <span className="combat-style-speed">{speed}t</span>
+                    </button>
+                  ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
-          {activeEffects.length > 0 && (
-            <div className="active-effects">
-              {activeEffects.map(desc => (
-                <div key={desc} className="active-effect-tag">{desc}</div>
-              ))}
-            </div>
-          )}
         </div>
       </div>
     </main>

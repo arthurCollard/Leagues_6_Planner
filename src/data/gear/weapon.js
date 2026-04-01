@@ -388,7 +388,7 @@ export const WEAPON = [
       pound: 5,
       focus: 5,
       def_spell: 5,
-      spelll: 5
+      spell: 5
     },
   },
   {
@@ -453,28 +453,40 @@ export const WEAPON = [
   {
     name: 'Dragon Axe',
     slot: 'weapon',
-    regions: ['Fremennik'],
+    regions: ['Fremennik', 'Kourend'],
     requirements: [{ skill: 'Attack', level: 60 }],
     bonuses: {
-      attack:  { stab: 35, slash: 72, crush: 35, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: -2, slash: 38, crush: 32, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 1, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 42, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      chop: 5,
+      hack: 5,
+      smash: 5,
+      block: 5
+    },
   },
   {
     name: 'Leaf-bladed Battleaxe',
     slot: 'weapon',
-    regions: ['Fremennik'],
+    regions: ['Fremennik', 'Tirannwn'],
     requirements: [{ skill: 'Attack', level: 65 }, { skill: 'Slayer', level: 55 }],
     bonuses: {
-      attack:  { stab: 52, slash: 72, crush: 52, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 62, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: -2, slash: 72, crush: 72, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: -1 },
+      other:   { meleeStrength: 92, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      chop: 5,
+      hack: 5,
+      smash: 5,
+      block: 5
+    },
   },
   {
     name: 'Brine Sabre',
@@ -482,25 +494,18 @@ export const WEAPON = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 46, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 7, slash: 47, crush: -2, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 44, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 46, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     speed: 4,
     twoHanded: false,
-  },
-  {
-    name: "Executioner's Axe",
-    slot: 'weapon',
-    regions: ['Fremennik'],
-    requirements: [{ skill: 'Attack', level: 75 }, { skill: 'Strength', level: 75 }],
-    bonuses: {
-      attack:  { stab: 0, slash: 101, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 106, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    combatStyle: {
+      chop: 4,
+      slash: 4,
+      lunge: 4,
+      block: 4
     },
-    speed: 7,
-    twoHanded: false,
   },
   {
     name: 'Mud Battlestaff',
@@ -508,12 +513,19 @@ export const WEAPON = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
-      attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 7, slash: -1, crush: 28, magic: 12, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 12, ranged: 0 },
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
     twoHanded: true,
+    combatStyle: {
+      bash: 5,
+      pound: 5,
+      focus: 5,
+      def_spell: 5,
+      spell: 5
+    },
   },
   {
     name: 'Ancient Sceptre',
@@ -521,12 +533,19 @@ export const WEAPON = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Magic', level: 62 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 10, prayer: 0 },
+      attack:  { stab: 20, slash: -1, crush: 50, magic: 20, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 15, ranged: 0 },
+      other:   { meleeStrength: 60, rangedStrength: 0, magicDamage: 5, prayer: 1 },
     },
     speed: 5,
     twoHanded: false,
+    combatStyle: {
+      bash: 4,
+      pound: 4,
+      focus: 4,
+      def_spell: 5,
+      spell: 5
+    },
   },
   {
     name: 'Venator Bow',
@@ -540,6 +559,11 @@ export const WEAPON = [
     },
     speed: 5,
     twoHanded: true,
+    combatStyle: {
+      accurate: 5,
+      rapid: 4,
+      longrange: 5
+    },
   },
   // ── Kandarin ───────────────────────────────────────────────────────────────
   {
@@ -549,11 +573,16 @@ export const WEAPON = [
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 15, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 20, prayer: 0 },
     },
     speed: 5,
     twoHanded: true,
+    combatStyle: {
+      accurate: 4,
+      accurate: 4,
+      longrange: 4
+    },
   },
   {
     name: 'Smoke Battlestaff',
@@ -561,12 +590,19 @@ export const WEAPON = [
     regions: ['Kandarin'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
-      attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 7, slash: -1, crush: 28, magic: 12, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 12, ranged: 0 },
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
     twoHanded: true,
+    combatStyle: {
+      bash: 5,
+      pound: 5,
+      focus: 5,
+      def_spell: 5,
+      spell: 5
+    },
   },
   {
     name: 'Mist Battlestaff',
@@ -574,12 +610,19 @@ export const WEAPON = [
     regions: ['Kandarin'],
     requirements: [{ skill: 'Attack', level: 30 }, { skill: 'Magic', level: 30 }],
     bonuses: {
-      attack:  { stab: 10, slash: 0, crush: 0, magic: 12, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 7, slash: -1, crush: 28, magic: 12, ranged: 0 },
+      defence: { stab: 2, slash: 3, crush: 1, magic: 12, ranged: 0 },
       other:   { meleeStrength: 35, rangedStrength: 0, magicDamage: 10, prayer: 0 },
     },
     speed: 5,
     twoHanded: true,
+    combatStyle: {
+      bash: 5,
+      pound: 5,
+      focus: 5,
+      def_spell: 5,
+      spell: 5
+    },
   },
   {
     name: 'Warped Sceptre',
