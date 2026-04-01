@@ -3,6 +3,7 @@ export const AMMO = [
   {
     name: 'Bronze arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -14,6 +15,7 @@ export const AMMO = [
   {
     name: 'Iron arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -25,6 +27,7 @@ export const AMMO = [
   {
     name: 'Steel arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -36,6 +39,7 @@ export const AMMO = [
   {
     name: 'Mithril arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -47,6 +51,7 @@ export const AMMO = [
   {
     name: 'Adamant arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -58,6 +63,7 @@ export const AMMO = [
   {
     name: 'Broad arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: 'Slayer', level: 55 }],
     bonuses: {
@@ -69,6 +75,7 @@ export const AMMO = [
   {
     name: 'Rune arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -80,6 +87,7 @@ export const AMMO = [
   {
     name: 'Amethyst arrow',
     slot: 'ammo',
+    ammoType: 'arrows',
     regions: [],
     requirements: [],
     bonuses: {
@@ -91,7 +99,8 @@ export const AMMO = [
   {
     name: 'Dragon arrow',
     slot: 'ammo',
-    regions: ['Tirannwn'],
+    ammoType: 'arrows',
+    regions: [],
     requirements: [],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
@@ -102,6 +111,7 @@ export const AMMO = [
   {
     name: 'Bolt rack',
     slot: 'ammo',
+    ammoType: 'bolt_rack',
     regions: ['Morytania'],
     requirements: [],
     bonuses: {
@@ -114,6 +124,7 @@ export const AMMO = [
   {
     name: 'Bronze bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -125,6 +136,7 @@ export const AMMO = [
   {
     name: 'Iron bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -136,6 +148,7 @@ export const AMMO = [
   {
     name: 'Steel bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -147,6 +160,7 @@ export const AMMO = [
   {
     name: 'Mithril bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -158,6 +172,7 @@ export const AMMO = [
   {
     name: 'Adamant bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -169,6 +184,7 @@ export const AMMO = [
   {
     name: 'Broad bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [{ skill: 'Slayer', level: 55 }],
     bonuses: {
@@ -180,6 +196,7 @@ export const AMMO = [
   {
     name: 'Runite bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -191,6 +208,7 @@ export const AMMO = [
   {
     name: 'Ruby bolts (e)',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -202,6 +220,7 @@ export const AMMO = [
   {
     name: 'Diamond bolts (e)',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -213,6 +232,7 @@ export const AMMO = [
   {
     name: 'Dragonstone bolts (e)',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -224,6 +244,7 @@ export const AMMO = [
   {
     name: 'Onyx bolts (e)',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -235,6 +256,7 @@ export const AMMO = [
   {
     name: 'Dragon bolts',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -246,6 +268,7 @@ export const AMMO = [
   {
     name: 'Dragon bolts (e)',
     slot: 'ammo',
+    ammoType: 'bolts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -258,6 +281,7 @@ export const AMMO = [
   {
     name: 'Adamant dart',
     slot: 'ammo',
+    ammoType: 'darts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -269,6 +293,7 @@ export const AMMO = [
   {
     name: 'Rune dart',
     slot: 'ammo',
+    ammoType: 'darts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -280,6 +305,7 @@ export const AMMO = [
   {
     name: 'Amethyst dart',
     slot: 'ammo',
+    ammoType: 'darts',
     regions: [],
     requirements: [],
     bonuses: {
@@ -291,6 +317,7 @@ export const AMMO = [
   {
     name: 'Dragon dart',
     slot: 'ammo',
+    ammoType: 'darts',
     regions: ['Tirannwn'],
     requirements: [],
     bonuses: {
@@ -299,10 +326,36 @@ export const AMMO = [
       other:   { meleeStrength: 0, rangedStrength: 35, magicDamage: 0, prayer: 0 },
     },
   },
+  // ── Atlatl Darts ──────────────────────────────────────────────────────────
+  {
+    name: 'Atlatl dart',
+    slot: 'ammo',
+    ammoType: 'atlatl_darts',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 30, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Blazing atlatl dart',
+    slot: 'ammo',
+    ammoType: 'atlatl_darts',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 40, magicDamage: 0, prayer: 0 },
+    },
+  },
   // ── Javelins ──────────────────────────────────────────────────────────────
   {
     name: 'Rune javelin',
     slot: 'ammo',
+    ammoType: 'javelins',
     regions: [],
     requirements: [],
     bonuses: {
@@ -314,6 +367,7 @@ export const AMMO = [
   {
     name: 'Amethyst javelin',
     slot: 'ammo',
+    ammoType: 'javelins',
     regions: [],
     requirements: [],
     bonuses: {
@@ -325,6 +379,7 @@ export const AMMO = [
   {
     name: 'Dragon javelin',
     slot: 'ammo',
+    ammoType: 'javelins',
     regions: ['Tirannwn'],
     requirements: [],
     bonuses: {

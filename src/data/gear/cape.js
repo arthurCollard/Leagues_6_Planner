@@ -39,7 +39,7 @@ export const CAPE = [
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      defence: { stab: 1, slash: 1, crush: 1, magic: 8, ranged: 2 },
       other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
     },
   },
@@ -106,7 +106,7 @@ export const CAPE = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 6, magic: 0, ranged: 0 },
       defence: { stab: 8, slash: 8, crush: 8, magic: 8, ranged: 8 },
-      other:   { meleeStrength: 1, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 1, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
   },
   {

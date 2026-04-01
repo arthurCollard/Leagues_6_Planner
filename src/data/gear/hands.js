@@ -16,9 +16,9 @@ export const HANDS = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
-      defence: { stab: 8, slash: 8, crush: 8, magic: 0, ranged: 8 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
+      attack:  { stab: -8, slash: -8, crush: -8, magic: 0, ranged: 18 },
+      defence: { stab: 8, slash: 8, crush: 8, magic: 5, ranged: 8 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -29,7 +29,7 @@ export const HANDS = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 2 },
     },
   },
   {
@@ -107,7 +107,7 @@ export const HANDS = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {

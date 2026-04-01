@@ -11,6 +11,7 @@ export const WEAPON = [
     },
     speed: 4,
     twoHanded: true,
+    ammoType: 'atlatl_darts',
     combatStyle: {
       accurate: 4,
       rapid: 3,
@@ -148,6 +149,7 @@ export const WEAPON = [
     },
     speed: 7,
     twoHanded: false,
+    ammoType: 'atlatl_darts',
     combatStyle: {
       accurate: 7,
       rapid: 6,
@@ -166,6 +168,7 @@ export const WEAPON = [
     },
     speed: 5,
     twoHanded: true,
+    ammoType: 'arrows',
     combatStyle: {
       accurate: 5,
       rapid: 4,
@@ -227,6 +230,7 @@ export const WEAPON = [
     },
     speed: 4,
     twoHanded: false,
+    ammoType: 'thrown',
     combatStyle: {
       accurate: 4,
       rapid: 3,
@@ -361,6 +365,7 @@ export const WEAPON = [
     },
     speed: 6,
     twoHanded: false,
+    ammoType: 'bolts',
     combatStyle: {
       accurate: 6,
       rapid: 5,
@@ -554,6 +559,7 @@ export const WEAPON = [
     },
     speed: 5,
     twoHanded: true,
+    ammoType: 'arrows',
     combatStyle: {
       accurate: 5,
       rapid: 4,
@@ -648,6 +654,7 @@ export const WEAPON = [
     },
     speed: 7,
     twoHanded: true,
+    ammoType: 'javelins',
     combatStyle: {
       accurate: 7,
       rapid: 6,
@@ -666,6 +673,7 @@ export const WEAPON = [
     },
     speed: 7,
     twoHanded: true,
+    ammoType: 'javelins',
     combatStyle: {
       accurate: 7,
       rapid: 6,
@@ -875,6 +883,7 @@ export const WEAPON = [
     },
     speed: 4,
     twoHanded: true,
+    ammoType: 'bolt_rack',
     combatStyle: {
       accurate: 4,
       rapid: 3,
@@ -986,6 +995,7 @@ export const WEAPON = [
     },
     speed: 3,
     twoHanded: true,
+    ammoType: 'darts',
     combatStyle: {
       accurate: 3,
       rapid: 2,
@@ -1022,6 +1032,7 @@ export const WEAPON = [
     },
     speed: 9,
     twoHanded: true,
+    ammoType: 'arrows',
     combatStyle: {
       accurate: 9,
       rapid: 8,
@@ -1031,6 +1042,7 @@ export const WEAPON = [
   {
     name: "Bow of Faerdhinen (c)",
     slot: 'weapon',
+    ammoType: 'thrown',
     regions: ["Tirannwn"],
     requirements: [{ skill: "Ranged", level: 80 }],
     bonuses: {
@@ -1049,6 +1061,7 @@ export const WEAPON = [
   {
     name: "Crystal Bow",
     slot: 'weapon',
+    ammoType: 'thrown',
     regions: ["Tirannwn"],
     requirements: [{ skill: "Ranged", level: 70 }],
     bonuses: {
@@ -1086,6 +1099,7 @@ export const WEAPON = [
   {
     name: "Craw's Bow (u)",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: ["Wilderness"],
     requirements: [{ skill: "Ranged", level: 60 }],
     bonuses: {
@@ -1104,6 +1118,7 @@ export const WEAPON = [
   {
     name: "Webweaver Bow",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: ["Wilderness"],
     requirements: [{ skill: "Ranged", level: 70 }],
     bonuses: {
@@ -1205,6 +1220,7 @@ export const WEAPON = [
     },
     speed: 6,
     twoHanded: true,
+    ammoType: 'arrows',
     combatStyle: {
       accurate: 6,
       rapid: 5,
@@ -1223,6 +1239,7 @@ export const WEAPON = [
     },
     speed: 6,
     twoHanded: false,
+    ammoType: 'bolts',
     combatStyle: {
       accurate: 6,
       rapid: 5,
@@ -1368,6 +1385,7 @@ export const WEAPON = [
     },
     speed: 3,
     twoHanded: false,
+    ammoType: 'thrown',
     combatStyle: {
       accurate: 3,
       rapid: 2,
@@ -1386,6 +1404,7 @@ export const WEAPON = [
     },
     speed: 5,
     twoHanded: false,
+    ammoType: 'thrown',
     combatStyle: {
       accurate: 5,
       rapid: 4,
@@ -1890,6 +1909,7 @@ export const WEAPON = [
   {
     name: "3rd Age Bow",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: "Ranged", level: 65 }],
     bonuses: {
@@ -1908,6 +1928,7 @@ export const WEAPON = [
   {
     name: "Magic Shortbow (i)",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: "Ranged", level: 50 }],
     bonuses: {
@@ -1926,6 +1947,7 @@ export const WEAPON = [
   {
     name: "Magic Comp Bow",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: "Ranged", level: 50 }],
     bonuses: {
@@ -1944,6 +1966,7 @@ export const WEAPON = [
   {
     name: "Bone Shortbow",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: "Ranged", level: 55 }],
     bonuses: {
@@ -1962,6 +1985,7 @@ export const WEAPON = [
   {
     name: "Magic Longbow",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: "Ranged", level: 50 }],
     bonuses: {
@@ -1980,6 +2004,7 @@ export const WEAPON = [
   {
     name: "Magic Shortbow",
     slot: 'weapon',
+    ammoType: 'arrows',
     regions: [],
     requirements: [{ skill: "Ranged", level: 50 }],
     bonuses: {

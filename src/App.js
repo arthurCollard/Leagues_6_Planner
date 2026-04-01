@@ -154,6 +154,21 @@ export default function App() {
           />
         </div>
       </div>
+
+      <footer className="app-footer">
+        <a
+          href="https://buymeacoffee.com/officerkingsley"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bmc-button"
+        >
+          <img
+            src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
+            alt="Buy me a coffee"
+          />
+          <span>Buy me a coffee</span>
+        </a>
+      </footer>
     </div>
   );
 }

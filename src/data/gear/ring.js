@@ -16,9 +16,9 @@ export const RING = [
     regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
     },
   },
   {

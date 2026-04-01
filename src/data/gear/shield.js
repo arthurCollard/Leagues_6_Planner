@@ -7,8 +7,8 @@ export const SHIELD = [
     requirements: [{ skill: 'Magic', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   // ── Karamja ────────────────────────────────────────────────────────────────
@@ -18,9 +18,9 @@ export const SHIELD = [
     regions: ['Karamja'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 55, slash: 57, crush: 55, magic: 35, ranged: 52 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -12, ranged: -8 },
+      defence: { stab: 40, slash: 42, crush: 38, magic: 0, ranged: 65 },
+      other:   { meleeStrength: 5, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   // ── Asgarnia ───────────────────────────────────────────────────────────────
@@ -30,8 +30,8 @@ export const SHIELD = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Attack', level: 60 }, { skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 25, slash: 24, crush: 23, magic: 0, ranged: 0 },
-      defence: { stab: 30, slash: 29, crush: 28, magic: 0, ranged: 0 },
+      attack:  { stab: 25, slash: 24, crush: 23, magic: -3, ranged: -2 },
+      defence: { stab: 30, slash: 29, crush: 28, magic: -3, ranged: -2 },
       other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -53,9 +53,9 @@ export const SHIELD = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Magic', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 10, ranged: 0 },
-      defence: { stab: 45, slash: 50, crush: 47, magic: 55, ranged: 50 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: -10, slash: -10, crush: -10, magic: 15, ranged: -10 },
+      defence: { stab: 72, slash: 80, crush: 75, magic: 55, ranged: -5 },
+      other:   { meleeStrength: -2, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
   },
   // ── Desert ─────────────────────────────────────────────────────────────────
@@ -88,8 +88,8 @@ export const SHIELD = [
     requirements: [{ skill: 'Magic', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   // ── Morytania ──────────────────────────────────────────────────────────────
@@ -99,8 +99,8 @@ export const SHIELD = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Attack', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 30, slash: 29, crush: 28, magic: 0, ranged: 0 },
-      defence: { stab: 35, slash: 34, crush: 33, magic: 0, ranged: 0 },
+      attack:  { stab: 30, slash: 29, crush: 28, magic: -5, ranged: -4 },
+      defence: { stab: 35, slash: 34, crush: 33, magic: -5, ranged: -4 },
       other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -112,8 +112,8 @@ export const SHIELD = [
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }, { skill: 'Magic', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
-      defence: { stab: 52, slash: 55, crush: 53, magic: 75, ranged: 55 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 3 },
+      defence: { stab: 53, slash: 55, crush: 73, magic: 2, ranged: 52 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 3, prayer: 3 },
     },
   },
   {
@@ -123,7 +123,7 @@ export const SHIELD = [
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }, { skill: 'Magic', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
-      defence: { stab: 52, slash: 55, crush: 53, magic: 30, ranged: 55 },
+      defence: { stab: 53, slash: 55, crush: 73, magic: 30, ranged: 52 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
   },
@@ -134,7 +134,7 @@ export const SHIELD = [
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 52, slash: 55, crush: 53, magic: 30, ranged: 55 },
+      defence: { stab: 63, slash: 65, crush: 75, magic: 2, ranged: 57 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
   },
@@ -144,9 +144,9 @@ export const SHIELD = [
     regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 12, ranged: 0 },
-      defence: { stab: 20, slash: 28, crush: 22, magic: 20, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: -8, slash: -8, crush: -8, magic: 12, ranged: -12 },
+      defence: { stab: 50, slash: 52, crush: 48, magic: 15, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
   },
   {
@@ -155,9 +155,9 @@ export const SHIELD = [
     regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
-      defence: { stab: 20, slash: 28, crush: 22, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: -12, slash: -12, crush: -12, magic: -8, ranged: 12 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 24, ranged: 52 },
+      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 0 },
     },
   },
   // ── Tirannwn ───────────────────────────────────────────────────────────────
@@ -167,8 +167,8 @@ export const SHIELD = [
     regions: ['Tirannwn'],
     requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 80, ranged: 85 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: -10 },
+      defence: { stab: 51, slash: 54, crush: 53, magic: 0, ranged: 80 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -180,8 +180,8 @@ export const SHIELD = [
     requirements: [{ skill: 'Magic', level: 50 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 6, prayer: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {

@@ -819,6 +819,12 @@ body {
   opacity: 0.55;
 }
 
+.slot-btn.slot-disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .slot-btn:hover {
   border-color: #c8a96e;
   opacity: 1;
@@ -1040,4 +1046,37 @@ body {
   background: rgba(126, 203, 126, 0.12);
   border: 1px solid rgba(126, 203, 126, 0.35);
   color: #7ecb7e;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.app-footer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem 1rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(184, 162, 130, 0.15);
+}
+
+.bmc-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FFDD00;
+  color: #000000;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.bmc-button:hover {
+  background: #FFE433;
+  transform: translateY(-1px);
+}
+
+.bmc-button img {
+  height: 22px;
+  width: auto;
 }

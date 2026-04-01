@@ -18,7 +18,7 @@ export const FEET = [
     bonuses: {
       attack:  { stab: 5, slash: 5, crush: 5, magic: 11, ranged: 15 },
       defence: { stab: 21, slash: 25, crush: 25, magic: 10, ranged: 10 },
-      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+      other:   { meleeStrength: 4, rangedStrength: 2, magicDamage: 1, prayer: 0 },
     },
   },
   {

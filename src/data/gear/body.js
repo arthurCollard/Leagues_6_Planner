@@ -137,8 +137,8 @@ export const BODY = [
     regions: [],
     requirements: [{ skill: 'Ranged', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 30 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 50, ranged: 45 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: 30 },
+      defence: { stab: 30, slash: 38, crush: 45, magic: 45, ranged: 50 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },

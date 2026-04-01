@@ -7,7 +7,7 @@ export const NECK = [
     bonuses: {
       attack:  { stab: 15, slash: 15, crush: 15, magic: 0, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 10, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 10, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
   },
   {
@@ -29,7 +29,7 @@ export const NECK = [
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 12, ranged: 0 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 2 },
     },
   },
   {
@@ -71,9 +71,9 @@ export const NECK = [
     regions: ['Kourend'],
     requirements: [{ skill: 'Prayer', level: 70 }],
     bonuses: {
-      attack:  { stab: 10, slash: 10, crush: 10, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 12 },
+      attack:  { stab: 10, slash: 10, crush: 10, magic: 10, ranged: 10 },
+      defence: { stab: 2, slash: 2, crush: 2, magic: 2, ranged: 2 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 12 },
     },
   },
   {
@@ -84,7 +84,7 @@ export const NECK = [
     bonuses: {
       attack:  { stab: -10, slash: -10, crush: -10, magic: 0, ranged: 0 },
       defence: { stab: -20, slash: -20, crush: -20, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 7, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 7, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
   },
   {
@@ -159,9 +159,9 @@ export const NECK = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Prayer', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 12 },
+      attack:  { stab: 10, slash: 10, crush: 10, magic: 10, ranged: 10 },
+      defence: { stab: 2, slash: 2, crush: 2, magic: 2, ranged: 2 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 12 },
     },
   },
 ];

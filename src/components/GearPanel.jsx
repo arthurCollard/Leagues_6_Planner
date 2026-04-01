@@ -58,16 +58,64 @@ function getRegionFiltered(slot, selectedRegions) {
 
 function getOptimizedGear(stat, selectedRegions) {
   const result = {};
-  Object.keys(ITEMS_BY_SLOT).forEach(slot => {
-    const items = getRegionFiltered(slot, selectedRegions);
-    let best = null;
-    let bestVal = 0;
-    items.forEach(item => {
-      const val = item.bonuses.other[stat] || 0;
-      if (val > bestVal) { bestVal = val; best = item; }
+
+  if (stat === 'rangedStrength') {
+    // Weapon and ammo must be evaluated as a pair
+    const weapons = getRegionFiltered('weapon', selectedRegions);
+    const ammos = getRegionFiltered('ammo', selectedRegions);
+
+    let bestWeapon = null;
+    let bestAmmo = null;
+    let bestCombined = 0;
+
+    weapons.forEach(weapon => {
+      const weaponVal = weapon.bonuses.other.rangedStrength || 0;
+      const compatibleAmmo = weapon.ammoType
+        ? ammos.filter(a => a.ammoType === weapon.ammoType)
+        : ammos;
+
+      let topAmmo = null;
+      let topAmmoVal = 0;
+      compatibleAmmo.forEach(ammo => {
+        const v = ammo.bonuses.other.rangedStrength || 0;
+        if (v > topAmmoVal) { topAmmoVal = v; topAmmo = ammo; }
+      });
+
+      const combined = weaponVal + topAmmoVal;
+      if (combined > bestCombined) {
+        bestCombined = combined;
+        bestWeapon = weapon;
+        bestAmmo = topAmmo;
+      }
     });
-    result[slot] = best;
-  });
+
+    result.weapon = bestWeapon;
+    result.ammo = bestAmmo;
+
+    Object.keys(ITEMS_BY_SLOT).forEach(slot => {
+      if (slot === 'weapon' || slot === 'ammo') return;
+      const items = getRegionFiltered(slot, selectedRegions);
+      let best = null;
+      let bestVal = 0;
+      items.forEach(item => {
+        const val = item.bonuses.other[stat] || 0;
+        if (val > bestVal) { bestVal = val; best = item; }
+      });
+      result[slot] = best;
+    });
+  } else {
+    Object.keys(ITEMS_BY_SLOT).forEach(slot => {
+      const items = getRegionFiltered(slot, selectedRegions);
+      let best = null;
+      let bestVal = 0;
+      items.forEach(item => {
+        const val = item.bonuses.other[stat] || 0;
+        if (val > bestVal) { bestVal = val; best = item; }
+      });
+      result[slot] = best;
+    });
+  }
+
   return result;
 }
 
@@ -110,7 +158,7 @@ function sumBonuses(gear) {
   return { totals, activeEffects };
 }
 
-function SlotPicker({ slot, selected, selectedRegions, onSelect }) {
+function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disabled }) {
   const [open, setOpen] = useState(false);
   const [dropUp, setDropUp] = useState(false);
   const [search, setSearch] = useState('');
@@ -120,7 +168,10 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect }) {
   const regionFiltered = selectedRegions.length === 0
     ? allItems
     : allItems.filter(i => i.regions.length === 0 || i.regions.some(r => selectedRegions.includes(r)));
-  const filtered = regionFiltered.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
+  const ammoFiltered = (slot === 'ammo' && ammoType)
+    ? regionFiltered.filter(i => i.ammoType === ammoType)
+    : regionFiltered;
+  const filtered = ammoFiltered.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
 
   useEffect(() => {
     if (!open) return;
@@ -136,9 +187,10 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect }) {
   return (
     <div className="slot-picker-wrapper" ref={ref}>
       <button
-        className={`slot-btn ${selected ? 'slot-filled' : 'slot-empty'}`}
-        onClick={() => setOpen(o => !o)}
-        title={slot.charAt(0).toUpperCase() + slot.slice(1)}
+        className={`slot-btn ${selected ? 'slot-filled' : 'slot-empty'} ${disabled ? 'slot-disabled' : ''}`}
+        onClick={() => !disabled && setOpen(o => !o)}
+        title={disabled ? '2H weapon equipped' : slot.charAt(0).toUpperCase() + slot.slice(1)}
+        disabled={disabled}
       >
         <img
           className="slot-icon"
@@ -229,6 +281,21 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
     }
   }, [weapon, selectedStyle]);
 
+  // Clear ammo when weapon changes to an incompatible ammo type
+  useEffect(() => {
+    const ammo = selectedGear.ammo;
+    if (ammo && weapon?.ammoType && ammo.ammoType !== weapon.ammoType) {
+      onSelectGear('ammo', null);
+    }
+  }, [weapon]);
+
+  // Clear shield when a two-handed weapon is equipped
+  useEffect(() => {
+    if (weapon?.twoHanded && selectedGear.shield) {
+      onSelectGear('shield', null);
+    }
+  }, [weapon]);
+
   function applyOptimized(stat) {
     const optimized = getOptimizedGear(stat, selectedRegions);
     Object.entries(optimized).forEach(([slot, item]) => onSelectGear(slot, item));
@@ -278,6 +345,8 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
                       selected={selectedGear[slot]}
                       selectedRegions={selectedRegions}
                       onSelect={item => onSelectGear(slot, item)}
+                      ammoType={slot === 'ammo' ? weapon?.ammoType : undefined}
+                      disabled={slot === 'shield' && !!weapon?.twoHanded}
                     />
                   ) : (
                     <div key={ci} className="slot-empty-cell" />
