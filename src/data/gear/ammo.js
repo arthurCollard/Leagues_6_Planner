@@ -1,0 +1,336 @@
+export const AMMO = [
+  // ── Arrows ────────────────────────────────────────────────────────────────
+  {
+    name: 'Bronze arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 1 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Iron arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 2 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Steel arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 3 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Mithril arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 5 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 7, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Adamant arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 7 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Broad arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [{ skill: 'Slayer', level: 55 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Rune arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 14, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Amethyst arrow',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 11 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 16, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragon arrow',
+    slot: 'ammo',
+    regions: ['Tirannwn'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 13 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Bolt rack',
+    slot: 'ammo',
+    regions: ['Morytania'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 100 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 55, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Bolts ─────────────────────────────────────────────────────────────────
+  {
+    name: 'Bronze bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 1 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 1, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Iron bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 2 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Steel bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 3 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Mithril bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 5 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 7, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Adamant bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 7 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Broad bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [{ skill: 'Slayer', level: 55 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Runite bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 15, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Ruby bolts (e)',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 9 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 14, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Diamond bolts (e)',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 10 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 13, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragonstone bolts (e)',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Onyx bolts (e)',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragon bolts',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 13 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragon bolts (e)',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 13 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Darts ─────────────────────────────────────────────────────────────────
+  {
+    name: 'Adamant dart',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 14 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 14, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Rune dart',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 18 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 18, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Amethyst dart',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 20 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 20, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragon dart',
+    slot: 'ammo',
+    regions: ['Tirannwn'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 25 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 35, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ── Javelins ──────────────────────────────────────────────────────────────
+  {
+    name: 'Rune javelin',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 64 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 25, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Amethyst javelin',
+    slot: 'ammo',
+    regions: [],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 78 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 28, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Dragon javelin',
+    slot: 'ammo',
+    regions: ['Tirannwn'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 95 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 55, magicDamage: 0, prayer: 0 },
+    },
+  },
+];

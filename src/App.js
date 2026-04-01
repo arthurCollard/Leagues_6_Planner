@@ -14,7 +14,7 @@ import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
 
-const EMPTY_GEAR = { head: null, cape: null, neck: null, weapon: null, body: null, shield: null, legs: null, hands: null, feet: null, ring: null };
+const EMPTY_GEAR = { head: null, cape: null, neck: null, ammo: null, weapon: null, body: null, shield: null, legs: null, hands: null, feet: null, ring: null };
 
 const DEFAULT_SETTINGS = {
   solvedThreshold: 3,
@@ -113,7 +113,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header
+<Header
         relicCount={Object.keys(selectedRelics).length}
         solvedCount={solvedCount}
         masteryPoints={Object.values(selectedMasteries).reduce((a, b) => a + b, 0)}

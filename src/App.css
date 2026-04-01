@@ -831,8 +831,10 @@ body {
 }
 
 .slot-icon {
-  font-size: 1.4rem;
-  line-height: 1;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  image-rendering: pixelated;
   flex-shrink: 0;
 }
 

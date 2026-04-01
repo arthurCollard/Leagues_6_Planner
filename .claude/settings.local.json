@@ -10,7 +10,14 @@
       "Bash(grep -A 8 \"name: ''Dual Macuahuitl''\" src/data/gear/weapon.js)",
       "Bash(grep -A 8 \"name: ''Noxious Halberd''\" src/data/gear/weapon.js)",
       "Bash(grep -A 8 \"name: ''Saradomin Godsword''\" src/data/gear/weapon.js)",
-      "Bash(grep -A 8 \"name: ''Dharok\" src/data/gear/weapon.js)"
+      "Bash(grep -A 8 \"name: ''Dharok\" src/data/gear/weapon.js)",
+      "Bash(npx eslint:*)",
+      "WebFetch(domain:runescape.wiki)",
+      "WebFetch(domain:prices.runescape.wiki)",
+      "WebFetch(domain:www.osrsbox.com)",
+      "Bash(node scripts/fetchWeaponData.js)",
+      "Bash(node --max-old-space-size=4096 scripts/fetchWeaponData.js)",
+      "Bash(node -e \":*)"
     ]
   }
 }

@@ -8,8 +8,9 @@ export { NECK }   from './neck';
 export { RING }   from './ring';
 export { WEAPON } from './weapon';
 export { SHIELD } from './shield';
+export { AMMO }   from './ammo';
 
-export const GEAR_SLOTS = ['head', 'cape', 'neck', 'weapon', 'body', 'shield', 'legs', 'hands', 'feet', 'ring'];
+export const GEAR_SLOTS = ['head', 'cape', 'neck', 'ammo', 'weapon', 'body', 'shield', 'legs', 'hands', 'feet', 'ring'];
 
 export const BONUS_LABELS = {
   attack:  { stab: 'Stab', slash: 'Slash', crush: 'Crush', magic: 'Magic', ranged: 'Ranged' },

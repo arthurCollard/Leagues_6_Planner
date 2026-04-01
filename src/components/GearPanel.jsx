@@ -1,27 +1,34 @@
 import { useState, useRef, useEffect } from 'react';
-import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD } from '../data/gear/index';
+import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD, AMMO } from '../data/gear/index';
 import { UNIVERSAL_REGIONS } from '../data/regions';
 
 const UNIVERSAL_REGION_NAMES = UNIVERSAL_REGIONS.map(r => r.name);
 
-const ITEMS_BY_SLOT = { head: HEAD, body: BODY, legs: LEGS, hands: HANDS, feet: FEET, cape: CAPE, neck: NECK, ring: RING, weapon: WEAPON, shield: SHIELD };
+const ITEMS_BY_SLOT = { head: HEAD, body: BODY, legs: LEGS, hands: HANDS, feet: FEET, cape: CAPE, neck: NECK, ring: RING, weapon: WEAPON, shield: SHIELD, ammo: AMMO };
 
 const SLOT_ICONS = {
-  head:   '🪖', cape:   '🧣', neck: '📿',
-  weapon: '⚔️',  body:   '👕', shield: '🛡️',
-  legs:   '👖', hands:  '🧤', feet: '👞', ring: '💍',
+  head:   '/gear_slots/Head_slot.png',
+  cape:   '/gear_slots/Cape_slot.png',
+  neck:   '/gear_slots/Neck_slot.png',
+  ammo:   '/gear_slots/Ammo_slot.png',
+  weapon: '/gear_slots/Weapon_slot.png',
+  body:   '/gear_slots/Body_slot.png',
+  shield: '/gear_slots/Shield_slot.png',
+  legs:   '/gear_slots/Legs_slot.png',
+  hands:  '/gear_slots/Hands_slot.png',
+  feet:   '/gear_slots/Feet_slot.png',
+  ring:   '/gear_slots/Ring_slot.png',
 };
 
 // Paperdoll layout: each row is [slotName | null for empty cell]
 const LAYOUT = [
   [null,     'head',   null    ],
-  ['cape',   'neck',   null    ],
+  ['cape',   'neck',   'ammo'  ],
   ['weapon', 'body',   'shield'],
   [null,     'legs',   null    ],
   ['hands',  'feet',   'ring'  ],
 ];
 
-const ZERO_BONUSES = { attack: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 }, defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 }, other: { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 } };
 
 const SET_BONUSES = {
   elite_void_mage: {
@@ -133,7 +140,18 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect }) {
         onClick={() => setOpen(o => !o)}
         title={slot.charAt(0).toUpperCase() + slot.slice(1)}
       >
-        <span className="slot-icon">{SLOT_ICONS[slot]}</span>
+        <img
+          className="slot-icon"
+          src={selected
+            ? `https://oldschool.runescape.wiki/w/Special:FilePath/${encodeURIComponent(selected.name.charAt(0).toUpperCase() + selected.name.slice(1).toLowerCase())}.png`
+            : SLOT_ICONS[slot]
+          }
+          alt={selected ? selected.name : slot}
+          onError={e => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = slot === 'weapon' && selected?.twoHanded ? '/gear_slots/2h_slot.png' : SLOT_ICONS[slot];
+          }}
+        />
         {selected && <span className="slot-name-label">{selected.name}</span>}
       </button>
 
@@ -209,7 +227,7 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
     if (selectedStyle && (!weapon?.combatStyle || weapon.combatStyle[selectedStyle] == null)) {
       setSelectedStyle(null);
     }
-  }, [weapon]);
+  }, [weapon, selectedStyle]);
 
   function applyOptimized(stat) {
     const optimized = getOptimizedGear(stat, selectedRegions);
