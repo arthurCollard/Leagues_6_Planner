@@ -158,6 +158,28 @@ body {
   background: #d0bd97;
 }
 
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.status-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: #b8a282;
+}
+
+.status-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 .skill-category { margin-bottom: 1.2rem; }
 .skill-category h4 {
   font-size: 0.8rem;

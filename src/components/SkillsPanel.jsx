@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SKILLS, EXTRAS, CATEGORIES } from '../data/skills';
+import { SKILLS, EXTRAS, CATEGORIES, STATUS_STYLES } from '../data/skills';
 import SkillIcon from './SkillIcon';
 
 export default function SkillsPanel({ skills, extras, solvedThreshold }) {
@@ -17,6 +17,15 @@ export default function SkillsPanel({ skills, extras, solvedThreshold }) {
         <button className="toggle-btn" onClick={() => setShowExtras(e => !e)}>
           {showExtras ? 'Show Skills' : 'Show Extras'}
         </button>
+      </div>
+
+      <div className="status-legend">
+        {Object.entries(STATUS_STYLES).map(([key, s]) => (
+          <span key={key} className="status-legend-item">
+            <span className="status-legend-dot" style={{ background: s.border }} />
+            {s.label}
+          </span>
+        ))}
       </div>
 
       {!showExtras ? (
