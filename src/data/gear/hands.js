@@ -21,9 +21,9 @@ export const HANDS = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 7, prayer: 2 },
     },
     effect: {
-      type: '',
+      type: 'multiply_totals',
       stats: [],
-      description: 'Upon a missed magic attack, next magic attack against the same enemy rolls accuracy twice',
+      description: 'Confliction Gauntlets: Upon a missed magic attack, next magic attack against the same enemy rolls accuracy twice',
     },
   },
   {
