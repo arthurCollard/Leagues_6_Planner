@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { RELICS } from '../data/relics';
 import RelicIcon from './RelicIcon';
 import { SKILLS, EXTRAS } from '../data/skills';
+import ContribTooltip from './ContribTooltip';
 
 const SKILL_NAME = Object.fromEntries(SKILLS.map(s => [s.id, s.name]));
 const EXTRA_NAME = Object.fromEntries(EXTRAS.map(e => [e.id, e.name]));
@@ -248,14 +249,31 @@ function RelicSettings({ relic, weights, onChange, onClose }) {
   );
 }
 
-function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic, locked, openSettings, onOpenSettings }) {
+function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic, locked, openSettings, onOpenSettings, onShowContrib, onHideContrib }) {
   const showSettings = openSettings === relic.name;
   const hasCustomWeights = Object.keys(weights).length > 0;
   const isReloaded = relic.special === 'reloaded';
+  const wrapperRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (!wrapperRef.current) return;
+    const rect = wrapperRef.current.getBoundingClientRect();
+    onShowContrib({
+      pos: { left: rect.left, top: rect.bottom + 6 },
+      skills: relic.skills || {},
+      extras: relic.extras || {},
+      special: relic.special,
+    });
+  };
 
   return (
     <div className={`relic-btn-outer ${locked ? 'relic-btn-locked' : ''}`}>
-      <div className={`relic-btn-wrapper ${selected && isReloaded ? 'relic-btn-wrapper-reloaded' : ''}`}>
+      <div
+        ref={wrapperRef}
+        className={`relic-btn-wrapper ${selected && isReloaded ? 'relic-btn-wrapper-reloaded' : ''}`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={onHideContrib}
+      >
         <button
           className={`relic-btn ${selected ? 'selected' : ''}`}
           onClick={locked ? undefined : onSelect}
@@ -366,6 +384,22 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
   const [tierLock, setTierLock] = useState(true);
   const [showConfirm, setShowConfirm] = useState(false);
   const [openSettings, setOpenSettings] = useState(null);
+  const [hoverContrib, setHoverContrib] = useState(null);
+
+  const handleOpenSettings = (name) => {
+    setOpenSettings(name);
+    if (name) setHoverContrib(null);
+  };
+  const hideTimer = useRef(null);
+
+  const handleShowContrib = (data) => {
+    if (openSettings) return;
+    clearTimeout(hideTimer.current);
+    setHoverContrib(data);
+  };
+  const handleHideContrib = () => {
+    hideTimer.current = setTimeout(() => setHoverContrib(null), 80);
+  };
 
   const hasSelections = Object.keys(selectedRelics).length > 0 || reloadedRelic != null;
 
@@ -448,7 +482,9 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
                     onSelectReloadedRelic={onSelectReloadedRelic}
                     locked={locked}
                     openSettings={openSettings}
-                    onOpenSettings={setOpenSettings}
+                    onOpenSettings={handleOpenSettings}
+                    onShowContrib={handleShowContrib}
+                    onHideContrib={handleHideContrib}
                   />
                 ))}
               </div>
@@ -456,6 +492,12 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
           );
         })}
       </div>
+
+      <ContribTooltip
+        data={hoverContrib}
+        onMouseEnter={() => clearTimeout(hideTimer.current)}
+        onMouseLeave={handleHideContrib}
+      />
     </main>
   );
 }

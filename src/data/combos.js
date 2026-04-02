@@ -1,15 +1,17 @@
 export const COMBO_BONUSES = [
   {
     relics: ['Endless Harvest', 'Woodsman'],
-    bonuses: { firmaking: 2, fletching: 1},
+    bonuses: { firemaking: 2, fletching: 1},
     thresholds: {},
     label: 'Endless Harvest + Woodsman Combo',
+    tooltip: 'Chop with endless harvest and automatically burn',
   },
   {
     relics: ['Endless Harvest', 'Hotfoot'],
-    bonuses: { smithing: 1, cooking: 1},
+    bonuses: { smithing: 1, cooking: 2},
     thresholds: {},
     label: 'Endless Harvest + Hotfoot',
+    tooltip: 'Mine and Fish with endless harvest and automatically smelt/cook',
   },
   {
     relics: [],
@@ -18,6 +20,7 @@ export const COMBO_BONUSES = [
     bonuses: { smithing: 2 },
     thresholds: {},
     label: 'Fremennik + GP Source',
+    tooltip: 'Buy ore at blast furnace for smithing xp',
   },
   {
     relics: ['Endless Harvest'],
@@ -26,14 +29,16 @@ export const COMBO_BONUSES = [
     bonuses: { firemaking: 2 },
     thresholds: {},
     label: 'Wintertodt + Endless Harvest',
+    tooltip: 'Easy firemaking xp at wintertodt',
   },
-    {
+  {
     relics: ['Larcenist'],
     regions: ['Varlamore'],
     requiredExtras: [],
     bonuses: { crafting: 1 },
     thresholds: {},
     label: 'Varlamore Gem Stall + Thieving',
+    tooltip: 'Gem stall thieving for potential crafting xp',
   },
   {
     relics: ['Larcenist'],
@@ -42,5 +47,6 @@ export const COMBO_BONUSES = [
     bonuses: { crafting: 1, smithing: 1 },
     thresholds: {},
     label: 'Prif Elves + Thieving',
+    tooltip: 'Steal shards, then craft crystal equipment for big xp',
   },
 ];

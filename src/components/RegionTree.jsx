@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
-import { createPortal } from 'react-dom';
 import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS, MAX_UNLOCKABLE_REGIONS } from '../data/regions';
 import { SKILLS, EXTRAS } from '../data/skills';
 import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD, AMMO } from '../data/gear/index';
+import ContribTooltip from './ContribTooltip';
 
 const ALL_GEAR = [...HEAD, ...BODY, ...LEGS, ...HANDS, ...FEET, ...CAPE, ...NECK, ...RING, ...WEAPON, ...SHIELD, ...AMMO];
 
@@ -111,17 +111,21 @@ function RegionSettings({ region, weights, onChange, onClose }) {
   );
 }
 
-function RegionCard({ region, selected, disabled, onClick, weights, onWeightsChange, onShowTooltip, onHideTooltip, openSettings, onOpenSettings }) {
+function RegionCard({ region, selected, disabled, onClick, weights, onWeightsChange, openSettings, onOpenSettings, onShowContrib, onHideContrib }) {
   const showSettings = openSettings === region.name;
   const wrapperRef = useRef(null);
   const hasCustomWeights = Object.keys(weights).length > 0;
   const drops = DROPS_BY_REGION[region.name];
 
   const handleMouseEnter = () => {
-    if (wrapperRef.current && drops?.length > 0) {
-      const rect = wrapperRef.current.getBoundingClientRect();
-      onShowTooltip(region.name, { left: rect.left, bottom: window.innerHeight - rect.top + 6 });
-    }
+    if (!wrapperRef.current) return;
+    const rect = wrapperRef.current.getBoundingClientRect();
+    onShowContrib({
+      pos: { left: rect.left, top: rect.bottom + 6 },
+      skills: region.skills || {},
+      extras: region.extras || {},
+      drops: drops || [],
+    });
   };
 
   return (
@@ -131,7 +135,7 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
         className="region-card-wrapper"
         style={{ flex: 1, minWidth: 0, position: 'relative' }}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={onHideTooltip}
+        onMouseLeave={onHideContrib}
       >
         <div
           className={`relic-btn${selected ? ' selected' : ''}${disabled ? ' mastery-locked' : ''}`}
@@ -167,18 +171,24 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
 
 export default function RegionTree({ selectedRegions, onSelectRegion, onReset, regionWeights, onRegionWeightsChange }) {
   const [isOpen, setIsOpen] = useState(true);
-  const [activeTooltip, setActiveTooltip] = useState(null); // { name, pos }
   const [openSettings, setOpenSettings] = useState(null);
+  const [hoverContrib, setHoverContrib] = useState(null);
   const hideTimer = useRef(null);
   const selectedCount = selectedRegions.length;
 
-  const handleShowTooltip = (name, pos) => {
-    clearTimeout(hideTimer.current);
-    setActiveTooltip({ name, pos });
+  const handleOpenSettings = (name) => {
+    setOpenSettings(name);
+    if (name) setHoverContrib(null);
   };
 
-  const handleHideTooltip = () => {
-    hideTimer.current = setTimeout(() => setActiveTooltip(null), 80);
+  const handleShowContrib = (data) => {
+    if (openSettings) return;
+    clearTimeout(hideTimer.current);
+    setHoverContrib(data);
+  };
+
+  const handleHideContrib = () => {
+    hideTimer.current = setTimeout(() => setHoverContrib(null), 80);
   };
 
   return (
@@ -218,10 +228,10 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
                 onClick={null}
                 weights={regionWeights[region.name] || {}}
                 onWeightsChange={w => onRegionWeightsChange(region.name, w)}
-                onShowTooltip={handleShowTooltip}
-                onHideTooltip={handleHideTooltip}
                 openSettings={openSettings}
-                onOpenSettings={setOpenSettings}
+                onOpenSettings={handleOpenSettings}
+                onShowContrib={handleShowContrib}
+                onHideContrib={handleHideContrib}
               />
             ))}
           </div>
@@ -245,10 +255,10 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
                   onClick={() => !isDisabled && onSelectRegion(region.name)}
                   weights={regionWeights[region.name] || {}}
                   onWeightsChange={w => onRegionWeightsChange(region.name, w)}
-                  onShowTooltip={handleShowTooltip}
-                  onHideTooltip={handleHideTooltip}
                   openSettings={openSettings}
-                  onOpenSettings={setOpenSettings}
+                  onOpenSettings={handleOpenSettings}
+                  onShowContrib={handleShowContrib}
+                  onHideContrib={handleHideContrib}
                 />
               );
             })}
@@ -257,20 +267,11 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
 
       </div>
 
-      {activeTooltip && createPortal(
-        <div
-          className="region-tooltip"
-          style={{ position: 'fixed', left: activeTooltip.pos.left, bottom: activeTooltip.pos.bottom, pointerEvents: 'auto' }}
-          onMouseEnter={() => clearTimeout(hideTimer.current)}
-          onMouseLeave={handleHideTooltip}
-        >
-          <strong>Notable Gear</strong>
-          <ul>
-            {DROPS_BY_REGION[activeTooltip.name].map(d => <li key={d}>{d}</li>)}
-          </ul>
-        </div>,
-        document.body
-      )}
+      <ContribTooltip
+        data={hoverContrib}
+        onMouseEnter={() => clearTimeout(hideTimer.current)}
+        onMouseLeave={handleHideContrib}
+      />
     </main>
   );
 }

@@ -1,19 +1,48 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { EXTRAS } from '../data/skills';
+import ContribTooltip from './ContribTooltip';
 
 export default function ComboBanner({ activeCombos, pendingCombos, activeThresholds = [], pendingThresholds = [], extras = {}, activePassives = [], onToggleSettings, onReset, hasSelections }) {
+  const [hoverCombo, setHoverCombo] = useState(null);
+  const hideTimer = useRef(null);
+
+  const handleMouseEnter = (e, combo) => {
+    clearTimeout(hideTimer.current);
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHoverCombo({
+      pos: { left: rect.left, top: rect.bottom + 6 },
+      skills: combo.bonuses || {},
+      extras: {},
+      description: combo.tooltip || undefined,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    hideTimer.current = setTimeout(() => setHoverCombo(null), 80);
+  };
+
   return (
     <div className="info-bar">
       <div className="info-bar-section info-bar-combos">
         <span className="info-bar-label">Combos &amp; Bonuses</span>
         <div className="info-bar-tags">
           {activeCombos.map(c => (
-            <span key={c.label} className="combo-tag combo-active">
+            <span
+              key={c.label}
+              className="combo-tag combo-active"
+              onMouseEnter={e => handleMouseEnter(e, c)}
+              onMouseLeave={handleMouseLeave}
+            >
               ⚡ {c.label}
             </span>
           ))}
           {activeThresholds.map(t => (
-            <span key={t.extra} className="combo-tag combo-active">
+            <span
+              key={t.label || t.extra}
+              className="combo-tag combo-active"
+              onMouseEnter={e => handleMouseEnter(e, { bonuses: t.perPoint, tooltip: t.tooltip })}
+              onMouseLeave={handleMouseLeave}
+            >
               ⚡ {t.label || t.extra}
             </span>
           ))}
@@ -42,6 +71,8 @@ export default function ComboBanner({ activeCombos, pendingCombos, activeThresho
           ))}
         </div>
       </div>
+      <ContribTooltip data={hoverCombo} />
+
       <div className="info-bar-controls">
         <button className="info-bar-ctrl-btn" onClick={onToggleSettings}>⚙️</button>
         <button className="info-bar-ctrl-btn" onClick={onReset} disabled={!hasSelections}>↺</button>

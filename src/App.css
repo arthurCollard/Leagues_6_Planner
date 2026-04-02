@@ -225,6 +225,7 @@ body {
 }
 
 .combo-tag {
+  position: relative;
   background: linear-gradient(135deg, #b8a282, #d0bd97);
   padding: 0.2rem 0.6rem;
   border-radius: 20px;
@@ -1006,6 +1007,113 @@ body {
 
 .region-tooltip li:last-child {
   border-bottom: none;
+}
+
+.contrib-tooltip {
+  background: #231e18;
+  border: 1px solid #b8a282;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  min-width: 140px;
+  max-width: 220px;
+  max-height: 260px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.contrib-scroll {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  padding-right: 6px;
+}
+
+.contrib-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.contrib-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contrib-scroll::-webkit-scrollbar-thumb {
+  background: rgba(184, 162, 130, 0.3);
+  border-radius: 2px;
+}
+
+.contrib-tabs {
+  display: flex;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(184, 162, 130, 0.2);
+  padding-bottom: 0.3rem;
+}
+
+.contrib-tab {
+  flex: 1;
+  background: none;
+  border: 1px solid rgba(184, 162, 130, 0.25);
+  border-radius: 4px;
+  color: #7a6a4a;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.contrib-tab:hover {
+  color: #c8b896;
+  border-color: rgba(184, 162, 130, 0.5);
+}
+
+.contrib-tab.active {
+  color: #e8d0a0;
+  border-color: #b8a282;
+  background: rgba(184, 162, 130, 0.1);
+}
+
+.contrib-section {
+  margin-bottom: 0.4rem;
+}
+
+.contrib-section:last-child {
+  margin-bottom: 0;
+}
+
+.contrib-description {
+  font-size: 0.72rem;
+  color: #c8b896;
+  font-style: italic;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(184, 162, 130, 0.2);
+}
+
+.contrib-label {
+  font-size: 0.65rem;
+  color: #7a6a4a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.contrib-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: #c8b896;
+  padding: 0.1rem 0;
+}
+
+.contrib-val {
+  color: #e8d0a0;
+  font-weight: 600;
+  margin-left: 0.5rem;
 }
 
 .main-layout {
