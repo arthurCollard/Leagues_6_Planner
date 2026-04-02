@@ -246,8 +246,10 @@ function ReloadedPicker({ selectedRelics, reloadedRelic, onSelectReloadedRelic }
   );
 }
 
-export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights, onRelicWeightsChange, reloadedRelic, onSelectReloadedRelic }) {
+export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights, onRelicWeightsChange, reloadedRelic, onSelectReloadedRelic, onReset }) {
   const [isOpen, setIsOpen] = useState(true);
+
+  const hasSelections = Object.keys(selectedRelics).length > 0 || reloadedRelic != null;
 
   return (
     <main className="relic-tree">
@@ -256,7 +258,10 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
           Relic Tree
           <p className="relic-tree-desc">Select relics → watch skills light up by coverage</p>
         </div>
-        <div className={`collapse-chevron ${isOpen ? 'open' : ''}`} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+          <button className="close-btn" disabled={!hasSelections} onClick={e => { e.stopPropagation(); onReset(); }}>Reset</button>
+          <div className={`collapse-chevron ${isOpen ? 'open' : ''}`} />
+        </div>
       </h2>
 
       <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>

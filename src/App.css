@@ -1215,10 +1215,20 @@ body {
 /* ── Footer ───────────────────────────────────────────────────────────────── */
 .app-footer {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 2rem 1rem 1rem;
+  gap: 2rem;
+  padding: 2rem 3rem;
   margin-top: 1.5rem;
   border-top: 1px solid rgba(184, 162, 130, 0.15);
+}
+
+.app-footer > :first-child {
+  max-width: 260px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.6;
+  text-align: center;
 }
 
 .bmc-button {

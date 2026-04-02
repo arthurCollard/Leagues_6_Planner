@@ -145,6 +145,7 @@ export default function App() {
           setSelectedRelics({});
           setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 });
           setSelectedRegions([]);
+          setReloadedRelic(null);
         }}
       />
 
@@ -165,6 +166,7 @@ export default function App() {
             onRelicWeightsChange={handleRelicWeightsChange}
             reloadedRelic={reloadedRelic}
             onSelectReloadedRelic={setReloadedRelic}
+            onReset={() => { setSelectedRelics({}); setReloadedRelic(null); }}
           />
           <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
           <RegionTree
@@ -185,7 +187,7 @@ export default function App() {
       </div>
 
       <footer className="app-footer">
-        <>© 2026 Leagues Plan. All rights reserved. This is a community-built tool and is not affiliated with or endorsed by Jagex Ltd.</>
+        <span>© 2026 Leagues Plan. All rights reserved. This is a community-built tool and is not affiliated with or endorsed by Jagex Ltd.</span>
         <a
           href="https://buymeacoffee.com/officerkingsley"
           target="_blank"

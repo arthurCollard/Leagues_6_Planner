@@ -256,5 +256,11 @@ for (const item of items) {
 }
 
 // ── Summary ───────────────────────────────────────────────────────────────────
+const okLabel      = `✔  OK: ${totalOk}`;
+const mismatchLabel = `✘  Mismatches: ${totalMismatches}`;
+const missingLabel  = `?  Not found / no infobox: ${totalMissing}`;
+const summaryLine  = `  ${okLabel}   ${mismatchLabel}   ${missingLabel}`;
+
 console.log('─'.repeat(60));
-console.log(`Done.  OK: ${totalOk}  |  Mismatches: ${totalMismatches}  |  Not found / no infobox: ${totalMissing}`);
+console.log(summaryLine);
+console.log('─'.repeat(60));
