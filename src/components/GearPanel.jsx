@@ -70,7 +70,11 @@ function getRegionFiltered(slot, selectedRegions) {
   const activeRegions = [...new Set([...selectedRegions, ...UNIVERSAL_REGION_NAMES])];
   return selectedRegions.length === 0
     ? allItems
-    : allItems.filter(i => i.regions.length === 0 || i.regions.some(r => activeRegions.includes(r)));
+    : allItems.filter(i => {
+        if (i.regions.length === 0) return true;
+        if (i.requireAllRegions) return i.regions.every(r => activeRegions.includes(r));
+        return i.regions.some(r => activeRegions.includes(r));
+      });
 }
 
 function getOptimizedGear(stat, selectedRegions) {
@@ -223,9 +227,14 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
   const ref = useRef(null);
 
   const allItems = ITEMS_BY_SLOT[slot] || [];
+  const activeRegions = [...new Set([...selectedRegions, ...UNIVERSAL_REGION_NAMES])];
   const regionFiltered = selectedRegions.length === 0
     ? allItems
-    : allItems.filter(i => i.regions.length === 0 || i.regions.some(r => selectedRegions.includes(r)));
+    : allItems.filter(i => {
+        if (i.regions.length === 0) return true;
+        if (i.requireAllRegions) return i.regions.every(r => activeRegions.includes(r));
+        return i.regions.some(r => activeRegions.includes(r));
+      });
   const ammoFiltered = (slot === 'ammo' && ammoType)
     ? regionFiltered.filter(i => i.ammoType === ammoType)
     : regionFiltered;

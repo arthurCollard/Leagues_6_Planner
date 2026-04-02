@@ -35,7 +35,8 @@ export const LEGS = [
   {
     name: 'Masori Chaps (f)',
     slot: 'legs',
-    regions: ['Desert'],
+    regions: ['Desert', 'Asgarnia'],
+    requireAllRegions: true,
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -2, ranged: 27 },
@@ -123,7 +124,8 @@ export const LEGS = [
   {
     name: 'Elite Void Robe',
     slot: 'legs',
-    regions: [],
+    regions: ['Asgarnia', 'Tirannwn', 'Kandarin'],
+    requireAllRegions: true,
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

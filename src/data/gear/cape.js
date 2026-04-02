@@ -35,7 +35,7 @@ export const CAPE = [
   {
     name: 'Masori Assembler',
     slot: 'cape',
-    regions: ['Desert'],
+    regions: ['Desert', 'Fremennik'],
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },

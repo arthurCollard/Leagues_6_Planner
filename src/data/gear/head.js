@@ -35,7 +35,8 @@ export const HEAD = [
   {
     name: 'Masori Mask (f)',
     slot: 'head',
-    regions: ['Desert'],
+    regions: ['Desert', 'Asgarnia'],
+    requireAllRegions: true,
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -1, ranged: 12 },

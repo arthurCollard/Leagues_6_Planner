@@ -62,7 +62,8 @@ export const SHIELD = [
   {
     name: "Elidinis' Ward (f)",
     slot: 'shield',
-    regions: ['Wilderness'],
+    regions: ['Wilderness', 'Desert'],
+    requireAllRegions: true,
     requirements: [{ skill: 'Magic', level: 80 }, { skill: 'Prayer', level: 80 }, { skill: 'Defence', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },

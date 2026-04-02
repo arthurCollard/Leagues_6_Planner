@@ -432,7 +432,8 @@ export const WEAPON = [
   {
     name: "Staff of the Dead",
     slot: 'weapon',
-    regions: ["Asgarnia"],
+    regions: ["Tirannwn", "Asgarnia"],
+    requireAllRegions: true,
     requirements: [{ skill: "Attack", level: 75 }, { skill: "Magic", level: 75 }],
     bonuses: {
       attack:  { stab: 55, slash: 70, crush: 0, magic: 17, ranged: 0 },
@@ -1480,7 +1481,8 @@ export const WEAPON = [
   {
     name: "Crystal Halberd",
     slot: 'weapon',
-    regions: ["Tirannwn"],
+    regions: ["Tirannwn", "Kandarin"],
+    requireAllRegions: true,
     requirements: [{ skill: "Attack", level: 70 }, { skill: "Agility", level: 50 }],
     bonuses: {
       attack:  { stab: 85, slash: 110, crush: 5, magic: -4, ranged: 0 },
