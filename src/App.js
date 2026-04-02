@@ -188,7 +188,7 @@ export default function App() {
       )}
 
       <div className="main-layout">
-        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} />
+        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} oversolvedFactor={settings.oversolvedFactor} />
 
         <div className="right-panel">
           <RelicTree

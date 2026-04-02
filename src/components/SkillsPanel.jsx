@@ -2,7 +2,24 @@ import React, { useState } from 'react';
 import { SKILLS, EXTRAS, CATEGORIES, STATUS_STYLES } from '../data/skills';
 import SkillIcon from './SkillIcon';
 
-export default function SkillsPanel({ skills, extras, solvedThreshold }) {
+function getStatusRange(key, solvedThreshold, oversolvedFactor) {
+  const half = solvedThreshold / 2;
+  const over = solvedThreshold * oversolvedFactor;
+  const maxLow = Math.ceil(half) - 1;
+  const maxSolved = Math.ceil(over) - 1;
+  const minPartial = maxLow + 1;
+  const maxPartial = solvedThreshold - 1;
+  switch (key) {
+    case 'unsolved':  return '0';
+    case 'low':       return maxLow < 1 ? '—' : maxLow === 1 ? '1' : `1–${maxLow}`;
+    case 'partial':   return minPartial > maxPartial ? '—' : minPartial === maxPartial ? `${minPartial}` : `${minPartial}–${maxPartial}`;
+    case 'solved':    return `${solvedThreshold}–${maxSolved}`;
+    case 'oversolved': return `${maxSolved + 1}+`;
+    default:          return '';
+  }
+}
+
+export default function SkillsPanel({ skills, extras, solvedThreshold, oversolvedFactor }) {
   const [showExtras, setShowExtras] = useState(false);
 
   const skillList = Object.values(skills);
@@ -24,6 +41,7 @@ export default function SkillsPanel({ skills, extras, solvedThreshold }) {
           <span key={key} className="status-legend-item">
             <span className="status-legend-dot" style={{ background: s.border }} />
             {s.label}
+            <span className="status-legend-range">{getStatusRange(key, solvedThreshold, oversolvedFactor)}</span>
           </span>
         ))}
       </div>
