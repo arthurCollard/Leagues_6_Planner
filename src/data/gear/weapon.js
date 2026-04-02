@@ -430,10 +430,30 @@ export const WEAPON = [
     },
   },
   {
-    name: "Staff of the Dead",
+    name: "Toxic Staff of the Dead",
     slot: 'weapon',
     regions: ["Tirannwn", "Asgarnia"],
     requireAllRegions: true,
+    requirements: [{ skill: "Attack", level: 75 }, { skill: "Magic", level: 75 }],
+    bonuses: {
+      attack:  { stab: 55, slash: 70, crush: 0, magic: 17, ranged: 0 },
+      defence: { stab: 0, slash: 3, crush: 3, magic: 17, ranged: 0 },
+      other:   { meleeStrength: 72, rangedStrength: 0, magicDamage: 15, prayer: 0 },
+    },
+    speed: 4,
+    twoHanded: false,
+    combatStyle: {
+      jab: 4,
+      swipe: 4,
+      pound: 4,
+      spell: 5,
+      defensive_spell: 5
+    },
+  },
+  {
+    name: "Staff of the Dead",
+    slot: 'weapon',
+    regions: ["Asgarnia"],
     requirements: [{ skill: "Attack", level: 75 }, { skill: "Magic", level: 75 }],
     bonuses: {
       attack:  { stab: 55, slash: 70, crush: 0, magic: 17, ranged: 0 },
