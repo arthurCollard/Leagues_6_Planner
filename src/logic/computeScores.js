@@ -102,12 +102,11 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
     }
   });
 
-  // Apply extra thresholds: bonus per point above threshold
+  // Apply extra thresholds: flat bonus when score meets threshold
   EXTRA_THRESHOLDS.forEach(({ extra, threshold, perPoint }) => {
-    const overflow = (extraScores[extra] || 0) - threshold;
-    if (overflow <= 0) return;
+    if ((extraScores[extra] || 0) < threshold) return;
     Object.entries(perPoint).forEach(([id, val]) => {
-      skillScores[id] = (skillScores[id] || 0) + val * overflow;
+      skillScores[id] = (skillScores[id] || 0) + val;
     });
   });
 

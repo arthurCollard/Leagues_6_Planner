@@ -127,10 +127,10 @@ export default function App() {
     })
     .filter(c => c.matched > 0);
 
-  const activeThresholds = EXTRA_THRESHOLDS.filter(t => (extras[t.extra]?.score || 0) > t.threshold);
+  const activeThresholds = EXTRA_THRESHOLDS.filter(t => (extras[t.extra]?.score || 0) >= t.threshold);
   const pendingThresholds = EXTRA_THRESHOLDS.filter(t => {
     const score = extras[t.extra]?.score || 0;
-    return score > 0 && score <= t.threshold;
+    return score > 0 && score < t.threshold;
   });
 
   const activePassives = (() => {
