@@ -252,7 +252,10 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
   return (
     <main className="relic-tree">
       <h2 className="section-header" onClick={() => setIsOpen(o => !o)}>
-        Relic Tree
+        <div>
+          Relic Tree
+          <p className="relic-tree-desc">Select relics → watch skills light up by coverage</p>
+        </div>
         <div className={`collapse-chevron ${isOpen ? 'open' : ''}`} />
       </h2>
 

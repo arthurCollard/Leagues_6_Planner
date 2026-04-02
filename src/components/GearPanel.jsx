@@ -385,7 +385,10 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
   return (
     <main className="relic-tree gear-section">
       <h2 className="section-header" onClick={() => setOpen(o => !o)}>
-        <span>Gear Planner</span>
+        <div>
+          Gear Planner
+          <p className="relic-tree-desc">Preview stat totals and attack speed for your gear setup</p>
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <div onClick={e => e.stopPropagation()}>
             <button

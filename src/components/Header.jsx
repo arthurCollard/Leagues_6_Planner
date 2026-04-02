@@ -2,8 +2,7 @@ export default function Header({ relicCount, solvedCount, masteryPoints, regionC
   return (
     <header className="app-header">
       <div>
-        <h1>🛡️ Leagues VI: Demonic Pacts Planner</h1>
-        <p>Select relics → watch skills light up by coverage</p>
+        <h1><img src="/Demonic_Pacts_League_Stylized_Logo.png" alt="Leagues VI" className="header-logo" /> Leagues VI: Demonic Pacts Planner</h1>
       </div>
       <div className="header-stats">
         <span>{relicCount}/8 Relics</span>

@@ -24,7 +24,10 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
   return (
     <main className="relic-tree">
       <h2 className="section-header" onClick={() => setIsOpen(o => !o)}>
-        <span>Combat Masteries</span>
+        <div>
+          Combat Masteries
+          <p className="relic-tree-desc">Spend up to 10 points to boost combat across Melee, Range, and Magic</p>
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <span className="mastery-pts-badge">{totalSpent} / {MAX_MASTERY_POINTS} pts</span>
           <button className="close-btn" disabled={totalSpent === 0} onClick={e => { e.stopPropagation(); onReset(); }}>Reset</button>

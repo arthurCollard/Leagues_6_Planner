@@ -168,7 +168,10 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
   return (
     <main className="relic-tree">
       <h2 className="section-header" onClick={() => setIsOpen(o => !o)}>
-        <span>Regions</span>
+        <div>
+          Regions
+          <p className="relic-tree-desc">Unlock up to 3 regions to access their gear and content</p>
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <span className="mastery-pts-badge">{selectedCount} / {MAX_UNLOCKABLE_REGIONS} unlocked</span>
           <button
