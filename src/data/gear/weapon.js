@@ -167,7 +167,6 @@ export const WEAPON = [
     },
     speed: 7,
     twoHanded: false,
-    ammoType: 'atlatl_darts',
     combatStyle: {
       accurate: 7,
       rapid: 6,

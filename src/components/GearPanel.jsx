@@ -372,10 +372,10 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
     }
   }, [weapon, selectedStyle]);
 
-  // Clear ammo when weapon changes to an incompatible ammo type
+  // Clear ammo when weapon changes to an incompatible ammo type or uses no ammo
   useEffect(() => {
     const ammo = selectedGear.ammo;
-    if (ammo && weapon?.ammoType && ammo.ammoType !== weapon.ammoType) {
+    if (ammo && (!weapon?.ammoType || ammo.ammoType !== weapon.ammoType)) {
       onSelectGear('ammo', null);
     }
   }, [weapon]);
@@ -440,7 +440,7 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
                       selectedRegions={selectedRegions}
                       onSelect={item => onSelectGear(slot, item)}
                       ammoType={slot === 'ammo' ? weapon?.ammoType : undefined}
-                      disabled={slot === 'shield' && !!weapon?.twoHanded}
+                      disabled={(slot === 'shield' && !!weapon?.twoHanded) || (slot === 'ammo' && !!weapon && !weapon.ammoType)}
                     />
                   ) : (
                     <div key={ci} className="slot-empty-cell" />
