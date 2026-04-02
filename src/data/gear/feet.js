@@ -27,8 +27,8 @@ export const FEET = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Ranged', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 12 },
-      defence: { stab: 5, slash: 5, crush: 5, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -12, ranged: 12 },
+      defence: { stab: 5, slash: 5, crush: 5, magic: 5, ranged: 5 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -39,8 +39,8 @@ export const FEET = [
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 5, slash: 5, crush: 5, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      defence: { stab: 5, slash: 5, crush: 5, magic: 8, ranged: 5 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
     },
   },
   {
@@ -49,7 +49,7 @@ export const FEET = [
     regions: ['Varlamore'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: -1 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
       defence: { stab: 32, slash: 32, crush: 32, magic: -3, ranged: 24 },
       other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 4 },
     },
@@ -60,9 +60,9 @@ export const FEET = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 32, slash: 32, crush: 32, magic: 0, ranged: 24 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
+      defence: { stab: 32, slash: 32, crush: 32, magic: -3, ranged: 24 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
   },
   {
@@ -71,9 +71,9 @@ export const FEET = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Magic', level: 70 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 10, slash: 11, crush: 12, magic: 8, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 6 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -82,7 +82,7 @@ export const FEET = [
     regions: ['Asgarnia', 'Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
       defence: { stab: 16, slash: 17, crush: 18, magic: 0, ranged: 0 },
       other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
@@ -93,9 +93,9 @@ export const FEET = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 65 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -5, ranged: -3 },
       defence: { stab: 17, slash: 18, crush: 19, magic: 0, ranged: 15 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -104,8 +104,8 @@ export const FEET = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 50 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -3, ranged: -1 },
+      defence: { stab: 15, slash: 16, crush: 17, magic: 0, ranged: 8 },
       other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },

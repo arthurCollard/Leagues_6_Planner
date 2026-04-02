@@ -39,8 +39,8 @@ export const HEAD = [
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: -1, ranged: 12 },
-      defence: { stab: 3, slash: 4, crush: 3, magic: 6, ranged: 4 },
-      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
+      defence: { stab: 8, slash: 10, crush: 12, magic: 12, ranged: 9 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -115,8 +115,8 @@ export const HEAD = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
-      defence: { stab: 30, slash: 32, crush: 27, magic: -1, ranged: 30 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 3 },
+      defence: { stab: 30, slash: 32, crush: 27, magic: 10, ranged: 30 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -317,8 +317,8 @@ export const HEAD = [
     regions: [],
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     sets: ['elite_void_mage'],
@@ -329,8 +329,8 @@ export const HEAD = [
     regions: [],
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 3 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     sets: ['elite_void_range'],
@@ -342,7 +342,7 @@ export const HEAD = [
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     sets: ['elite_void_melee'],

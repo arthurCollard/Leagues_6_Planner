@@ -185,6 +185,7 @@ export default function App() {
       </div>
 
       <footer className="app-footer">
+        <>© 2026 Leagues Plan. All rights reserved. This is a community-built tool and is not affiliated with or endorsed by Jagex Ltd.</>
         <a
           href="https://buymeacoffee.com/officerkingsley"
           target="_blank"

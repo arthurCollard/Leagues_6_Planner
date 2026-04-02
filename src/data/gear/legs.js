@@ -5,8 +5,8 @@ export const LEGS = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 87, slash: 78, crush: 79, magic: -9, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -24, ranged: -11 },
+      defence: { stab: 87, slash: 78, crush: 79, magic: -9, ranged: 102 },
       other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
   },
@@ -16,8 +16,8 @@ export const LEGS = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 95, slash: 92, crush: 93, magic: -14, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -31, ranged: -17 },
+      defence: { stab: 95, slash: 92, crush: 93, magic: -14, ranged: 102 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
     },
   },
@@ -27,8 +27,8 @@ export const LEGS = [
     regions: ['Varlamore', 'Asgarnia', 'Fremennik', 'Desert'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 26, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 26, ranged: -9 },
+      defence: { stab: 31, slash: 28, crush: 34, magic: 22, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 1 },
     },
   },
@@ -38,9 +38,9 @@ export const LEGS = [
     regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 27 },
-      defence: { stab: 0, slash: 0, crush: 39, magic: 46, ranged: 37 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -2, ranged: 27 },
+      defence: { stab: 35, slash: 30, crush: 39, magic: 46, ranged: 37 },
+      other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -49,8 +49,8 @@ export const LEGS = [
     regions: ['Kourend'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 26, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 26, ranged: -7 },
+      defence: { stab: 27, slash: 24, crush: 30, magic: 20, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 3, prayer: 0 },
     },
   },
@@ -60,9 +60,9 @@ export const LEGS = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 65 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 68, slash: 67, crush: 65, magic: 0, ranged: 64 },
-      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -21, ranged: -7 },
+      defence: { stab: 71, slash: 63, crush: 66, magic: -4, ranged: 93 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -93,8 +93,8 @@ export const LEGS = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 68, slash: 66, crush: 63, magic: 0, ranged: 65 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -21, ranged: -11 },
+      defence: { stab: 68, slash: 66, crush: 63, magic: -4, ranged: 65 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -115,8 +115,8 @@ export const LEGS = [
     regions: [],
     requirements: [{ skill: 'Ranged', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 17 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 23, ranged: 26 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 17 },
+      defence: { stab: 18, slash: 20, crush: 26, magic: 23, ranged: 26 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },

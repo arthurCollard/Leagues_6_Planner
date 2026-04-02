@@ -31,7 +31,7 @@ export const SHIELD = [
     requirements: [{ skill: 'Attack', level: 60 }, { skill: 'Defence', level: 60 }],
     bonuses: {
       attack:  { stab: 25, slash: 24, crush: 23, magic: -3, ranged: -2 },
-      defence: { stab: 30, slash: 29, crush: 28, magic: -3, ranged: -2 },
+      defence: { stab: 25, slash: 24, crush: 23, magic: -3, ranged: -2 },
       other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -54,7 +54,7 @@ export const SHIELD = [
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Magic', level: 70 }],
     bonuses: {
       attack:  { stab: -10, slash: -10, crush: -10, magic: 15, ranged: -10 },
-      defence: { stab: 72, slash: 80, crush: 75, magic: 55, ranged: -5 },
+      defence: { stab: 72, slash: 80, crush: 75, magic: 15, ranged: -5 },
       other:   { meleeStrength: -2, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
   },
@@ -65,9 +65,9 @@ export const SHIELD = [
     regions: ['Wilderness'],
     requirements: [{ skill: 'Magic', level: 80 }, { skill: 'Prayer', level: 80 }, { skill: 'Defence', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 5 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
+      defence: { stab: 53, slash: 55, crush: 73, magic: 2, ranged: 52 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 4 },
     },
   },
   {
@@ -76,9 +76,9 @@ export const SHIELD = [
     regions: ['Desert'],
     requirements: [{ skill: 'Magic', level: 80 }, { skill: 'Prayer', level: 80 }, { skill: 'Defence', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 25, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 5, prayer: 5 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
+      defence: { stab: 5, slash: 3, crush: 9, magic: 0, ranged: 6 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 3, prayer: 1 },
     },
   },
   {
@@ -100,7 +100,7 @@ export const SHIELD = [
     requirements: [{ skill: 'Attack', level: 70 }, { skill: 'Defence', level: 70 }],
     bonuses: {
       attack:  { stab: 30, slash: 29, crush: 28, magic: -5, ranged: -4 },
-      defence: { stab: 35, slash: 34, crush: 33, magic: -5, ranged: -4 },
+      defence: { stab: 30, slash: 29, crush: 28, magic: -5, ranged: -4 },
       other:   { meleeStrength: 8, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -122,7 +122,7 @@ export const SHIELD = [
     regions: ['Wilderness'],
     requirements: [{ skill: 'Defence', level: 75 }, { skill: 'Prayer', level: 65 }, { skill: 'Magic', level: 65 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       defence: { stab: 53, slash: 55, crush: 73, magic: 30, ranged: 52 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
@@ -235,7 +235,7 @@ export const SHIELD = [
     requirements: [],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 10, slash: 10, crush: 10, magic: 0, ranged: 10 },
+      defence: { stab: 7, slash: 9, crush: 8, magic: 2, ranged: 8 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -257,9 +257,9 @@ export const SHIELD = [
     regions: ['Fremennik'],
     requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 10 },
-      defence: { stab: 70, slash: 75, crush: 72, magic: 10, ranged: 72 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: -10, slash: -10, crush: -10, magic: -10, ranged: 15 },
+      defence: { stab: 70, slash: 75, crush: 72, magic: 28, ranged: 72 },
+      other:   { meleeStrength: -2, rangedStrength: 8, magicDamage: 0, prayer: 0 },
     },
   },
 ];

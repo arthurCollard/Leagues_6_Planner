@@ -5,7 +5,7 @@ export const BODY = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -18, ranged: -14 },
       defence: { stab: 117, slash: 111, crush: 117, magic: -11, ranged: 142 },
       other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
@@ -16,7 +16,7 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -40, ranged: -20 },
       defence: { stab: 132, slash: 130, crush: 117, magic: -16, ranged: 142 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
     },
@@ -27,9 +27,9 @@ export const BODY = [
     regions: ['Varlamore', 'Asgarnia', 'Fremennik', 'Desert'],
     requirements: [{ skill: 'Magic', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 31, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: -11 },
+      defence: { stab: 47, slash: 36, crush: 56, magic: 31, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 2 },
     },
   },
   {
@@ -38,9 +38,9 @@ export const BODY = [
     regions: ['Desert'],
     requirements: [{ skill: 'Ranged', level: 80 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 45 },
-      defence: { stab: 0, slash: 0, crush: 54, magic: 63, ranged: 56 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -4, ranged: 43 },
+      defence: { stab: 59, slash: 52, crush: 64, magic: 74, ranged: 60 },
+      other:   { meleeStrength: 0, rangedStrength: 4, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -49,8 +49,8 @@ export const BODY = [
     regions: ['Kourend'],
     requirements: [{ skill: 'Magic', level: 75 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 28, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: -8 },
+      defence: { stab: 42, slash: 31, crush: 51, magic: 28, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 3, prayer: 0 },
     },
   },
@@ -60,9 +60,9 @@ export const BODY = [
     regions: ['Asgarnia'],
     requirements: [{ skill: 'Defence', level: 65 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 98, slash: 93, crush: 105, magic: 0, ranged: 133 },
-      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: -10 },
+      defence: { stab: 98, slash: 93, crush: 105, magic: -6, ranged: 133 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 1 },
     },
   },
   {
@@ -71,9 +71,9 @@ export const BODY = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: -3, slash: -3, crush: 12, magic: 0, ranged: 0 },
+      attack:  { stab: -3, slash: -3, crush: 12, magic: -11, ranged: -10 },
       defence: { stab: 67, slash: 55, crush: 71, magic: 0, ranged: 35 },
-      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 2 },
     },
   },
   {
@@ -93,8 +93,8 @@ export const BODY = [
     regions: ['Kandarin', 'Wilderness'],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 80, slash: 85, crush: 72, magic: 0, ranged: 55 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: 0 },
+      defence: { stab: 81, slash: 93, crush: 98, magic: -3, ranged: 82 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -104,8 +104,8 @@ export const BODY = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 109, slash: 107, crush: 97, magic: 0, ranged: 106 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -30, ranged: -15 },
+      defence: { stab: 109, slash: 107, crush: 97, magic: -6, ranged: 106 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -115,8 +115,8 @@ export const BODY = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 62, slash: 85, crush: 62, magic: 0, ranged: 67 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -40, ranged: 0 },
+      defence: { stab: 62, slash: 85, crush: 62, magic: -10, ranged: 67 },
       other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -149,7 +149,7 @@ export const BODY = [
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 30, slash: 30, crush: 30, magic: 30, ranged: 30 },
+      defence: { stab: 45, slash: 45, crush: 45, magic: 45, ranged: 45 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
     },
     sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],

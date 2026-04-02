@@ -1,11 +1,11 @@
 export const UNIVERSAL_REGIONS = [
-  {
-    name: 'Misthalin',
-    icon: '',
-    drops: [],
-    skills: {},
-    extras: { seed_access: 2, white_berries: 1, antifires_secondary: 2 },
-  },
+  // {
+  //   name: 'Misthalin',
+  //   icon: '',
+  //   drops: [],
+  //   skills: {},
+  //   extras: { seed_access: 2, white_berries: 1, antifires_secondary: 2 },
+  // },
   {
     name: 'Varlamore',
     icon: '',

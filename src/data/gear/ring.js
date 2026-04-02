@@ -104,9 +104,9 @@ export const RING = [
     regions: ['Kourend'],
     requirements: [{ skill: 'Slayer', level: 75 }],
     bonuses: {
-      attack:  { stab: 4, slash: 4, crush: 4, magic: 0, ranged: 4 },
-      defence: { stab: 6, slash: 6, crush: 6, magic: 0, ranged: 6 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 4, slash: 4, crush: 4, magic: 6, ranged: 4 },
+      defence: { stab: 4, slash: 4, crush: 4, magic: 6, ranged: 4 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {

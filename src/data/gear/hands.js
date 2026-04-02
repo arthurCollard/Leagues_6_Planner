@@ -5,7 +5,7 @@ export const HANDS = [
     regions: ['Kourend'],
     requirements: [{ skill: 'Defence', level: 80 }],
     bonuses: {
-      attack:  { stab: 16, slash: 16, crush: 16, magic: 0, ranged: 0 },
+      attack:  { stab: 16, slash: 16, crush: 16, magic: -16, ranged: -16 },
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 14, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
@@ -49,8 +49,8 @@ export const HANDS = [
     regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 50 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 9, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 5, slash: 5, crush: 9, magic: -3, ranged: -1 },
+      defence: { stab: 8, slash: 8, crush: 8, magic: -3, ranged: 5 },
       other:   { meleeStrength: 7, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -60,9 +60,9 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 60 }],
     bonuses: {
-      attack:  { stab: 9, slash: 9, crush: 9, magic: 0, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      attack:  { stab: 9, slash: 9, crush: 9, magic: 5, ranged: 9 },
+      defence: { stab: 9, slash: 9, crush: 9, magic: 5, ranged: 9 },
+      other:   { meleeStrength: 9, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -71,8 +71,8 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Ranged', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 11 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 11 },
+      defence: { stab: 4, slash: 5, crush: 5, magic: 8, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
@@ -83,7 +83,7 @@ export const HANDS = [
     requirements: [{ skill: 'Attack', level: 40 }, { skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 6, slash: 6, crush: 6, magic: 6, ranged: 6 },
+      defence: { stab: 6, slash: 6, crush: 6, magic: 4, ranged: 6 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
     sets: ['elite_void_mage', 'elite_void_range', 'elite_void_melee'],
@@ -94,9 +94,9 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Magic', level: 25 }, { skill: 'Defence', level: 25 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 8, ranged: 0 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 5, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {
@@ -105,8 +105,8 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Ranged', level: 40 }],
     bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 11 },
+      defence: { stab: 1, slash: 2, crush: 1, magic: 2, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },

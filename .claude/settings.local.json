@@ -17,7 +17,18 @@
       "WebFetch(domain:www.osrsbox.com)",
       "Bash(node scripts/fetchWeaponData.js)",
       "Bash(node --max-old-space-size=4096 scripts/fetchWeaponData.js)",
-      "Bash(node -e \":*)"
+      "Bash(node -e \":*)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot ring)",
+      "Bash(node scripts/crosscheck-gear.mjs)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot ammo)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot head)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot body)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot legs)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot hands)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot feet)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot cape)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot neck)",
+      "Bash(node scripts/crosscheck-gear.mjs --slot shield)"
     ]
   }
 }

@@ -50,7 +50,7 @@ export const CAPE = [
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
-      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      defence: { stab: 3, slash: 3, crush: 3, magic: 15, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
   },
@@ -61,7 +61,7 @@ export const CAPE = [
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
-      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      defence: { stab: 3, slash: 3, crush: 3, magic: 15, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
   },
@@ -72,7 +72,7 @@ export const CAPE = [
     requirements: [{ skill: 'Magic', level: 60 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 15, ranged: 0 },
-      defence: { stab: 15, slash: 15, crush: 15, magic: 15, ranged: 15 },
+      defence: { stab: 3, slash: 3, crush: 3, magic: 15, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 2, prayer: 0 },
     },
   },
@@ -94,7 +94,7 @@ export const CAPE = [
     requirements: [{ skill: 'Ranged', level: 70 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
-      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 8 },
+      defence: { stab: 1, slash: 1, crush: 1, magic: 8, ranged: 2 },
       other:   { meleeStrength: 0, rangedStrength: 2, magicDamage: 0, prayer: 0 },
     },
   },
