@@ -261,10 +261,79 @@ body {
   color: #1a1612;
 }
 
-.tier-chosen {
+.tier-info-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.tier-info-btn {
+  background: transparent;
+  border: 1px solid #6b5c3e;
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #b8a282;
+  line-height: 1.4;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.tier-info-btn:hover {
+  border-color: #b8a282;
   color: #d8ccb4;
+  background: rgba(184, 162, 130, 0.1);
+}
+
+.tier-passive-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 50;
+  background: #1e1a14;
+  border: 1px solid #6b5c3e;
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  min-width: 280px;
+  max-width: 360px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+}
+
+.tier-passive-tooltip-title {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #b8a282;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.tier-passives-list {
+  margin: 0 0 0 1rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.tier-passives-list li {
+  font-size: 0.78rem;
+  color: #c8b99a;
+  line-height: 1.5;
+}
+
+.tier-chosen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tier-chosen-name {
   font-size: 0.9rem;
   font-weight: 600;
+  color: #d8ccb4;
 }
 
 .relic-row {
@@ -582,8 +651,8 @@ body {
 
 .region-tooltip {
   position: absolute;
-  bottom: calc(100% + 6px);
-  left: 0;
+  top: 0;
+  left: calc(100% + 6px);
   background: #231e18;
   border: 1px solid #b8a282;
   border-radius: 10px;
@@ -594,8 +663,27 @@ body {
   max-height: 280px;
   overflow-y: auto;
   text-align: left;
-  pointer-events: auto;
+  pointer-events: none;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease 0.1s, visibility 0.15s ease 0.1s;
+}
+
+.region-card-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 6px;
+  height: 100%;
+}
+
+.region-card-wrapper:hover .region-tooltip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
 }
 
 .region-tooltip strong {
@@ -853,6 +941,7 @@ body {
   padding: 4px;
   transition: border-color 0.15s, background 0.15s;
   overflow: hidden;
+  position: relative;
 }
 
 .slot-btn.slot-empty {
@@ -877,20 +966,26 @@ body {
 }
 
 .slot-icon {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
   image-rendering: pixelated;
   flex-shrink: 0;
 }
 
 .slot-name-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 0.52rem;
   color: #d0bd97;
   text-align: center;
   line-height: 1.2;
   word-break: break-word;
-  max-width: 100%;
+  padding: 2px 2px 2px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75) 40%);
+  pointer-events: none;
 }
 
 /* Slot dropdown */
@@ -1086,6 +1181,12 @@ body {
   background: rgba(126, 203, 126, 0.12);
   border: 1px solid rgba(126, 203, 126, 0.35);
   color: #7ecb7e;
+}
+
+.mastery-speed-tag {
+  background: rgba(130, 180, 220, 0.12);
+  border-color: rgba(130, 180, 220, 0.35);
+  color: #82b4dc;
 }
 
 /* ── Footer ───────────────────────────────────────────────────────────────── */

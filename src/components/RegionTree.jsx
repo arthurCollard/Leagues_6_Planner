@@ -1,6 +1,17 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS, MAX_UNLOCKABLE_REGIONS } from '../data/regions';
 import { SKILLS, EXTRAS } from '../data/skills';
+import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD, AMMO } from '../data/gear/index';
+
+const ALL_GEAR = [...HEAD, ...BODY, ...LEGS, ...HANDS, ...FEET, ...CAPE, ...NECK, ...RING, ...WEAPON, ...SHIELD, ...AMMO];
+
+const DROPS_BY_REGION = {};
+ALL_GEAR.forEach(item => {
+  item.regions.forEach(r => {
+    if (!DROPS_BY_REGION[r]) DROPS_BY_REGION[r] = [];
+    DROPS_BY_REGION[r].push(item.name);
+  });
+});
 
 const SKILL_NAME = Object.fromEntries(SKILLS.map(s => [s.id, s.name]));
 const EXTRA_NAME = Object.fromEntries(EXTRAS.map(e => [e.id, e.name]));
@@ -100,26 +111,13 @@ function RegionSettings({ region, weights, onChange, onClose }) {
 }
 
 function RegionCard({ region, selected, disabled, onClick, weights, onWeightsChange }) {
-  const [showTooltip, setShowTooltip] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const hideTimer = useRef(null);
   const hasCustomWeights = Object.keys(weights).length > 0;
-
-  const handleEnter = () => {
-    clearTimeout(hideTimer.current);
-    setShowTooltip(true);
-  };
-
-  const handleLeave = () => {
-    hideTimer.current = setTimeout(() => setShowTooltip(false), 120);
-  };
 
   return (
     <div className="relic-btn-outer">
       <div
         className="region-card-wrapper"
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
         style={{ flex: 1, minWidth: 0, position: 'relative' }}
       >
         <div
@@ -133,11 +131,11 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
           {selected && <span className="check">✓</span>}
         </div>
 
-        {showTooltip && region.drops?.length > 0 && (
+        {DROPS_BY_REGION[region.name]?.length > 0 && (
           <div className="region-tooltip">
-            <strong>Notable Drops</strong>
+            <strong>Notable Gear</strong>
             <ul>
-              {region.drops.map(d => <li key={d}>{d}</li>)}
+              {DROPS_BY_REGION[region.name].map(d => <li key={d}>{d}</li>)}
             </ul>
           </div>
         )}

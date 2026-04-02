@@ -1,10 +1,71 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { RELICS } from '../data/relics';
 import RelicIcon from './RelicIcon';
 import { SKILLS, EXTRAS } from '../data/skills';
 
 const SKILL_NAME = Object.fromEntries(SKILLS.map(s => [s.id, s.name]));
 const EXTRA_NAME = Object.fromEntries(EXTRAS.map(e => [e.id, e.name]));
+
+const TIER_PASSIVES = {
+  1: [
+    'Leagues XP multiplier is 5x.',
+    'Items from eligible sources will be 2x as common.',
+    'Farming ticks will occur every minute instead of every five minutes.',
+    'Minigame points received are boosted by 4x.',
+    'Run energy is never drained whilst running.',
+    'All clue scrolls will drop as stackable scroll boxes, and clue step progress is saved between clues.',
+    'Players will only receive clue steps they can access within an unlocked region.',
+  ],
+  2: [
+    'Leagues XP multiplier is increased from 5x to 8x.',
+  ],
+  3: [
+    'Combat experience (including Hitpoints and Prayer) will be multiplied by 1.5x. This is multiplicative with other experience modifiers.',
+    'The Bigger and Badder slayer unlock is unlocked for free.',
+    'Slayer reward points are 5x from tasks, and you aren\'t required to complete 5 tasks before earning points.',
+    'Superior slayer monsters will appear at a rate of 1/50.',
+  ],
+  4: [
+    'Items from eligible sources will be 5x as common.',
+    'Minigame points received are boosted by 8x.',
+  ],
+  5: [
+    'Leagues XP multiplier is increased from 8x to 12x.',
+  ],
+  7: [
+    'Leagues XP multiplier is increased from 12x to 16x.',
+  ],
+};
+
+function TierPassiveTooltip({ passives }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = e => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [open]);
+
+  return (
+    <span className="tier-info-wrap" ref={ref}>
+      <button
+        className="tier-info-btn"
+        onClick={e => { e.stopPropagation(); setOpen(o => !o); }}
+        aria-label="Passive effects"
+      >Passives</button>
+      {open && (
+        <div className="tier-passive-tooltip">
+          <strong className="tier-passive-tooltip-title">Passive Effects</strong>
+          <ul className="tier-passives-list">
+            {passives.map((p, i) => <li key={i}>{p}</li>)}
+          </ul>
+        </div>
+      )}
+    </span>
+  );
+}
 
 function RelicSettings({ relic, weights, onChange, onClose }) {
   const baseSkills = relic.skills || {};
@@ -200,12 +261,15 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
           <div key={tier} className="tier-block">
             <div className="tier-label">
               <span>Tier {tier}</span>
+              {TIER_PASSIVES[tier] && <TierPassiveTooltip passives={TIER_PASSIVES[tier]} />}
               {selectedRelics[tier] && (
                 <span className="tier-chosen">
                   <RelicIcon src={selectedRelics[tier].icon} name={selectedRelics[tier].name} />
-                  {selectedRelics[tier].special === 'reloaded' && reloadedRelic
-                    ? `Reloaded (${reloadedRelic.name})`
-                    : selectedRelics[tier].name}
+                  <span className="tier-chosen-name">
+                    {selectedRelics[tier].special === 'reloaded' && reloadedRelic
+                      ? `Reloaded (${reloadedRelic.name})`
+                      : selectedRelics[tier].name}
+                  </span>
                 </span>
               )}
             </div>

@@ -427,8 +427,8 @@ export const WEAPON = [
       jab: 4,
       swipe: 4,
       pound: 4,
-      spell: 4,
-      defensive_spell: 4
+      spell: 5,
+      defensive_spell: 5
     },
   },
   {
@@ -833,6 +833,11 @@ export const WEAPON = [
       jab: 5,
       block: 5
     },
+    effect: {
+      "type": "multiply_totals",
+      "stats": [],
+      "description": "Scythe of Vitur:  When attacking a large creature, the scythe will instead apply multiple hits to them."
+    },
   },
   {
     name: "Sanguinesti Staff",
@@ -1225,6 +1230,11 @@ export const WEAPON = [
       accurate: 6,
       rapid: 5,
       longrange: 6
+    },
+    effect: {
+      "type": "multiply_totals",
+      "stats": [],
+      "description": "Twisted Bow: the higher the target's Magic level, the higher the bow's accuracy and damage."
     },
   },
   {

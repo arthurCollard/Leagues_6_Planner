@@ -179,6 +179,7 @@ export default function App() {
             selectedRegions={selectedRegions}
             onSelectGear={(slot, item) => setSelectedGear(prev => ({ ...prev, [slot]: item }))}
             onReset={() => setSelectedGear(EMPTY_GEAR)}
+            selectedMasteries={selectedMasteries}
           />
         </div>
       </div>

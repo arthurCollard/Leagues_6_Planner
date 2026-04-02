@@ -302,6 +302,21 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
   );
 }
 
+function getMasteryBranch(weapon) {
+  if (!weapon) return null;
+  if (isRangedWeapon(weapon)) return 'Range';
+  if (isMagicWeapon(weapon))  return 'Magic';
+  return 'Melee';
+}
+
+function applyMasterySpeed(baseSpeed, branch, masteries) {
+  if (!branch || baseSpeed == null) return baseSpeed;
+  const depth = masteries[branch] || 0;
+  if (depth >= 5) return baseSpeed >= 5 ? Math.floor(baseSpeed / 2) : Math.ceil(baseSpeed / 2);
+  if (depth >= 3) return Math.max(1, Math.floor(baseSpeed * 0.8));
+  return baseSpeed;
+}
+
 function BonusRow({ label, value }) {
   const sign = value > 0 ? '+' : '';
   const cls = value > 0 ? 'bonus-pos' : value < 0 ? 'bonus-neg' : 'bonus-zero';
@@ -320,7 +335,7 @@ const OPT_BUTTONS = [
   { label: 'Max Prayer',     stat: 'prayer'          },
 ];
 
-export default function GearPanel({ selectedGear, selectedRegions, onSelectGear, onReset }) {
+export default function GearPanel({ selectedGear, selectedRegions, onSelectGear, onReset, selectedMasteries = {} }) {
   const [open, setOpen] = useState(true);
   const [selectedStyle, setSelectedStyle] = useState(null);
   const { totals, activeEffects } = sumBonuses(selectedGear);
@@ -331,6 +346,14 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
   const activeStyleSpeed = selectedStyle && weapon?.combatStyle?.[selectedStyle] != null
     ? weapon.combatStyle[selectedStyle]
     : weapon?.speed ?? null;
+
+  const masteryBranch = getMasteryBranch(weapon);
+  const masterySpeed = applyMasterySpeed(activeStyleSpeed, masteryBranch, selectedMasteries);
+  const masteryName = masteryBranch && (selectedMasteries[masteryBranch] || 0) >= 5
+    ? ({ Melee: 'Rapid Assault', Range: 'Rapid Fire', Magic: 'Rapid Spells' })[masteryBranch]
+    : masteryBranch && (selectedMasteries[masteryBranch] || 0) >= 3
+    ? ({ Melee: 'Swift Strikes', Range: 'Swift Shots', Magic: 'Swift Cast' })[masteryBranch]
+    : null;
 
   // Reset style when weapon changes to one that doesn't have the current style
   useEffect(() => {
@@ -442,16 +465,25 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
                 {activeStyleSpeed != null && (
                   <div className="bonus-row">
                     <span className="bonus-label">Atk Speed</span>
-                    <span className="bonus-value bonus-zero">{activeStyleSpeed}t</span>
+                    <span className="bonus-value bonus-zero">
+                      {masterySpeed !== activeStyleSpeed
+                        ? <><s style={{ opacity: 0.5 }}>{activeStyleSpeed}t</s> {masterySpeed}t</>
+                        : `${activeStyleSpeed}t`}
+                    </span>
                   </div>
                 )}
               </div>
             </div>
-            {activeEffects.length > 0 && (
+            {(activeEffects.length > 0 || masteryName) && (
               <div className="active-effects">
                 {activeEffects.map(desc => (
                   <div key={desc} className="active-effect-tag">{desc}</div>
                 ))}
+                {masteryName && (
+                  <div className="active-effect-tag mastery-speed-tag">
+                    {masteryName}: {activeStyleSpeed}t → {masterySpeed}t
+                  </div>
+                )}
               </div>
             )}
             {combatStyles.length > 0 && (
