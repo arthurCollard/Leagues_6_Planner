@@ -194,19 +194,16 @@ export const RELICS = {
     {
       name: 'Larcenist',
       icon: `${process.env.PUBLIC_URL}/relics/Nature's_Accord.png`,
-      desc: '10x loot from thieving and automatically re-steal from stall or NPC',
+      desc: '100% Thieving success, auto re-steal, 10x loot from pickpocketing and stalls',
       description: {
         effects: [
-          'Choose your Slayer task from a list of 3 choices; one choice will always be a boss task pulled from any boss normally assignable within your unlocked areas.',
-          'Task kill count is selectable for all tasks, with a range of 5–200.',
-          'Superior Slayer monsters have a 50% chance of spawning another superior on death.',
-          'Superior monsters always drop between 1 and 3 elite clue scrolls.',
-          'All effects of an imbued Slayer helmet are gained without needing to wear one, including protective effects such as acting as a nosepeg, facemask, etc.',
-          'All Slayer reward shop perks are free. The rune pouch, herb sack, and looting bag are available from the Slayer reward store for free.',
-        ],
-        notes: [
-          'Wearing a Slayer helmet while having this relic will not double the helmet effects.',
-          'This relic\'s boost will stack with set effects like those of Void Knight equipment or crystal armour.',
+          '100% success rate on all Thieving actions.',
+          'Automatically re-pickpocket an NPC.',
+          'Automatically re-steal from a stall.',
+          'Items obtained from pickpocketing and stalls are noted.',
+          'Stalls never deplete and guards will never catch you thieving from them.',
+          'The amount of coin pouches you can carry is increased by 10x.',
+          'Loot is increased by 10x for: pickpocketing (not including clue scrolls), stealing from stalls, and stealing house valuables in Varlamore.',
         ],
       },
       skills: { thieving: 5 },
