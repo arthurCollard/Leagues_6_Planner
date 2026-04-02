@@ -42,24 +42,10 @@ const ALL_GEAR = [
   ...CAPE, ...NECK, ...RING, ...WEAPON, ...SHIELD, ...AMMO,
 ];
 
-// ── Wiki ↔ local field mapping ───────────────────────────────────────────────
-// wiki param → [localCategory, localKey]
-const FIELD_MAP = {
-  astab:  ['attack',  'stab'],
-  aslash: ['attack',  'slash'],
-  acrush: ['attack',  'crush'],
-  amagic: ['attack',  'magic'],
-  arange: ['attack',  'ranged'],
-  dstab:  ['defence', 'stab'],
-  dslash: ['defence', 'slash'],
-  dcrush: ['defence', 'crush'],
-  dmagic: ['defence', 'magic'],
-  drange: ['defence', 'ranged'],
-  str:    ['other',   'meleeStrength'],
-  rstr:   ['other',   'rangedStrength'],
-  mdmg:   ['other',   'magicDamage'],   // wiki stores as plain number e.g. "5" for 5%
-  prayer: ['other',   'prayer'],
-};
+// ── Shared logic (field map, parser, comparator) ─────────────────────────────
+const { FIELD_MAP, parseInfoboxBonuses, compareItem } = await import(
+  pathToFileURL(resolve(__dirname, '../src/utils/gearCrosscheck.js')).href
+);
 
 // ── CLI args ─────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
@@ -134,74 +120,6 @@ async function fetchWikitext(itemName) {
   }
 
   return null;
-}
-
-// ── Infobox Bonuses parser ────────────────────────────────────────────────────
-/**
- * Extracts key=value pairs from the FIRST {{Infobox Bonuses ...}} template
- * found in the wikitext.  Values like "+5", "−3", "0" are returned as numbers.
- */
-function parseInfoboxBonuses(wikitext) {
-  // Match the template block (handles nested braces up to 2 levels deep)
-  const startIdx = wikitext.indexOf('{{Infobox Bonuses');
-  if (startIdx === -1) {
-    // Some items use a redirect or different template name
-    const altIdx = wikitext.indexOf('{{infobox bonuses');
-    if (altIdx === -1) return null;
-  }
-
-  // Walk forward tracking brace depth to find the closing }}
-  let depth = 0;
-  let start = wikitext.indexOf('{{', startIdx);
-  let end   = start;
-  for (let i = start; i < wikitext.length - 1; i++) {
-    if (wikitext[i] === '{' && wikitext[i + 1] === '{') { depth++; i++; continue; }
-    if (wikitext[i] === '}' && wikitext[i + 1] === '}') { depth--; i++; if (depth === 0) { end = i + 1; break; } }
-  }
-
-  const block = wikitext.slice(start, end + 1);
-  const result = {};
-
-  for (const [wikiKey] of Object.entries(FIELD_MAP)) {
-    // Match "|key = value" or "|key= value" (case-insensitive)
-    const re = new RegExp(`\\|\\s*${wikiKey}\\s*=\\s*([^|}\n]+)`, 'i');
-    const m  = block.match(re);
-    if (!m) continue;
-
-    // Strip whitespace, wiki markup, commas; handle minus sign variants
-    const raw = m[1].trim()
-      .replace(/,/g, '')          // thousands separators
-      .replace(/−/g, '-')         // unicode minus → ASCII minus
-      .replace(/[^0-9.\-+]/g, '') // strip anything else
-      .replace(/^\+/, '');        // remove leading +
-
-    const num = parseFloat(raw);
-    if (!isNaN(num)) result[wikiKey] = num;
-  }
-
-  return result;
-}
-
-// ── Comparison logic ──────────────────────────────────────────────────────────
-function compareItem(item, wikiStats) {
-  const mismatches = [];
-
-  for (const [wikiKey, [cat, localKey]] of Object.entries(FIELD_MAP)) {
-    const wikiVal  = wikiStats[wikiKey];
-    if (wikiVal === undefined) continue; // wiki param missing — skip
-
-    const localVal = item.bonuses?.[cat]?.[localKey];
-    if (localVal === undefined) {
-      mismatches.push({ field: wikiKey, local: 'MISSING', wiki: wikiVal });
-      continue;
-    }
-
-    if (localVal !== wikiVal) {
-      mismatches.push({ field: wikiKey, local: localVal, wiki: wikiVal });
-    }
-  }
-
-  return mismatches;
 }
 
 // ── Rate-limit helper (avoid hammering the wiki) ──────────────────────────────

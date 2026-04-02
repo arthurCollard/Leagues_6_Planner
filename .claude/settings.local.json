@@ -28,7 +28,8 @@
       "Bash(node scripts/crosscheck-gear.mjs --slot feet)",
       "Bash(node scripts/crosscheck-gear.mjs --slot cape)",
       "Bash(node scripts/crosscheck-gear.mjs --slot neck)",
-      "Bash(node scripts/crosscheck-gear.mjs --slot shield)"
+      "Bash(node scripts/crosscheck-gear.mjs --slot shield)",
+      "Bash(npx react-scripts:*)"
     ]
   }
 }
