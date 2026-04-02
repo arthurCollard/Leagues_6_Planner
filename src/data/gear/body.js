@@ -256,6 +256,50 @@ export const BODY = [
     },
   },
   {
+    name: 'Blue Moon Chestplate',
+    slot: 'body',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Magic', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 51, magic: 28, ranged: 0 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+    },
+  },
+  {
+    name: 'Blood Moon Chestplate',
+    slot: 'body',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Strength', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: -10 },
+      defence: { stab: 60, slash: 80, crush: 80, magic: 40, ranged: 79 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Eclipse Moon Chestplate',
+    slot: 'body',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: 31 },
+      defence: { stab: 15, slash: 18, crush: 57, magic: 55, ranged: 32 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Hueycoatl Hide Body',
+    slot: 'body',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: 30 },
+      defence: { stab: 55, slash: 47, crush: 60, magic: 56, ranged: 55 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 3 },
+    },
+  },
+  {
     name: 'Sunfire Fanatic Cuirass',
     slot: 'body',
     regions: ['Varlamore'],

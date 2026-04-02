@@ -234,6 +234,50 @@ export const LEGS = [
     },
   },
   {
+    name: 'Blue Moon Tassets',
+    slot: 'legs',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Magic', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 22, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 23, magic: 32, ranged: 0 },
+      other:   { meleeStrength: 1, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+    },
+  },
+  {
+    name: 'Blood Moon Tassets',
+    slot: 'legs',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Strength', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -21, ranged: -7 },
+      defence: { stab: 30, slash: 50, crush: 49, magic: 32, ranged: 46 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Eclipse Moon Tassets',
+    slot: 'legs',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -15, ranged: 17 },
+      defence: { stab: 9, slash: 13, crush: 37, magic: 31, ranged: 17 },
+      other:   { meleeStrength: 1, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Hueycoatl Hide Chaps',
+    slot: 'legs',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 17 },
+      defence: { stab: 31, slash: 25, crush: 33, magic: 30, ranged: 31 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+  },
+  {
     name: 'Sunfire Fanatic Chausses',
     slot: 'legs',
     regions: ['Varlamore'],

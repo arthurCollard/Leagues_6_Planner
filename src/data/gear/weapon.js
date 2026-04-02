@@ -113,6 +113,24 @@ export const WEAPON = [
     },
   },
   {
+    name: "Eye of Ayak",
+    slot: 'weapon',
+    regions: ["Varlamore"],
+    requirements: [{ skill: "Magic", level: 83 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 30, ranged: 0 },
+      defence: { stab: 1, slash: 5, crush: 5, magic: 10, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+    speed: 3,
+    twoHanded: false,
+    combatStyle: {
+      accurate: 3,
+      accurate_2: 3,
+      longrange: 3
+    },
+  },
+  {
     name: "Dragon Hunter Wand",
     slot: 'weapon',
     regions: ["Varlamore"],

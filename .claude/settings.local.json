@@ -29,7 +29,11 @@
       "Bash(node scripts/crosscheck-gear.mjs --slot cape)",
       "Bash(node scripts/crosscheck-gear.mjs --slot neck)",
       "Bash(node scripts/crosscheck-gear.mjs --slot shield)",
-      "Bash(npx react-scripts:*)"
+      "Bash(npx react-scripts:*)",
+      "Bash(curl -s \"https://oldschool.runescape.wiki/api.php?action=query&redirects=1&prop=revisions&rvslots=main&rvprop=content&format=json&titles=Blue_moon_helm\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s \"https://oldschool.runescape.wiki/api.php?action=query&redirects=1&prop=revisions&rvslots=main&rvprop=content&format=json&titles=Blue_moon_chestplate\")",
+      "Bash(curl -s \"https://oldschool.runescape.wiki/api.php?action=query&redirects=1&prop=revisions&rvslots=main&rvprop=content&format=json&titles=Blue_moon_tassets\")"
     ]
   }
 }

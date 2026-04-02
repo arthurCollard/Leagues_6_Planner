@@ -1,5 +1,32 @@
 export const HANDS = [
   {
+    name: 'Hueycoatl Hide Vambraces',
+    slot: 'hands',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 70 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -10, ranged: 11 },
+      defence: { stab: 6, slash: 5, crush: 7, magic: 8, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 1 },
+    },
+  },
+  {
+    name: 'Confliction Gauntlets',
+    slot: 'hands',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Hitpoints', level: 90 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 20, ranged: -4 },
+      defence: { stab: 15, slash: 18, crush: 7, magic: 5, ranged: 5 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 7, prayer: 2 },
+    },
+    effect: {
+      type: '',
+      stats: [],
+      description: 'Upon a missed magic attack, next magic attack against the same enemy rolls accuracy twice',
+    },
+  },
+  {
     name: 'Ferocious Gloves',
     slot: 'hands',
     regions: ['Kourend'],

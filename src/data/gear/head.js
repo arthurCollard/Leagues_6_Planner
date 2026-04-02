@@ -256,6 +256,50 @@ export const HEAD = [
     },
   },
   {
+    name: 'Blue Moon Helm',
+    slot: 'head',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Magic', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 6, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 10, magic: 6, ranged: 0 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 1, prayer: 0 },
+    },
+  },
+  {
+    name: 'Blood Moon Helm',
+    slot: 'head',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Strength', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: -2 },
+      defence: { stab: 20, slash: 31, crush: 34, magic: 7, ranged: 29 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Eclipse Moon Helm',
+    slot: 'head',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 75 }, { skill: 'Defence', level: 50 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -6, ranged: 8 },
+      defence: { stab: 2, slash: 3, crush: 14, magic: 10, ranged: 4 },
+      other:   { meleeStrength: 3, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  {
+    name: 'Hueycoatl Hide Coif',
+    slot: 'head',
+    regions: ['Varlamore'],
+    requirements: [{ skill: 'Ranged', level: 70 }, { skill: 'Defence', level: 40 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: -1, ranged: 7 },
+      defence: { stab: 4, slash: 7, crush: 10, magic: 5, ranged: 8 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 2 },
+    },
+  },
+  {
     name: 'Crystal Helm',
     slot: 'head',
     regions: ['Tirannwn'],
