@@ -64,7 +64,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                       key={mastery.name}
                       className={`relic-btn${isSelected ? ' selected' : ''}${isNext ? ' mastery-available' : ''}${isLocked ? ' mastery-locked' : ''}`}
                       onClick={() => !isLocked && handleClick(branch, tier)}
-                      title={mastery.dps || undefined}
+                      data-tooltip={mastery.dps || undefined}
                     >
                       <div className="mastery-diamond">
                         <span className="mastery-roman">{ROMAN[idx]}</span>

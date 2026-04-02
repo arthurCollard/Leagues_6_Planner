@@ -1,4 +1,4 @@
-export default function Header({ relicCount, solvedCount, masteryPoints, regionCount, onToggleSettings, onReset }) {
+export default function Header({ relicCount, solvedCount, masteryPoints, regionCount }) {
   return (
     <header className="app-header">
       <div>
@@ -9,8 +9,6 @@ export default function Header({ relicCount, solvedCount, masteryPoints, regionC
         <span>{solvedCount}/23 Skills Solved</span>
         <span>{masteryPoints}/10 Mastery pts</span>
         <span>{regionCount}/3 Regions</span>
-        <button onClick={onToggleSettings}>⚙️ Settings</button>
-        <button onClick={onReset}>🔄 Reset</button>
       </div>
     </header>
   );

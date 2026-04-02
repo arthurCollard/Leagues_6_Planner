@@ -6,7 +6,7 @@ export default function SkillIcon({ skill, score, status }) {
   return (
     <div
       className="skill-icon"
-      title={`${skill.name}: ${score} pts (${style.label})`}
+      data-tooltip={`${skill.name}: ${score} pts (${style.label})`}
       style={{
         background: style.bg,
         border: `2px solid ${style.border}`,

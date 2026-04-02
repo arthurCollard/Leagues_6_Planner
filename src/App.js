@@ -9,6 +9,7 @@ import SkillsPanel from './components/SkillsPanel';
 import RelicTree from './components/RelicTree';
 import { COMBO_BONUSES } from './data/combos';
 import { EXTRAS } from './data/skills';
+import { TIER_PASSIVES } from './components/RelicTree';
 import { EXTRA_THRESHOLDS } from './data/thresholds';
 import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
@@ -69,9 +70,11 @@ export default function App() {
   const selectRelic = (tier, relic) => {
     setSelectedRelics(prev => {
       if (prev[tier]?.name === relic.name) {
+        // Deselecting: cascade remove this tier and all higher tiers
         const next = { ...prev };
-        delete next[tier];
-        if (tier === '7') setReloadedRelic(null);
+        const tierNum = Number(tier);
+        Object.keys(next).forEach(t => { if (Number(t) >= tierNum) delete next[t]; });
+        setReloadedRelic(null);
         return next;
       }
       if (tier === '7' && prev[tier]?.name !== relic.name) setReloadedRelic(null);
@@ -130,6 +133,23 @@ export default function App() {
     return score > 0 && score <= t.threshold;
   });
 
+  const activePassives = (() => {
+    const all = Object.entries(TIER_PASSIVES)
+      .filter(([tier]) => selectedRelics[tier])
+      .flatMap(([, passives]) => passives);
+    const best = new Map();
+    const ungrouped = [];
+    for (const p of all) {
+      if (p.group) {
+        const prev = best.get(p.group);
+        if (!prev || p.priority > prev.priority) best.set(p.group, p);
+      } else {
+        ungrouped.push(p);
+      }
+    }
+    return [...best.values(), ...ungrouped].map(p => ({ short: p.short, text: p.text }));
+  })();
+
   const solvedCount = Object.values(skills)
     .filter(s => s.status === 'solved' || s.status === 'oversolved').length;
 
@@ -149,11 +169,21 @@ export default function App() {
         }}
       />
 
+      <ComboBanner
+        activeCombos={activeCombos}
+        pendingCombos={pendingCombos}
+        activeThresholds={activeThresholds}
+        pendingThresholds={pendingThresholds}
+        extras={extras}
+        activePassives={activePassives}
+        onToggleSettings={() => setShowSettings(s => !s)}
+        onReset={() => { setSelectedRelics({}); setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 }); setSelectedRegions([]); setReloadedRelic(null); }}
+        hasSelections={Object.keys(selectedRelics).length > 0 || selectedRegions.length > 0 || Object.values(selectedMasteries).some(v => v > 0)}
+      />
+
       {showSettings && (
         <SettingsPanel settings={settings} onChange={setSettings} />
       )}
-
-      <ComboBanner activeCombos={activeCombos} pendingCombos={pendingCombos} activeThresholds={activeThresholds} pendingThresholds={pendingThresholds} extras={extras} />
 
       <div className="main-layout">
         <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} />
