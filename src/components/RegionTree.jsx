@@ -111,8 +111,8 @@ function RegionSettings({ region, weights, onChange, onClose }) {
   );
 }
 
-function RegionCard({ region, selected, disabled, onClick, weights, onWeightsChange, tooltip, onShowTooltip, onHideTooltip }) {
-  const [showSettings, setShowSettings] = useState(false);
+function RegionCard({ region, selected, disabled, onClick, weights, onWeightsChange, onShowTooltip, onHideTooltip, openSettings, onOpenSettings }) {
+  const showSettings = openSettings === region.name;
   const wrapperRef = useRef(null);
   const hasCustomWeights = Object.keys(weights).length > 0;
   const drops = DROPS_BY_REGION[region.name];
@@ -149,14 +149,14 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
             region={region}
             weights={weights}
             onChange={onWeightsChange}
-            onClose={() => setShowSettings(false)}
+            onClose={() => onOpenSettings(null)}
           />
         )}
       </div>
 
       <button
         className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
-        onClick={e => { e.stopPropagation(); setShowSettings(s => !s); }}
+        onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : region.name); }}
         title="Adjust region weights"
       >
         ⚙️
@@ -168,6 +168,7 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
 export default function RegionTree({ selectedRegions, onSelectRegion, onReset, regionWeights, onRegionWeightsChange }) {
   const [isOpen, setIsOpen] = useState(true);
   const [activeTooltip, setActiveTooltip] = useState(null); // { name, pos }
+  const [openSettings, setOpenSettings] = useState(null);
   const hideTimer = useRef(null);
   const selectedCount = selectedRegions.length;
 
@@ -219,6 +220,8 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
                 onWeightsChange={w => onRegionWeightsChange(region.name, w)}
                 onShowTooltip={handleShowTooltip}
                 onHideTooltip={handleHideTooltip}
+                openSettings={openSettings}
+                onOpenSettings={setOpenSettings}
               />
             ))}
           </div>
@@ -244,6 +247,8 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
                   onWeightsChange={w => onRegionWeightsChange(region.name, w)}
                   onShowTooltip={handleShowTooltip}
                   onHideTooltip={handleHideTooltip}
+                  openSettings={openSettings}
+                  onOpenSettings={setOpenSettings}
                 />
               );
             })}

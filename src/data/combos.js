@@ -27,4 +27,20 @@ export const COMBO_BONUSES = [
     thresholds: {},
     label: 'Wintertodt + Endless Harvest',
   },
+    {
+    relics: ['Larcenist'],
+    regions: ['Varlamore'],
+    requiredExtras: [],
+    bonuses: { crafting: 1 },
+    thresholds: {},
+    label: 'Varlamore Gem Stall + Thieving',
+  },
+  {
+    relics: ['Larcenist'],
+    regions: ['Tirannwn'],
+    requiredExtras: [],
+    bonuses: { crafting: 1, smithing: 1 },
+    thresholds: {},
+    label: 'Prif Elves + Thieving',
+  },
 ];

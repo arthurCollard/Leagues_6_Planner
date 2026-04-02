@@ -92,7 +92,7 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
   const selectedNames = relicsToScore.map(r => r.name);
 
   COMBO_BONUSES.forEach(combo => {
-    if (comboMatches(combo, selectedNames, selectedRegions, extraScores)) {
+    if (comboMatches(combo, selectedNames, activeRegionNames, extraScores)) {
       Object.entries(combo.bonuses || {}).forEach(([id, val]) => {
         skillScores[id] = (skillScores[id] || 0) + val;
       });
@@ -141,7 +141,7 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
       })
     ),
     activeCombos: COMBO_BONUSES.filter(c =>
-      comboMatches(c, selectedNames, selectedRegions, extraScores)
+      comboMatches(c, selectedNames, activeRegionNames, extraScores)
     ),
   };
 }

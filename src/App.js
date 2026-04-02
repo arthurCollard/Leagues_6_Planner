@@ -14,6 +14,7 @@ import { EXTRA_THRESHOLDS } from './data/thresholds';
 import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
+import { UNIVERSAL_REGIONS } from './data/regions';
 
 function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -86,6 +87,7 @@ export default function App() {
   const { skills, extras, activeCombos } = computeScores(selectedRelics, settings, relicWeights, reloadedRelic, selectedMasteries, selectedRegions, regionWeights);
 
   const selectedNames = Object.values(selectedRelics).filter(Boolean).map(r => r.name);
+  const activeRegionNames = [...UNIVERSAL_REGIONS.map(r => r.name), ...selectedRegions];
 
   const pendingCombos = COMBO_BONUSES
     .filter(c => !activeCombos.includes(c))
@@ -115,12 +117,12 @@ export default function App() {
       ];
       const matched = [
         ...(c.relics || []).filter(r => r && selectedNames.includes(r)),
-        ...(c.regions || []).filter(r => selectedRegions.includes(r)),
+        ...(c.regions || []).filter(r => activeRegionNames.includes(r)),
         ...extraMatched,
       ].length;
       const missing = [
         ...(c.relics || []).filter(r => r && !selectedNames.includes(r)),
-        ...(c.regions || []).filter(r => !selectedRegions.includes(r)).map(r => `Region: ${r}`),
+        ...(c.regions || []).filter(r => !activeRegionNames.includes(r)).map(r => `Region: ${r}`),
         ...extraMissing,
       ];
       return { ...c, matched, missing, total: allConditions.length };

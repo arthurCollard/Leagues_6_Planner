@@ -356,7 +356,7 @@ body {
   margin-bottom: 1.8rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(184, 162, 130, 0.2);
-  overflow: hidden;
+  overflow: visible;
   max-height: 1000px;
   opacity: 1;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin-bottom 0.4s ease, padding-bottom 0.4s ease;
@@ -365,6 +365,7 @@ body {
 .tier-block-locked {
   max-height: 0;
   opacity: 0;
+  overflow: hidden;
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;

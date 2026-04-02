@@ -248,8 +248,8 @@ function RelicSettings({ relic, weights, onChange, onClose }) {
   );
 }
 
-function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic, locked }) {
-  const [showSettings, setShowSettings] = useState(false);
+function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic, locked, openSettings, onOpenSettings }) {
+  const showSettings = openSettings === relic.name;
   const hasCustomWeights = Object.keys(weights).length > 0;
   const isReloaded = relic.special === 'reloaded';
 
@@ -282,7 +282,7 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, sele
         <RelicDescButton relic={relic} />
         <button
           className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
-          onClick={e => { e.stopPropagation(); setShowSettings(s => !s); }}
+          onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : relic.name); }}
           title="Adjust relic weights"
         >
           ⚙️
@@ -294,7 +294,7 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, sele
           relic={relic}
           weights={weights}
           onChange={onWeightsChange}
-          onClose={() => setShowSettings(false)}
+          onClose={() => onOpenSettings(null)}
         />
       )}
     </div>
@@ -365,6 +365,7 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
   const [isOpen, setIsOpen] = useState(true);
   const [tierLock, setTierLock] = useState(true);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [openSettings, setOpenSettings] = useState(null);
 
   const hasSelections = Object.keys(selectedRelics).length > 0 || reloadedRelic != null;
 
@@ -446,6 +447,8 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
                     reloadedRelic={reloadedRelic}
                     onSelectReloadedRelic={onSelectReloadedRelic}
                     locked={locked}
+                    openSettings={openSettings}
+                    onOpenSettings={setOpenSettings}
                   />
                 ))}
               </div>
