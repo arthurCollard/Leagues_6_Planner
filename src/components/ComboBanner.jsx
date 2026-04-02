@@ -11,14 +11,14 @@ export default function ComboBanner({ activeCombos, pendingCombos, activeThresho
           ⚡ {c.label}
         </span>
       ))}
-      {pendingCombos.map(c => (
-        <span key={c.label} className="combo-tag combo-pending" data-tooltip={`Needs: ${c.missing.join(', ')}`}>
-          🔗 {c.label} ({c.matched}/{c.total})
-        </span>
-      ))}
       {activeThresholds.map(t => (
         <span key={t.extra} className="combo-tag combo-active">
           ⚡ {t.label || t.extra}
+        </span>
+      ))}
+      {pendingCombos.map(c => (
+        <span key={c.label} className="combo-tag combo-pending" data-tooltip={`Needs: ${c.missing.join(', ')}`}>
+          🔗 {c.label} ({c.matched}/{c.total})
         </span>
       ))}
       {pendingThresholds.map(t => {

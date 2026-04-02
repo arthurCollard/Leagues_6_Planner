@@ -110,17 +110,6 @@ export const CAPE = [
     },
   },
   {
-    name: 'Cape of Accomplishment (Trimmed)',
-    slot: 'cape',
-    regions: [],
-    requirements: [{ skill: 'Any', level: 99 }],
-    bonuses: {
-      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
-      defence: { stab: 9, slash: 9, crush: 9, magic: 9, ranged: 9 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 4 },
-    },
-  },
-  {
     name: "Ava's Accumulator",
     slot: 'cape',
     regions: [],

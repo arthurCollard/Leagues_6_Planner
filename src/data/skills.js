@@ -42,7 +42,7 @@ export const EXTRAS = [
   { id: 'anti_venoms_secondary',  name: 'Antivenoms (Secondary)',  icon: '🐍' },
   { id: 'antifires_primary',      name: 'Antifires (Primary)',     icon: '🔥' },
   { id: 'antifires_secondary',    name: 'Antifires (Secondary)',   icon: '🔥' },
-  { id: 'mega_rares',             name: 'Mega Rares Access',       icon: '💎' },
+  { id: 'mega_rares',             name: 'Mega Rares Access',       icon: '💎', solvedAt: 1 },
 ];
 
 export const CATEGORIES = {

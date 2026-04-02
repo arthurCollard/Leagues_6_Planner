@@ -24,7 +24,7 @@ function comboMatches(combo, selectedRelicNames, selectedRegions, extraScores) {
   );
 }
 
-export function computeScores(selectedRelics, settings, relicWeights = {}, reloadedRelic = null, selectedMasteries = {}, selectedRegions = []) {
+export function computeScores(selectedRelics, settings, relicWeights = {}, reloadedRelic = null, selectedMasteries = {}, selectedRegions = [], regionWeights = {}) {
   const { solvedThreshold, oversolvedFactor } = settings;
   const oversolvedThreshold = solvedThreshold * oversolvedFactor;
 
@@ -38,13 +38,19 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
     const customWeights = relicWeights[relic.name] || {};
 
     Object.entries(relic.skills || {}).forEach(([id, val]) => {
-      const weight = customWeights.skills?.[id] ?? val;  // default to base val, not 1
-      skillScores[id] = (skillScores[id] || 0) + weight; // add weight directly, no multiply
+      const weight = customWeights.skills?.[id] ?? val;
+      skillScores[id] = (skillScores[id] || 0) + weight;
+    });
+    Object.entries(customWeights.skills || {}).forEach(([id, val]) => {
+      if (!(id in (relic.skills || {}))) skillScores[id] = (skillScores[id] || 0) + val;
     });
 
     Object.entries(relic.extras || {}).forEach(([id, val]) => {
-      const weight = customWeights.extras?.[id] ?? val;  // default to base val, not 1
-      extraScores[id] = (extraScores[id] || 0) + weight; // add weight directly, no multiply
+      const weight = customWeights.extras?.[id] ?? val;
+      extraScores[id] = (extraScores[id] || 0) + weight;
+    });
+    Object.entries(customWeights.extras || {}).forEach(([id, val]) => {
+      if (!(id in (relic.extras || {}))) extraScores[id] = (extraScores[id] || 0) + val;
     });
 
   });
@@ -57,11 +63,20 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
   activeRegionNames.forEach(name => {
     const region = REGION_BY_NAME[name];
     if (!region) return;
+    const customWeights = regionWeights[name] || {};
     Object.entries(region.skills || {}).forEach(([id, val]) => {
-      skillScores[id] = (skillScores[id] || 0) + val;
+      const weight = customWeights.skills?.[id] ?? val;
+      skillScores[id] = (skillScores[id] || 0) + weight;
+    });
+    Object.entries(customWeights.skills || {}).forEach(([id, val]) => {
+      if (!(id in (region.skills || {}))) skillScores[id] = (skillScores[id] || 0) + val;
     });
     Object.entries(region.extras || {}).forEach(([id, val]) => {
-      extraScores[id] = (extraScores[id] || 0) + val;
+      const weight = customWeights.extras?.[id] ?? val;
+      extraScores[id] = (extraScores[id] || 0) + weight;
+    });
+    Object.entries(customWeights.extras || {}).forEach(([id, val]) => {
+      if (!(id in (region.extras || {}))) extraScores[id] = (extraScores[id] || 0) + val;
     });
   });
 
@@ -112,10 +127,19 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
       }])
     ),
     extras: Object.fromEntries(
-      EXTRAS.map(e => [e.id, {
-        score: extraScores[e.id] || 0,
-        status: getStatus(extraScores[e.id] || 0),
-      }])
+      EXTRAS.map(e => {
+        const score = extraScores[e.id] || 0;
+        const threshold = e.solvedAt ?? solvedThreshold;
+        const overThreshold = threshold * oversolvedFactor;
+        const getExtraStatus = s => {
+          if (s === 0)             return 'unsolved';
+          if (s < threshold / 2)  return 'low';
+          if (s < threshold)      return 'partial';
+          if (s < overThreshold)  return 'solved';
+          return 'oversolved';
+        };
+        return [e.id, { score, status: getExtraStatus(score) }];
+      })
     ),
     activeCombos: COMBO_BONUSES.filter(c =>
       comboMatches(c, selectedNames, selectedRegions, extraScores)

@@ -34,6 +34,10 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
 
       <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>
 
+        <div className="mastery-placeholder-note">
+          ⚠️ Placeholder — actual mastery perks will be updated once spoiled
+        </div>
+
         {/* One tier-block per branch */}
         {BRANCHES.map(branch => {
           const depth = selectedMasteries[branch] || 0;

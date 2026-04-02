@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './App.css';
 
 import { computeScores } from './logic/computeScores';
@@ -14,6 +14,27 @@ import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
 
+function useLocalStorage(key, defaultValue) {
+  const [value, setValue] = useState(() => {
+    try {
+      const stored = localStorage.getItem(key);
+      return stored !== null ? JSON.parse(stored) : defaultValue;
+    } catch {
+      return defaultValue;
+    }
+  });
+
+  const setStoredValue = useCallback(newValue => {
+    setValue(prev => {
+      const next = typeof newValue === 'function' ? newValue(prev) : newValue;
+      try { localStorage.setItem(key, JSON.stringify(next)); } catch {}
+      return next;
+    });
+  }, [key]);
+
+  return [value, setStoredValue];
+}
+
 const EMPTY_GEAR = { head: null, cape: null, neck: null, ammo: null, weapon: null, body: null, shield: null, legs: null, hands: null, feet: null, ring: null };
 
 const DEFAULT_SETTINGS = {
@@ -22,14 +43,15 @@ const DEFAULT_SETTINGS = {
 };
 
 export default function App() {
-  const [selectedRelics, setSelectedRelics] = useState({});
-  const [reloadedRelic, setReloadedRelic] = useState(null);
-  const [settings, setSettings] = useState(DEFAULT_SETTINGS);
+  const [selectedRelics, setSelectedRelics] = useLocalStorage('ls6_selectedRelics', {});
+  const [reloadedRelic, setReloadedRelic] = useLocalStorage('ls6_reloadedRelic', null);
+  const [settings, setSettings] = useLocalStorage('ls6_settings', DEFAULT_SETTINGS);
   const [showSettings, setShowSettings] = useState(false);
-  const [relicWeights, setRelicWeights] = useState({});
-  const [selectedMasteries, setSelectedMasteries] = useState({ Melee: 0, Range: 0, Magic: 0 });
-  const [selectedRegions, setSelectedRegions] = useState([]);
-  const [selectedGear, setSelectedGear] = useState(EMPTY_GEAR);
+  const [relicWeights, setRelicWeights] = useLocalStorage('ls6_relicWeights', {});
+  const [regionWeights, setRegionWeights] = useLocalStorage('ls6_regionWeights', {});
+  const [selectedMasteries, setSelectedMasteries] = useLocalStorage('ls6_selectedMasteries', { Melee: 0, Range: 0, Magic: 0 });
+  const [selectedRegions, setSelectedRegions] = useLocalStorage('ls6_selectedRegions', []);
+  const [selectedGear, setSelectedGear] = useLocalStorage('ls6_selectedGear', EMPTY_GEAR);
 
   const handleSelectMastery = (branch, depth) =>
     setSelectedMasteries(prev => ({ ...prev, [branch]: depth }));
@@ -58,7 +80,7 @@ export default function App() {
     });
   };
 
-  const { skills, extras, activeCombos } = computeScores(selectedRelics, settings, relicWeights, reloadedRelic, selectedMasteries, selectedRegions);
+  const { skills, extras, activeCombos } = computeScores(selectedRelics, settings, relicWeights, reloadedRelic, selectedMasteries, selectedRegions, regionWeights);
 
   const selectedNames = Object.values(selectedRelics).filter(Boolean).map(r => r.name);
 
@@ -145,7 +167,13 @@ export default function App() {
             onSelectReloadedRelic={setReloadedRelic}
           />
           <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
-          <RegionTree selectedRegions={selectedRegions} onSelectRegion={handleSelectRegion} onReset={() => setSelectedRegions([])} />
+          <RegionTree
+            selectedRegions={selectedRegions}
+            onSelectRegion={handleSelectRegion}
+            onReset={() => setSelectedRegions([])}
+            regionWeights={regionWeights}
+            onRegionWeightsChange={(name, w) => setRegionWeights(prev => ({ ...prev, [name]: w }))}
+          />
           <GearPanel
             selectedGear={selectedGear}
             selectedRegions={selectedRegions}

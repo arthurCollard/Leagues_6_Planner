@@ -48,6 +48,23 @@ const SET_BONUSES = {
   },
 };
 
+function isRangedWeapon(w) {
+  return (w.bonuses.attack.ranged || 0) > 0 || !!w.ammoType;
+}
+
+function isMagicWeapon(w) {
+  return (w.bonuses.other.magicDamage || 0) > 0 || (w.bonuses.attack.magic || 0) > 0;
+}
+
+function isMeleeWeapon(w) {
+  return !isRangedWeapon(w) && (
+    (w.bonuses.other.meleeStrength || 0) > 0 ||
+    (w.bonuses.attack.stab || 0) > 0 ||
+    (w.bonuses.attack.slash || 0) > 0 ||
+    (w.bonuses.attack.crush || 0) > 0
+  );
+}
+
 function getRegionFiltered(slot, selectedRegions) {
   const allItems = ITEMS_BY_SLOT[slot] || [];
   const activeRegions = [...new Set([...selectedRegions, ...UNIVERSAL_REGION_NAMES])];
@@ -75,8 +92,8 @@ function getOptimizedGear(stat, selectedRegions) {
       nonWeaponTotal += bestVal;
     });
 
-    // Evaluate each weapon: its own magicDamage + nonWeaponTotal, applying any multiply_totals effect
-    const weapons = getRegionFiltered('weapon', selectedRegions);
+    // Only consider magic weapons
+    const weapons = getRegionFiltered('weapon', selectedRegions).filter(isMagicWeapon);
     let bestWeapon = null, bestTotal = -Infinity;
     weapons.forEach(weapon => {
       const weaponVal = weapon.bonuses.other.magicDamage || 0;
@@ -98,8 +115,8 @@ function getOptimizedGear(stat, selectedRegions) {
   }
 
   if (stat === 'rangedStrength') {
-    // Weapon and ammo must be evaluated as a pair
-    const weapons = getRegionFiltered('weapon', selectedRegions);
+    // Only consider ranged weapons; weapon must have ammoType to benefit from ammo
+    const weapons = getRegionFiltered('weapon', selectedRegions).filter(isRangedWeapon);
     const ammos = getRegionFiltered('ammo', selectedRegions);
 
     let bestWeapon = null;
@@ -110,7 +127,7 @@ function getOptimizedGear(stat, selectedRegions) {
       const weaponVal = weapon.bonuses.other.rangedStrength || 0;
       const compatibleAmmo = weapon.ammoType
         ? ammos.filter(a => a.ammoType === weapon.ammoType)
-        : ammos;
+        : [];  // no ammoType = weapon doesn't use ammo
 
       let topAmmo = null;
       let topAmmoVal = 0;
@@ -142,8 +159,11 @@ function getOptimizedGear(stat, selectedRegions) {
       result[slot] = best;
     });
   } else {
+    // For meleeStrength: only consider melee weapons; prayer has no weapon-type restriction
     Object.keys(ITEMS_BY_SLOT).forEach(slot => {
-      const items = getRegionFiltered(slot, selectedRegions);
+      const items = (slot === 'weapon' && stat === 'meleeStrength')
+        ? getRegionFiltered(slot, selectedRegions).filter(isMeleeWeapon)
+        : getRegionFiltered(slot, selectedRegions);
       let best = null;
       let bestVal = 0;
       items.forEach(item => {

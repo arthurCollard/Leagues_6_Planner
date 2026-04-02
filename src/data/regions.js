@@ -3,7 +3,7 @@ export const UNIVERSAL_REGIONS = [
     name: 'Misthalin',
     icon: '',
     drops: [],
-    skills: { attack: 2, strength: 2, defence: 2, ranged: 2, magic: 2, hitpoints: 2, mining: 1, hunter: 1, woodcutting: 2 },
+    skills: {},
     extras: { seed_access: 2, white_berries: 1, antifires_secondary: 2 },
   },
   {
@@ -16,7 +16,7 @@ export const UNIVERSAL_REGIONS = [
       'Awakener\'s orb', 'Huntsman\'s kit', 'Avernic treads', 'Eye of ayak (uncharged)',
       'Echo boots', 'Sunfire fanatic armour', 'Tonalztics of ralos',
     ],
-    skills: { attack: 3, strength: 3, defence: 3, prayer: 3, runecrafting: 2, construction: 3, hitpoints: 3, agility: 2, herblore: 3, thieving: 3, crafting: 3, slayer: 2, hunter: 3, mining: 2, woodcutting: 2, farming: 2 },
+    skills: {},
     extras: { ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2 },
   },
   {
@@ -27,7 +27,7 @@ export const UNIVERSAL_REGIONS = [
       'Tzhaar-ket-om', 'Toktz-ket-xil', 'Obsidian cape', 'Toktz-xil-ul',
       'Toktz-mej-tal', 'Toktz-xil-ak', 'Toktz-xil-ek', 'Draconic visage', 'Gout tuber',
     ],
-    skills: { runecrafting: 1, agility: 1, crafting: 1, fletching: 2, cooking: 1, fishing: 2 },
+    skills: {},
     extras: { food_source: 1, limpwurt: 1, prayer_pot_primary: 1, prayer_pot_secondary: 1 },
   },
 ];
@@ -45,7 +45,7 @@ export const UNLOCKABLE_REGIONS = [
       'Bellator ring', 'Soulreaper axe pieces', 'Virtus robes', 'Awakener\'s orb',
       'Giantsoul amulet', 'Deadeye prayer scroll', 'Mystic vigour prayer scroll', 'Flippers',
     ],
-    skills: { runecrafting: 2, construction: 3, herblore: 1, thieving: 1, crafting: 2, mining: 2, farming: 2 },
+    skills: {},
     extras: { ammo_source: 2, eye_of_newt: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 2, allotment_patches: 2 },
   },
   {
@@ -60,7 +60,7 @@ export const UNLOCKABLE_REGIONS = [
       'Virtus mask', 'Virtus robe top', 'Virtus robe bottom',
       'Awakener\'s orb', 'Ancient sceptre', 'Venator shard',
     ],
-    skills: { ranged: 2, prayer: 3, magic: 2, runecrafting: 2, construction: 3, agility: 1, herblore: 2, crafting: 2, mining: 1, smithing: 3, cooking: 2, farming: 1 },
+    skills: {},
     extras: { gp_source: 2, food_source: 2, travel: 2, ammo_source: 3, limpwurt: 3, antifires_secondary: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 1 },
   },
   {
@@ -72,7 +72,7 @@ export const UNLOCKABLE_REGIONS = [
       'Dragon chainbody', 'Dragon full helm', 'Draconic visage',
       'Mist battlestaff', 'Warped sceptre', 'Smouldering stone', 'Angler\'s outfit',
     ],
-    skills: { defence: 3, ranged: 3, magic: 2, runecrafting: 3, construction: 1, hitpoints: 3, agility: 2, herblore: 2, thieving: 3, slayer: 1, hunter: 2, fishing: 3, woodcutting: 3, farming: 2 },
+    skills: {},
     extras: { food_source: 3, travel: 1, ammo_source: 1, eye_of_newt: 3, prayer_pot_primary: 2, herb_patches: 2, allotment_patches: 4 },
   },
   {
@@ -88,7 +88,7 @@ export const UNLOCKABLE_REGIONS = [
       'Awakener\'s orb', 'Tome of water', 'Dragon harpoon',
       'Abyssal needle', 'Abyssal lantern', 'Abyssal dye',
     ],
-    skills: { defence: 3, magic: 3, runecrafting: 3, hitpoints: 3, agility: 1, herblore: 2, thieving: 3, crafting: 3, fletching: 3, slayer: 2, hunter: 2, mining: 3, smithing: 3, fishing: 3, cooking: 3 },
+    skills: {},
     extras: { travel: 1, ammo_source: 3, mega_rares: 1 },
   },
   {
@@ -104,7 +104,7 @@ export const UNLOCKABLE_REGIONS = [
       'Black mask', 'Blood shard', 'Amulet of rancour',
       'Noxious halberd pieces', 'Aranea boots', 'Granite maul',
     ],
-    skills: { ranged: 2, prayer: 2, runecrafting: 2, agility: 3, thieving: 2, fletching: 3, slayer: 3, hunter: 1, smithing: 2, cooking: 3, firemaking: 3, woodcutting: 2, farming: 1 },
+    skills: {},
     extras: { limpwurt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 2, prayer_pot_primary: 1, herb_patches: 2, allotment_patches: 2 },
   },
   {
@@ -118,7 +118,7 @@ export const UNLOCKABLE_REGIONS = [
       'Dragonstone platelegs', 'Enhanced crystal teleport seed',
       'Mist battlestaff', 'Leaf-bladed battleaxe',
     ],
-    skills: { ranged: 3, runecrafting: 2, construction: 1, hitpoints: 2, agility: 2, herblore: 1, thieving: 2, crafting: 2, slayer: 1, hunter: 3, mining: 3, smithing: 3, fishing: 1, woodcutting: 3 },
+    skills: {},
     extras: { gp_source: 2, ammo_source: 1, white_berries: 3, eye_of_newt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 3, mega_rares: 1, allotment_patches: 2 },
   },
   {
@@ -136,7 +136,7 @@ export const UNLOCKABLE_REGIONS = [
       'Dagon\'hai hat', 'Dagon\'hai robe top', 'Dagon\'hai robe bottom',
       'Amulet of eternal glory', 'Teleport anchoring scroll', 'Elder chaos robes',
     ],
-    skills: { defence: 3, ranged: 3, prayer: 3, runecrafting: 1, construction: 2, hitpoints: 3, agility: 3, herblore: 3, thieving: 2, crafting: 2, fletching: 2, slayer: 3, hunter: 3, mining: 2, smithing: 2, fishing: 3, firemaking: 2 },
+    skills: {},
     extras: { gp_source: 3, food_source: 2, limpwurt: 2, white_berries: 3, prayer_pot_primary: 2 },
   },
   {
@@ -153,7 +153,7 @@ export const UNLOCKABLE_REGIONS = [
       'Abyssal whip', 'Abyssal dagger', 'Draconic visage', 'Uncut onyx',
       'Oathplate armour', 'Soulflame horn',
     ],
-    skills: { attack: 2, strength: 2, defence: 2, ranged: 3, prayer: 2, magic: 2, runecrafting: 2, hitpoints: 2, herblore: 3, thieving: 3, fletching: 2, slayer: 3, hunter: 1, mining: 2, smithing: 1, fishing: 3, cooking: 3, firemaking: 3, woodcutting: 3, farming: 3 },
+    skills: {},
     extras: { food_source: 2, ammo_source: 1, seed_access: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 2, anti_venoms_primary: 2, antifires_primary: 2, herb_patches: 2, allotment_patches: 4, mega_rares: 1 },
   },
 ];

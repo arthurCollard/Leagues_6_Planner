@@ -444,6 +444,31 @@ body {
   padding: 6px;
 }
 
+.add-bonus-select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 4px 6px;
+  background: #1a1612;
+  border: 1px dashed #6b5c3e;
+  color: #b8a282;
+  border-radius: 4px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+.add-bonus-select:focus { outline: none; border-color: #d4a843; }
+
+.remove-bonus-btn {
+  background: none;
+  border: none;
+  color: #6b5c3e;
+  cursor: pointer;
+  padding: 0 2px;
+  font-size: 1em;
+  line-height: 1;
+  margin-left: 4px;
+}
+.remove-bonus-btn:hover { color: #dc2626; }
+
 .close-btn:hover, .reset-btn:hover {
   background: #b8a282;
   color: #1a1612;
@@ -613,6 +638,17 @@ body {
 }
 
 /* ── Mastery Tree ──────────────────────────────────── */
+.mastery-placeholder-note {
+  font-size: 0.78rem;
+  color: #b8a282;
+  background: rgba(184, 162, 130, 0.08);
+  border: 1px dashed #6b5c3e;
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  opacity: 0.8;
+}
 .mastery-pts-badge {
   font-size: 0.8rem;
   background: rgba(184, 162, 130, 0.15);

@@ -38,9 +38,9 @@ export const HANDS = [
     regions: [],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
-      attack:  { stab: 12, slash: 12, crush: 12, magic: 6, ranged: 0 },
+      attack:  { stab: 12, slash: 12, crush: 12, magic: 6, ranged: 12 },
       defence: { stab: 12, slash: 12, crush: 12, magic: 6, ranged: 12 },
-      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+      other:   { meleeStrength: 12, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
   {

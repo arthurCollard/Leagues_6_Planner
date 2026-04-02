@@ -707,7 +707,7 @@ export const WEAPON = [
   {
     name: "Tumeken's Shadow",
     slot: 'weapon',
-    regions: ["Desert"],
+    regions: ["Desert", "Kourend", "Morytania"],
     requirements: [{ skill: "Magic", level: 85 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 35, ranged: 0 },
@@ -818,7 +818,7 @@ export const WEAPON = [
   {
     name: "Scythe of Vitur",
     slot: 'weapon',
-    regions: ["Morytania"],
+    regions: ["Morytania", "Kourend", "Desert"],
     requirements: [{ skill: "Attack", level: 80 }, { skill: "Strength", level: 90 }],
     bonuses: {
       attack:  { stab: 75, slash: 125, crush: 30, magic: -6, ranged: 0 },
@@ -1211,7 +1211,7 @@ export const WEAPON = [
   {
     name: "Twisted Bow",
     slot: 'weapon',
-    regions: ["Kourend"],
+    regions: ["Kourend", "Desert", " Morytania"],
     requirements: [{ skill: "Ranged", level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 70 },

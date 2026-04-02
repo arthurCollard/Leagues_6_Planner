@@ -1,8 +1,32 @@
 import React, { useState } from 'react';
 import { RELICS } from '../data/relics';
 import RelicIcon from './RelicIcon';
+import { SKILLS, EXTRAS } from '../data/skills';
+
+const SKILL_NAME = Object.fromEntries(SKILLS.map(s => [s.id, s.name]));
+const EXTRA_NAME = Object.fromEntries(EXTRAS.map(e => [e.id, e.name]));
 
 function RelicSettings({ relic, weights, onChange, onClose }) {
+  const baseSkills = relic.skills || {};
+  const baseExtras = relic.extras || {};
+
+  const customSkillIds = Object.keys(weights.skills || {}).filter(id => !(id in baseSkills));
+  const customExtraIds = Object.keys(weights.extras || {}).filter(id => !(id in baseExtras));
+
+  const addableSkills = SKILLS.filter(s => !(s.id in baseSkills) && !customSkillIds.includes(s.id));
+  const addableExtras = EXTRAS.filter(e => !(e.id in baseExtras) && !customExtraIds.includes(e.id));
+
+  function removeSkill(id) {
+    const s = { ...weights.skills };
+    delete s[id];
+    onChange({ ...weights, skills: s });
+  }
+  function removeExtra(id) {
+    const e = { ...weights.extras };
+    delete e[id];
+    onChange({ ...weights, extras: e });
+  }
+
   return (
     <div className="relic-settings-panel">
       <div className="relic-settings-header">
@@ -15,37 +39,61 @@ function RelicSettings({ relic, weights, onChange, onClose }) {
 
       <div className="relic-settings-body">
         <h5>Skills</h5>
-        {Object.entries(relic.skills || {}).map(([skill, base]) => (
-          <label key={skill}>
-            {skill}
+        {Object.entries(baseSkills).map(([id, base]) => (
+          <label key={id}>
+            {SKILL_NAME[id] || id}
             <input
               type="number" min="0" max="10" step="0.5"
-              value={weights.skills?.[skill] ?? base}
-              onChange={e => onChange({
-                ...weights,
-                skills: { ...weights.skills, [skill]: +e.target.value }
-              })}
+              value={weights.skills?.[id] ?? base}
+              onChange={e => onChange({ ...weights, skills: { ...weights.skills, [id]: +e.target.value } })}
             />
           </label>
         ))}
+        {customSkillIds.map(id => (
+          <label key={id}>
+            {SKILL_NAME[id] || id}
+            <input
+              type="number" min="0" max="10" step="0.5"
+              value={weights.skills[id]}
+              onChange={e => onChange({ ...weights, skills: { ...weights.skills, [id]: +e.target.value } })}
+            />
+            <button className="remove-bonus-btn" onClick={() => removeSkill(id)}>×</button>
+          </label>
+        ))}
+        {addableSkills.length > 0 && (
+          <select className="add-bonus-select" value="" onChange={e => e.target.value && onChange({ ...weights, skills: { ...weights.skills, [e.target.value]: 1 } })}>
+            <option value="">+ Add skill…</option>
+            {addableSkills.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+          </select>
+        )}
 
-        {Object.keys(relic.extras || {}).length > 0 && (
-          <>
-            <h5>Extras</h5>
-            {Object.entries(relic.extras).map(([extra, base]) => (
-              <label key={extra}>
-                {extra}
-                <input
-                  type="number" min="0" max="10" step="0.5"
-                  value={weights.extras?.[extra] ?? base}
-                  onChange={e => onChange({
-                    ...weights,
-                    extras: { ...weights.extras, [extra]: +e.target.value }
-                  })}
-                />
-              </label>
-            ))}
-          </>
+        <h5>Extras</h5>
+        {Object.entries(baseExtras).map(([id, base]) => (
+          <label key={id}>
+            {EXTRA_NAME[id] || id}
+            <input
+              type="number" min="0" max="10" step="0.5"
+              value={weights.extras?.[id] ?? base}
+              onChange={e => onChange({ ...weights, extras: { ...weights.extras, [id]: +e.target.value } })}
+            />
+          </label>
+        ))}
+        {customExtraIds.map(id => (
+          <label key={id}>
+            {EXTRA_NAME[id] || id}
+            <input
+              type="number" min="0" max="10" step="0.5"
+              value={weights.extras[id]}
+              onChange={e => onChange({ ...weights, extras: { ...weights.extras, [id]: +e.target.value } })}
+            />
+            <button className="remove-bonus-btn" onClick={() => removeExtra(id)}>×</button>
+          </label>
+        ))}
+        {addableExtras.length > 0 && (
+          <select className="add-bonus-select" value="" onChange={e => e.target.value && onChange({ ...weights, extras: { ...weights.extras, [e.target.value]: 1 } })}>
+            <option value="">+ Add extra…</option>
+            {addableExtras.map(ex => <option key={ex.id} value={ex.id}>{ex.name}</option>)}
+          </select>
         )}
 
         <button className="reset-btn" onClick={() => onChange({})}>
