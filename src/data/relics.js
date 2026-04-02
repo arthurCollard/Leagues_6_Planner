@@ -189,7 +189,7 @@ export const RELICS = {
         ],
       },
       skills: { farming: 3 },
-      extras: { seed_access: 1, travel: 3 },
+      extras: { seed_access: 1, travel: 3, white_berries: 1 },
     },
     {
       name: 'Larcenist',

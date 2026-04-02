@@ -103,6 +103,7 @@ body {
   font-size: 0.8rem;
 }
 
+/* ── Info Bar ─────────────────────────────────────────────────────────────── */
 .info-bar {
   display: flex;
   gap: 1rem;
@@ -119,8 +120,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: center;
-  flex-shrink: 0;
 }
 
 .info-bar-ctrl-btn {
@@ -161,6 +160,13 @@ body {
   min-width: 0;
   min-height: 7.75rem;
   flex: 1;
+}
+
+.info-bar-combos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .info-bar-label {
@@ -204,6 +210,34 @@ body {
   z-index: 100;
 }
 
+.combo-tab-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.combo-tab-label {
+  font-size: 0.7rem;
+  color: #5a4a2a;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+}
+
+.combo-tab-label.combo-tab-selected {
+  color: #d8ccb4;
+}
+
+.tab-count {
+  background: rgba(184, 162, 130, 0.15);
+  border-radius: 10px;
+  padding: 0 0.35rem;
+  font-size: 0.65rem;
+}
+
 .info-bar-tags {
   display: flex;
   gap: 0.6rem;
@@ -214,6 +248,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+}
+
+.info-bar-empty {
+  font-size: 0.72rem;
+  color: #4a3a2a;
+  font-style: italic;
 }
 
 .passive-chip {
@@ -290,7 +330,7 @@ body {
   border-radius: 14px;
   padding: 1.5rem;
   position: sticky;
-  top: 12rem;
+  top: 4rem;
 }
 
 .panel-header {
@@ -578,25 +618,13 @@ body {
 
   /* Info bar */
   .info-bar {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
     position: static;
   }
+  .info-bar-body {
+    flex-direction: column;
+  }
   .info-bar-section {
-    min-height: unset;
     width: 100%;
-  }
-  .info-bar-controls {
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-    padding: 0;
-    border: none;
-  }
-  .info-bar-tags,
-  .info-bar-passive-chips {
-    flex-wrap: wrap;
   }
 
   /* Main layout */
@@ -1517,6 +1545,12 @@ body {
 .slot-btn.slot-filled {
   border-color: #c8a96e;
   background: #2a2318;
+}
+
+.slot-btn.slot-unavailable {
+  border-color: #dc2626;
+  background: rgba(220, 38, 38, 0.15);
+  box-shadow: 0 0 6px rgba(220, 38, 38, 0.4);
 }
 
 .slot-icon {

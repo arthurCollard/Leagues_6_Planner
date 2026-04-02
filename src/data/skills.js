@@ -25,25 +25,33 @@ export const SKILLS = [
 ];
 
 export const EXTRAS = [
-  { id: 'gp_source',              name: 'GP Source',               icon: '💰' },
-  { id: 'food_source',            name: 'Food Source',             icon: '🍖' },
-  { id: 'travel',                 name: 'Travel / Teleport',       icon: '🗺️' },
-  { id: 'ammo_source',            name: 'Ammo Source',             icon: '🏹' },
-  { id: 'seed_access',            name: 'Seed Access',             icon: '🌾' },
-  { id: 'herb_supply',            name: 'Herb Supply',             icon: '🧪' },
-  { id: 'herb_patches',           name: 'Herb Patches',            icon: '🌱' },
-  { id: 'allotment_patches',      name: 'Allotment Patches',       icon: '🥬' },
-  { id: 'limpwurt',               name: 'Limpwurt Root',           icon: '🌿' },
-  { id: 'white_berries',          name: 'White Berries',           icon: '🍇' },
-  { id: 'eye_of_newt',            name: 'Eye of Newt',             icon: '👁️' },
-  { id: 'prayer_pot_primary',     name: 'Prayer Pot (Primary)',    icon: '🙏' },
-  { id: 'prayer_pot_secondary',   name: 'Prayer Pot (Secondary)',  icon: '🙏' },
-  { id: 'anti_venoms_primary',    name: 'Antivenoms (Primary)',    icon: '🐍' },
-  { id: 'anti_venoms_secondary',  name: 'Antivenoms (Secondary)',  icon: '🐍' },
-  { id: 'antifires_primary',      name: 'Antifires (Primary)',     icon: '🔥' },
-  { id: 'antifires_secondary',    name: 'Antifires (Secondary)',   icon: '🔥' },
-  { id: 'mega_rares',             name: 'Mega Rares Access',       icon: '💎', solvedAt: 1 },
+  { id: 'gp_source',              name: 'GP Source',               icon: '💰', category: 'general'  },
+  { id: 'food_source',            name: 'Food Source',             icon: '🍖', category: 'general'  },
+  { id: 'travel',                 name: 'Travel / Teleport',       icon: '🗺️', category: 'general'  },
+  { id: 'ammo_source',            name: 'Ammo Source',             icon: '🏹', category: 'general'  },
+  { id: 'mega_rares',             name: 'Mega Rares Access',       icon: '💎', category: 'general',  solvedAt: 1 },
+  { id: 'seed_access',            name: 'Seed Access',             icon: '🌾', category: 'farming'  },
+  { id: 'herb_patches',           name: 'Herb Patches',            icon: '🌱', category: 'farming'  },
+  { id: 'allotment_patches',      name: 'Allotment Patches',       icon: '🥬', category: 'farming'  },
+  { id: 'bush_patches',           name: 'Bush Patches',            icon: '🥬', category: 'farming'  },
+  { id: 'tree_patches',           name: 'Tree Patches',            icon: '🥬', category: 'farming'  },
+  { id: 'hardwood_patches',       name: 'Hardwood Patches',        icon: '🥬', category: 'farming'  },
+  { id: 'limpwurt',               name: 'Limpwurt Root',           icon: '🌿', category: 'herblore' },
+  { id: 'white_berries',          name: 'White Berries',           icon: '🍇', category: 'herblore', solvedAt: 1 },
+  { id: 'eye_of_newt',            name: 'Eye of Newt',             icon: '👁️', category: 'herblore' },
+  { id: 'prayer_pot_primary',     name: 'Prayer Pot (Primary)',    icon: '🙏', category: 'herblore' },
+  { id: 'prayer_pot_secondary',   name: 'Prayer Pot (Secondary)',  icon: '🙏', category: 'herblore' },
+  { id: 'anti_venoms_primary',    name: 'Antivenoms (Primary)',    icon: '🐍', category: 'herblore' },
+  { id: 'anti_venoms_secondary',  name: 'Antivenoms (Secondary)',  icon: '🐍', category: 'herblore' },
+  { id: 'antifires_primary',      name: 'Antifires (Primary)',     icon: '🔥', category: 'herblore' },
+  { id: 'antifires_secondary',    name: 'Antifires (Secondary)',   icon: '🔥', category: 'herblore' },
 ];
+
+export const EXTRA_CATEGORIES = {
+  general:  '⚙️ General',
+  farming:  '🌱 Farming',
+  herblore: '🧪 Herblore',
+};
 
 export const CATEGORIES = {
   combat:  '⚔️ Combat',

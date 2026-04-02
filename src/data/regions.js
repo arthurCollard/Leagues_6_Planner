@@ -18,7 +18,7 @@ export const UNIVERSAL_REGIONS = [
       'Echo boots', 'Sunfire fanatic armour', 'Tonalztics of ralos',
     ],
     skills: { prayer: 2, fletching: 1, herblore: 1, woodcutting: 1, hunter: 2},
-    extras: { ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2 },
+    extras: { ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2, tree_patches:1, hardwood_patches: 1 },
   },
   {
     name: 'Karamja',
@@ -51,7 +51,7 @@ export const UNLOCKABLE_REGIONS = [
       'Void armor set',
     ],
     skills: { construction: 1 },
-    extras: { ammo_source: 2, eye_of_newt: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 2, allotment_patches: 2 },
+    extras: { ammo_source: 2, eye_of_newt: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 2, allotment_patches: 2, bush_patches: 1, tree_patches: 2 },
   },
   {
     name: 'Fremennik',
@@ -66,7 +66,7 @@ export const UNLOCKABLE_REGIONS = [
       'Awakener\'s orb', 'Ancient sceptre', 'Venator shard',
     ],
     skills: { prayer: 1, construction: 1, smithing: 1},
-    extras: { gp_source: 2, food_source: 2, travel: 2, ammo_source: 3, limpwurt: 3, antifires_secondary: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 1 },
+    extras: { gp_source: 2, food_source: 2, travel: 2, ammo_source: 3, limpwurt: 3, antifires_secondary: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 1, bush_patches: 1 },
   },
   {
     name: 'Kandarin',
@@ -79,7 +79,7 @@ export const UNLOCKABLE_REGIONS = [
       'Mist battlestaff', 'Warped sceptre', 'Angler\'s outfit',
     ],
     skills: { runecrafting: 1, thieving: 1},
-    extras: { food_source: 3, travel: 1, ammo_source: 1, eye_of_newt: 3, prayer_pot_primary: 2, herb_patches: 2, allotment_patches: 4 },
+    extras: { food_source: 3, travel: 1, ammo_source: 1, eye_of_newt: 3, prayer_pot_primary: 2, herb_patches: 2, allotment_patches: 4, bush_patches: 1, tree_patches: 1 },
   },
   {
     name: 'Desert',
@@ -126,7 +126,7 @@ export const UNLOCKABLE_REGIONS = [
       'Mist battlestaff', 'Leaf-bladed battleaxe',
     ],
     skills: {},
-    extras: { gp_source: 2, ammo_source: 1, white_berries: 3, eye_of_newt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 3, allotment_patches: 2 },
+    extras: { gp_source: 2, ammo_source: 1, white_berries: 1, eye_of_newt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 3, allotment_patches: 2 },
   },
   {
     name: 'Wilderness',
@@ -145,7 +145,7 @@ export const UNLOCKABLE_REGIONS = [
       'Amulet of eternal glory', 'Elder chaos robes',
     ],
     skills: { prayer: 2, hunter: 1},
-    extras: { gp_source: 3, food_source: 2, limpwurt: 2, white_berries: 3, prayer_pot_primary: 2 },
+    extras: { gp_source: 3, food_source: 2, limpwurt: 2, white_berries: 1, prayer_pot_primary: 2 },
   },
   {
     name: 'Kourend',
@@ -163,7 +163,7 @@ export const UNLOCKABLE_REGIONS = [
       'Oathplate armour', 'Soulflame horn',
     ],
     skills: { runecrafting: 1, magic: 1, farming: 1, slayer: 1},
-    extras: { food_source: 2, ammo_source: 1, seed_access: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 2, anti_venoms_primary: 2, antifires_primary: 2, herb_patches: 2, allotment_patches: 4, mega_rares: 1 },
+    extras: { food_source: 2, ammo_source: 1, seed_access: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 2, anti_venoms_primary: 2, antifires_primary: 2, herb_patches: 2, allotment_patches: 4, bush_patches: 1, mega_rares: 1, tree_patches: 1 },
   },
 ];
 

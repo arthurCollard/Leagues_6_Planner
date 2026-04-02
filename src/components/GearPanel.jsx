@@ -239,6 +239,7 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
     ? regionFiltered.filter(i => i.ammoType === ammoType)
     : regionFiltered;
   const filtered = ammoFiltered.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
+  const isUnavailable = selected && selectedRegions.length > 0 && !regionFiltered.some(i => i.name === selected.name);
 
   useEffect(() => {
     if (!open) return;
@@ -254,7 +255,7 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
   return (
     <div className="slot-picker-wrapper" ref={ref}>
       <button
-        className={`slot-btn ${selected ? 'slot-filled' : 'slot-empty'} ${disabled ? 'slot-disabled' : ''}`}
+        className={`slot-btn ${selected ? 'slot-filled' : 'slot-empty'} ${disabled ? 'slot-disabled' : ''} ${isUnavailable ? 'slot-unavailable' : ''}`}
         onClick={() => !disabled && setOpen(o => !o)}
         title={disabled ? '2H weapon equipped' : slot.charAt(0).toUpperCase() + slot.slice(1)}
         disabled={disabled}

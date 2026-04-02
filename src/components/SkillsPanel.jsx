@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SKILLS, EXTRAS, CATEGORIES, STATUS_STYLES } from '../data/skills';
+import { SKILLS, EXTRAS, CATEGORIES, EXTRA_CATEGORIES, STATUS_STYLES } from '../data/skills';
 import SkillIcon from './SkillIcon';
 
 function getStatusRange(key, solvedThreshold, oversolvedFactor) {
@@ -63,16 +63,21 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
           </div>
         ))
       ) : (
-        <div className="skill-grid extras-grid">
-          {EXTRAS.map(e => (
-            <SkillIcon
-              key={e.id}
-              skill={e}
-              score={extras[e.id].score}
-              status={extras[e.id].status}
-            />
-          ))}
-        </div>
+        Object.entries(EXTRA_CATEGORIES).map(([cat, label]) => (
+          <div key={cat} className="skill-category">
+            <h4>{label}</h4>
+            <div className="skill-grid extras-grid">
+              {EXTRAS.filter(e => e.category === cat).map(e => (
+                <SkillIcon
+                  key={e.id}
+                  skill={e}
+                  score={extras[e.id]?.score ?? 0}
+                  status={extras[e.id]?.status ?? 'unsolved'}
+                />
+              ))}
+            </div>
+          </div>
+        ))
       )}
     </aside>
   );

@@ -113,7 +113,7 @@ export const HEAD = [
   {
     name: 'Slayer Helmet (i)',
     slot: 'head',
-    regions: [],
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 3, ranged: 3 },
@@ -347,7 +347,7 @@ export const HEAD = [
   {
     name: 'Black Mask (i)',
     slot: 'head',
-    regions: [],
+    regions: ['Morytania'],
     requirements: [{ skill: 'Defence', level: 40 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },

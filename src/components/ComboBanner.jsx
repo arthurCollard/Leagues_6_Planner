@@ -1,10 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { EXTRAS } from '../data/skills';
 import ContribTooltip from './ContribTooltip';
 
 export default function ComboBanner({ activeCombos, pendingCombos, activeThresholds = [], pendingThresholds = [], extras = {}, activePassives = [], onToggleSettings, onReset, hasSelections }) {
+  const [activeTab, setActiveTab] = useState('pending');
   const [hoverCombo, setHoverCombo] = useState(null);
   const hideTimer = useRef(null);
+  const prevActiveCount = useRef(0);
+
+  const activeCount = activeCombos.length + activeThresholds.length;
+  const pendingCount = pendingCombos.length + pendingThresholds.length;
+
+  useEffect(() => {
+    if (prevActiveCount.current === 0 && activeCount > 0) {
+      setActiveTab('active');
+    }
+    prevActiveCount.current = activeCount;
+  }, [activeCount]);
 
   const handleMouseEnter = (e, combo) => {
     clearTimeout(hideTimer.current);
@@ -21,64 +33,77 @@ export default function ComboBanner({ activeCombos, pendingCombos, activeThresho
     hideTimer.current = setTimeout(() => setHoverCombo(null), 80);
   };
 
-  const MAX_PILLS = 11;
-  const allPills = [
-    ...activeCombos.map(c => ({ type: 'ac', key: `ac-${c.label}`, combo: c })),
-    ...activeThresholds.map(t => ({ type: 'at', key: `at-${t.label || t.extra}`, threshold: t })),
-    ...pendingCombos.map(c => ({ type: 'pc', key: `pc-${c.label}`, combo: c })),
-    ...pendingThresholds.map(t => ({ type: 'pt', key: `pt-${t.extra}`, threshold: t })),
-  ];
-  const visiblePills = allPills.slice(0, MAX_PILLS);
-  const overflowCount = allPills.length - MAX_PILLS;
-
   return (
     <div className="info-bar">
       <div className="info-bar-section info-bar-combos">
-        <span className="info-bar-label">
-          Combos &amp; Bonuses
-          <span className="info-icon" data-tooltip="Certain relics and regions work well together. You can see combos and their bonuses to your skills here.">ℹ</span>
-        </span>
+        <div className="info-bar-combos-header">
+          <span className="info-bar-label">
+            Combos &amp; Bonuses
+            <span className="info-icon" data-tooltip="Certain relics and regions work well together. You can see combos and their bonuses to your skills here.">ℹ</span>
+          </span>
+          <label className="combo-tab-toggle">
+            <span className={`combo-tab-label ${activeTab === 'active' ? 'combo-tab-selected' : ''}`}>
+              Active <span className="tab-count">{activeCount}</span>
+            </span>
+            <span
+              className={`toggle-track ${activeTab === 'pending' ? 'toggle-on' : 'toggle-off'}`}
+              onClick={() => setActiveTab(activeTab === 'active' ? 'pending' : 'active')}
+            >
+              <span className="toggle-thumb" />
+            </span>
+            <span className={`combo-tab-label ${activeTab === 'pending' ? 'combo-tab-selected' : ''}`}>
+              Pending <span className="tab-count">{pendingCount}</span>
+            </span>
+          </label>
+        </div>
+
         <div className="info-bar-tags">
-          {visiblePills.map(p => {
-            if (p.type === 'ac') return (
-              <span key={p.key} className="combo-tag combo-active"
-                onMouseEnter={e => handleMouseEnter(e, p.combo)}
+          {activeTab === 'active' && <>
+            {activeCombos.map(c => (
+              <span key={c.label} className="combo-tag combo-active"
+                onMouseEnter={e => handleMouseEnter(e, c)}
                 onMouseLeave={handleMouseLeave}>
-                ⚡ {p.combo.label}
+                ⚡ {c.label}
               </span>
-            );
-            if (p.type === 'at') return (
-              <span key={p.key} className="combo-tag combo-active"
-                onMouseEnter={e => handleMouseEnter(e, { bonuses: p.threshold.perPoint, tooltip: p.threshold.tooltip })}
+            ))}
+            {activeThresholds.map(t => (
+              <span key={t.label || t.extra} className="combo-tag combo-active"
+                onMouseEnter={e => handleMouseEnter(e, { bonuses: t.perPoint, tooltip: t.tooltip })}
                 onMouseLeave={handleMouseLeave}>
-                ⚡ {p.threshold.label || p.threshold.extra}
+                ⚡ {t.label || t.extra}
               </span>
-            );
-            if (p.type === 'pc') return (
-              <span key={p.key} className="combo-tag combo-pending"
-                data-tooltip={`Needs: ${p.combo.missing.join(', ')}`}>
-                🔗 {p.combo.label} ({p.combo.matched}/{p.combo.total})
+            ))}
+            {activeCount === 0 && (
+              <span className="info-bar-empty">No active combos yet</span>
+            )}
+          </>}
+
+          {activeTab === 'pending' && <>
+            {pendingCombos.map(c => (
+              <span key={c.label} className="combo-tag combo-pending"
+                data-tooltip={`Needs: ${c.missing.join(', ')}`}>
+                🔗 {c.label} ({c.matched}/{c.total})
               </span>
-            );
-            if (p.type === 'pt') {
-              const extraName = EXTRAS.find(x => x.id === p.threshold.extra)?.name || p.threshold.extra;
+            ))}
+            {pendingThresholds.map(t => {
+              const extraName = EXTRAS.find(x => x.id === t.extra)?.name || t.extra;
               return (
-                <span key={p.key} className="combo-tag combo-pending"
-                  data-tooltip={`Need ${p.threshold.threshold} ${extraName}`}>
-                  🔗 {p.threshold.label || p.threshold.extra} ({extras[p.threshold.extra]?.score || 0}/{p.threshold.threshold})
+                <span key={t.extra} className="combo-tag combo-pending"
+                  data-tooltip={`Need ${t.threshold} ${extraName}`}>
+                  🔗 {t.label || t.extra} ({extras[t.extra]?.score || 0}/{t.threshold})
                 </span>
               );
-            }
-            return null;
-          })}
-          {overflowCount > 0 && (
-            <span className="combo-tag combo-overflow">+{overflowCount} more</span>
-          )}
+            })}
+            {pendingCount === 0 && (
+              <span className="info-bar-empty">No pending combos</span>
+            )}
+          </>}
         </div>
       </div>
+
       <div className="info-bar-section info-bar-passives">
         <span className="info-bar-label">
-          Active Passives
+          Passive Bonuses
           <span className="info-icon" data-tooltip="Relic Tiers provide passive effects. You can see the accumulated effects of your unlocked passives here">ℹ</span>
         </span>
         <div className="info-bar-passive-chips">
@@ -89,6 +114,7 @@ export default function ComboBanner({ activeCombos, pendingCombos, activeThresho
           ))}
         </div>
       </div>
+
       <ContribTooltip data={hoverCombo} />
 
       <div className="info-bar-controls">
