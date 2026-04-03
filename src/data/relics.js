@@ -95,9 +95,31 @@ export const RELICS = {
         notes: [],
       },
       skills: { hunter: 3, firemaking: 2, fletching: 3, farming: 1 },
-      extras: { seed_access: 2, herb_supply: 2 },
+      extras: { seed_access: 2 },
     },
         {
+      name: 'Friendly Forager',
+      icon: `${process.env.PUBLIC_URL}/relics/Friendly_Forager.png`,
+      desc: 'Herbs from gathering, herb sack pouch, 4-dose potions, 90% secondary save, all-at-once Herblore',
+      description: {
+        grant: 'Upon choosing this relic you will receive the forager\'s pouch.',
+        effects: [
+          'While the forager\'s pouch is worn or in your inventory: when you gather resources from Woodcutting, Fishing, Mining, and Hunter, the pouch will find and store a random grimy herb.',
+          'The herb is limited to any which your Herblore level + 25 can clean. This also provides a small amount of Herblore experience.',
+          'The pouch will only find herbs it has room to store, but will always attempt to give you a herb you can receive.',
+          'The pouch also functions as a silk-lined herb sack, and shares an inventory with it.',
+          'All items are processed at once while training Herblore.',
+          'Secondary ingredients have a 90% chance to not be consumed. This stacks additively with other sources.',
+          'Potions created will have 4 doses instead of 3.',
+        ],
+        notes: [
+          'The forager\'s pouch can be retrieved from the Leagues Tutor in Yama\'s Lair if lost.',
+        ],
+      },
+      skills: { herblore: 4 },
+      extras: { prayer_pot_primary: 3, antifires_primary: 3},
+    },
+    {
       name: 'Hotfoot',
       icon: `${process.env.PUBLIC_URL}/relics/Hotfoot.png`,
       desc: 'Level agility while you run, caught fish are automatically cooked, and mined ore is automatically smelted.',
@@ -193,7 +215,7 @@ export const RELICS = {
     },
     {
       name: 'Larcenist',
-      icon: `${process.env.PUBLIC_URL}/relics/Nature's_Accord.png`,
+      icon: `${process.env.PUBLIC_URL}/relics/Larcenist.png`,
       desc: '100% Thieving success, auto re-steal, 10x loot from pickpocketing and stalls',
       description: {
         effects: [
