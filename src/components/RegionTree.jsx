@@ -3,6 +3,7 @@ import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS, MAX_UNLOCKABLE_REGIONS } from '.
 import { SKILLS, EXTRAS } from '../data/skills';
 import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD, AMMO } from '../data/gear/index';
 import ContribTooltip from './ContribTooltip';
+import RegionDetailModal from './RegionDetailModal';
 
 const ALL_GEAR = [...HEAD, ...BODY, ...LEGS, ...HANDS, ...FEET, ...CAPE, ...NECK, ...RING, ...WEAPON, ...SHIELD, ...AMMO];
 
@@ -148,6 +149,12 @@ function RegionCard({ region, selected, selectionOrder, totalSelected, disabled,
           onClick={onClick}
         >
           <div className="relic-info">
+            <img
+              className="region-badge-icon"
+              src={`/regions/${region.name}_Area_Badge.png`}
+              alt=""
+              onError={e => { e.target.style.display = 'none'; }}
+            />
             <strong>{region.name}</strong>
           </div>
           {selectionOrder != null && (
@@ -230,6 +237,12 @@ function RegionSplitPanel({ selectedRegions, onSelectRegion, onReorderRegion, op
               >
                 <span className="region-drag-handle">⠿</span>
                 <span className="region-order-num">{i + 1}.</span>
+                <img
+                  className="region-badge-icon"
+                  src={`/regions/${name}_Area_Badge.png`}
+                  alt=""
+                  onError={e => { e.target.style.display = 'none'; }}
+                />
                 <span className="region-item-name">{name}</span>
                 <button
                   className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
@@ -272,6 +285,12 @@ function RegionSplitPanel({ selectedRegions, onSelectRegion, onReorderRegion, op
                 onMouseEnter={() => showTooltip(region.name, region)}
                 onMouseLeave={onHideContrib}
               >
+                <img
+                  className="region-badge-icon"
+                  src={`/regions/${region.name}_Area_Badge.png`}
+                  alt=""
+                  onError={e => { e.target.style.display = 'none'; }}
+                />
                 <span className="region-item-name">{region.name}</span>
                 <button
                   className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
@@ -300,6 +319,7 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReorderR
   const [isOpen, setIsOpen] = useState(true);
   const [openSettings, setOpenSettings] = useState(null);
   const [hoverContrib, setHoverContrib] = useState(null);
+  const [modalRegion, setModalRegion] = useState(null);
   const hideTimer = useRef(null);
   const showTimer = useRef(null);
   const selectedCount = selectedRegions.length;
@@ -390,6 +410,12 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReorderR
         data={hoverContrib}
         onMouseEnter={() => clearTimeout(hideTimer.current)}
         onMouseLeave={handleHideContrib}
+        onMoreInfo={name => { setHoverContrib(null); setModalRegion(name); }}
+      />
+      <RegionDetailModal
+        key={modalRegion}
+        regionName={modalRegion}
+        onClose={() => setModalRegion(null)}
       />
     </main>
   );

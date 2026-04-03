@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SCRAPED_PATH = path.join(__dirname, 'region-data.json');
+const SCRAPED_PATH = path.join(__dirname, '../src/data/region-data.json');
 const REGIONS_PATH = path.join(__dirname, '../src/data/regions.js');
 
 // Map existing region names -> scraped page names
@@ -67,6 +67,23 @@ function extractNonCombat(scraped) {
     getList(scraped, 'Key Info', 'Notable Non-Combat Activities') ||
     null
   );
+}
+
+function extractDropTable(scraped) {
+  // Notable drops is a table under the top-level "Notable drops" h2, stored as _content
+  const section = scraped?.['Notable drops'];
+  if (!section) return null;
+  const content = section['_content'];
+  if (!content || content.type !== 'table') return null;
+  return content.rows
+    .filter(row => row['Item'] && row['Item'].trim())
+    .map(row => ({
+      item:   row['Item'].trim(),
+      source: row['Source']?.trim() || '',
+      base:   row['BaseRarity']?.trim() || '',
+      x2:     row['2x DropMultiplier']?.trim() || '',
+      x5:     row['5x DropMultiplier']?.trim() || '',
+    }));
 }
 
 // ---------- serialise a region object ----------

@@ -10,7 +10,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const OUTPUT_PATH = path.join(__dirname, 'region-data.json');
+const OUTPUT_PATH = path.join(__dirname, '../src/data/region-data.json');
 const WIKI_API = 'https://oldschool.runescape.wiki/api.php';
 const HEADERS = { 'User-Agent': 'OSRS-Leagues-Planner/1.0 (region-scraper; local)' };
 const RATE_LIMIT_MS = 300;
@@ -62,6 +62,11 @@ function stripTags(html) {
     .replace(/&quot;/g, '"')
     .replace(/&#039;/g, "'")
     .replace(/&nbsp;/g, ' ')
+    // decode remaining numeric entities (e.g. &#91; → [)
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+    // strip wiki footnote markers like [d 1], [1], [a], etc.
+    .replace(/\[[^\]]{0,10}\]/g, '')
     .replace(/\s+/g, ' ')
     .trim();
 }

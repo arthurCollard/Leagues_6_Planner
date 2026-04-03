@@ -1,0 +1,4535 @@
+{
+  "Misthalin": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Barbarian Village",
+          "Draynor Village",
+          "Edgeville",
+          "Fossil Island",
+          "Lumbridge",
+          "The Digsite",
+          "Varrock",
+          "Zanaris",
+          "The Isle of Souls and Soul Wars",
+          "Dorgesh-Kaan",
+          "Lithkren Vault"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The gate between Lumbridge and Al Kharid",
+          "The entrance to the Kalphite Hive from Dorgesh-Kaan South Dungeon",
+          "The grapple shortcut between Lumbridge and Al Kharid",
+          "The stepping stone between Lumbridge Swamp and the Kalphite Lair",
+          "The under-wall shortcut between Draynor Village and Port Sarim",
+          "The underground sections of the Paterdomus Temple",
+          "The railing shortcut between the Paterdomus Temple and Canifis"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Abyssal Sire",
+          "Bryophyta",
+          "Deranged archaeologist",
+          "Edgeville Dungeon",
+          "Fossil Island wyverns",
+          "The Lithkren Vault (if the Fremennik Province is unlocked)",
+          "Lumbridge Swamp Caves",
+          "Obor",
+          "Stronghold of Security",
+          "Tormented Demons",
+          "Scurrius, the Rat King"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Champions' Guild",
+          "Draynor Village rooftop agility course",
+          "Hunting herbiboar on Fossil Island",
+          "Fossil Island Birdhouses",
+          "Fossil Island hardwood tree patches",
+          "Fossil Island sulliuscep woodcutting",
+          "Underwater Agility and Thieving",
+          "Volcanic mine underneath Fossil Island Volcano",
+          "Puro-Puro implings",
+          "Cosmic, earth, and water altars",
+          "Varrock rooftop agility course",
+          "Mahogany Homes"
+        ]
+      },
+      "Other information": {
+        "type": "list",
+        "items": [
+          "Thessalia in Varrock will offer additional makeover services.",
+          "The following Misthalin shop stocks have been modified: Pestle and mortar and fishing bait has been added to the Lumbridge General Store",
+          "The Mahogany Homes intro requirement is auto-completed."
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed (without rewarding completion XP) after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Dragon Slayer I",
+          "Druidic Ritual",
+          "Elemental Workshop I",
+          "Tears of Guthix",
+          "Bone Voyage The Dig Site",
+          "Fairytale II - Cure a Queen Fairytale I - Growing Pains Lost City",
+          "Nature Spirit Priest in Peril",
+          "The Restless Ghost",
+          "Death to the Dorgeshuun The Lost Tribe Goblin Diplomacy",
+          "Rune Mysteries",
+          "Gertrude's Cat",
+          "Romeo and Juliet",
+          "A Soul's Bane",
+          "Defender of Varrock (This does not complete pre-req quests)"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Lumbridge & Draynor Diary": "Catch some anchovies in Al Kharid Mine some iron ore at the Al Kharid mine",
+            "Varrock Diary": "None"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Lumbridge & Draynor Diary": "Complete a lap of the Al Kharid rooftop course Grapple across the River Lum Purchase an upgraded device from Ava Craft some lava runes at the Fire Altar in Al Kharid",
+            "Varrock Diary": "Select a colour for your kitten Use the Spirit tree in the north-eastern corner of Grand Exchange Pick a white tree fruit Use the balloon to travel from Varrock"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Lumbridge & Draynor Diary": "Cast Bones to Peaches in Al Kharid Palace Collect 100 tears from Tears of Guthix Take the train from Dorgesh-Kaan to Keldagrim Purchase some Barrows gloves from the Culinaromancer's Chest",
+            "Varrock Diary": "Trade furs with the Fancy Dress Seller for a Spottier cape and equip it Teleport to Paddewwa"
+          },
+          {
+            "col0": "Elite Tasks",
+            "Lumbridge & Draynor Diary": "Chop some magic logs at the magic training arena Perform the Quest Point cape emote in the Wise Old Man's house",
+            "Varrock Diary": "Use Lunar magic to make 20 mahogany planks in the Varrock Lumber Yard Bake a summer pie in the Cook's Guild Smith and fletch ten rune darts within Varrock"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Cows (3 - 50)",
+          "Zombies (10 - 50)",
+          "Skeletons (15 - 126)",
+          "Bears (13 - 50)",
+          "Hill Giants (25 - 100)",
+          "Moss Giants (40 - 100)",
+          "Blue Dragons (65 - 126)",
+          "Black Dragons (80 - 126)",
+          "Greater Demons (70 - 126)",
+          "Abyssal Demons (85 - 126)",
+          "Pyrefiends (25 - 70)",
+          "Iron Dragons (80 - 126)",
+          "Ankou (60 - 126)",
+          "Fossil Island Wyverns (60 - 126)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Abyssal whip",
+            "Source": "Abyssal demon",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal dagger",
+            "Source": "Abyssal demon",
+            "BaseRarity": "1/32,000",
+            "2x DropMultiplier": "1/16,000",
+            "5x DropMultiplier": "1/6,400"
+          },
+          {
+            "col0": "",
+            "Item": "Unsired",
+            "Source": "Abyssal Sire",
+            "BaseRarity": "1/100",
+            "2x DropMultiplier": "1/50",
+            "5x DropMultiplier": "1/20"
+          },
+          {
+            "col0": "",
+            "Item": "Wyvern visage",
+            "Source": "Ancient wyvern",
+            "BaseRarity": "1/10,000",
+            "2x DropMultiplier": "1/5,000",
+            "5x DropMultiplier": "1/2,000"
+          },
+          {
+            "col0": "",
+            "Item": "Wyvern visage",
+            "Source": "Long-tailed, spitting, and taloned wyvern",
+            "BaseRarity": "1/12,000",
+            "2x DropMultiplier": "1/6,000",
+            "5x DropMultiplier": "1/2,400"
+          },
+          {
+            "col0": "",
+            "Item": "Draconic visage",
+            "Source": "Adamant dragon",
+            "BaseRarity": "1/9,000",
+            "2x DropMultiplier": "1/4,500",
+            "5x DropMultiplier": "1/1,800"
+          },
+          {
+            "col0": "",
+            "Item": "Draconic visage",
+            "Source": "Rune dragon",
+            "BaseRarity": "1/8,000",
+            "2x DropMultiplier": "1/4,000",
+            "5x DropMultiplier": "1/1,600"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon limbs",
+            "Source": "Adamant dragon",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon limbs",
+            "Source": "Rune dragon",
+            "BaseRarity": "1/800",
+            "2x DropMultiplier": "1/400",
+            "5x DropMultiplier": "1/160"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon kiteshield",
+            "Source": "Adamant dragon",
+            "BaseRarity": "1/5,000",
+            "2x DropMultiplier": "1/2,500",
+            "5x DropMultiplier": "1/1,000"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon platebody",
+            "Source": "Rune dragon",
+            "BaseRarity": "1/5,000",
+            "2x DropMultiplier": "1/2,500",
+            "5x DropMultiplier": "1/1,000"
+          },
+          {
+            "col0": "",
+            "Item": "Hill giant club",
+            "Source": "Obor",
+            "BaseRarity": "1/118",
+            "2x DropMultiplier": "1/59",
+            "5x DropMultiplier": "1/23"
+          },
+          {
+            "col0": "",
+            "Item": "Bryophyta's essence",
+            "Source": "Bryophyta",
+            "BaseRarity": "1/118",
+            "2x DropMultiplier": "1/59",
+            "5x DropMultiplier": "1/23"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon pickaxe",
+            "Source": "Ore pack (Volcanic Mine)",
+            "BaseRarity": "1/100",
+            "2x DropMultiplier": "1/50",
+            "5x DropMultiplier": "1/20"
+          },
+          {
+            "col0": "",
+            "Item": "Tormented synapse",
+            "Source": "Tormented Demon",
+            "BaseRarity": "1/500",
+            "2x DropMultiplier": "1/250",
+            "5x DropMultiplier": "1/100"
+          },
+          {
+            "col0": "",
+            "Item": "Burning claw",
+            "Source": "Tormented Demon",
+            "BaseRarity": "1/501",
+            "2x DropMultiplier": "1/250",
+            "5x DropMultiplier": "1/100"
+          },
+          {
+            "col0": "",
+            "Item": "Scurrius' spine",
+            "Source": "Scurrius",
+            "BaseRarity": "1/33",
+            "2x DropMultiplier": "1/16",
+            "5x DropMultiplier": "1/6"
+          },
+          {
+            "col0": "",
+            "Item": "Broken zombie axe",
+            "Source": "Armoured Zombies",
+            "BaseRarity": "1/800",
+            "2x DropMultiplier": "1/400",
+            "5x DropMultiplier": "1/160"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon platelegs",
+            "Source": "Rune dragon",
+            "BaseRarity": "1/127",
+            "2x DropMultiplier": "1/63",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon plateskirt",
+            "Source": "Rune dragon",
+            "BaseRarity": "1/127",
+            "2x DropMultiplier": "1/63",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon platelegs",
+            "Source": "Adamant dragon",
+            "BaseRarity": "1/110",
+            "2x DropMultiplier": "1/55",
+            "5x DropMultiplier": "1/22"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon plateskirt",
+            "Source": "Adamant dragon",
+            "BaseRarity": "1/110",
+            "2x DropMultiplier": "1/55",
+            "5x DropMultiplier": "1/22"
+          }
+        ]
+      }
+    }
+  },
+  "Karamja": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Brimhaven",
+          "Karamja Ship Yard",
+          "Musa Point",
+          "Shilo Village",
+          "Tai Bwo Wannai",
+          "Mor-Ul-Rek"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Brimhaven Dungeon",
+          "Tai Bwo Wannai Dungeon (Jogre Dungeon)",
+          "The Fight Caves",
+          "The Fight Pits",
+          "TzHaar-Ket-Rak's Challenges",
+          "The Inferno",
+          "Tzhaar creatures"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Brimhaven Agility Arena",
+          "Brimhaven House Portal",
+          "Calquat tree patch",
+          "Fishing infernal eel",
+          "Fruit tree patch north of Brimhaven",
+          "Fishing karambwan",
+          "Nature Altar",
+          "Tai Bwo Wannai Cleanup",
+          "Teak and Mahogany woodcutting",
+          "Tzhaar pickpocketing",
+          "Thieving from the gem stall in Mor-Ul-Rek",
+          "Uncut gems from the Shilo Village mine"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Fernahei's Fishing Hut.",
+          "TzHaar-Hur-Tel's Equipment Store",
+          "TzHaar-Mej-Roh's Rune Store",
+          "TzHaar-Hur-Lek's Ore and Gem Store",
+          "Jiminua's Jungle Store.",
+          "Obli's General Store.",
+          "The Shrimp and Parrot",
+          "Tiadeche's Karambwan Stall"
+        ]
+      },
+      "Other information": {
+        "type": "list",
+        "items": [
+          "When purchasing a Player Owned House from an Estate Agent your house will be placed in Brimhaven so that Construction can be trained from level 1.",
+          "Tzhaar-Ket-Rak will let you do all of his challenges immediately."
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Shilo Village Jungle Potion"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Karamja Diary": "Travel to Port Sarim via the dock, east of Musa Point. Travel to Ardougne via the port near Brimhaven."
+          },
+          {
+            "col0": "Medium Tasks",
+            "Karamja Diary": "Charter the Lady of the Waves from south of Cairn Isle to Port Khazard. Use the gnome glider to travel to Karamja. Charter a ship from the shipyard in the far east of Karamja."
+          },
+          {
+            "col0": "Hard Tasks",
+            "Karamja Diary": "Eat an oomlie wrap. Kill a deathwing in the dungeon under the Kharazi Jungle. Collect 5 palm leaves."
+          },
+          {
+            "col0": "Elite Tasks",
+            "Karamja Diary": "Create an antivenom potion whilst standing in the horse shoe mine."
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Zombies (10 - 50)",
+          "Fire Giants (65 - 126)",
+          "Moss Giants (40 - 100)",
+          "Red Dragons (65 - 126)",
+          "Greater Demons (70 - 126)",
+          "Iron Dragons (80 - 126)",
+          "Steel Dragons (85 - 126)",
+          "Harpie Bug Swarms (45 - 85)",
+          "Tzhaar (60 - 126)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Obsidian Helmet",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Obsidian Platelegs",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Infernal Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Obsidian Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Fire Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Amulet of Fury",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Berserker Necklace",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tzhaar-ket-om",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Toktz-xil-ul",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Toktz-mej-tal",
+            "Source": "TzHaar-Mej",
+            "BaseRarity": "1/4,096",
+            "2x DropMultiplier": "1/2,048",
+            "5x DropMultiplier": "1/819"
+          },
+          {
+            "col0": "",
+            "Item": "Toktz-xil-ak",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Toktz-xil-ek",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tzhaar-ket-om (t)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Toktz-ket-xil",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    },
+    "Boosted Activities": {
+      "_content": {
+        "type": "list",
+        "items": [
+          "Tai Bwo Wannai Cleanup favour"
+        ]
+      }
+    }
+  },
+  "Asgarnia": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Burthorpe",
+          "The Ruins of Camdozaal",
+          "Ice Mountain",
+          "Dwarven Mine",
+          "Entrana",
+          "Falador",
+          "Goblin Village",
+          "God Wars Dungeon",
+          "Port Sarim",
+          "Rimmington",
+          "Taverley",
+          "Troll Stronghold",
+          "Void Knights' Outpost"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The rubble shortcut between Death Plateau and the Fremennik province",
+          "The cave between Trollweiss and Keldagrim",
+          "The rock-climb shortcut between the Troll Stronghold and the Wilderness",
+          "The rock-climb shortcut between the God Wars Dungeon and the Wilderness",
+          "The ladder between Taverley Dungeon and the water obelisk",
+          "The underground tunnel between Taverley and Catherby",
+          "The cave between Entrana and the Wilderness"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Asgarnia Ice Dungeon",
+          "The Whisperer",
+          "Cerberus",
+          "Giant Mole",
+          "God Wars Dungeon including Nex",
+          "Taverley Dungeon",
+          "Warriors' Guild",
+          "Pest Control",
+          "Echo Boss: Cerberus"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Crafting Guild",
+          "Falador Rooftop Agility Course",
+          "Falador tree patch",
+          "Falador allotment patch",
+          "Fire obelisk and Water obelisk",
+          "Heroes' Guild",
+          "Motherlode Mine",
+          "Rimmington house portal",
+          "Rogues' Den",
+          "Air, body, law, and Mind Altars",
+          "Taverley house portal",
+          "Taverley tree patch",
+          "Troll Stronghold herb patch"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Betty's Magic Emporium",
+          "Nurmof's Pickaxe Shop",
+          "Prospector Percy's Nugget Shop",
+          "Multicannon parts for sale",
+          "Garden supplier"
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Merlin's Crystal",
+          "My Arm's Big Adventure Eadgar's Ruse Troll Stronghold Death Plateau",
+          "The Feud",
+          "Dwarf Cannon"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Falador Diary": "None"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Falador Diary": "Visit the Port Sarim Rat Pits"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Falador Diary": "Recharge your Prayer in the Port Sarim church while wearing full Proselyte"
+          },
+          {
+            "col0": "Elite Tasks",
+            "Falador Diary": "Purchase a white 2h sword from Sir Vyvin"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Trolls (60 - 126)",
+          "Ogres (40 - 90)",
+          "Black Demons (80 - 126)",
+          "Hellhounds (75 - 126)",
+          "Bloodveld (50 - 126)",
+          "Skeletal Wyverns (70 - 126)",
+          "Spiritual Creatures (60 - 100)",
+          "Sourhogs (3 - 126)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Torva Full Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Mask",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Mask (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Torva Platebody",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Body (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Bandos Chestplate",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elite Void Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Torva Platelegs",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Bottom",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Chaps (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Bandos Tassets",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elite Void Robe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Zaryte Vambraces",
+            "Source": "Nex",
+            "BaseRarity": "1/172",
+            "2x DropMultiplier": "1/86",
+            "5x DropMultiplier": "1/34"
+          },
+          {
+            "col0": "",
+            "Item": "Primordial Boots",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Avernic Treads (Max)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Pegasian Boots",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Eternal Boots",
+            "Source": "Cerberus",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Boots",
+            "Source": "Spiritual mages",
+            "BaseRarity": "1/128",
+            "2x DropMultiplier": "1/64",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Bandos Boots",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Max Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Bellator Ring",
+            "Source": "The Whisperer",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Dagger",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Soulreaper Axe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Armadyl Godsword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Bandos Godsword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Saradomin Sword",
+            "Source": "Commander Zilyana",
+            "BaseRarity": "1/127",
+            "2x DropMultiplier": "1/63",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Armadyl Crossbow",
+            "Source": "Commander Zilyana",
+            "BaseRarity": "1/508",
+            "2x DropMultiplier": "1/254",
+            "5x DropMultiplier": "1/101"
+          },
+          {
+            "col0": "",
+            "Item": "Steam Battlestaff",
+            "Source": "K'ril Tsutsaroth",
+            "BaseRarity": "1/127",
+            "2x DropMultiplier": "1/63",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Zamorakian Spear",
+            "Source": "K'ril Tsutsaroth",
+            "BaseRarity": "1/127",
+            "2x DropMultiplier": "1/63",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Toxic Staff of the Dead",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Staff of the Dead",
+            "Source": "K'ril Tsutsaroth",
+            "BaseRarity": "1/508",
+            "2x DropMultiplier": "1/254",
+            "5x DropMultiplier": "1/101"
+          },
+          {
+            "col0": "",
+            "Item": "Ancient Godsword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Saradomin Godsword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Zamorak Godsword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Saradomin's Blessed Sword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Defender",
+            "Source": "Cyclops",
+            "BaseRarity": "1/100",
+            "2x DropMultiplier": "1/50",
+            "5x DropMultiplier": "1/20"
+          }
+        ]
+      }
+    }
+  },
+  "Fremennik Province": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Keldagrim",
+          "Ghorrock Dungeon",
+          "Lunar Isle",
+          "Miscellania & Etceteria",
+          "Neitiznot & Jatizso",
+          "Rellekka",
+          "The Island of Stone",
+          "The Mountain Camp",
+          "The Pirates' Cove",
+          "Ungael",
+          "Waterbirth Island",
+          "Weiss (Requires completion of Making Friends with My Arm)"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The log shortcut leading to Kandarin north of Sinclair Manor",
+          "The rubble separating the Fremennik Province and the Death Plateau",
+          "The cave entrance in the tunnel leading to Keldagrim that leads to the bottom of Trollweiss mountain",
+          "The basalt rock agility shortcut leading from the Lighthouse to the Barbarian Outpost"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Basilisk knights",
+          "Duke Sucellus",
+          "Phantom Muspah",
+          "Dagannoth Kings",
+          "Rellekka Slayer Cave",
+          "Waterbirth Island Dungeon",
+          "Vorkath (Note that the Fremennik Provinces alone do not provide the means to create anti-venoms.)",
+          "Echo Boss: Dagannoth Kings",
+          "^ Extra arder-musca poisons and their materials will not be cleared from the inventory after killing the Duke, so poisons can be made in batches and kept in the inventory between kills. However, the contents of the fermentation vats will reset to empty when the Duke wakes up or if the player leaves.",
+          "^ Players may create private instances to fight the Dagannoth Kings.",
+          "^ Cure Me is available as an alternative, which will downgrade venom to poison and cure poison."
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Blast Furnace, operated by Dwarves Ice gloves will be placed in your bank upon region unlock and can be reclaimed from The Sage if lost",
+          "Kingdom Management",
+          "Penguin Agility Course",
+          "Rellekka house portal",
+          "Rellekka Rooftop Course",
+          "Astral Altar",
+          "Weiss herb patch"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Mawnis Burowgar",
+          "Skulgrimen's Battle Gear",
+          "Baba Yaga's Magic Shop.",
+          "Moon Clan Fine Clothes.",
+          "Ore Store",
+          "Keldagrim Stonemason Construction shop",
+          "Blast Furnace Ore seller."
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area:"
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Secrets of the North and all prerequisites (Note that this does not complete Desert Treasure I)",
+          "Horror from the Deep Alfred Grimhand's Barcrawl Scorpion Catcher",
+          "Dragon Slayer II Legends' Quest Family Crest",
+          "Heroes' Quest Shield of Arrav",
+          "Lost City",
+          "Merlin's Crystal",
+          "Dragon Slayer I",
+          "Underground Pass Biohazard Plague City",
+          "Waterfall Quest",
+          "Dream Mentor Lunar Diplomacy The Fremennik Trials",
+          "Lost City",
+          "Rune Mysteries",
+          "Shilo Village Jungle Potion",
+          "Eadgar's Ruse Druidic Ritual",
+          "Troll Stronghold Death Plateau",
+          "A Tail of Two Cats Icthlarin's Little Helper Gertrude's Cat",
+          "Animal Magnetism Ernest the Chicken",
+          "Priest in Peril",
+          "The Restless Ghost",
+          "Ghosts Ahoy Priest in Peril",
+          "The Restless Ghost",
+          "Bone Voyage The Dig Site",
+          "Client of Kourend",
+          "Mountain Daughter",
+          "The Fremennik Isles The Fremennik Trials",
+          "Olaf's Quest"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Fremennik Diary": "Enter the Troll Stronghold"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Fremennik Diary": "Mine some gold at the Arzinian Mine Travel to the Snowy Hunter Area via Eagle"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Fremennik Diary": "Teleport to Trollheim"
+          },
+          {
+            "col0": "Elite Tasks",
+            "Fremennik Diary": "Kill each of the God Wars Dungeon Generals Slay a spiritual mage within the God Wars Dungeon"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Trolls (60 - 126)",
+          "Dagannoth (75 - 126)",
+          "Turoth (60 - 100)",
+          "Basilisks (40 - 126)",
+          "Cockatrice (40 - 80)",
+          "Kurask (65 - 126)",
+          "Jellies (57 - 126)"
+        ]
+      },
+      "Items": {
+        "type": "list",
+        "items": [
+          "Ice gloves"
+        ]
+      },
+      "Mechanics": {
+        "type": "list",
+        "items": [
+          "The ability to create super antifire potions."
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Echo Helm",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Mask",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Neitiznot Faceguard",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Helm of Neitiznot",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Berserker Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Warrior Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Archer Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Farseer Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Granite Body",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Bottom",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Granite Legs",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Assembler",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ava's Assembler",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragonbone Necklace",
+            "Source": "Vorkath",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          },
+          {
+            "col0": "",
+            "Item": "Magus Ring",
+            "Source": "Duke Sucellus",
+            "BaseRarity": "1/720",
+            "2x DropMultiplier": "1/360",
+            "5x DropMultiplier": "1/144"
+          },
+          {
+            "col0": "",
+            "Item": "Berserker Ring (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Archers Ring (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Seers Ring (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Granite Ring (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Soulreaper Axe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Axe",
+            "Source": "Dagannoth Kings",
+            "BaseRarity": "1/128",
+            "2x DropMultiplier": "1/64",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Leaf-bladed Battleaxe",
+            "Source": "Kurask, King Kurask",
+            "BaseRarity": "1/1,026",
+            "2x DropMultiplier": "1/513",
+            "5x DropMultiplier": "1/205"
+          },
+          {
+            "col0": "",
+            "Item": "Brine Sabre",
+            "Source": "Brine rat",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Mud Battlestaff",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ancient Sceptre",
+            "Source": "Phantom Muspah",
+            "BaseRarity": "1/50",
+            "2x DropMultiplier": "1/25",
+            "5x DropMultiplier": "1/10"
+          },
+          {
+            "col0": "",
+            "Item": "Venator Bow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Pickaxe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Leaf-bladed Spear",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragonfire Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ancient Wyvern Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragonfire Ward",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  },
+  "Kandarin": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Ape Atoll",
+          "Ardougne",
+          "Barbarian Outpost",
+          "Catherby",
+          "Corsair Cove",
+          "Gu'Tanoth",
+          "Myths' Guild",
+          "Piscatoris Fishing Colony",
+          "Port Khazard",
+          "Seers' Village",
+          "Tree Gnome Stronghold",
+          "Tree Gnome Village",
+          "Yanille"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The Underground Pass between Ardougne and Isafdar",
+          "The underground tunnel between Catherby and Taverley",
+          "The grapple shortcut between Catherby and Taverley",
+          "The log shortcut between Sinclair Mansion and the Fremennik Province",
+          "The gates between Kandarin and Tirannwn at Arandar",
+          "The basalt shortcut between the Barbarian Outpost and the Lighthouse",
+          "The doors between the Mourner Headquarters and the Temple of Light"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Ancient Cavern",
+          "Ape Atoll monkeys",
+          "Barbarian Assault",
+          "Castle Wars",
+          "Demonic gorillas",
+          "Kraken",
+          "Stronghold Slayer Cave",
+          "Smoke devils",
+          "Thermonuclear Smoke Devil",
+          "Waterfall Dungeon",
+          "Poison Waste Dungeon",
+          "Echo Boss: Thermonuclear Smoke Devil"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Ardougne Market thieving",
+          "Ardougne Rooftop Course",
+          "Barbarian fishing",
+          "Barbarian Outpost Agility Course",
+          "Fishing in Catherby",
+          "Chompy bird hunting",
+          "Hunter training in Feldip Hills",
+          "Fishing Trawler",
+          "Gnome Stronghold Agility Course",
+          "Fishing Guild",
+          "Myths' Guild",
+          "Piscatoris Hunter area",
+          "Ourania Altar",
+          "Wrath Altar",
+          "Seers' Village Rooftop Course",
+          "Access to spirit tree",
+          "Tower of Life",
+          "Yanille house portal"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Hickton's Archery Emporium.",
+          "Dargaud's Bow and Arrows.",
+          "Daga's Scimitar Smithy",
+          "Rasolo the Wandering Merchant",
+          "Myths' Guild Weaponry",
+          "Magic Guild Store (Runes and Staves)",
+          "Magic Guild Store (Mystic Robes)",
+          "Aleck's Hunter Emporium."
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "King's Ransom Black Knight's Fortress",
+          "Holy Grail Merlin's Crystal",
+          "Murder Mystery",
+          "One Small Favour Rune Mysteries",
+          "Shilo Village Jungle Potion Druidic Ritual",
+          "Murder Mystery",
+          "Monkey Madness II Enlightened Journey",
+          "The Eyes of Glouphrie",
+          "Recipe for Disaster/Freeing King Awowogei Monkey Madness I The Grand Tree",
+          "Tree Gnome Village",
+          "Recipe for Disaster/Another Cook's Quest Cook's Assistant",
+          "Troll Stronghold Death Plateau",
+          "Watchtower",
+          "Swan Song Garden of Tranquillity Creature of Fenkenstrain",
+          "The Rising Sun in Falador",
+          "The Rusty Anchor in Port Sarim"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Kandarin Diary": "None",
+            "Western Provinces Diary": "Complete a novice game of Pest Control Teleport to Pest control using the Minigame teleports",
+            "Ardougne Diary": "Enter the Combat Training Camp north of West Ardougne Use the Ardougne lever to teleport to the Wilderness"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Kandarin Diary": "Use the Grapple Shortcut to get from the water to the Catherby shore",
+            "Western Provinces Diary": "Complete an intermediate game of Pest Control",
+            "Ardougne Diary": "Travel to Castle Wars by Hot Air Balloon Claim buckets of sand from Bert in Yanille Equip an Iban's upgraded staff or upgrade an Iban's staff"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Kandarin Diary": "Charge a water orb Kill a shadow hound in the Shadow Dungeon",
+            "Western Provinces Diary": "Complete a veteran game of Pest Control Build an Isafdar painting in your POH Quest Hall",
+            "Ardougne Diary": "Recharge some jewellery at the totem pole in the Legends' Guild Smith a Dragon sq shield in West Ardougne Craft some death runes at the Death Altar"
+          },
+          {
+            "col0": "Elite Tasks",
+            "Kandarin Diary": "Fish and cook 5 sharks in Catherby using the cooking gauntlets Teleport to Catherby",
+            "Western Provinces Diary": "Equip any complete void set",
+            "Ardougne Diary": "Imbue a salve amulet at Nightmare Zone or equip a salve amulet(i) Cast Ice Barrage on another player within Castle Wars"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Ogres (40 - 90)",
+          "Black Demons (80 - 126)",
+          "Hellhounds (75 - 126)",
+          "Waterfiends (75 - 110)",
+          "Cave Kraken (80 - 126)",
+          "Mithril Dragons (3 - 126)",
+          "Smoke Devils (85 - 126)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Dragon Full Helm",
+            "Source": "Mithril dragon",
+            "BaseRarity": "1/32,768",
+            "2x DropMultiplier": "1/16,384",
+            "5x DropMultiplier": "1/6,553"
+          },
+          {
+            "col0": "",
+            "Item": "Robin Hood Hat",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Chainbody",
+            "Source": "Thermonuclear Smoke Devil",
+            "BaseRarity": "1/2,000",
+            "2x DropMultiplier": "1/1,000",
+            "5x DropMultiplier": "1/400"
+          },
+          {
+            "col0": "",
+            "Item": "Elite Void Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elite Void Robe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tormented Bracelet",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ardougne Cloak 4",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Amulet of Torture",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Necklace of Anguish",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Occult Necklace",
+            "Source": "Nuclear smoke devil and smoke devil",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Trident",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Trident of the Seas",
+            "Source": "Kraken",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Smoke Battlestaff",
+            "Source": "Thermonuclear Smoke Devil",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Mist Battlestaff",
+            "Source": "Waterfiend",
+            "BaseRarity": "1/3,000",
+            "2x DropMultiplier": "1/1,500",
+            "5x DropMultiplier": "1/600"
+          },
+          {
+            "col0": "",
+            "Item": "Warped Sceptre",
+            "Source": "Warped terrorbird and Warped tortoise",
+            "BaseRarity": "1/320",
+            "2x DropMultiplier": "1/160",
+            "5x DropMultiplier": "1/64"
+          },
+          {
+            "col0": "",
+            "Item": "Heavy Ballista",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Light Ballista",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Halberd",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Devil's Element",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  },
+  "Kharidian Desert": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Bandit Camp",
+          "Necropolis",
+          "Ruins of Unkah",
+          "Bedabin Camp",
+          "Desert Mining Camp",
+          "Nardah",
+          "Pollnivneach",
+          "Ruins of Uzer",
+          "Uzer Oasis",
+          "Giants' Plateau",
+          "Sophanem"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The gate north-west of Al-Kharid leading to Lumbridge",
+          "The grapple shortcut across the River Lum to Lumbridge",
+          "The stepping stone north-west of the Kalphite Lair leading to the Lumbridge Swamp"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Bandits",
+          "Kalphite Queen",
+          "Smoke Dungeon",
+          "Tombs of Amascut Tombs of Amascut has 2 new invocations, which means max raid level can go up to 1000.",
+          "At 500 invocation level and above, The chance of getting a unique item is further boosted by 2x. If a unique is rolled for any player, everyone in a team will receive a unique item.",
+          "The Leviathan",
+          "Tempoross",
+          "Echo Boss: Kalphite Queen"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Agility Pyramid",
+          "Mage Training Arena",
+          "Giants' Foundry",
+          "Guardians of the Rift",
+          "Elidinis Statuette in Nardah",
+          "Pollnivneach Blackjacking",
+          "Pollnivneach house portal",
+          "Pollnivneach Rooftop Course",
+          "Pyramid Plunder",
+          "Fire Altar",
+          "Mining in the Bandit Camp Quarry",
+          "Sandstorm Machine",
+          "Sorceress's Garden",
+          "Zahur's Herblore Services"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Blackjack seller",
+          "Rewards Guardian",
+          "Ali's Discount Wares.",
+          "Shantay Pass Shop",
+          "Nardah Hunter Shop.",
+          "Gem Trader."
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Prince Ali Rescue",
+          "Desert Treasure II Desert Treasure I The Dig Site",
+          "Temple of Ikov",
+          "The Tourist Trap",
+          "Troll Stronghold Death Plateau",
+          "Priest in Peril",
+          "Waterfall Quest",
+          "Secrets of the North Making Friends with My Arm My Arm's Big Adventure Eadgar's Ruse Druidic Ritual",
+          "The Feud",
+          "Jungle Potion",
+          "Swan Song One Small Favour Rune Mysteries",
+          "Shilo Village",
+          "Garden of Tranquillity Creature of Fenkenstrain The Restless Ghost",
+          "Cold War",
+          "Romeo & Juliet",
+          "The General's Shadow Curse of the Empty Lord, for full ghostly robes",
+          "Fight Arena",
+          "Devious Minds Wanted! Recruitment Drive Black Knights' Fortress",
+          "The Lost Tribe Goblin Diplomacy",
+          "Rune Mysteries",
+          "Doric's Quest",
+          "Enter the Abyss",
+          "Hazeel Cult",
+          "Enakhra's Lament",
+          "Temple of the Eye Enter the Abyss",
+          "The Garden of Death",
+          "Below Ice Mountain",
+          "His Faithful Servants",
+          "Icthlarin's Little Helper Gertrude's Cat"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Desert Diary": "None"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Desert Diary": "Travel to the Desert via the Eagle transport system"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Desert Diary": "Slay a dust devil in the desert cave with a Slayer Helmet equipped Refill your waterskins in the Desert using Lunar spells"
+          },
+          {
+            "col0": "Elite Tasks",
+            "Desert Diary": "Bake a wild pie at the Nardah clay oven Speak to the Kq head in your POH"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Dust Devils (70 - 126)",
+          "Kalphite (15 - 126)",
+          "Bandits (3 - 126)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Virtus Mask",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Mask (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Mask",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Body (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Body",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Bottom",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Chaps (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Chaps",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Masori Assembler",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Venator Ring",
+            "Source": "The Leviathan",
+            "BaseRarity": "1/768",
+            "2x DropMultiplier": "1/384",
+            "5x DropMultiplier": "1/153"
+          },
+          {
+            "col0": "",
+            "Item": "Lightbearer",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ring of Shadows",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Drygore blowpipe",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Soulreaper Axe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Osmumten's Fang",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tumeken's Shadow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Pickaxe",
+            "Source": "Kalphite Queen",
+            "BaseRarity": "1/400",
+            "2x DropMultiplier": "1/200",
+            "5x DropMultiplier": "1/80"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon 2h Sword",
+            "Source": "Kalphite Queen",
+            "BaseRarity": "1/256",
+            "2x DropMultiplier": "1/128",
+            "5x DropMultiplier": "1/51"
+          },
+          {
+            "col0": "",
+            "Item": "Dust Battlestaff",
+            "Source": "Dust devil",
+            "BaseRarity": "1/4,000",
+            "2x DropMultiplier": "1/2,000",
+            "5x DropMultiplier": "1/800"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Harpoon",
+            "Source": "Tempoross",
+            "BaseRarity": "1/8,000",
+            "2x DropMultiplier": "1/4,000",
+            "5x DropMultiplier": "1/1,600"
+          },
+          {
+            "col0": "",
+            "Item": "Scythe of Vitur",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Twisted Bow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elidinis' Ward (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elidinis' Ward",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tome of Water",
+            "Source": "Tempoross",
+            "BaseRarity": "1/1,600",
+            "2x DropMultiplier": "1/800",
+            "5x DropMultiplier": "1/320"
+          }
+        ]
+      }
+    }
+  },
+  "Morytania": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Burgh de Rott",
+          "Canifis",
+          "Darkmeyer",
+          "Meiyerditch",
+          "Mort'ton",
+          "Mos Le'Harmless",
+          "Port Phasmatys",
+          "Slepe",
+          "Ver Sinhaza"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The agility shortcut through the railing next to the Paterdomus Temple leading to Misthalin",
+          "The stairs leading from the Paterdomus temple up to Misthalin"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Barrows",
+          "Cave horrors",
+          "Fenkenstrain's experiments",
+          "Grotesque Guardians",
+          "Haunted Mine",
+          "Morytania Spider Cave",
+          "The Nightmare of Ashihama",
+          "Lair of Tarn Razorlor",
+          "Shades of Mort'ton",
+          "Slayer Tower",
+          "Theatre of Blood",
+          "Vyrewatch Sentinels",
+          "Echo Boss: Grotesque Guardians",
+          "Damage & Defence increased by 25%",
+          "50% increased hitpoints on monsters",
+          "Unique chance will be further multiplied by 2.",
+          "In Theatre of Blood: Hard mode, if a unique is rolled for any player, everyone in a team will receive a unique item."
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Canifis Rooftop Course",
+          "Daeyalt Essence mining",
+          "Ectofuntus prayer training",
+          "Hallowed Sepulchre",
+          "Harmony Island herb patch",
+          "Port Phasmatys allotment patch",
+          "Temple Trekking",
+          "True Blood Altar (A blood talisman can be purchased from the Canifis General Store)",
+          "Vyrelord pickpocketing",
+          "Werewolf Agility Course"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Ak-Haranu's Exotic Shop.",
+          "Smithing Smith's Shop."
+        ]
+      },
+      "Changes to shops": {
+        "type": "list",
+        "items": [
+          "The Canifis General Store carries a blood talisman"
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Ghosts Ahoy",
+          "A Taste of Hope Darkness of Hallowvale In Aid of the Myreque In Search of the Myreque Nature Spirit Priest in Peril",
+          "Restless Ghost",
+          "The Great Brain Robbery Creature of Fenkenstrain",
+          "Cabin Fever Pirate's Treasure",
+          "Rum Deal Zogre Flesh Eaters Big Chompy Bird Hunting",
+          "Recipe for Disaster/Freeing Pirate Pete Recipe for Disaster/Another Cook's Quest Cook's Assistant"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Morytania Diary": "None"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Morytania Diary": "Make a batch of cannonballs at the Port Phasmatys furnace"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Morytania Diary": "Enter the Kharyrll portal in your POH through a Portal Chamber Pray at the altar of nature in the nature grotto with piety activated"
+          },
+          {
+            "col0": "Elite Tasks",
+            "Morytania Diary": "Catch a shark in Burgh de Rott with your bare hands Fertilize the Morytania herb patch using lunar spells"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Vampyres (35 - 100)",
+          "Banshees (20 - 50)",
+          "Gargoyles (80 - 126)",
+          "Bloodveld (50 - 126)",
+          "Nechryael (85 - 126)",
+          "Cave Horrors (85 - 126)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Justiciar Faceguard",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Inquisitor's Great Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dharok's Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Slayer Helmet (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Karil's Coif",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ahrim's Hood",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Verac's Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Torag's Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Guthan's Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Black Mask (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Justiciar Chestguard",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Inquisitor's Hauberk",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dharok's Platebody",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Karil's Leathertop",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ahrim's Robetop",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Verac's Brassard",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Torag's Platebody",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Guthan's Platebody",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Justiciar Legguards",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Inquisitor's Plateskirt",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dharok's Platelegs",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Karil's Leatherskirt",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ahrim's Robeskirt",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Verac's Plateskirt",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Torag's Platelegs",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Guthan's Chainskirt",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Granite Gloves",
+            "Source": "Grotesque Guardians",
+            "BaseRarity": "1/500",
+            "2x DropMultiplier": "1/250",
+            "5x DropMultiplier": "1/100"
+          },
+          {
+            "col0": "",
+            "Item": "Guardian Boots",
+            "Source": "Grotesque Guardians",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          },
+          {
+            "col0": "",
+            "Item": "Aranea Boots",
+            "Source": "Araxyte",
+            "BaseRarity": "1/4,000",
+            "2x DropMultiplier": "1/2,000",
+            "5x DropMultiplier": "1/800"
+          },
+          {
+            "col0": "",
+            "Item": "Devout Boots",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Amulet of Blood Fury",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Amulet of Rancour",
+            "Source": "Araxxor",
+            "BaseRarity": "1/600",
+            "2x DropMultiplier": "1/300",
+            "5x DropMultiplier": "1/120"
+          },
+          {
+            "col0": "",
+            "Item": "Amulet of the Damned",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ring of Endurance",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Staff",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tumeken's Shadow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Scythe of Vitur",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sanguinesti Staff",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ghrazi Rapier",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Karil's Crossbow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Nightmare Staff",
+            "Source": "The Nightmare",
+            "BaseRarity": "1/300",
+            "2x DropMultiplier": "1/150",
+            "5x DropMultiplier": "1/60"
+          },
+          {
+            "col0": "",
+            "Item": "Inquisitor's Mace",
+            "Source": "The Nightmare",
+            "BaseRarity": "1/750",
+            "2x DropMultiplier": "1/375",
+            "5x DropMultiplier": "1/150"
+          },
+          {
+            "col0": "",
+            "Item": "Granite Maul",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Granite Hammer",
+            "Source": "Grotesque Guardians",
+            "BaseRarity": "1/750",
+            "2x DropMultiplier": "1/375",
+            "5x DropMultiplier": "1/150"
+          },
+          {
+            "col0": "",
+            "Item": "Noxious Halberd",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Whip",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Dagger",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dharok's Greataxe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Bludgeon",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Torag's Hammers",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Verac's Flail",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Avernic Defender",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Bolt rack",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  },
+  "Tirannwn": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Gwenith",
+          "Iorwerth Camp",
+          "Lletya",
+          "Prifddinas",
+          "Tyras Camp",
+          "Zul-Andra"
+        ]
+      },
+      "Restricted travel": {
+        "type": "list",
+        "items": [
+          "The gate in Arandar leading to Kandarin",
+          "The entrance to the Mourner Headquarters near the Temple of Light",
+          "The Underground Pass exit to West Ardougne"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "A 'Rabbit'",
+          "Iorwerth Dungeon",
+          "The Gauntlet",
+          "Zulrah",
+          "Echo Boss: Corrupted Hunllef"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Elven Crystal Chest",
+          "Death Altar",
+          "Lletya Fruit Tree Patch",
+          "Prifddinas Allotment Patch",
+          "Prifddinas Agility Course",
+          "Prifddinas Crystal implings",
+          "Prifddinas Hunter Grounds",
+          "Prifddinas house portal",
+          "Prifddinas Teak and Mahogany trees",
+          "Sacred Eel fishing",
+          "Zalcano",
+          "Thieving Elves"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Sian's Ranged Weaponry",
+          "Iorwerth's Arms",
+          "Amlodd's Magical Supplies",
+          "Gwyn's Mining Emporium"
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Song of the Elves Mourning's End Part II Mourning's End Part I Big Chompy Bird Hunting",
+          "Sheep Herder",
+          "Roving Elves Waterfall Quest",
+          "Regicide Underground Pass Biohazard Plague City",
+          "Making History Priest in Peril",
+          "The Restless Ghost"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "text",
+        "text": "[edit | edit source] No achievement diary tasks are completed after unlocking Tirannwn"
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Kurask (65 - 126)",
+          "Bloodveld (50 - 126)",
+          "Nechryael (85 - 126)",
+          "Elves (70 - 126)",
+          "Dark Beasts (90 - 126)",
+          "Waterfiends (75 - 110)"
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Serpentine Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Body",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elite Void Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Legs",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elite Void Robe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ring of Suffering (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Toxic Staff of the Dead",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Leaf-bladed Battleaxe",
+            "Source": "Kurask and King Kurask",
+            "BaseRarity": "1/1,026",
+            "2x DropMultiplier": "1/513",
+            "5x DropMultiplier": "1/205"
+          },
+          {
+            "col0": "",
+            "Item": "Toxic Blowpipe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Uncharged Toxic Trident",
+            "Source": "Zulrah",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Dark Bow",
+            "Source": "Dark beast",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Bow of Faerdhinen (c)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Bow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Halberd",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Halberd",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Felling Axe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Leaf-bladed Spear",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Crystal Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon dart",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon javelin",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  },
+  "Wilderness": {
+    "Key Info": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable Settlements": {
+        "type": "list",
+        "items": [
+          "Bandit Camp",
+          "Dark Warriors' Fortress",
+          "Ferox Enclave",
+          "The Mage Arena",
+          "Rogues' Castle",
+          "Pirates' Hideout"
+        ]
+      },
+      "Notable Combat-Related Activities": {
+        "type": "list",
+        "items": [
+          "Callisto and Artio",
+          "Chaos Elemental",
+          "Chaos Fanatic",
+          "Corporeal Beast",
+          "Crazy Archaeologist",
+          "King Black Dragon",
+          "Lava Dragon",
+          "Mage Arena",
+          "Mage Arena II",
+          "Scorpia",
+          "Venenatis and Spindel",
+          "Vet'ion and Calvar'ion",
+          "Wilderness God Wars Dungeon",
+          "Wilderness Slayer Cave"
+        ]
+      },
+      "Notable Non-Combat Activities": {
+        "type": "list",
+        "items": [
+          "Abyss Runecrafting (note: you cannot access altars that are in areas you haven't unlocked!)",
+          "Air Obelisk",
+          "Black chinchompa",
+          "Black Salamander",
+          "Dark Crab Fishing",
+          "Earth Obelisk",
+          "Fountain of Rune",
+          "Chaos Altar",
+          "Wilderness Agility Course",
+          "Wilderness Resource Area",
+          "Chest (Rogues' Castle)"
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "list",
+        "items": [
+          "Enter the Abyss",
+          "Smith a Gold Helmet in the resource area",
+          "Take the Agility shortcut from Trollheim to the Wilderness",
+          "Fish a raw lava eel in the Wilderness",
+          "Teleport to Ghorrock",
+          "Black Demon (80 - 126)",
+          "Hellhounds (75 - 126)",
+          "Bloodveld (50 - 126)",
+          "Dust Devil (70 - 126)",
+          "Jellies (57 - 126)",
+          "Nechryael (85 - 126)",
+          "Spiritual creature (60 - 100)",
+          "Bandits (3 - 126)",
+          "Lava Dragon (3 - 126)",
+          "Revenants (3 - 126)",
+          "Chaos Druid (3 - 126)"
+        ]
+      }
+    },
+    "Drops": {
+      "_content": {
+        "type": "list",
+        "items": [
+          "All unique rewards from Revenants",
+          "Malediction and Odium shards from all sources",
+          "Fedora from the Crazy Archaeologist",
+          "Dragon Boots from spiritual mages",
+          "Dragon 2h sword from all sources",
+          "Dragon Pickaxe from all sources",
+          "All unique rewards from Venenatis",
+          "All unique rewards from Callisto",
+          "All unique rewards from Vet'ion",
+          "Draconic Visage from all sources",
+          "Amulet of Eternal Glory from the Fountain of Rune",
+          "Dagon'hai robes from Larran's Big Chest",
+          "All unique rewards from the Corporeal Beast",
+          "All unique rewards from Superior slayer monster",
+          "All unique rewards from Zombie pirate and Zombie pirate locker",
+          "All unique rewards from Elder Chaos Druid",
+          "Smouldering Stone from Hellhounds"
+        ]
+      }
+    },
+    "Echoes": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "Attribute": "Requirements",
+            "Description": "None"
+          },
+          {
+            "Attribute": "Difficulty",
+            "Description": "Elite"
+          },
+          {
+            "Attribute": "Echo Orb",
+            "Description": "Wilderness echo orb"
+          },
+          {
+            "Attribute": "Droprate",
+            "Description": "1/30"
+          }
+        ]
+      },
+      "Items": {
+        "type": "table",
+        "rows": [
+          {
+            "Attack bonuses": "Attack bonuses"
+          },
+          {
+            "Attack bonuses": ""
+          },
+          {
+            "Attack bonuses": "+65"
+          },
+          {
+            "Attack bonuses": ""
+          },
+          {
+            "Attack bonuses": ""
+          },
+          {
+            "Attack bonuses": "+0"
+          },
+          {
+            "Attack bonuses": ""
+          },
+          {
+            "Attack bonuses": ""
+          },
+          {
+            "Attack bonuses": "+100"
+          },
+          {
+            "Attack bonuses": ""
+          }
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Dragon Chainbody",
+            "Source": "Dust devil",
+            "BaseRarity": "1/32,768",
+            "2x DropMultiplier": "1/16,384",
+            "5x DropMultiplier": "1/6,553"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Boots",
+            "Source": "Spiritual mage",
+            "BaseRarity": "1/128",
+            "2x DropMultiplier": "1/64",
+            "5x DropMultiplier": "1/25"
+          },
+          {
+            "col0": "",
+            "Item": "Imbued Saradomin Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Imbued Guthix Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Imbued Zamorak Cape",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ring of the Gods (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Treasonous Ring (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tyrannical Ring (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Crossbow",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Pickaxe",
+            "Source": "Chaos Elemental, Callisto, Venenatis, Vet'ion",
+            "BaseRarity": "1/256",
+            "2x DropMultiplier": "1/128",
+            "5x DropMultiplier": "1/51"
+          },
+          {
+            "col0": "",
+            "Item": "Viggora's Chainmace (u)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Craw's Bow (u)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Webweaver Bow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Thammaron's Sceptre (u)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Voidwaker",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Whip",
+            "Source": "Abyssal demon",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Dagger",
+            "Source": "Abyssal demon",
+            "BaseRarity": "1/32,000",
+            "2x DropMultiplier": "1/16,000",
+            "5x DropMultiplier": "1/6,400"
+          },
+          {
+            "col0": "",
+            "Item": "Black Salamander",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elidinis' Ward (f)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Arcane Spirit Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Spectral Spirit Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elysian Spirit Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Malediction Ward",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Odium Ward",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blessed Spirit Shield",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  },
+  "Kebos and Kourend": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Hosidius",
+          "Arceuus",
+          "Lovakengj",
+          "Port Piscarilius",
+          "Shayzien",
+          "Kingstown",
+          "Northern Tundras",
+          "Kourend Woodland",
+          "Mount Karuulm",
+          "Kebos Swamp",
+          "Mount Quidamortem"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Chambers of Xeric",
+          "Alchemical Hydra",
+          "Lizardman Shaman",
+          "Mount Karuulm Slayer Dungeon",
+          "Sarachnis (Forthos Dungeon)",
+          "Catacombs of Kourend",
+          "Giants' Den",
+          "Hespori",
+          "Echo Boss: Hespori",
+          "Damage & Defence increased by 25%",
+          "50% increased hitpoints on monsters",
+          "Unique chance further multiplied by 3."
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "Farming Guild",
+          "Woodcutting Guild",
+          "Arceuus Library",
+          "Hosidius House Portal",
+          "Hosidius farming patches",
+          "Tithe Farm",
+          "Lake Molch Aerial Fishing",
+          "The Wintertodt",
+          "Soul Altar and Blood Altar",
+          "Blast Mine"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Kourend Castle Gem Stall.",
+          "Thyria's Wares",
+          "Toothy's Pickaxes",
+          "Frankie's Fishing Emporium",
+          "Daryl's Ranging Surplus",
+          "Little Shop of Horace"
+        ]
+      },
+      "Slayer": {
+        "type": "text",
+        "text": "[edit | edit source] Konar will assign Slayer tasks based on the areas you have unlocked."
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Client of Kourend X Marks the Spot",
+          "A Kingdom Divided The Depths of Despair",
+          "The Queen of Thieves",
+          "The Ascent of Arceuus",
+          "The Forsaken Tower",
+          "Tale of the Righteous"
+        ]
+      },
+      "Achievement diary tasks": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "Easy Tasks",
+            "Kourend & Kebos Diary": "None"
+          },
+          {
+            "col0": "Medium Tasks",
+            "Kourend & Kebos Diary": "None"
+          },
+          {
+            "col0": "Hard Tasks",
+            "Kourend & Kebos Diary": "Cast Monster Examine on a mountain troll south of Mount Quidamortem."
+          },
+          {
+            "col0": "Elite Tasks",
+            "Kourend & Kebos Diary": "None"
+          }
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Trolls (60 - 126)",
+          "Black Demons (80 - 126)",
+          "Hellhounds (75 - 126)",
+          "Banshees (20 - 50)",
+          "Bloodveld (50 - 126)",
+          "Dust Devils (57 - 126)",
+          "Jellies (57 - 126)",
+          "Nechryael (85 - 126)",
+          "Lizardmen (3 - 126)",
+          "Wyrms (3 - 126)",
+          "Drakes (3 - 126)",
+          "Hydras (3 - 126)"
+        ]
+      }
+    },
+    "Notable Drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Nature's reprisal",
+            "Source": "Echo Hespori",
+            "BaseRarity": "1/15",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Unique reward",
+            "Source": "Chambers of Xeric",
+            "BaseRarity": "1/100",
+            "2x DropMultiplier": "1/50",
+            "5x DropMultiplier": "1/20"
+          },
+          {
+            "col0": "",
+            "Item": "Warm gloves and bruma torch",
+            "Source": "Wintertodt",
+            "BaseRarity": "1/150",
+            "2x DropMultiplier": "1/75",
+            "5x DropMultiplier": "1/30"
+          },
+          {
+            "col0": "",
+            "Item": "Pyromancer outfit",
+            "Source": "Wintertodt",
+            "BaseRarity": "1/150",
+            "2x DropMultiplier": "1/75",
+            "5x DropMultiplier": "1/30"
+          },
+          {
+            "col0": "",
+            "Item": "Tome of fire (empty)",
+            "Source": "Wintertodt",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon axe",
+            "Source": "Wintertodt",
+            "BaseRarity": "1/10,000",
+            "2x DropMultiplier": "1/5,000",
+            "5x DropMultiplier": "1/2,000"
+          },
+          {
+            "col0": "",
+            "Item": "Burnt page",
+            "Source": "Wintertodt",
+            "BaseRarity": "1/45",
+            "2x DropMultiplier": "1/22",
+            "5x DropMultiplier": "1/9"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon sword and dragon harpoon",
+            "Source": "Wyrm",
+            "BaseRarity": "1/10,000",
+            "2x DropMultiplier": "1/5,000",
+            "5x DropMultiplier": "1/2,000"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon knife",
+            "Source": "Drake and Wyrm",
+            "BaseRarity": "1/10,000",
+            "2x DropMultiplier": "1/5,000",
+            "5x DropMultiplier": "1/2,000"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon thrownaxe",
+            "Source": "Drake and Wyrm",
+            "BaseRarity": "1/10,000",
+            "2x DropMultiplier": "1/5,000",
+            "5x DropMultiplier": "1/2,000"
+          },
+          {
+            "col0": "",
+            "Item": "Hydra's fang, heart, and eye",
+            "Source": "Alchemical Hydra",
+            "BaseRarity": "1/181",
+            "2x DropMultiplier": "1/90",
+            "5x DropMultiplier": "1/36"
+          },
+          {
+            "col0": "",
+            "Item": "Hydra's fang, heart, and eye",
+            "Source": "Hydra",
+            "BaseRarity": "1/1,800",
+            "2x DropMultiplier": "1/900",
+            "5x DropMultiplier": "1/360"
+          },
+          {
+            "col0": "",
+            "Item": "Bonecrusher necklace",
+            "Source": "Alchemical Hydra",
+            "BaseRarity": "1/513",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Ferocious gloves",
+            "Source": "Alchemical Hydra",
+            "BaseRarity": "1/514",
+            "2x DropMultiplier": "1/257",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon hunter lance",
+            "Source": "Alchemical Hydra",
+            "BaseRarity": "1/1,001",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon thrownaxe",
+            "Source": "Alchemical Hydra",
+            "BaseRarity": "1/2,000",
+            "2x DropMultiplier": "1/1,000",
+            "5x DropMultiplier": "1/400"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon knife",
+            "Source": "Alchemical Hydra",
+            "BaseRarity": "1/2,001",
+            "2x DropMultiplier": "1/1,000",
+            "5x DropMultiplier": "1/400"
+          },
+          {
+            "col0": "",
+            "Item": "Drake's claw and tooth",
+            "Source": "Drake",
+            "BaseRarity": "1/2,560",
+            "2x DropMultiplier": "1/1,280",
+            "5x DropMultiplier": "1/512"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon warhammer",
+            "Source": "Lizardman shaman",
+            "BaseRarity": "1/3,000",
+            "2x DropMultiplier": "1/1,500",
+            "5x DropMultiplier": "1/600"
+          },
+          {
+            "col0": "",
+            "Item": "Draconic visage",
+            "Source": "Dragons in the Catacombs of Kourend",
+            "BaseRarity": "1/10,000",
+            "2x DropMultiplier": "1/5,000",
+            "5x DropMultiplier": "1/2,000"
+          },
+          {
+            "col0": "",
+            "Item": "Sarachnis cudgel",
+            "Source": "Sarachnis",
+            "BaseRarity": "1/384",
+            "2x DropMultiplier": "1/192",
+            "5x DropMultiplier": "1/76"
+          },
+          {
+            "col0": "",
+            "Item": "Bottomless compost bucket",
+            "Source": "Hespori",
+            "BaseRarity": "1/35",
+            "2x DropMultiplier": "1/17",
+            "5x DropMultiplier": "1/7"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon hasta",
+            "Source": "Brimstone chest",
+            "BaseRarity": "1/200",
+            "2x DropMultiplier": "1/100",
+            "5x DropMultiplier": "1/40"
+          },
+          {
+            "col0": "",
+            "Item": "Dusk Mystic",
+            "Source": "Brimstone chest",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal whip",
+            "Source": "Abyssal demon",
+            "BaseRarity": "1/512",
+            "2x DropMultiplier": "1/256",
+            "5x DropMultiplier": "1/102"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal dagger",
+            "Source": "Abyssal demon",
+            "BaseRarity": "1/32,000",
+            "2x DropMultiplier": "1/16,000",
+            "5x DropMultiplier": "1/6,400"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon chainbody",
+            "Source": "Dust devil",
+            "BaseRarity": "1/32,768",
+            "2x DropMultiplier": "1/16,384",
+            "5x DropMultiplier": "1/6,553"
+          },
+          {
+            "col0": "",
+            "Item": "Uncut onyx",
+            "Source": "Skotizo",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Hespori seed",
+            "Source": "Seed pack",
+            "BaseRarity": "1/8.8",
+            "2x DropMultiplier": "1/4.4",
+            "5x DropMultiplier": "1/1.8"
+          },
+          {
+            "col0": "",
+            "Item": "Golden tench",
+            "Source": "Aerial fishing",
+            "BaseRarity": "1/20,000",
+            "2x DropMultiplier": "1/10,000",
+            "5x DropMultiplier": "1/4,000"
+          },
+          {
+            "col0": "",
+            "Item": "Evil chicken outfit",
+            "Source": "Shrine",
+            "BaseRarity": "1/1,200",
+            "2x DropMultiplier": "1/600",
+            "5x DropMultiplier": "1/240"
+          }
+        ]
+      }
+    },
+    "Echo Drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "Echo boss": "Hespori",
+            "Difficulty": "Elite",
+            "Echo equipment": "Nature's reprisal",
+            "Base Rarity": "N/A"
+          }
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Ancestral Hat",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ancestral Robe Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ancestral Robe Bottom",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ferocious Gloves",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Boots of Brimstone",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Bonecrusher Necklace",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ring of Suffering (i)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Brimstone Ring",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Shortbow",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Axe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tumeken's Shadow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Scythe of Vitur",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Whip",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Abyssal Dagger",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Twisted Bow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Hunter Crossbow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Claws",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Elder Maul",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Kodai Wand",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Hunter Lance",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Warhammer",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sarachnis Cudgel",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Sword",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Knife",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Thrownaxe",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Colossal Blade",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dinh's Bulwark",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tome of Fire",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  },
+  "Varlamore": {
+    "Overview of area": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source]"
+      },
+      "Notable settlements": {
+        "type": "list",
+        "items": [
+          "Civitas illa Fortis",
+          "Avium Savannah",
+          "Cam Torum",
+          "Ralos Rise",
+          "Darkfrost",
+          "Aldarin",
+          "Twilight Temple",
+          "The Stranglewood (accessible via a league navigator in northern Varlamore)",
+          "Ruins of Tapoyauik"
+        ]
+      },
+      "Notable combat-related activities": {
+        "type": "list",
+        "items": [
+          "Moons of Peril",
+          "Fortis Colosseum",
+          "Amoxliatl",
+          "Hueycoatl",
+          "Vardorvis",
+          "Echo Boss: Sol Heredit"
+        ]
+      },
+      "Notable non-combat activities": {
+        "type": "list",
+        "items": [
+          "House robbery",
+          "Calcified mining",
+          "Blessed bone shards",
+          "Hunter's guild with Hunter rumours",
+          "Mastering Mixology Herblore activity",
+          "Colossal Wyrm Agility Course",
+          "Crafting sunfire runes"
+        ]
+      },
+      "Notable shops": {
+        "type": "list",
+        "items": [
+          "Huita's Herbal Supplies",
+          "Toci's Gem Store",
+          "Tizoro's Pickaxes",
+          "The Runic Emporium",
+          "Yarnio's Baked Goods",
+          "Cobado's Groceries",
+          "Pellem's Fur Store",
+          "Imia's Supplies",
+          "Stonecutter Supplies",
+          "Fortis Blacksmith",
+          "Spike's Spikes",
+          "Hunter's crossbow added to Trader Stan's Trading Post in Sunset Coast"
+        ]
+      }
+    },
+    "Unlocks": {
+      "_content": {
+        "type": "text",
+        "text": "[edit | edit source] The following quests and achievement diary tasks are automatically completed after unlocking the area."
+      },
+      "Quests": {
+        "type": "list",
+        "items": [
+          "Heart of Darkness Twilight's Promise Children of the Sun",
+          "At First Light Eagles' Peak"
+        ]
+      },
+      "Slayer": {
+        "type": "list",
+        "items": [
+          "Jellies (57 - 126)",
+          "Wyrms (3 - 126)"
+        ]
+      }
+    },
+    "Notable Drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Sunlight spear",
+            "Source": "Echo Sol Heredit",
+            "BaseRarity": "1/5",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sunlit bracers",
+            "Source": "Echo Sol Heredit",
+            "BaseRarity": "1/7",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "All unique rewards",
+            "Source": "Moons of Peril",
+            "BaseRarity": "1/224",
+            "2x DropMultiplier": "1/112",
+            "5x DropMultiplier": "1/44"
+          },
+          {
+            "col0": "",
+            "Item": "Glacial temotli",
+            "Source": "Amoxliatl",
+            "BaseRarity": "1/100",
+            "2x DropMultiplier": "1/50",
+            "5x DropMultiplier": "1/20"
+          },
+          {
+            "col0": "",
+            "Item": "Pendant of ates",
+            "Source": "Amoxliatl",
+            "BaseRarity": "1/25",
+            "2x DropMultiplier": "1/12",
+            "5x DropMultiplier": "1/5"
+          },
+          {
+            "col0": "",
+            "Item": "Tooth half of key",
+            "Source": "Amoxliatl",
+            "BaseRarity": "1/500",
+            "2x DropMultiplier": "1/250",
+            "5x DropMultiplier": "1/100"
+          },
+          {
+            "col0": "",
+            "Item": "Glacial temotli",
+            "Source": "Frost nagua",
+            "BaseRarity": "1/500",
+            "2x DropMultiplier": "1/250",
+            "5x DropMultiplier": "1/100"
+          },
+          {
+            "col0": "",
+            "Item": "Pendant of ates",
+            "Source": "Frost nagua",
+            "BaseRarity": "1/100",
+            "2x DropMultiplier": "1/50",
+            "5x DropMultiplier": "1/20"
+          },
+          {
+            "col0": "",
+            "Item": "Tooth half of key",
+            "Source": "Frost nagua",
+            "BaseRarity": "1/7,000",
+            "2x DropMultiplier": "1/3,500",
+            "5x DropMultiplier": "1/1,400"
+          },
+          {
+            "col0": "",
+            "Item": "Sulphur blades",
+            "Source": "Sulphur nagua",
+            "BaseRarity": "1/450",
+            "2x DropMultiplier": "1/225",
+            "5x DropMultiplier": "1/90"
+          },
+          {
+            "col0": "",
+            "Item": "Hueycoatl hide",
+            "Source": "Hueycoatl",
+            "BaseRarity": "1/34",
+            "2x DropMultiplier": "1/17",
+            "5x DropMultiplier": "1/6"
+          },
+          {
+            "col0": "",
+            "Item": "Tome of earth",
+            "Source": "Hueycoatl",
+            "BaseRarity": "1/92",
+            "2x DropMultiplier": "1/46",
+            "5x DropMultiplier": "1/18"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon hunter wand",
+            "Source": "Hueycoatl",
+            "BaseRarity": "1/207",
+            "2x DropMultiplier": "1/103",
+            "5x DropMultiplier": "1/41"
+          },
+          {
+            "col0": "",
+            "Item": "Tooth half of key",
+            "Source": "Hueycoatl",
+            "BaseRarity": "1/150",
+            "2x DropMultiplier": "1/75",
+            "5x DropMultiplier": "1/30"
+          },
+          {
+            "col0": "",
+            "Item": "Soulreaper axe pieces",
+            "Source": "Vardorvis",
+            "BaseRarity": "1/1,088",
+            "2x DropMultiplier": "1/544",
+            "5x DropMultiplier": "1/217"
+          },
+          {
+            "col0": "",
+            "Item": "Ultor ring",
+            "Source": "Vardorvis",
+            "BaseRarity": "1/1,088",
+            "2x DropMultiplier": "1/544",
+            "5x DropMultiplier": "1/217"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus robes",
+            "Source": "Vardorvis",
+            "BaseRarity": "1/1,088",
+            "2x DropMultiplier": "1/544",
+            "5x DropMultiplier": "1/217"
+          },
+          {
+            "col0": "",
+            "Item": "Awakener's orb",
+            "Source": "Vardorvis",
+            "BaseRarity": "1/80",
+            "2x DropMultiplier": "1/40",
+            "5x DropMultiplier": "1/16"
+          },
+          {
+            "col0": "",
+            "Item": "Hunters' Guild loot sack rares",
+            "Source": "Hunter rumours",
+            "BaseRarity": "1/50",
+            "2x DropMultiplier": "1/25",
+            "5x DropMultiplier": "1/10"
+          },
+          {
+            "col0": "",
+            "Item": "Tecu salamander",
+            "Source": "Hunting",
+            "BaseRarity": "1/1,000",
+            "2x DropMultiplier": "1/500",
+            "5x DropMultiplier": "1/200"
+          }
+        ]
+      },
+      "Fortis Colosseum drops": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Echo boots",
+            "Source": "Fortis Colosseum",
+            "BaseRarity": "~2/25",
+            "2x DropMultiplier": "~7/45",
+            "5x DropMultiplier": "~6/17"
+          },
+          {
+            "col0": "",
+            "Item": "Sunfire fanatic armour",
+            "Source": "Fortis Colosseum",
+            "BaseRarity": "~5/42",
+            "2x DropMultiplier": "~7/31",
+            "5x DropMultiplier": "~20/41"
+          },
+          {
+            "col0": "",
+            "Item": "Tonalztics of ralos",
+            "Source": "Fortis Colosseum",
+            "BaseRarity": "~1/84",
+            "2x DropMultiplier": "~1/42",
+            "5x DropMultiplier": "~1/17"
+          }
+        ]
+      }
+    },
+    "Notable drops": {
+      "_content": {
+        "type": "table",
+        "rows": [
+          {
+            "col0": "",
+            "Item": "Virtus Mask",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blue Moon Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blood Moon Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Eclipse Moon Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Hueycoatl Hide Coif",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sunfire Fanatic Helm",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Top",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blue Moon Chestplate",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blood Moon Chestplate",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Eclipse Moon Chestplate",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Hueycoatl Hide Body",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sunfire Fanatic Cuirass",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Virtus Robe Bottom",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blue Moon Tassets",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blood Moon Tassets",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Eclipse Moon Tassets",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Hueycoatl Hide Chaps",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sunfire Fanatic Chausses",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Hueycoatl Hide Vambraces",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Confliction Gauntlets",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Avernic Treads",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Avernic Treads (Max)",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Boots",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dizana's Quiver",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Holy Necklace",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Ultor Ring",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Echo Macuahuitl",
+            "Source": "Echo drop",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Eclipse Atlatl",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dual Macuahuitl",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blue Moon Spear",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Glacial Temotli",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Sulphur Blades",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Eye of Ayak",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Dragon Hunter Wand",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tonalztics of Ralos",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Scorching Bow",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tecu Salamander",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Earthbound Tecpatl",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Tome of Earth",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Atlatl dart",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          },
+          {
+            "col0": "",
+            "Item": "Blazing atlatl dart",
+            "Source": "",
+            "BaseRarity": "N/A",
+            "2x DropMultiplier": "N/A",
+            "5x DropMultiplier": "N/A"
+          }
+        ]
+      }
+    }
+  }
+}

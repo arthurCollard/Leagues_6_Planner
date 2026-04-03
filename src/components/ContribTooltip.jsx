@@ -5,7 +5,7 @@ import { SKILLS, EXTRAS } from '../data/skills';
 const SKILL_NAME = Object.fromEntries(SKILLS.map(s => [s.id, s.name]));
 const EXTRA_NAME = Object.fromEntries(EXTRAS.map(e => [e.id, e.name]));
 
-export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
+export default function ContribTooltip({ data, onMouseEnter, onMouseLeave, onMoreInfo }) {
   const [activeTab, setActiveTab] = useState('bonuses');
 
   if (!data) return null;
@@ -114,6 +114,11 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
         </>
       )}
       </div>
+      {onMoreInfo && title && (
+        <button className="contrib-more-btn" onClick={() => onMoreInfo(title)}>
+          More info →
+        </button>
+      )}
     </div>,
     document.body
   );
