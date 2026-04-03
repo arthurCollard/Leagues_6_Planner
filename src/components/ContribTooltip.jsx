@@ -17,6 +17,9 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
   const hasContribs = skillEntries.length > 0 || extraEntries.length > 0;
   const hasDrops = drops?.length > 0;
   const showTabs = hasContribs && hasDrops;
+  const sortedDrops = hasDrops
+    ? [...drops].sort((a, b) => (b.echo ? 1 : 0) - (a.echo ? 1 : 0))
+    : [];
 
   return createPortal(
     <div
@@ -84,8 +87,13 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
           {(!showTabs || activeTab === 'gear') && hasDrops && (
             <div className="contrib-section">
               {!showTabs && <div className="contrib-label">Notable Gear</div>}
-              {drops.map(d => (
-                <div key={d} className="contrib-row" style={{ color: '#b8a282' }}>{d}</div>
+              {sortedDrops.map(d => (
+                <div key={d.name} className={`contrib-row${d.echo ? ' contrib-row-echo' : ''}`}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    {d.echo && <span className="echo-badge">ECHO</span>}
+                    {d.name}
+                  </span>
+                </div>
               ))}
             </div>
           )}

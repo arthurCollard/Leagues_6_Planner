@@ -10,7 +10,7 @@ const DROPS_BY_REGION = {};
 ALL_GEAR.forEach(item => {
   item.regions.forEach(r => {
     if (!DROPS_BY_REGION[r]) DROPS_BY_REGION[r] = [];
-    DROPS_BY_REGION[r].push(item.name);
+    DROPS_BY_REGION[r].push({ name: item.name, echo: !!item.echo });
   });
 });
 

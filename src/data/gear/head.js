@@ -1,4 +1,18 @@
 export const HEAD = [
+  // ── Echo Items (stats TBD) ─────────────────────────────────────────────────
+  {
+    name: 'Echo Helm',
+    echo: true,
+    slot: 'head',
+    regions: ['Fremennik'],
+    requirements: [{ skill: 'Defence', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
+  // ──────────────────────────────────────────────────────────────────────────
   {
     name: 'Torva Full Helm',
     slot: 'head',

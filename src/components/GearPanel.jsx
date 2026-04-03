@@ -240,6 +240,7 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
     : regionFiltered;
   const filtered = ammoFiltered.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
   const isUnavailable = selected && selectedRegions.length > 0 && !regionFiltered.some(i => i.name === selected.name);
+  const hasEchoAvailable = !selected?.echo && selectedRegions.length > 0 && regionFiltered.some(i => i.echo);
 
   useEffect(() => {
     if (!open) return;
@@ -255,7 +256,7 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
   return (
     <div className="slot-picker-wrapper" ref={ref}>
       <button
-        className={`slot-btn ${selected ? 'slot-filled' : 'slot-empty'} ${disabled ? 'slot-disabled' : ''} ${isUnavailable ? 'slot-unavailable' : ''}`}
+        className={`slot-btn ${selected ? 'slot-filled' : 'slot-empty'} ${disabled ? 'slot-disabled' : ''} ${isUnavailable ? 'slot-unavailable' : ''} ${selected?.echo ? 'slot-echo' : ''} ${hasEchoAvailable ? 'slot-echo-available' : ''}`}
         onClick={() => !disabled && setOpen(o => !o)}
         title={disabled ? '2H weapon equipped' : slot.charAt(0).toUpperCase() + slot.slice(1)}
         disabled={disabled}
@@ -293,10 +294,13 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
             {filtered.map(item => (
               <button
                 key={item.name}
-                className={`slot-option ${selected?.name === item.name ? 'slot-option-active' : ''}`}
+                className={`slot-option ${selected?.name === item.name ? 'slot-option-active' : ''} ${item.echo ? 'slot-option-echo' : ''}`}
                 onClick={() => { onSelect(item); setOpen(false); setSearch(''); }}
               >
-                <span className="slot-option-name">{item.name}</span>
+                <span className="slot-option-name">
+                  {item.echo && <span className="echo-badge">ECHO</span>}
+                  {item.name}
+                </span>
                 {item.requirements?.length > 0 && (
                   <span className="slot-option-req">
                     {item.requirements.map(r => `${r.skill} ${r.level}`).join(', ')}
@@ -398,6 +402,11 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
         <div>
           Gear Planner
           <p className="relic-tree-desc">Preview stat totals and attack speed for your gear setup</p>
+          <p className="relic-tree-desc">
+            <span style={{ color: '#c084fc' }}>✦</span> indicates an echo item is available in that slot —{' '}
+            <span style={{ color: '#a855f7', border: '1px solid #a855f7', borderRadius: '3px', padding: '0 3px', fontSize: '0.7em' }}>purple outline</span> means one is equipped.
+            {' '}Echo item stats are pending and will be updated once confirmed.
+          </p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <div onClick={e => e.stopPropagation()}>

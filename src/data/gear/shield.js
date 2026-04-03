@@ -1,4 +1,22 @@
 export const SHIELD = [
+  // ── Echo Items (stats TBD) ─────────────────────────────────────────────────
+  {
+    name: "Devil's Element",
+    echo: true,
+    slot: 'shield',
+    regions: ['Kandarin'],
+    requirements: [{ skill: 'Magic', level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 20, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 6, prayer: 3 },
+    },
+    effect: {
+      "type": "multiply_totals",
+      "stats": [],
+      "description": "Devil's Element: doubles elemental weakness"
+    },
+  },
   // ── Varlamore ──────────────────────────────────────────────────────────────
   {
     name: 'Tome of Earth',
