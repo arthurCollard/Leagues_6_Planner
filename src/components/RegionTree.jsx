@@ -30,12 +30,16 @@ function RegionSettings({ region, weights, onChange, onClose }) {
   function removeSkill(id) {
     const s = { ...weights.skills };
     delete s[id];
-    onChange({ ...weights, skills: s });
+    const next = { ...weights, skills: s };
+    if (Object.keys(next.skills).length === 0) delete next.skills;
+    onChange(next);
   }
   function removeExtra(id) {
     const e = { ...weights.extras };
     delete e[id];
-    onChange({ ...weights, extras: e });
+    const next = { ...weights, extras: e };
+    if (Object.keys(next.extras).length === 0) delete next.extras;
+    onChange(next);
   }
 
   return (
@@ -111,7 +115,7 @@ function RegionSettings({ region, weights, onChange, onClose }) {
   );
 }
 
-function RegionCard({ region, selected, disabled, onClick, weights, onWeightsChange, openSettings, onOpenSettings, onShowContrib, onHideContrib }) {
+function RegionCard({ region, selected, selectionOrder, totalSelected, disabled, onClick, onReorder, weights, onWeightsChange, openSettings, onOpenSettings, onShowContrib, onHideContrib }) {
   const showSettings = openSettings === region.name;
   const wrapperRef = useRef(null);
   const hasCustomWeights = Object.keys(weights).length > 0;
@@ -122,6 +126,7 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
     const rect = wrapperRef.current.getBoundingClientRect();
     onShowContrib({
       pos: { left: rect.left, top: rect.bottom + 6 },
+      title: region.name,
       skills: region.skills || {},
       extras: region.extras || {},
       drops: drops || [],
@@ -145,7 +150,17 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
           <div className="relic-info">
             <strong>{region.name}</strong>
           </div>
-          {selected && <span className="check">✓</span>}
+          {selectionOrder != null && (
+            <span className="region-order-badge">
+              {selectionOrder > 1 && (
+                <button className="region-order-arrow" onClick={e => { e.stopPropagation(); onReorder(-1); }} title="Move earlier">‹</button>
+              )}
+              {selectionOrder}
+              {selectionOrder < totalSelected && (
+                <button className="region-order-arrow" onClick={e => { e.stopPropagation(); onReorder(1); }} title="Move later">›</button>
+              )}
+            </span>
+          )}
         </div>
 
         {showSettings && (
@@ -169,11 +184,124 @@ function RegionCard({ region, selected, disabled, onClick, weights, onWeightsCha
   );
 }
 
-export default function RegionTree({ selectedRegions, onSelectRegion, onReset, regionWeights, onRegionWeightsChange }) {
+function RegionSplitPanel({ selectedRegions, onSelectRegion, onReorderRegion, openSettings, onOpenSettings, regionWeights, onRegionWeightsChange, onShowContrib, onHideContrib }) {
+  const [dragIndex, setDragIndex] = useState(null);
+  const [dragOverIndex, setDragOverIndex] = useState(null);
+  const itemRefs = useRef({});
+  const selectedCount = selectedRegions.length;
+  const unselected = UNLOCKABLE_REGIONS.filter(r => !selectedRegions.includes(r.name));
+
+  const showTooltip = (name, region) => {
+    const el = itemRefs.current[name];
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    onShowContrib({ pos: { left: rect.left, top: rect.bottom + 6 }, title: name, skills: region?.skills || {}, extras: region?.extras || {}, drops: DROPS_BY_REGION[name] || [] });
+  };
+
+  const handleDrop = (toIndex) => {
+    if (dragIndex !== null && dragIndex !== toIndex) onReorderRegion(dragIndex, toIndex);
+    setDragIndex(null);
+    setDragOverIndex(null);
+  };
+
+  return (
+    <div className="region-split-panel">
+      <div className="region-panel">
+        <div className="region-panel-label">
+          Selected
+          <span className="region-panel-count">{selectedCount} / {MAX_UNLOCKABLE_REGIONS}</span>
+        </div>
+        {selectedRegions.map((name, i) => {
+          const region = UNLOCKABLE_REGIONS.find(r => r.name === name);
+          const showSettings = openSettings === name;
+          const hasCustomWeights = Object.keys(regionWeights[name] || {}).length > 0;
+          return (
+            <div key={name} style={{ position: 'relative' }}>
+              <div
+                ref={el => { itemRefs.current[name] = el; }}
+                className={`region-panel-item region-selected-item${dragOverIndex === i && dragIndex !== i ? ' drag-over' : ''}`}
+                draggable
+                onDragStart={e => { e.dataTransfer.effectAllowed = 'move'; setDragIndex(i); onHideContrib(); }}
+                onDragOver={e => { e.preventDefault(); setDragOverIndex(i); }}
+                onDrop={() => handleDrop(i)}
+                onDragEnd={() => { setDragIndex(null); setDragOverIndex(null); }}
+                onMouseEnter={() => showTooltip(name, region)}
+                onMouseLeave={onHideContrib}
+              >
+                <span className="region-drag-handle">⠿</span>
+                <span className="region-order-num">{i + 1}.</span>
+                <span className="region-item-name">{name}</span>
+                <button
+                  className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
+                  onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : name); }}
+                  title="Adjust region weights"
+                >⚙️</button>
+                <button className="region-remove-btn" onClick={() => onSelectRegion(name)} title="Remove">×</button>
+              </div>
+              {showSettings && region && (
+                <RegionSettings
+                  region={region}
+                  weights={regionWeights[name] || {}}
+                  onChange={w => onRegionWeightsChange(name, w)}
+                  onClose={() => onOpenSettings(null)}
+                />
+              )}
+            </div>
+          );
+        })}
+        {selectedCount === 0 && (
+          <div className="region-empty-hint">Click a region on the right to add it</div>
+        )}
+        {Array.from({ length: MAX_UNLOCKABLE_REGIONS - selectedCount }).map((_, i) => (
+          <div key={`empty-${i}`} className="region-panel-item region-empty-slot">— {selectedCount + i + 1}. —</div>
+        ))}
+      </div>
+
+      <div className="region-panel region-panel-available">
+        <div className="region-panel-label">Available</div>
+        <div className="region-available-grid">
+        {unselected.map(region => {
+          const showSettings = openSettings === region.name;
+          const hasCustomWeights = Object.keys(regionWeights[region.name] || {}).length > 0;
+          return (
+            <div key={region.name} style={{ position: 'relative' }}>
+              <div
+                ref={el => { itemRefs.current[region.name] = el; }}
+                className={`region-panel-item region-available-item${selectedCount >= MAX_UNLOCKABLE_REGIONS ? ' region-panel-maxed' : ''}`}
+                onClick={() => selectedCount < MAX_UNLOCKABLE_REGIONS && onSelectRegion(region.name)}
+                onMouseEnter={() => showTooltip(region.name, region)}
+                onMouseLeave={onHideContrib}
+              >
+                <span className="region-item-name">{region.name}</span>
+                <button
+                  className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
+                  onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : region.name); }}
+                  title="Adjust region weights"
+                >⚙️</button>
+              </div>
+              {showSettings && (
+                <RegionSettings
+                  region={region}
+                  weights={regionWeights[region.name] || {}}
+                  onChange={w => onRegionWeightsChange(region.name, w)}
+                  onClose={() => onOpenSettings(null)}
+                />
+              )}
+            </div>
+          );
+        })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function RegionTree({ selectedRegions, onSelectRegion, onReorderRegion, onReset, regionWeights, onRegionWeightsChange }) {
   const [isOpen, setIsOpen] = useState(true);
   const [openSettings, setOpenSettings] = useState(null);
   const [hoverContrib, setHoverContrib] = useState(null);
   const hideTimer = useRef(null);
+  const showTimer = useRef(null);
   const selectedCount = selectedRegions.length;
 
   const handleOpenSettings = (name) => {
@@ -184,10 +312,12 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
   const handleShowContrib = (data) => {
     if (openSettings) return;
     clearTimeout(hideTimer.current);
-    setHoverContrib(data);
+    clearTimeout(showTimer.current);
+    showTimer.current = setTimeout(() => setHoverContrib(data), 300);
   };
 
   const handleHideContrib = () => {
+    clearTimeout(showTimer.current);
     hideTimer.current = setTimeout(() => setHoverContrib(null), 80);
   };
 
@@ -237,33 +367,22 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReset, r
           </div>
         </div>
 
-        <div className="tier-block">
-          <div className="tier-label">
-            <span>Unlockable</span>
-            <span className="tier-chosen">Pick up to {MAX_UNLOCKABLE_REGIONS}</span>
-          </div>
-          <div className="relic-row">
-            {UNLOCKABLE_REGIONS.map(region => {
-              const isSelected = selectedRegions.includes(region.name);
-              const isDisabled = !isSelected && selectedCount >= MAX_UNLOCKABLE_REGIONS;
-              return (
-                <RegionCard
-                  key={region.name}
-                  region={region}
-                  selected={isSelected}
-                  disabled={isDisabled}
-                  onClick={() => !isDisabled && onSelectRegion(region.name)}
-                  weights={regionWeights[region.name] || {}}
-                  onWeightsChange={w => onRegionWeightsChange(region.name, w)}
-                  openSettings={openSettings}
-                  onOpenSettings={handleOpenSettings}
-                  onShowContrib={handleShowContrib}
-                  onHideContrib={handleHideContrib}
-                />
-              );
-            })}
-          </div>
+        <div className="tier-label" style={{ marginTop: '0.75rem' }}>
+          <span>Unlockable</span>
+          <span className="tier-chosen">Click to add up to {MAX_UNLOCKABLE_REGIONS} regions — drag to re-order</span>
         </div>
+
+        <RegionSplitPanel
+          selectedRegions={selectedRegions}
+          onSelectRegion={onSelectRegion}
+          onReorderRegion={onReorderRegion}
+          openSettings={openSettings}
+          onOpenSettings={handleOpenSettings}
+          regionWeights={regionWeights}
+          onRegionWeightsChange={onRegionWeightsChange}
+          onShowContrib={handleShowContrib}
+          onHideContrib={handleHideContrib}
+        />
 
       </div>
 

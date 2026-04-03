@@ -76,6 +76,21 @@ export const WEAPON = [
     twoHanded: false,
     combatStyle: { accurate: 5, longrange: 5, defensive: 5 },
   },
+  {
+    name: "Echo Macuahuitl",
+    echo: true,
+    slot: 'weapon',
+    regions: ["Varlamore"],
+    requirements: [{ skill: "Attack", level: 75 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+    speed: 4,
+    twoHanded: true,
+    combatStyle: { accurate: 5, aggressive: 5, controlled: 5, defensive: 5 },
+  },
   // ──────────────────────────────────────────────────────────────────────────
   {
     name: "Eclipse Atlatl",

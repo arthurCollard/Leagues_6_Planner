@@ -6,6 +6,7 @@ export default function ComboBanner({ activeCombos, pendingCombos, activeThresho
   const [activeTab, setActiveTab] = useState('pending');
   const [hoverCombo, setHoverCombo] = useState(null);
   const hideTimer = useRef(null);
+  const showTimer = useRef(null);
   const prevActiveCount = useRef(0);
 
   const activeCount = activeCombos.length + activeThresholds.length;
@@ -20,16 +21,18 @@ export default function ComboBanner({ activeCombos, pendingCombos, activeThresho
 
   const handleMouseEnter = (e, combo) => {
     clearTimeout(hideTimer.current);
+    clearTimeout(showTimer.current);
     const rect = e.currentTarget.getBoundingClientRect();
-    setHoverCombo({
+    showTimer.current = setTimeout(() => setHoverCombo({
       pos: { left: rect.left, top: rect.bottom + 6 },
       skills: combo.bonuses || {},
       extras: {},
       description: combo.tooltip || undefined,
-    });
+    }), 300);
   };
 
   const handleMouseLeave = () => {
+    clearTimeout(showTimer.current);
     hideTimer.current = setTimeout(() => setHoverCombo(null), 80);
   };
 

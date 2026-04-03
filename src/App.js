@@ -64,6 +64,15 @@ export default function App() {
         ? prev.filter(n => n !== regionName)
         : prev.length < 3 ? [...prev, regionName] : prev
     );
+
+  const handleReorderRegion = (fromIdx, toIdx) =>
+    setSelectedRegions(prev => {
+      if (fromIdx === toIdx) return prev;
+      const next = [...prev];
+      const [moved] = next.splice(fromIdx, 1);
+      next.splice(toIdx, 0, moved);
+      return next;
+    });
   const handleRelicWeightsChange = (relicName, weights) => {
     setRelicWeights(prev => ({ ...prev, [relicName]: weights }));
   };
@@ -204,6 +213,7 @@ export default function App() {
           <RegionTree
             selectedRegions={selectedRegions}
             onSelectRegion={handleSelectRegion}
+            onReorderRegion={handleReorderRegion}
             onReset={() => setSelectedRegions([])}
             regionWeights={regionWeights}
             onRegionWeightsChange={(name, w) => setRegionWeights(prev => ({ ...prev, [name]: w }))}

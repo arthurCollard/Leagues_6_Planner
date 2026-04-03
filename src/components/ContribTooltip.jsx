@@ -9,7 +9,7 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
   const [activeTab, setActiveTab] = useState('bonuses');
 
   if (!data) return null;
-  const { pos, skills, extras, special, description, drops } = data;
+  const { pos, skills, extras, special, description, drops, title } = data;
   const skillEntries = Object.entries(skills || {}).filter(([, v]) => v > 0).sort(([, a], [, b]) => a - b);
   const extraEntries = Object.entries(extras || {}).filter(([, v]) => v > 0).sort(([, a], [, b]) => a - b);
   const clampedLeft = Math.min(pos.left, window.innerWidth - 230);
@@ -28,6 +28,9 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
+      {title && (
+        <div className="contrib-title">{title}</div>
+      )}
       {description && (
         <div className="contrib-description">{description}</div>
       )}

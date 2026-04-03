@@ -391,13 +391,16 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
     if (name) setHoverContrib(null);
   };
   const hideTimer = useRef(null);
+  const showTimer = useRef(null);
 
   const handleShowContrib = (data) => {
     if (openSettings) return;
     clearTimeout(hideTimer.current);
-    setHoverContrib(data);
+    clearTimeout(showTimer.current);
+    showTimer.current = setTimeout(() => setHoverContrib(data), 300);
   };
   const handleHideContrib = () => {
+    clearTimeout(showTimer.current);
     hideTimer.current = setTimeout(() => setHoverContrib(null), 80);
   };
 
@@ -495,7 +498,7 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
 
       <ContribTooltip
         data={hoverContrib}
-        onMouseEnter={() => clearTimeout(hideTimer.current)}
+        onMouseEnter={() => { clearTimeout(hideTimer.current); clearTimeout(showTimer.current); }}
         onMouseLeave={handleHideContrib}
       />
     </main>

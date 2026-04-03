@@ -21,6 +21,18 @@ export const FEET = [
       other:   { meleeStrength: 4, rangedStrength: 2, magicDamage: 1, prayer: 0 },
     },
   },
+    {
+    name: 'Avernic Treads (Max)',
+    slot: 'feet',
+    regions: ['Varlamore', 'Asgarnia'],
+    requireAllRegions: true,
+    requirements: [{ skill: 'Defence', level: 80 }],
+    bonuses: {
+      attack:  { stab: 5, slash: 5, crush: 5, magic: 11, ranged: 15 },
+      defence: { stab: 21, slash: 25, crush: 25, magic: 10, ranged: 10 },
+      other:   { meleeStrength: 6, rangedStrength: 3, magicDamage: 2, prayer: 0 },
+    },
+  },
   {
     name: 'Pegasian Boots',
     slot: 'feet',
