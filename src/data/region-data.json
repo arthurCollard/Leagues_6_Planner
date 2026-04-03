@@ -3947,6 +3947,8 @@
           "Amoxliatl",
           "Hueycoatl",
           "Vardorvis",
+          "Doom of Mokhaiotl",
+          "Gemstone Crab",
           "Echo Boss: Sol Heredit"
         ]
       },
@@ -3996,7 +3998,8 @@
         "type": "list",
         "items": [
           "Jellies (57 - 126)",
-          "Wyrms (3 - 126)"
+          "Wyrms (3 - 126)",
+          "Custodian Stalkers (need Vannaka?)"
         ]
       }
     },
