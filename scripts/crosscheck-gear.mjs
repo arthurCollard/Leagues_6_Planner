@@ -7,14 +7,20 @@
  *   node scripts/crosscheck-gear.mjs
  *   node scripts/crosscheck-gear.mjs --slot weapon
  *   node scripts/crosscheck-gear.mjs --item "Abyssal whip"
+ *   node scripts/crosscheck-gear.mjs --add "Dragon boots"
  *
  * The script fetches wikitext for each item, parses the {{Infobox Bonuses}}
  * template, and reports any mismatches between wiki values and local data.
+ *
+ * --add mode: looks up an item on the wiki, shows its stats, and interactively
+ * prompts for slot/regions/requirements before appending it to the gear file.
  */
 
 import { fileURLToPath } from 'url';
 import { dirname, resolve, join } from 'path';
 import { pathToFileURL } from 'url';
+import { readFileSync, writeFileSync } from 'fs';
+import rl from 'readline/promises';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
@@ -46,19 +52,6 @@ const ALL_GEAR = [
 const { FIELD_MAP, parseInfoboxBonuses, compareItem } = await import(
   pathToFileURL(resolve(__dirname, '../src/utils/gearCrosscheck.js')).href
 );
-
-// ── CLI args ─────────────────────────────────────────────────────────────────
-const args = process.argv.slice(2);
-const slotFilter = args.includes('--slot')  ? args[args.indexOf('--slot')  + 1] : null;
-const itemFilter = args.includes('--item')  ? args[args.indexOf('--item')  + 1] : null;
-
-const items = ALL_GEAR.filter(item => {
-  if (slotFilter && item.slot !== slotFilter) return false;
-  if (itemFilter && item.name.toLowerCase() !== itemFilter.toLowerCase()) return false;
-  return true;
-});
-
-console.log(`Checking ${items.length} item(s)…\n`);
 
 // ── Wiki fetch helpers ────────────────────────────────────────────────────────
 const WIKI_API = 'https://oldschool.runescape.wiki/api.php';
@@ -124,6 +117,169 @@ async function fetchWikitext(itemName) {
 
 // ── Rate-limit helper (avoid hammering the wiki) ──────────────────────────────
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ── CLI args ─────────────────────────────────────────────────────────────────
+const args = process.argv.slice(2);
+const slotFilter = args.includes('--slot')  ? args[args.indexOf('--slot')  + 1] : null;
+const itemFilter = args.includes('--item')  ? args[args.indexOf('--item')  + 1] : null;
+const addName    = args.includes('--add')   ? args[args.indexOf('--add')   + 1] : null;
+
+// ── --add mode ────────────────────────────────────────────────────────────────
+if (addName) {
+  const VALID_SLOTS = ['head','body','legs','hands','feet','cape','neck','ring','weapon','shield','ammo'];
+  const SLOT_FILES  = {
+    head: 'head.js', body: 'body.js', legs: 'legs.js', hands: 'hands.js',
+    feet: 'feet.js', cape: 'cape.js', neck: 'neck.js', ring: 'ring.js',
+    weapon: 'weapon.js', shield: 'shield.js', ammo: 'ammo.js',
+  };
+  const EXPORT_NAMES = {
+    head: 'HEAD', body: 'BODY', legs: 'LEGS', hands: 'HANDS', feet: 'FEET',
+    cape: 'CAPE', neck: 'NECK', ring: 'RING', weapon: 'WEAPON', shield: 'SHIELD', ammo: 'AMMO',
+  };
+
+  // Check for duplicate
+  const existing = ALL_GEAR.find(g => g.name.toLowerCase() === addName.toLowerCase());
+  if (existing) {
+    console.log(`"${addName}" already exists in local data (slot: ${existing.slot}).`);
+    process.exit(0);
+  }
+
+  // Fetch wiki stats
+  console.log(`Fetching wiki data for "${addName}"…\n`);
+  let wikitext;
+  try {
+    wikitext = await fetchWikitext(addName);
+  } catch (err) {
+    console.error(`Fetch error: ${err.message}`);
+    process.exit(1);
+  }
+
+  if (!wikitext) {
+    console.error(`Could not find "${addName}" on the wiki.`);
+    process.exit(1);
+  }
+
+  const wikiStats = parseInfoboxBonuses(wikitext);
+  if (!wikiStats) {
+    console.error(`No {{Infobox Bonuses}} found for "${addName}".`);
+    process.exit(1);
+  }
+
+  // Build bonuses object from wiki stats
+  const bonuses = { attack: {}, defence: {}, other: {} };
+  for (const [wikiKey, [cat, localKey]] of Object.entries(FIELD_MAP)) {
+    const val = wikiStats[wikiKey] ?? 0;
+    bonuses[cat][localKey] = val;
+  }
+
+  // Display parsed stats
+  console.log(`Stats for "${addName}":`);
+  console.log(`  Attack:  stab=${bonuses.attack.stab}  slash=${bonuses.attack.slash}  crush=${bonuses.attack.crush}  magic=${bonuses.attack.magic}  ranged=${bonuses.attack.ranged}`);
+  console.log(`  Defence: stab=${bonuses.defence.stab}  slash=${bonuses.defence.slash}  crush=${bonuses.defence.crush}  magic=${bonuses.defence.magic}  ranged=${bonuses.defence.ranged}`);
+  console.log(`  Other:   meleeStr=${bonuses.other.meleeStrength}  rangedStr=${bonuses.other.rangedStrength}  magicDmg=${bonuses.other.magicDamage}  prayer=${bonuses.other.prayer}`);
+  console.log();
+
+  const readline = rl.createInterface({ input: process.stdin, output: process.stdout });
+
+  // Prompt for slot
+  let slot;
+  while (!slot) {
+    const answer = (await readline.question(`Slot (${VALID_SLOTS.join('/')}): `)).trim().toLowerCase();
+    if (VALID_SLOTS.includes(answer)) {
+      slot = answer;
+    } else {
+      console.log(`  Invalid slot. Choose from: ${VALID_SLOTS.join(', ')}`);
+    }
+  }
+
+  // Prompt for regions
+  let regions = [];
+  while (regions.length === 0) {
+    const answer = (await readline.question('Regions (comma-separated, e.g. Asgarnia,Kandarin): ')).trim();
+    if (answer) {
+      regions = answer.split(',').map(r => r.trim()).filter(Boolean);
+    } else {
+      console.log('  At least one region is required.');
+    }
+  }
+
+  // Prompt for requirements (optional)
+  const requirements = [];
+  const reqInput = (await readline.question('Requirements (e.g. Defence 70, Attack 75) or leave blank: ')).trim();
+  if (reqInput) {
+    for (const part of reqInput.split(',')) {
+      const m = part.trim().match(/^(.+?)\s+(\d+)$/);
+      if (m) {
+        requirements.push({ skill: m[1].trim(), level: parseInt(m[2], 10) });
+      } else {
+        console.log(`  Skipping unrecognised requirement: "${part.trim()}"`);
+      }
+    }
+  }
+
+  // Prompt for echo item
+  const echoAnswer = (await readline.question('Is this an echo item? (y/n): ')).trim().toLowerCase();
+  const isEcho = echoAnswer === 'y' || echoAnswer === 'yes';
+
+  // Prompt for special effect
+  const effectAnswer = (await readline.question('Does this item have a special effect? (y/n): ')).trim().toLowerCase();
+  let effect = null;
+  if (effectAnswer === 'y' || effectAnswer === 'yes') {
+    const effectDesc = (await readline.question('Effect description: ')).trim();
+    effect = { type: 'multiply_totals', stats: [], description: effectDesc };
+  }
+
+  readline.close();
+
+  // Serialise the new item
+  const reqStr = requirements.length > 0
+    ? `[${requirements.map(r => `{ skill: '${r.skill}', level: ${r.level} }`).join(', ')}]`
+    : '[]';
+  const regStr = `[${regions.map(r => `'${r}'`).join(', ')}]`;
+
+  const itemLines = [
+    `  {`,
+    ...(isEcho ? [`    echo: true,`] : []),
+    `    name: ${JSON.stringify(addName)},`,
+    `    slot: '${slot}',`,
+    `    regions: ${regStr},`,
+    `    requirements: ${reqStr},`,
+    `    bonuses: {`,
+    `      attack:  { stab: ${bonuses.attack.stab}, slash: ${bonuses.attack.slash}, crush: ${bonuses.attack.crush}, magic: ${bonuses.attack.magic}, ranged: ${bonuses.attack.ranged} },`,
+    `      defence: { stab: ${bonuses.defence.stab}, slash: ${bonuses.defence.slash}, crush: ${bonuses.defence.crush}, magic: ${bonuses.defence.magic}, ranged: ${bonuses.defence.ranged} },`,
+    `      other:   { meleeStrength: ${bonuses.other.meleeStrength}, rangedStrength: ${bonuses.other.rangedStrength}, magicDamage: ${bonuses.other.magicDamage}, prayer: ${bonuses.other.prayer} },`,
+    `    },`,
+    ...(effect ? [`    effect: { type: '${effect.type}', stats: [], description: ${JSON.stringify(effect.description)} },`] : []),
+    `  },`,
+  ];
+  const itemEntry = itemLines.join('\n');
+
+  // Append to gear file before the closing `];`
+  const gearFilePath = resolve(__dirname, '../src/data/gear', SLOT_FILES[slot]);
+  const exportName = EXPORT_NAMES[slot];
+  let src = readFileSync(gearFilePath, 'utf8');
+
+  // Find last `];` to insert before
+  const insertIdx = src.lastIndexOf('];');
+  if (insertIdx === -1) {
+    console.error(`Could not find closing ]; in ${SLOT_FILES[slot]}`);
+    process.exit(1);
+  }
+
+  src = src.slice(0, insertIdx) + itemEntry + '\n' + src.slice(insertIdx);
+  writeFileSync(gearFilePath, src, 'utf8');
+
+  console.log(`\nAdded "${addName}" to src/data/gear/${SLOT_FILES[slot]}`);
+  process.exit(0);
+}
+
+const items = ALL_GEAR.filter(item => {
+  if (slotFilter && item.slot !== slotFilter) return false;
+  if (itemFilter && item.name.toLowerCase() !== itemFilter.toLowerCase()) return false;
+  return true;
+});
+
+console.log(`Checking ${items.length} item(s)…\n`);
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 let totalMismatches = 0;

@@ -91,6 +91,29 @@ export const WEAPON = [
     twoHanded: true,
     combatStyle: { accurate: 5, aggressive: 5, controlled: 5, defensive: 5 },
   },
+  {
+    name: "Drygore blowpipe",
+    echo: true,
+    slot: 'weapon',
+    regions: ['Desert'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 50 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 10, magicDamage: 0, prayer: 0 },
+    },
+    twoHanded: true,
+    effect: {
+      "type": "multiply_totals",
+      "stats": [],
+      "description": "Drygore blowpipe: re-rolls accuracy on an unsuccessful hit"
+    },
+    combatStyle: {
+      accurate: 3,
+      rapid: 2,
+      longrange: 3
+    },  
+  },
   // ──────────────────────────────────────────────────────────────────────────
   {
     name: "Eclipse Atlatl",
@@ -2160,6 +2183,17 @@ export const WEAPON = [
       accurate: 4,
       rapid: 3,
       longrange: 4
+    },
+  },
+  {
+    name: "Drygore blowpipe",
+    slot: 'weapon',
+    regions: ['Desert'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 50 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
     },
   },
 ];
