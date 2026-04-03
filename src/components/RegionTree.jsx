@@ -415,6 +415,7 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReorderR
       <RegionDetailModal
         key={modalRegion}
         regionName={modalRegion}
+        customWeights={regionWeights[modalRegion] || {}}
         onClose={() => setModalRegion(null)}
       />
     </main>

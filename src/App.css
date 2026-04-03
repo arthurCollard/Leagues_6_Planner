@@ -275,7 +275,8 @@ body {
 .tier-lock-toggle[data-tooltip]:hover::after,
 .combo-pending[data-tooltip]:hover::after,
 .skill-icon[data-tooltip]:hover::after,
-.relic-btn[data-tooltip]:hover::after {
+.relic-btn[data-tooltip]:hover::after,
+.mastery-tier-btn[data-tooltip]:hover::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: calc(100% + 6px);
@@ -1593,6 +1594,13 @@ body {
 }
 
 .rdm-weights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.rdm-weights-col {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -1683,15 +1691,24 @@ body {
 
 .rdm-weight-row {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 0.75rem;
   color: #c8b896;
-  padding: 0.08rem 0;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3px;
+}
+.rdm-weight-row:nth-child(even) {
+  background: rgba(184, 162, 130, 0.06);
 }
 
 .rdm-weight-val {
   color: #e8d0a0;
   font-weight: 600;
+  margin-left: 1rem;
+  min-width: 2rem;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 .rdm-drops-section {
@@ -1840,80 +1857,158 @@ body {
   font-weight: 600;
 }
 
-.mastery-row-grid {
+.mastery-track-wrap {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  gap: 0.25rem;
 }
 
-.mastery-row-grid .relic-btn {
-  padding: 0.5rem;
-  gap: 0.4rem;
-  align-items: flex-start;
-}
-
-.mastery-row-grid .relic-info {
-  min-width: 0;
-}
-
-.mastery-row-grid .relic-info strong {
-  font-size: 0.75rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-}
-
-.mastery-row-grid .relic-info small {
-  font-size: 0.62rem;
-  line-height: 1.3;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.mastery-available {
-  border-style: dashed !important;
-  opacity: 0.75;
-}
-
-.mastery-available:hover {
-  border-style: solid !important;
-  opacity: 1;
-}
-
-.mastery-locked {
-  opacity: 0.3;
-  cursor: default !important;
+.mastery-track-wrap::before {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: calc(100% / 12);
+  right: calc(100% / 12);
+  height: 2px;
+  background: rgba(184, 162, 130, 0.12);
+  z-index: 0;
   pointer-events: none;
 }
 
-.mastery-diamond {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, #b8a282, #d0bd97);
-  transform: rotate(45deg);
+.mastery-tier-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0 0.15rem 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.mastery-tier-node {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #1a1612;
+  border: 2px solid rgba(184, 162, 130, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border-radius: 2px;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: all 0.2s;
 }
 
-.mastery-row-grid .relic-btn.selected .mastery-diamond {
-  background: linear-gradient(135deg, #d0bd97, #e8d9b8);
-  box-shadow: 0 0 8px rgba(216, 204, 180, 0.5);
+.mastery-tier-btn.selected .mastery-tier-node {
+  background: rgba(184, 162, 130, 0.18);
+  border-color: #d0bd97;
+  box-shadow: 0 0 10px rgba(216, 204, 180, 0.3);
+}
+
+.mastery-tier-btn:not(.mastery-locked):hover .mastery-tier-node {
+  border-color: #d0bd97;
+  background: rgba(184, 162, 130, 0.1);
+}
+
+.mastery-available .mastery-tier-node {
+  border-color: #b8a282;
+  border-style: dashed;
+}
+
+.mastery-available:hover .mastery-tier-node {
+  border-style: solid;
+}
+
+.mastery-locked {
+  opacity: 0.28;
+  cursor: default;
+  pointer-events: none;
 }
 
 .mastery-roman {
-  transform: rotate(-45deg);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  color: #1a1612;
+  color: #7a6a4a;
   display: block;
 }
+
+.mastery-tier-btn.selected .mastery-roman {
+  color: #d0bd97;
+}
+
+.mastery-tier-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+}
+
+.mastery-tier-name {
+  font-size: 0.67rem;
+  font-weight: 600;
+  color: #7a6a4a;
+  line-height: 1.2;
+}
+
+.mastery-tier-btn.selected .mastery-tier-name {
+  color: #d0bd97;
+}
+
+.mastery-tier-desc {
+  font-size: 0.56rem;
+  color: #4a4030;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mastery-tier-btn.selected .mastery-tier-desc {
+  color: #6a5c42;
+}
+
+/* ── Mastery branch colours ─────────────────────────────────────────────── */
+
+.mastery-branch-melee .tier-label span:first-child  { background: #c0392b; color: #fff; }
+.mastery-branch-range .tier-label span:first-child  { background: #27ae60; color: #fff; }
+.mastery-branch-magic .tier-label span:first-child  { background: #2980b9; color: #fff; }
+
+.mastery-branch-melee .mastery-track-wrap::before { background: rgba(192, 57, 43, 0.2); }
+.mastery-branch-range .mastery-track-wrap::before { background: rgba(39, 174, 96, 0.2); }
+.mastery-branch-magic .mastery-track-wrap::before { background: rgba(41, 128, 185, 0.2); }
+
+.mastery-branch-melee .mastery-tier-btn.selected .mastery-tier-node {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.15);
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
+.mastery-branch-range .mastery-tier-btn.selected .mastery-tier-node {
+  border-color: #2ecc71;
+  background: rgba(46, 204, 113, 0.15);
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+.mastery-branch-magic .mastery-tier-btn.selected .mastery-tier-node {
+  border-color: #3498db;
+  background: rgba(52, 152, 219, 0.15);
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.mastery-branch-melee .mastery-tier-btn.selected .mastery-roman,
+.mastery-branch-melee .mastery-tier-btn.selected .mastery-tier-name { color: #e74c3c; }
+.mastery-branch-range .mastery-tier-btn.selected .mastery-roman,
+.mastery-branch-range .mastery-tier-btn.selected .mastery-tier-name { color: #2ecc71; }
+.mastery-branch-magic .mastery-tier-btn.selected .mastery-roman,
+.mastery-branch-magic .mastery-tier-btn.selected .mastery-tier-name { color: #3498db; }
+
+.mastery-branch-melee .mastery-available .mastery-tier-node { border-color: rgba(231, 76, 60, 0.6); }
+.mastery-branch-range .mastery-available .mastery-tier-node { border-color: rgba(46, 204, 113, 0.6); }
+.mastery-branch-magic .mastery-available .mastery-tier-node { border-color: rgba(52, 152, 219, 0.6); }
 
 /* ── Gear Panel ─────────────────────────────────────────────────────────── */
 

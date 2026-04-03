@@ -64,7 +64,7 @@ function getDropTable(scraped) {
   return content.rows.filter(row => row['Item']?.trim());
 }
 
-export default function RegionDetailModal({ regionName, onClose }) {
+export default function RegionDetailModal({ regionName, customWeights = {}, onClose }) {
   const [activeTab, setActiveTab] = useState(null);
   const [dropFilter, setDropFilter] = useState('');
 
@@ -81,8 +81,10 @@ export default function RegionDetailModal({ regionName, onClose }) {
   const settlements = getList(scraped, 'Overview of area', 'Notable settlements') || getList(scraped, 'Key Info', 'Notable Settlements');
   const activities  = getList(scraped, 'Overview of area', 'Notable non-combat activities') || getList(scraped, 'Key Info', 'Notable Non-Combat Activities');
   const dropTable   = getDropTable(scraped);
-  const skillEntries = Object.entries(region.skills || {}).filter(([, v]) => v > 0);
-  const extraEntries = Object.entries(region.extras || {}).filter(([, v]) => v > 0);
+  const mergedSkills = { ...region.skills, ...customWeights.skills };
+  const mergedExtras = { ...region.extras, ...customWeights.extras };
+  const skillEntries = Object.entries(mergedSkills).filter(([, v]) => v > 0);
+  const extraEntries = Object.entries(mergedExtras).filter(([, v]) => v > 0);
 
   const tabs = [
     pvm?.length        && { id: 'pvm',          label: 'PVM' },
@@ -185,7 +187,7 @@ export default function RegionDetailModal({ regionName, onClose }) {
           {currentTab === 'weights' && (
             <div className="rdm-weights">
               {skillEntries.length > 0 && (
-                <>
+                <div className="rdm-weights-col">
                   <div className="rdm-sub-label">Skills</div>
                   {skillEntries.map(([id, val]) => (
                     <div key={id} className="rdm-weight-row">
@@ -193,18 +195,18 @@ export default function RegionDetailModal({ regionName, onClose }) {
                       <span className="rdm-weight-val">+{val}</span>
                     </div>
                   ))}
-                </>
+                </div>
               )}
               {extraEntries.length > 0 && (
-                <>
-                  <div className="rdm-sub-label" style={{ marginTop: '0.6rem' }}>Extras</div>
+                <div className="rdm-weights-col">
+                  <div className="rdm-sub-label">Extras</div>
                   {extraEntries.map(([id, val]) => (
                     <div key={id} className="rdm-weight-row">
                       <span>{EXTRA_NAME[id] || id}</span>
                       <span className="rdm-weight-val">+{val}</span>
                     </div>
                   ))}
-                </>
+                </div>
               )}
             </div>
           )}

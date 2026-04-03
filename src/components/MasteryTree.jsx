@@ -41,39 +41,34 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
           ⚠️ Placeholder — actual mastery perks will be updated once spoiled
         </div>
 
-        {/* One tier-block per branch */}
         {BRANCHES.map(branch => {
           const depth = selectedMasteries[branch] || 0;
           return (
-            <div key={branch} className="tier-block">
+            <div key={branch} className={`tier-block mastery-branch-${branch.toLowerCase()}`}>
               <div className="tier-label">
                 <span>{branch}</span>
-                {depth > 0 && (
-                  <span className="tier-chosen">{depth} / 6 tiers</span>
-                )}
+                {depth > 0 && <span className="tier-chosen">{depth} / 6</span>}
               </div>
-              <div className="mastery-row-grid">
+              <div className="mastery-track-wrap">
                 {MASTERIES[branch].map((mastery, idx) => {
                   const tier = idx + 1;
                   const isSelected = depth >= tier;
                   const isNext = depth === tier - 1 && pointsLeft > 0;
                   const isLocked = !isSelected && !isNext;
-
                   return (
                     <button
                       key={mastery.name}
-                      className={`relic-btn${isSelected ? ' selected' : ''}${isNext ? ' mastery-available' : ''}${isLocked ? ' mastery-locked' : ''}`}
+                      className={`mastery-tier-btn${isSelected ? ' selected' : ''}${isNext ? ' mastery-available' : ''}${isLocked ? ' mastery-locked' : ''}`}
                       onClick={() => !isLocked && handleClick(branch, tier)}
                       data-tooltip={mastery.dps || undefined}
                     >
-                      <div className="mastery-diamond">
+                      <div className="mastery-tier-node">
                         <span className="mastery-roman">{ROMAN[idx]}</span>
                       </div>
-                      <div className="relic-info">
-                        <strong>{mastery.name}</strong>
-                        <small>{mastery.desc}</small>
+                      <div className="mastery-tier-info">
+                        <span className="mastery-tier-name">{mastery.name}</span>
+                        <span className="mastery-tier-desc">{mastery.desc}</span>
                       </div>
-                      {isSelected && <span className="check">✓</span>}
                     </button>
                   );
                 })}
@@ -86,28 +81,24 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
         <div className="tier-block">
           <div className="tier-label">
             <span>Passives</span>
-            {passivesUnlocked > 0 && (
-              <span className="tier-chosen">{passivesUnlocked} / 6 unlocked</span>
-            )}
+            {passivesUnlocked > 0 && <span className="tier-chosen">{passivesUnlocked} / 6 unlocked</span>}
           </div>
-          <div className="mastery-row-grid">
+          <div className="mastery-track-wrap">
             {MASTERIES.Passives.map((passive, idx) => {
               const tier = idx + 1;
               const isUnlocked = passivesUnlocked >= tier;
-
               return (
                 <div
                   key={passive.name}
-                  className={`relic-btn${isUnlocked ? ' selected' : ' mastery-locked'}`}
+                  className={`mastery-tier-btn${isUnlocked ? ' selected' : ' mastery-locked'}`}
                 >
-                  <div className="mastery-diamond">
+                  <div className="mastery-tier-node">
                     <span className="mastery-roman">{ROMAN[idx]}</span>
                   </div>
-                  <div className="relic-info">
-                    <strong>{passive.name}</strong>
-                    <small>{passive.desc}</small>
+                  <div className="mastery-tier-info">
+                    <span className="mastery-tier-name">{passive.name}</span>
+                    <span className="mastery-tier-desc">{passive.desc}</span>
                   </div>
-                  {isUnlocked && <span className="check">✓</span>}
                 </div>
               );
             })}
