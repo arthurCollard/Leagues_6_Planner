@@ -3,40 +3,12 @@ import { RELICS } from '../data/relics';
 import RelicIcon from './RelicIcon';
 import { SKILLS, EXTRAS } from '../data/skills';
 import ContribTooltip from './ContribTooltip';
+import { TIER_PASSIVES } from '../data/tierPassives';
 
 const SKILL_NAME = Object.fromEntries(SKILLS.map(s => [s.id, s.name]));
 const EXTRA_NAME = Object.fromEntries(EXTRAS.map(e => [e.id, e.name]));
 
-export const TIER_PASSIVES = {
-  1: [
-    { short: '5x Leagues XP', text: 'Leagues XP multiplier is 5x.', group: 'xp_mult', priority: 1 },
-    { short: '2x item drops', text: 'Items from eligible sources will be 2x as common.', group: 'drop_rate', priority: 1 },
-    { short: 'Farming ticks: 1min', text: 'Farming ticks will occur every minute instead of every five minutes.' },
-    { short: '4x minigame points', text: 'Minigame points received are boosted by 4x.', group: 'minigame_pts', priority: 1 },
-    { short: 'Infinite run energy', text: 'Run energy is never drained whilst running.' },
-    { short: 'Stackable clue boxes', text: 'All clue scrolls will drop as stackable scroll boxes, and clue step progress is saved between clues.' },
-    { short: 'Region-locked clue steps', text: 'Players will only receive clue steps they can access within an unlocked region.' },
-  ],
-  2: [
-    { short: '8x Leagues XP', text: 'Leagues XP multiplier is increased from 5x to 8x.', group: 'xp_mult', priority: 2 },
-  ],
-  3: [
-    { short: '1.5x combat XP', text: 'Combat experience (including Hitpoints and Prayer) will be multiplied by 1.5x. This is multiplicative with other experience modifiers.' },
-    { short: 'Free Bigger & Badder', text: 'The Bigger and Badder slayer unlock is unlocked for free.' },
-    { short: '5x slayer points', text: 'Slayer reward points are 5x from tasks, and you aren\'t required to complete 5 tasks before earning points.' },
-    { short: 'Superior rate: 1/50', text: 'Superior slayer monsters will appear at a rate of 1/50.' },
-  ],
-  4: [
-    { short: '5x item drops', text: 'Items from eligible sources will be 5x as common.', group: 'drop_rate', priority: 2 },
-    { short: '8x minigame points', text: 'Minigame points received are boosted by 8x.', group: 'minigame_pts', priority: 2 },
-  ],
-  5: [
-    { short: '12x Leagues XP', text: 'Leagues XP multiplier is increased from 8x to 12x.', group: 'xp_mult', priority: 3 },
-  ],
-  7: [
-    { short: '16x Leagues XP', text: 'Leagues XP multiplier is increased from 12x to 16x.', group: 'xp_mult', priority: 4 },
-  ],
-};
+export { TIER_PASSIVES };
 
 function TierPassiveModal({ passives, tier, onClose }) {
   useEffect(() => {
@@ -249,7 +221,7 @@ function RelicSettings({ relic, weights, onChange, onClose }) {
   );
 }
 
-function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic, locked, openSettings, onOpenSettings, onShowContrib, onHideContrib }) {
+function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange, selectedRelics, reloadedRelic, onSelectReloadedRelic, locked, openSettings, onOpenSettings, onShowContrib, onHideContrib }) {
   const showSettings = openSettings === relic.name;
   const hasCustomWeights = Object.keys(weights).length > 0;
   const isReloaded = relic.special === 'reloaded';
@@ -258,10 +230,17 @@ function RelicButton({ relic, selected, onSelect, weights, onWeightsChange, sele
   const handleMouseEnter = () => {
     if (!wrapperRef.current) return;
     const rect = wrapperRef.current.getBoundingClientRect();
+    const passiveSkills = {};
+    (TIER_PASSIVES[tier] || []).forEach(p => {
+      Object.entries(p.skills || {}).forEach(([id, v]) => {
+        passiveSkills[id] = (passiveSkills[id] || 0) + v;
+      });
+    });
     onShowContrib({
       pos: { left: rect.left, top: rect.bottom + 6 },
       skills: relic.skills || {},
       extras: relic.extras || {},
+      passiveSkills: Object.keys(passiveSkills).length > 0 ? passiveSkills : null,
       special: relic.special,
     });
   };
@@ -476,6 +455,7 @@ export default function RelicTree({ selectedRelics, onSelectRelic, relicWeights,
                   <RelicButton
                     key={relic.name}
                     relic={relic}
+                    tier={tier}
                     selected={selectedRelics[tier]?.name === relic.name}
                     onSelect={() => onSelectRelic(tier, relic)}
                     weights={relicWeights?.[relic.name] ?? {}}

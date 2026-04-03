@@ -20,7 +20,7 @@ function getStatusRange(key, solvedThreshold, oversolvedFactor) {
 }
 
 export default function SkillsPanel({ skills, extras, solvedThreshold, oversolvedFactor }) {
-  const [showExtras, setShowExtras] = useState(false);
+  const [activeTab, setActiveTab] = useState('skills');
 
   const skillList = Object.values(skills);
   const totalPoints = skillList.reduce((sum, s) => sum + Math.min(s.score, solvedThreshold), 0);
@@ -30,12 +30,8 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
   return (
     <aside className="skills-panel">
       <div className="panel-header">
-        <h2>Skill Coverage <span className="coverage-pct">({pct}%)</span></h2>
-        <button className="toggle-btn" onClick={() => setShowExtras(e => !e)}>
-          {showExtras ? 'Show Skills' : 'Show Extras'}
-        </button>
+        <h2>Skill Coverage <span className={`coverage-pct ${pct >= 100 ? 'pct-max' : pct >= 85 ? 'pct-high' : pct >= 67 ? 'pct-mid' : pct >= 50 ? 'pct-low' : ''}`}>({pct}%)</span></h2>
       </div>
-
       <div className="status-legend">
         {Object.entries(STATUS_STYLES).map(([key, s]) => (
           <span key={key} className="status-legend-item">
@@ -46,7 +42,12 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
         ))}
       </div>
 
-      {!showExtras ? (
+      <div className="skills-tabs">
+        <button className={`skills-tab ${activeTab === 'skills' ? 'active' : ''}`} onClick={() => setActiveTab('skills')}>Skills</button>
+        <button className={`skills-tab ${activeTab === 'extras' ? 'active' : ''}`} onClick={() => setActiveTab('extras')}>Extras</button>
+      </div>
+
+      {activeTab === 'skills' ? (
         Object.entries(CATEGORIES).map(([cat, label]) => (
           <div key={cat} className="skill-category">
             <h4>{label}</h4>

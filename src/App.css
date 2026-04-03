@@ -343,9 +343,14 @@ body {
 .coverage-pct {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #7ecb7e;
+  color: #dc2626;
   margin-left: 0.5rem;
+  transition: color 0.3s;
 }
+.coverage-pct.pct-low  { color: #ea580c; }
+.coverage-pct.pct-mid  { color: #eab308; }
+.coverage-pct.pct-high { color: #22c55e; }
+.coverage-pct.pct-max  { color: #14b8a6; }
 
 .toggle-btn {
   background: #b8a282;
@@ -360,6 +365,34 @@ body {
 
 .toggle-btn:hover {
   background: #d0bd97;
+}
+
+.skills-tabs {
+  display: flex;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(184, 162, 130, 0.2);
+}
+
+.skills-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #7a6a4a;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+
+.skills-tab:hover {
+  color: #c8b896;
+}
+
+.skills-tab.active {
+  color: #d8ccb4;
+  border-bottom-color: #b8a282;
 }
 
 .status-legend {
@@ -1025,6 +1058,14 @@ body {
   line-height: 1.5;
 }
 
+.tier-passive-bonuses {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  color: #22c55e;
+  font-style: italic;
+}
+
 .relic-modal-toggles li {
   color: #a8d8a8;
 }
@@ -1429,6 +1470,8 @@ body {
   letter-spacing: 0.05em;
   margin-bottom: 0.2rem;
 }
+
+
 
 .contrib-row {
   display: flex;

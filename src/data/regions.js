@@ -18,7 +18,7 @@ export const UNIVERSAL_REGIONS = [
       'Echo boots', 'Sunfire fanatic armour', 'Tonalztics of ralos',
     ],
     skills: { prayer: 2, fletching: 1, herblore: 1, woodcutting: 1, hunter: 2},
-    extras: { ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2, tree_patches:1, hardwood_patches: 1 },
+    extras: { seed_access: 1, ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2, tree_patches:1, hardwood_patches: 1 },
   },
   {
     name: 'Karamja',

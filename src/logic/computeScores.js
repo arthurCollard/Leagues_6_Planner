@@ -2,6 +2,7 @@ import { SKILLS, EXTRAS } from '../data/skills';
 import { COMBO_BONUSES } from '../data/combos';
 import { EXTRA_THRESHOLDS } from '../data/thresholds';
 import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/regions';
+import { TIER_PASSIVES } from '../data/tierPassives';
 
 const ALL_REGIONS = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
 const REGION_BY_NAME = Object.fromEntries(ALL_REGIONS.map(r => [r.name, r]));
@@ -77,6 +78,19 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
     });
     Object.entries(customWeights.extras || {}).forEach(([id, val]) => {
       if (!(id in (region.extras || {}))) extraScores[id] = (extraScores[id] || 0) + val;
+    });
+  });
+
+  // Apply tier passive bonuses for unlocked tiers
+  Object.entries(selectedRelics).forEach(([tier, relic]) => {
+    if (!relic) return;
+    (TIER_PASSIVES[tier] || []).forEach(passive => {
+      Object.entries(passive.skills || {}).forEach(([id, val]) => {
+        skillScores[id] = (skillScores[id] || 0) + val;
+      });
+      Object.entries(passive.extras || {}).forEach(([id, val]) => {
+        extraScores[id] = (extraScores[id] || 0) + val;
+      });
     });
   });
 

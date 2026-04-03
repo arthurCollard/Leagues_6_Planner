@@ -9,7 +9,7 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
   const [activeTab, setActiveTab] = useState('bonuses');
 
   if (!data) return null;
-  const { pos, skills, extras, special, description, drops, title } = data;
+  const { pos, skills, extras, passiveSkills, special, description, drops, title } = data;
   const skillEntries = Object.entries(skills || {}).filter(([, v]) => v > 0).sort(([, a], [, b]) => a - b);
   const extraEntries = Object.entries(extras || {}).filter(([, v]) => v > 0).sort(([, a], [, b]) => a - b);
   const clampedLeft = Math.min(pos.left, window.innerWidth - 230);
@@ -61,6 +61,17 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave }) {
                     <div className="contrib-section">
                       {!showTabs && <div className="contrib-label">Bonuses</div>}
                       {skillEntries.map(([id, val]) => (
+                        <div key={id} className="contrib-row">
+                          <span>{SKILL_NAME[id] || id}</span>
+                          <span className="contrib-val">+{val}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {passiveSkills && Object.entries(passiveSkills).filter(([, v]) => v > 0).length > 0 && (
+                    <div className="contrib-section">
+                      <div className="contrib-label">Tier Passives</div>
+                      {Object.entries(passiveSkills).filter(([, v]) => v > 0).map(([id, val]) => (
                         <div key={id} className="contrib-row">
                           <span>{SKILL_NAME[id] || id}</span>
                           <span className="contrib-val">+{val}</span>
