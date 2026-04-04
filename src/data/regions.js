@@ -207,6 +207,7 @@ export const UNLOCKABLE_REGIONS = [
     extras: { ammo_source: 2, eye_of_newt: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 2, allotment_patches: 2, bush_patches: 1, tree_patches: 2 },
     spellbook: [],
     prayer: [],
+    prayerUnlocks: ['Chivalry', 'Piety', 'Deadeye', 'Mystic Vigour'],
   },
   {
     name: "Fremennik",
@@ -771,6 +772,7 @@ export const UNLOCKABLE_REGIONS = [
     extras: { food_source: 2, ammo_source: 1, seed_access: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 2, anti_venoms_primary: 2, antifires_primary: 2, herb_patches: 2, allotment_patches: 4, bush_patches: 1, mega_rares: 1, tree_patches: 1 },
     spellbook: ['Arceuus'],
     prayer: [],
+    prayerUnlocks: ['Rigour', 'Augury'],
   },
 ];
 

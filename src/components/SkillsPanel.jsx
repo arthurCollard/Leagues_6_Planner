@@ -24,7 +24,7 @@ function getStatusRange(key, solvedThreshold, oversolvedFactor) {
 const SPELLBOOK_NAMES = Object.keys(SPELLBOOKS);
 const PRAYER_BOOK_NAMES = Object.keys(PRAYERS).filter(b => b !== 'Ancient Curses');
 
-export default function SkillsPanel({ skills, extras, solvedThreshold, oversolvedFactor, unlockedSpellbooks = new Set(['Standard']), unlockedPrayerBooks = new Set(['Standard']) }) {
+export default function SkillsPanel({ skills, extras, solvedThreshold, oversolvedFactor, unlockedSpellbooks = new Set(['Standard']), unlockedPrayerBooks = new Set(['Standard']), unlockedPrayers = new Set() }) {
   const [activeTab, setActiveTab] = useState('skills');
   const [activeSpellbook, setActiveSpellbook] = useState(SPELLBOOK_NAMES[0]);
   const [activePrayerBook, setActivePrayerBook] = useState(PRAYER_BOOK_NAMES[0]);
@@ -146,14 +146,15 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
             <div key={cat} className="ref-category">
               <h4 className="ref-category-label">{cat}</h4>
               <div className="ref-list">
-                {prayerList.map(prayer => (
-                  <div key={prayer.name} className="ref-item">
+                {[...prayerList].sort((a, b) => b.level - a.level).map(prayer => (
+                  <div key={prayer.name} className={`ref-item${prayer.unlock ? (unlockedPrayers.has(prayer.name) ? ' ref-item-unlocked' : ' ref-item-locked') : ''}`}>
                     <div className="ref-item-top">
                       <span className="ref-item-name">{prayer.name}</span>
                       <span className="ref-item-level">Lvl {prayer.level}</span>
                     </div>
                     <div className="ref-item-cost">Drain: {prayer.drain}/min</div>
                     <div className="ref-item-desc">{prayer.desc}</div>
+                    {prayer.unlock && <div className="ref-item-unlock">{prayer.unlock}</div>}
                   </div>
                 ))}
               </div>

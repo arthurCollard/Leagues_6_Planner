@@ -184,6 +184,16 @@ export default function App() {
     return books;
   })();
 
+  const unlockedPrayers = (() => {
+    const prayers = new Set();
+    const allRegions = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
+    const activeRegionObjs = allRegions.filter(r => activeRegionNames.includes(r.name));
+    const activeRelics = [...Object.values(selectedRelics).filter(Boolean), reloadedRelic].filter(Boolean);
+    for (const r of activeRegionObjs) (r.prayerUnlocks || []).forEach(p => prayers.add(p));
+    for (const r of activeRelics) (r.prayerUnlocks || []).forEach(p => prayers.add(p));
+    return prayers;
+  })();
+
   return (
     <div className="app">
 <Header
@@ -217,7 +227,7 @@ export default function App() {
       )}
 
       <div className="main-layout">
-        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} oversolvedFactor={settings.oversolvedFactor} unlockedSpellbooks={unlockedSpellbooks} unlockedPrayerBooks={unlockedPrayerBooks} />
+        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} oversolvedFactor={settings.oversolvedFactor} unlockedSpellbooks={unlockedSpellbooks} unlockedPrayerBooks={unlockedPrayerBooks} unlockedPrayers={unlockedPrayers} />
 
         <div className="right-panel">
           <RelicTree

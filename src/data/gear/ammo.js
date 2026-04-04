@@ -1,6 +1,23 @@
 export const AMMO = [
   // ── Arrows ────────────────────────────────────────────────────────────────
   {
+    echo: true,
+    name: "Crystal Blessing",
+    slot: 'ammo',
+    regions: ['Tirannwn'],
+    requirements: [],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
+    },
+    effect: { 
+      type: 'multiply_totals',
+      stats: [],
+      description: "expands the accuracy and damage bonus from crystal armour to all melee weapons (Subject to Change)" },
+  },
+  // ── Arrows ────────────────────────────────────────────────────────────────
+  {
     name: 'Bronze arrow',
     slot: 'ammo',
     ammoType: 'arrows',
@@ -387,5 +404,5 @@ export const AMMO = [
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 150, magicDamage: 0, prayer: 0 },
     },
-  },
+  }
 ];

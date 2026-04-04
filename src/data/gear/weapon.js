@@ -2186,4 +2186,16 @@ export const WEAPON = [
       longrange: 4
     },
   },
+  {
+    name: "Rune Crossbow",
+    slot: 'weapon',
+    ammoType: 'bolts',
+    regions: ['Asgarnia', 'Wilderness', 'Fremennik', 'Karamja'],
+    requirements: [{ skill: 'Range', level: 61 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 90 },
+      defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
+      other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
 ];

@@ -235,9 +235,16 @@ function SlotPicker({ slot, selected, selectedRegions, onSelect, ammoType, disab
         if (i.requireAllRegions) return i.regions.every(r => activeRegions.includes(r));
         return i.regions.some(r => activeRegions.includes(r));
       });
-  const ammoFiltered = (slot === 'ammo' && ammoType)
+  const ammoFiltered = slot === 'ammo' && ammoType
     ? regionFiltered.filter(i => i.ammoType === ammoType)
-    : regionFiltered;
+    : slot === 'weapon' && ammoType
+      ? [...regionFiltered].sort((a, b) => {
+          const score = i => i.echo ? 0 : i.ammoType === ammoType ? 1 : 2;
+          const sd = score(a) - score(b);
+          if (sd !== 0) return sd;
+          return (b.bonuses.attack.ranged || 0) - (a.bonuses.attack.ranged || 0);
+        })
+      : regionFiltered;
   const filtered = ammoFiltered.filter(i => i.name.toLowerCase().includes(search.toLowerCase()));
   const isUnavailable = selected && selectedRegions.length > 0 && !regionFiltered.some(i => i.name === selected.name);
   const hasEchoAvailable = !selected?.echo && selectedRegions.length > 0 && regionFiltered.some(i => i.echo);
@@ -376,10 +383,16 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
     }
   }, [weapon, selectedStyle]);
 
-  // Clear ammo when weapon changes to an incompatible ammo type or uses no ammo
+  // Clear ammo when weapon changes to an incompatible ammo type
   useEffect(() => {
     const ammo = selectedGear.ammo;
-    if (ammo && (!weapon?.ammoType || ammo.ammoType !== weapon.ammoType)) {
+    if (!ammo) return;
+    // If ammo has an ammoType, it must match the weapon's ammoType
+    if (ammo.ammoType && ammo.ammoType !== weapon?.ammoType) {
+      onSelectGear('ammo', null);
+    }
+    // If weapon has an ammoType but ammo has no ammoType (e.g. Crystal Blessing), clear it
+    if (weapon?.ammoType && !ammo.ammoType) {
       onSelectGear('ammo', null);
     }
   }, [weapon]);
@@ -448,8 +461,8 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
                       selected={selectedGear[slot]}
                       selectedRegions={selectedRegions}
                       onSelect={item => onSelectGear(slot, item)}
-                      ammoType={slot === 'ammo' ? weapon?.ammoType : undefined}
-                      disabled={(slot === 'shield' && !!weapon?.twoHanded) || (slot === 'ammo' && !!weapon && !weapon.ammoType)}
+                      ammoType={slot === 'ammo' ? weapon?.ammoType : slot === 'weapon' ? selectedGear.ammo?.ammoType : undefined}
+                      disabled={(slot === 'shield' && !!weapon?.twoHanded)}
                     />
                   ) : (
                     <div key={ci} className="slot-empty-cell" />

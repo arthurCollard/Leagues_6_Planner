@@ -523,6 +523,24 @@ body {
   padding: 0.4rem 0.6rem;
 }
 
+.ref-item-unlocked {
+  background: rgba(74, 160, 74, 0.08);
+  border-color: rgba(74, 160, 74, 0.35);
+}
+
+.ref-item-locked {
+  background: rgba(180, 60, 60, 0.08);
+  border-color: rgba(180, 60, 60, 0.3);
+}
+
+.ref-item-locked .ref-item-name {
+  color: #d8ccb4;
+}
+
+.ref-item-unlocked .ref-item-name {
+  color: #7ecf7e;
+}
+
 .ref-item-top {
   display: flex;
   justify-content: space-between;
@@ -554,6 +572,13 @@ body {
   font-size: 0.65rem;
   color: #7a6a50;
   line-height: 1.35;
+}
+
+.ref-item-unlock {
+  font-size: 0.62rem;
+  color: #7a6a50;
+  margin-top: 0.15rem;
+  font-style: italic;
 }
 
 .status-legend {

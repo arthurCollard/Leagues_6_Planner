@@ -273,6 +273,7 @@ export const RELICS = {
       extras: {},
       spellbook: ['Standard', 'Ancient', 'Lunar', 'Arceuus'],
       prayer: ['Standard', 'Ancient Curses'],
+      prayerUnlocks: ['Chivalry', 'Piety', 'Deadeye', 'Mystic Vigour', 'Rigour', 'Augury'],
     },
   ],
   7: [
