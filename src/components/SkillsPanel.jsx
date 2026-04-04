@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { SKILLS, EXTRAS, CATEGORIES, EXTRA_CATEGORIES, STATUS_STYLES } from '../data/skills';
 import SkillIcon from './SkillIcon';
+import SPELLBOOKS from '../data/spellbooks.json';
+import PRAYERS from '../data/prayers.json';
 
 function getStatusRange(key, solvedThreshold, oversolvedFactor) {
   const half = solvedThreshold / 2;
@@ -19,8 +21,13 @@ function getStatusRange(key, solvedThreshold, oversolvedFactor) {
   }
 }
 
-export default function SkillsPanel({ skills, extras, solvedThreshold, oversolvedFactor }) {
+const SPELLBOOK_NAMES = Object.keys(SPELLBOOKS);
+const PRAYER_BOOK_NAMES = Object.keys(PRAYERS).filter(b => b !== 'Ancient Curses');
+
+export default function SkillsPanel({ skills, extras, solvedThreshold, oversolvedFactor, unlockedSpellbooks = new Set(['Standard']), unlockedPrayerBooks = new Set(['Standard']) }) {
   const [activeTab, setActiveTab] = useState('skills');
+  const [activeSpellbook, setActiveSpellbook] = useState(SPELLBOOK_NAMES[0]);
+  const [activePrayerBook, setActivePrayerBook] = useState(PRAYER_BOOK_NAMES[0]);
 
   const skillList = Object.values(skills);
   const totalPoints = skillList.reduce((sum, s) => sum + Math.min(s.score, solvedThreshold), 0);
@@ -30,7 +37,7 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
   return (
     <aside className="skills-panel">
       <div className="panel-header">
-        <h2>Skill Coverage <span className={`coverage-pct ${pct >= 100 ? 'pct-max' : pct >= 85 ? 'pct-high' : pct >= 67 ? 'pct-mid' : pct >= 50 ? 'pct-low' : ''}`}>({pct}%)</span></h2>
+        <h2>Solve... <span className={`coverage-pct ${pct >= 100 ? 'pct-max' : pct >= 85 ? 'pct-high' : pct >= 67 ? 'pct-mid' : pct >= 50 ? 'pct-low' : ''}`}>({pct}%)</span></h2>
       </div>
       <div className="status-legend">
         {Object.entries(STATUS_STYLES).map(([key, s]) => (
@@ -45,9 +52,12 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
       <div className="skills-tabs">
         <button className={`skills-tab ${activeTab === 'skills' ? 'active' : ''}`} onClick={() => setActiveTab('skills')}>Skills</button>
         <button className={`skills-tab ${activeTab === 'extras' ? 'active' : ''}`} onClick={() => setActiveTab('extras')}>Extras</button>
+        <button className={`skills-tab ${activeTab === 'spellbook' ? 'active' : ''}`} onClick={() => setActiveTab('spellbook')}>Spellbook</button>
+        <button className={`skills-tab ${activeTab === 'prayer' ? 'active' : ''}`} onClick={() => setActiveTab('prayer')}>Prayer</button>
       </div>
 
-      {activeTab === 'skills' ? (
+      <div className="skills-panel-body">
+      {activeTab === 'skills' && (
         Object.entries(CATEGORIES).map(([cat, label]) => (
           <div key={cat} className="skill-category">
             <h4>{label}</h4>
@@ -63,7 +73,9 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
             </div>
           </div>
         ))
-      ) : (
+      )}
+
+      {activeTab === 'extras' && (
         Object.entries(EXTRA_CATEGORIES).map(([cat, label]) => (
           <div key={cat} className="skill-category">
             <h4>{label}</h4>
@@ -80,6 +92,76 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
           </div>
         ))
       )}
+
+      {activeTab === 'spellbook' && (
+        <div className="ref-tab-content">
+          <div className="subbook-tabs">
+            {SPELLBOOK_NAMES.map(book => (
+              <button
+                key={book}
+                className={`subbook-tab ${activeSpellbook === book ? 'active' : ''} ${unlockedSpellbooks.has(book) ? 'unlocked' : 'locked'}`}
+                onClick={() => setActiveSpellbook(book)}
+              >
+                {book}
+              </button>
+            ))}
+          </div>
+          {Object.entries(SPELLBOOKS[activeSpellbook]).map(([cat, spells]) => (
+            <div key={cat} className="ref-category">
+              <h4 className="ref-category-label">{cat}</h4>
+              <div className="ref-list">
+                {spells.map(spell => (
+                  <div key={spell.name} className="ref-item">
+                    <div className="ref-item-top">
+                      <span className="ref-item-name">{spell.name}</span>
+                      <span className="ref-item-level">Lvl {spell.level || 1}</span>
+                    </div>
+                    {spell.runes && spell.runes !== 'None' && (
+                      <div className="ref-item-cost">{spell.runes}</div>
+                    )}
+                    <div className="ref-item-desc">{spell.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {activeTab === 'prayer' && (
+        <div className="ref-tab-content">
+          <div className="mastery-placeholder-note">⚠️ Work in progress — prayer data may be incomplete or change</div>
+          <div className="subbook-tabs">
+            {PRAYER_BOOK_NAMES.map(book => (
+              <button
+                key={book}
+                className={`subbook-tab ${activePrayerBook === book ? 'active' : ''} ${unlockedPrayerBooks.has(book) ? 'unlocked' : 'locked'}`}
+                onClick={() => setActivePrayerBook(book)}
+              >
+                {book}
+              </button>
+            ))}
+          </div>
+          {Object.entries(PRAYERS[activePrayerBook]).map(([cat, prayerList]) => (
+            <div key={cat} className="ref-category">
+              <h4 className="ref-category-label">{cat}</h4>
+              <div className="ref-list">
+                {prayerList.map(prayer => (
+                  <div key={prayer.name} className="ref-item">
+                    <div className="ref-item-top">
+                      <span className="ref-item-name">{prayer.name}</span>
+                      <span className="ref-item-level">Lvl {prayer.level}</span>
+                    </div>
+                    <div className="ref-item-cost">Drain: {prayer.drain}/min</div>
+                    <div className="ref-item-desc">{prayer.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+      </div>
     </aside>
   );
 }

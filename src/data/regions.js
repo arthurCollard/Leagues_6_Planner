@@ -54,6 +54,8 @@ export const UNIVERSAL_REGIONS = [
     ],
     skills: { prayer: 2, fletching: 1, herblore: 1, woodcutting: 1, hunter: 2 },
     extras: { seed_access: 1, ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2, tree_patches: 1, hardwood_patches: 1 },
+    spellbook: [],
+    prayer: [],
   },
   {
     name: "Karamja",
@@ -113,6 +115,8 @@ export const UNIVERSAL_REGIONS = [
     ],
     skills: {},
     extras: { food_source: 1, limpwurt: 1, prayer_pot_primary: 1, prayer_pot_secondary: 1 },
+    spellbook: [],
+    prayer: [],
   },
 ];
 
@@ -201,6 +205,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { construction: 1 },
     extras: { ammo_source: 2, eye_of_newt: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 2, allotment_patches: 2, bush_patches: 1, tree_patches: 2 },
+    spellbook: [],
+    prayer: [],
   },
   {
     name: "Fremennik",
@@ -291,6 +297,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { prayer: 1, construction: 1, smithing: 1 },
     extras: { gp_source: 2, food_source: 2, travel: 2, ammo_source: 3, limpwurt: 3, antifires_secondary: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 1, bush_patches: 1 },
+    spellbook: ['Lunar'],
+    prayer: [],
   },
   {
     name: "Kandarin",
@@ -379,6 +387,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { runecrafting: 1, thieving: 1 },
     extras: { food_source: 3, travel: 1, ammo_source: 1, eye_of_newt: 3, prayer_pot_primary: 2, herb_patches: 2, allotment_patches: 4, bush_patches: 1, tree_patches: 1 },
+    spellbook: [],
+    prayer: [],
   },
   {
     name: "Desert",
@@ -474,6 +484,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { runecrafting: 1, thieving: 1, crafting: 1, smithing: 1, fishing: 1 },
     extras: { travel: 1, ammo_source: 3, mega_rares: 1 },
+    spellbook: ['Ancient'],
+    prayer: ['Ancient Curses'],
   },
   {
     name: "Morytania",
@@ -549,6 +561,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { slayer: 1 },
     extras: { limpwurt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 2, prayer_pot_primary: 1, herb_patches: 2, allotment_patches: 2 },
+    spellbook: [],
+    prayer: [],
   },
   {
     name: "Tirannwn",
@@ -612,6 +626,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: {},
     extras: { gp_source: 2, ammo_source: 1, white_berries: 1, eye_of_newt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 3, allotment_patches: 2 },
+    spellbook: [],
+    prayer: [],
   },
   {
     name: "Wilderness",
@@ -669,6 +685,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { prayer: 2, hunter: 1 },
     extras: { gp_source: 3, food_source: 2, limpwurt: 2, white_berries: 1, prayer_pot_primary: 2 },
+    spellbook: [],
+    prayer: [],
   },
   {
     name: "Kourend",
@@ -751,6 +769,8 @@ export const UNLOCKABLE_REGIONS = [
     ],
     skills: { runecrafting: 1, magic: 1, farming: 1, slayer: 1 },
     extras: { food_source: 2, ammo_source: 1, seed_access: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 2, anti_venoms_primary: 2, antifires_primary: 2, herb_patches: 2, allotment_patches: 4, bush_patches: 1, mega_rares: 1, tree_patches: 1 },
+    spellbook: ['Arceuus'],
+    prayer: [],
   },
 ];
 

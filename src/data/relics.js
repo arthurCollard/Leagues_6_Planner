@@ -253,7 +253,27 @@ export const RELICS = {
       },
       skills: { slayer: 3, attack: 1, strength: 1, ranged: 1, magic: 1, defence: 1 },
       extras: {},
-    }
+    },
+    {
+      name: 'Grimoire',
+      icon: `${process.env.PUBLIC_URL}/relics/Grimoire.png`,
+      desc: 'Freely swap spellbooks, acts as Book of the Dead, all prayers & spells unlocked regardless of requirements',
+      description: {
+        grant: 'Upon choosing this relic you will receive the arcane grimoire.',
+        effects: [
+          'The grimoire can be used to freely swap between spellbooks.',
+          'The grimoire acts as a book of the dead.',
+          'You will unlock access to all prayers and spells regardless of area, quest, or diary requirements.',
+        ],
+        notes: [
+          'The arcane grimoire can be retrieved from the Leagues Tutor in Yama\'s Lair if lost.',
+        ],
+      },
+      skills: {  },
+      extras: {},
+      spellbook: ['Standard', 'Ancient', 'Lunar', 'Arceuus'],
+      prayer: ['Standard', 'Ancient Curses'],
+    },
   ],
   7: [
     {

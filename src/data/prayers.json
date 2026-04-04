@@ -1,0 +1,68 @@
+{
+  "Standard": {
+    "Melee boosts": [
+      { "name": "Thick Skin", "level": 1, "drain": 1, "desc": "+5% Defence" },
+      { "name": "Burst of Strength", "level": 4, "drain": 1, "desc": "+5% Strength" },
+      { "name": "Clarity of Thought", "level": 7, "drain": 1, "desc": "+5% Attack" },
+      { "name": "Rock Skin", "level": 10, "drain": 3, "desc": "+10% Defence" },
+      { "name": "Superhuman Strength", "level": 13, "drain": 3, "desc": "+10% Strength" },
+      { "name": "Improved Reflexes", "level": 16, "drain": 3, "desc": "+10% Attack" },
+      { "name": "Steel Skin", "level": 28, "drain": 6, "desc": "+15% Defence" },
+      { "name": "Ultimate Strength", "level": 31, "drain": 6, "desc": "+15% Strength" },
+      { "name": "Incredible Reflexes", "level": 34, "drain": 6, "desc": "+15% Attack" },
+      { "name": "Chivalry", "level": 60, "drain": 24, "desc": "+15% Attack, +18% Strength, +20% Defence" },
+      { "name": "Piety", "level": 70, "drain": 24, "desc": "+20% Attack, +23% Strength, +25% Defence" }
+    ],
+    "Ranged boosts": [
+      { "name": "Sharp Eye", "level": 8, "drain": 2, "desc": "+5% Ranged attack & strength" },
+      { "name": "Hawk Eye", "level": 26, "drain": 5, "desc": "+10% Ranged attack & strength" },
+      { "name": "Eagle Eye", "level": 44, "drain": 8, "desc": "+15% Ranged attack & strength" },
+      { "name": "Rigour", "level": 74, "drain": 24, "desc": "+20% Ranged attack, +23% Ranged strength, +25% Defence" }
+    ],
+    "Magic boosts": [
+      { "name": "Mystic Will", "level": 9, "drain": 2, "desc": "+5% Magic attack & defence" },
+      { "name": "Mystic Lore", "level": 27, "drain": 5, "desc": "+10% Magic attack & defence" },
+      { "name": "Mystic Might", "level": 45, "drain": 8, "desc": "+15% Magic attack & defence" },
+      { "name": "Augury", "level": 77, "drain": 24, "desc": "+25% Magic attack, +25% Magic defence, +25% Defence" }
+    ],
+    "Protection prayers": [
+      { "name": "Protect from Magic", "level": 37, "drain": 8, "desc": "Negates most magic attacks; 40% damage reduction in PvP" },
+      { "name": "Protect from Missiles", "level": 40, "drain": 8, "desc": "Negates most ranged attacks; 40% damage reduction in PvP" },
+      { "name": "Protect from Melee", "level": 43, "drain": 8, "desc": "Negates most melee attacks; 40% damage reduction in PvP" },
+      { "name": "Retribution", "level": 46, "drain": 3, "desc": "Deals up to 25% of Prayer level as damage to nearby enemies when killed" },
+      { "name": "Redemption", "level": 49, "drain": 6, "desc": "Heals up to 25% of max HP when HP drops below 10%" },
+      { "name": "Smite", "level": 52, "drain": 18, "desc": "Drains 1/4 of damage dealt from target's Prayer points" }
+    ],
+    "Utility": [
+      { "name": "Rapid Restore", "level": 19, "drain": 1, "desc": "2x stat restoration rate" },
+      { "name": "Rapid Heal", "level": 22, "drain": 2, "desc": "2x Hitpoints restoration rate" },
+      { "name": "Protect Item", "level": 25, "drain": 2, "desc": "Keep 1 additional item on death (non-Wilderness)" },
+      { "name": "Preserve", "level": 55, "drain": 2, "desc": "Boosted stats last 50% longer before draining" }
+    ]
+  },
+  "Ancient Curses": {
+    "Overhead prayers": [
+      { "name": "Deflect Curses", "level": 62, "drain": 8, "desc": "Reduces curse spell effects when attacked" },
+      { "name": "Deflect Magic", "level": 65, "drain": 8, "desc": "Negates most magic attacks; 40% damage reduction in PvP" },
+      { "name": "Deflect Missiles", "level": 68, "drain": 8, "desc": "Negates most ranged attacks; 40% damage reduction in PvP" },
+      { "name": "Deflect Melee", "level": 71, "drain": 8, "desc": "Negates most melee attacks; 40% damage reduction in PvP" },
+      { "name": "Wrath", "level": 89, "drain": 5, "desc": "Deals up to 25% of Prayer level as Magic damage to nearby enemies when killed" },
+      { "name": "Soul Split", "level": 92, "drain": 24, "desc": "Restores 10% of damage dealt as HP, and 5% as Prayer points" }
+    ],
+    "Leech curses": [
+      { "name": "Berserker Curse", "level": 60, "drain": 7, "desc": "+9% melee stats; periodically drains target's stats" },
+      { "name": "Leech Attack", "level": 74, "drain": 5, "desc": "Drains 5% of target's Attack; boosts your own by 5%" },
+      { "name": "Leech Ranged", "level": 74, "drain": 5, "desc": "Drains 5% of target's Ranged; boosts your own by 5%" },
+      { "name": "Leech Magic", "level": 74, "drain": 5, "desc": "Drains 5% of target's Magic; boosts your own by 5%" },
+      { "name": "Leech Defence", "level": 75, "drain": 5, "desc": "Drains 5% of target's Defence; boosts your own by 5%" },
+      { "name": "Leech Strength", "level": 76, "drain": 5, "desc": "Drains 5% of target's Strength; boosts your own by 5%" },
+      { "name": "Leech Energy", "level": 77, "drain": 5, "desc": "Drains 10% of target's run energy; restores your own" },
+      { "name": "Leech Special Attack", "level": 78, "drain": 5, "desc": "Drains 10% of target's special attack energy; restores your own" }
+    ],
+    "Stat boosting": [
+      { "name": "Turmoil", "level": 95, "drain": 25, "desc": "+15–23% Attack, +15–23% Strength, +15–25% Defence (scales with target's stats)" },
+      { "name": "Anguish", "level": 95, "drain": 25, "desc": "+17–20% Ranged attack, +18–21% Ranged strength, +17–20% Defence" },
+      { "name": "Torment", "level": 95, "drain": 25, "desc": "+15–18% Magic attack, +15–18% Magic defence" }
+    ]
+  }
+}

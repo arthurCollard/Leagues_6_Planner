@@ -1,0 +1,259 @@
+{
+  "Standard": {
+    "Offensive spells": [
+      { "name": "Wind Strike", "level": 1, "runes": "1 Air, 1 Mind", "desc": "Deals 2-8 damage to a single target" },
+      { "name": "Water Strike", "level": 5, "runes": "1 Air, 1 Water, 1 Mind", "desc": "Deals 4-8 damage to a single target" },
+      { "name": "Earth Strike", "level": 9, "runes": "1 Air, 2 Earth, 1 Mind", "desc": "Deals 6-8 damage to a single target" },
+      { "name": "Fire Strike", "level": 13, "runes": "2 Air, 3 Fire, 1 Mind", "desc": "Deals up to 8 damage to a single target" },
+      { "name": "Wind Bolt", "level": 17, "runes": "2 Air, 1 Chaos", "desc": "Deals 9-12 damage to a single target" },
+      { "name": "Water Bolt", "level": 23, "runes": "2 Air, 2 Water, 1 Chaos", "desc": "Deals 10-12 damage to a single target" },
+      { "name": "Earth Bolt", "level": 29, "runes": "2 Air, 3 Earth, 1 Chaos", "desc": "Deals 11-12 damage to a single target" },
+      { "name": "Fire Bolt", "level": 35, "runes": "3 Air, 4 Fire, 1 Chaos", "desc": "Deals up to 12 damage to a single target" },
+      { "name": "Crumble Undead", "level": 39, "runes": "2 Air, 2 Earth, 1 Chaos", "desc": "Deals up to 15 damage; only works on undead enemies" },
+      { "name": "Wind Blast", "level": 41, "runes": "3 Air, 1 Death", "desc": "Deals 13-16 damage to a single target" },
+      { "name": "Water Blast", "level": 47, "runes": "3 Air, 3 Water, 1 Death", "desc": "Deals 14-16 damage to a single target" },
+      { "name": "Iban Blast", "level": 50, "runes": "5 Fire, 1 Death (requires Iban's staff)", "desc": "Powerful spell dealing up to 25 damage; drains staff charges" },
+      { "name": "Magic Dart", "level": 50, "runes": "1 Death, 4 Mind (requires Slayer's staff)", "desc": "Max hit determined by caster's Magic level; deals 15-19 damage" },
+      { "name": "Earth Blast", "level": 53, "runes": "3 Air, 4 Earth, 1 Death", "desc": "Deals 15-16 damage to a single target" },
+      { "name": "Fire Blast", "level": 59, "runes": "4 Air, 5 Fire, 1 Death", "desc": "Deals up to 16 damage to a single target" },
+      { "name": "Saradomin Strike", "level": 60, "runes": "4 Air, 2 Fire, 2 Blood (requires Saradomin staff)", "desc": "God spell dealing 20-30 damage with secondary effect" },
+      { "name": "Claws of Guthix", "level": 60, "runes": "4 Air, 1 Fire, 2 Blood (requires Guthix staff)", "desc": "God spell dealing 20-30 damage with secondary effect" },
+      { "name": "Flames of Zamorak", "level": 60, "runes": "1 Air, 4 Fire, 2 Blood (requires Zamorak staff)", "desc": "God spell dealing 20-30 damage with secondary effect" },
+      { "name": "Wind Wave", "level": 62, "runes": "5 Air, 1 Blood", "desc": "Deals 17-20 damage to a single target" },
+      { "name": "Water Wave", "level": 65, "runes": "5 Air, 7 Water, 1 Blood", "desc": "Deals 18-20 damage to a single target" },
+      { "name": "Earth Wave", "level": 70, "runes": "5 Air, 7 Earth, 1 Blood", "desc": "Deals 19-20 damage to a single target" },
+      { "name": "Fire Wave", "level": 75, "runes": "5 Air, 7 Fire, 1 Blood", "desc": "Deals up to 20 damage to a single target" },
+      { "name": "Wind Surge", "level": 81, "runes": "7 Air, 1 Wrath", "desc": "Deals 21-24 damage to a single target" },
+      { "name": "Water Surge", "level": 85, "runes": "7 Air, 10 Water, 1 Wrath", "desc": "Deals 22-24 damage to a single target" },
+      { "name": "Earth Surge", "level": 90, "runes": "7 Air, 10 Earth, 1 Wrath", "desc": "Deals 23-24 damage to a single target" },
+      { "name": "Fire Surge", "level": 95, "runes": "7 Air, 10 Fire, 1 Wrath", "desc": "Deals up to 24 damage to a single target" }
+    ],
+    "Support spells": [
+      { "name": "Charge", "level": 80, "runes": "3 Air, 3 Fire, 3 Blood", "desc": "Increases god spell damage to 30 for 7 minutes; requires god cape" }
+    ],
+    "Curse spells": [
+      { "name": "Confuse", "level": 3, "runes": "2 Earth, 3 Water, 1 Body", "desc": "Reduces target's Attack by 5%" },
+      { "name": "Weaken", "level": 11, "runes": "2 Earth, 3 Water, 1 Body", "desc": "Reduces target's Strength by 5%" },
+      { "name": "Curse", "level": 19, "runes": "3 Earth, 2 Water, 1 Body", "desc": "Reduces target's Defence by 5%" },
+      { "name": "Bind", "level": 20, "runes": "3 Earth, 3 Water, 2 Nature", "desc": "Prevents target from moving for 4.8 seconds" },
+      { "name": "Snare", "level": 50, "runes": "4 Earth, 4 Water, 3 Nature", "desc": "Prevents movement for 9.6 seconds; can deal up to 3 damage" },
+      { "name": "Vulnerability", "level": 66, "runes": "5 Earth, 5 Water, 1 Soul", "desc": "Reduces target's Defence by 10%" },
+      { "name": "Enfeeble", "level": 73, "runes": "8 Earth, 8 Water, 1 Soul", "desc": "Reduces target's Strength by 10%" },
+      { "name": "Entangle", "level": 79, "runes": "5 Earth, 5 Water, 4 Nature", "desc": "Prevents movement for 14.4 seconds; can deal up to 5 damage" },
+      { "name": "Stun", "level": 80, "runes": "12 Earth, 12 Water, 1 Soul", "desc": "Reduces target's Attack by 10%" },
+      { "name": "Tele Block", "level": 85, "runes": "1 Chaos, 1 Death, 1 Law", "desc": "Prevents teleportation for 5 minutes (2.5 with protection)" }
+    ],
+    "Teleport spells": [
+      { "name": "Lumbridge Home Teleport", "level": 0, "runes": "None", "desc": "Teleports to Lumbridge; once every 30 minutes" },
+      { "name": "Minigame Teleport", "level": 0, "runes": "None", "desc": "Teleports to chosen minigame; once every 20 minutes" },
+      { "name": "Varrock Teleport", "level": 25, "runes": "3 Air, 1 Fire, 1 Law", "desc": "Teleports to Varrock market square" },
+      { "name": "Lumbridge Teleport", "level": 31, "runes": "3 Air, 1 Earth, 1 Law", "desc": "Teleports to Lumbridge Castle courtyard" },
+      { "name": "Falador Teleport", "level": 37, "runes": "3 Air, 1 Water, 1 Law", "desc": "Teleports to Falador centre" },
+      { "name": "Teleport to House", "level": 40, "runes": "1 Air, 1 Earth, 1 Law", "desc": "Teleports to player-owned house (members only)" },
+      { "name": "Camelot Teleport", "level": 45, "runes": "5 Air, 1 Law", "desc": "Teleports to Camelot gates (members only)" },
+      { "name": "Kourend Castle Teleport", "level": 48, "runes": "1 Fire, 1 Water, 2 Law", "desc": "Teleports to Kourend Castle courtyard (members only)" },
+      { "name": "Ardougne Teleport", "level": 51, "runes": "2 Water, 2 Law", "desc": "Teleports to East Ardougne market (members only)" },
+      { "name": "Civitas illa Fortis Teleport", "level": 54, "runes": "1 Earth, 1 Fire, 2 Law", "desc": "Teleports to Sunrise Palace (members only)" },
+      { "name": "Watchtower Teleport", "level": 58, "runes": "2 Earth, 2 Law", "desc": "Teleports to Watchtower near Yanille (members only)" },
+      { "name": "Trollheim Teleport", "level": 61, "runes": "2 Fire, 2 Law", "desc": "Teleports to Trollheim (members only)" },
+      { "name": "Ape Atoll Teleport", "level": 64, "runes": "2 Fire, 2 Water, 2 Law, 1 Banana", "desc": "Teleports to Temple of Marimbo (members only)" },
+      { "name": "Teleport to Boat", "level": 67, "runes": "2 Earth, 2 Water, 2 Law", "desc": "Teleports to player-owned boat (members only)" },
+      { "name": "Teleother Lumbridge", "level": 74, "runes": "1 Earth, 1 Law, 1 Soul", "desc": "Teleports another player to Lumbridge Castle (members only)" },
+      { "name": "Teleother Falador", "level": 82, "runes": "1 Water, 1 Law, 1 Soul", "desc": "Teleports another player to Falador (members only)" },
+      { "name": "Teleport to Target", "level": 85, "runes": "1 Chaos, 1 Death, 1 Law", "desc": "Teleports to assigned target in Bounty Hunter (members only)" },
+      { "name": "Teleother Camelot", "level": 90, "runes": "1 Law, 2 Soul", "desc": "Teleports another player to Camelot (members only)" }
+    ],
+    "Alchemy spells": [
+      { "name": "Bones to Bananas", "level": 15, "runes": "2 Earth, 2 Water, 1 Nature", "desc": "Converts bones in inventory to bananas" },
+      { "name": "Low Level Alchemy", "level": 21, "runes": "3 Fire, 1 Nature", "desc": "Converts item to coins (40% of item value)" },
+      { "name": "Superheat Item", "level": 43, "runes": "4 Fire, 1 Nature", "desc": "Smelts ore into bars without furnace; 100% success for iron" },
+      { "name": "High Level Alchemy", "level": 55, "runes": "5 Fire, 1 Nature", "desc": "Converts item to coins (60% of item value)" },
+      { "name": "Bones to Peaches", "level": 60, "runes": "2 Earth, 4 Water, 2 Nature", "desc": "Converts bones in inventory to peaches (members only)" }
+    ],
+    "Jewellery Enchantments": [
+      { "name": "Lvl-1 Enchant", "level": 7, "runes": "1 Water, 1 Cosmic", "desc": "Enchants sapphire and opal jewellery" },
+      { "name": "Lvl-2 Enchant", "level": 27, "runes": "3 Air, 1 Cosmic", "desc": "Enchants emerald and jade jewellery" },
+      { "name": "Lvl-3 Enchant", "level": 49, "runes": "5 Fire, 1 Cosmic", "desc": "Enchants ruby and red topaz jewellery" },
+      { "name": "Lvl-4 Enchant", "level": 57, "runes": "10 Earth, 1 Cosmic", "desc": "Enchants diamond jewellery" },
+      { "name": "Lvl-5 Enchant", "level": 68, "runes": "15 Earth, 15 Water, 1 Cosmic", "desc": "Enchants dragonstone jewellery (members only)" },
+      { "name": "Lvl-6 Enchant", "level": 87, "runes": "20 Earth, 20 Fire, 1 Cosmic", "desc": "Enchants onyx jewellery (members only)" },
+      { "name": "Lvl-7 Enchant", "level": 93, "runes": "20 Blood, 1 Cosmic, 20 Soul", "desc": "Enchants zenyte jewellery (members only)" }
+    ],
+    "Enchant Crossbow Bolt": [
+      { "name": "Enchant Crossbow Bolt (Opal)", "level": 4, "runes": "2 Air, 1 Cosmic", "desc": "Enchants opal and opal dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Sapphire)", "level": 7, "runes": "1 Water, 1 Cosmic, 1 Mind", "desc": "Enchants sapphire and sapphire dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Jade)", "level": 14, "runes": "2 Earth, 1 Cosmic", "desc": "Enchants jade and jade dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Pearl)", "level": 24, "runes": "2 Water, 1 Cosmic", "desc": "Enchants pearl and pearl dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Emerald)", "level": 27, "runes": "3 Air, 1 Cosmic, 1 Nature", "desc": "Enchants emerald and emerald dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Red Topaz)", "level": 29, "runes": "2 Fire, 1 Cosmic", "desc": "Enchants topaz and topaz dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Ruby)", "level": 49, "runes": "5 Fire, 1 Blood, 1 Cosmic", "desc": "Enchants ruby and ruby dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Diamond)", "level": 57, "runes": "10 Earth, 1 Cosmic, 2 Law", "desc": "Enchants diamond and diamond dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Dragonstone)", "level": 68, "runes": "15 Earth, 1 Cosmic, 1 Soul", "desc": "Enchants dragonstone and dragonstone dragon bolts (members only)" },
+      { "name": "Enchant Crossbow Bolt (Onyx)", "level": 87, "runes": "20 Fire, 1 Cosmic, 1 Death", "desc": "Enchants onyx and onyx dragon bolts (members only)" }
+    ],
+    "Charge Orb spells": [
+      { "name": "Charge Water Orb", "level": 56, "runes": "30 Water, 3 Cosmic, 1 Unpowered orb", "desc": "Creates water orbs at Obelisk of Water (members only)" },
+      { "name": "Charge Earth Orb", "level": 60, "runes": "30 Earth, 3 Cosmic, 1 Unpowered orb", "desc": "Creates earth orbs at Obelisk of Earth (members only)" },
+      { "name": "Charge Fire Orb", "level": 63, "runes": "30 Fire, 3 Cosmic, 1 Unpowered orb", "desc": "Creates fire orbs at Obelisk of Fire (members only)" },
+      { "name": "Charge Air Orb", "level": 66, "runes": "30 Air, 3 Cosmic, 1 Unpowered orb", "desc": "Creates air orbs at Obelisk of Air (members only)" }
+    ],
+    "Other Utility spells": [
+      { "name": "Telekinetic Grab", "level": 33, "runes": "1 Air, 1 Law", "desc": "Remotely retrieves items on ground through barriers" },
+      { "name": "Monster Inspect", "level": 42, "runes": "2 Body, 2 Mind", "desc": "Displays monster stats, defences, and slayer task info" },
+      { "name": "Summon Boat", "level": 56, "runes": "1 Earth, 1 Water, 2 Law", "desc": "Teleports player-owned boat to mooring point (members only)" }
+    ]
+  },
+  "Ancient": {
+    "Combat spells": [
+      { "name": "Smoke Rush", "level": 50, "runes": "1 Air, 1 Fire, 2 Chaos, 2 Death", "desc": "Inflicts poison damage starting at 2" },
+      { "name": "Shadow Rush", "level": 52, "runes": "1 Air, 2 Chaos, 2 Death, 1 Soul", "desc": "Reduces target's Attack level by 10%" },
+      { "name": "Blood Rush", "level": 56, "runes": "1 Blood, 2 Chaos, 2 Death", "desc": "Heals caster for 25% of damage dealt" },
+      { "name": "Ice Rush", "level": 58, "runes": "2 Water, 2 Chaos, 2 Death", "desc": "Freezes target for 4.8 seconds" },
+      { "name": "Smoke Burst", "level": 62, "runes": "2 Air, 2 Fire, 4 Chaos, 2 Death", "desc": "3x3 area attack that poisons targets starting at 2 damage" },
+      { "name": "Shadow Burst", "level": 64, "runes": "1 Air, 4 Chaos, 2 Death, 2 Soul", "desc": "3x3 area attack reducing targets' Attack by 10%" },
+      { "name": "Blood Burst", "level": 68, "runes": "2 Blood, 4 Chaos, 2 Death", "desc": "3x3 area attack healing caster for 25% of damage to all targets" },
+      { "name": "Ice Burst", "level": 70, "runes": "4 Water, 4 Chaos, 2 Death", "desc": "3x3 area attack freezing targets for 9.6 seconds" },
+      { "name": "Smoke Blitz", "level": 74, "runes": "2 Air, 2 Fire, 2 Blood, 2 Death", "desc": "Single-target attack inflicting poison starting at 4 damage" },
+      { "name": "Shadow Blitz", "level": 76, "runes": "2 Air, 2 Blood, 2 Death, 2 Soul", "desc": "Single-target attack reducing Attack level by 15%" },
+      { "name": "Blood Blitz", "level": 80, "runes": "4 Blood, 2 Death", "desc": "Single-target attack healing caster for 25% of damage" },
+      { "name": "Ice Blitz", "level": 82, "runes": "3 Water, 2 Blood, 2 Death", "desc": "Single-target attack freezing for 14.4 seconds" },
+      { "name": "Smoke Barrage", "level": 86, "runes": "4 Air, 4 Fire, 2 Blood, 4 Death", "desc": "3x3 area attack poisoning targets starting at 4 damage" },
+      { "name": "Shadow Barrage", "level": 88, "runes": "4 Air, 2 Blood, 4 Death, 3 Soul", "desc": "3x3 area attack reducing targets' Attack by 15%" },
+      { "name": "Blood Barrage", "level": 92, "runes": "4 Blood, 4 Death, 1 Soul", "desc": "3x3 area attack healing caster for 25% of damage to targets" },
+      { "name": "Ice Barrage", "level": 94, "runes": "6 Water, 2 Blood, 4 Death", "desc": "3x3 area attack freezing targets for 19.2 seconds" }
+    ],
+    "Teleportation spells": [
+      { "name": "Edgeville Home Teleport", "level": 0, "runes": "None", "desc": "Teleports to Edgeville; once per 30 minutes" },
+      { "name": "Minigame Teleport", "level": 0, "runes": "None", "desc": "Teleports to chosen minigame; once per 20 minutes" },
+      { "name": "Paddewwa Teleport", "level": 54, "runes": "1 Air, 1 Fire, 2 Law", "desc": "Teleports to Edgeville Dungeon entrance" },
+      { "name": "Senntisten Teleport", "level": 60, "runes": "2 Law, 1 Soul", "desc": "Teleports to the Digsite" },
+      { "name": "Kharyrll Teleport", "level": 66, "runes": "1 Blood, 2 Law", "desc": "Teleports to Canifis, inside the Hair of the Dog tavern" },
+      { "name": "Lassar Teleport", "level": 72, "runes": "4 Water, 2 Law", "desc": "Teleports to the top of Ice Mountain" },
+      { "name": "Dareeyak Teleport", "level": 78, "runes": "2 Air, 3 Fire, 2 Law", "desc": "Teleports to western ruins in the Wilderness" },
+      { "name": "Carrallanger Teleport", "level": 84, "runes": "2 Law, 2 Soul", "desc": "Teleports to Graveyard of Shadows in the Wilderness" },
+      { "name": "Teleport to Target", "level": 85, "runes": "1 Chaos, 1 Death, 1 Law", "desc": "Teleports to assigned target in Bounty Hunter" },
+      { "name": "Annakarl Teleport", "level": 90, "runes": "2 Blood, 2 Law", "desc": "Teleports to Demonic Ruins in the Wilderness" },
+      { "name": "Ghorrock Teleport", "level": 96, "runes": "8 Water, 2 Law", "desc": "Teleports to Frozen Waste Plateau in the Wilderness" }
+    ]
+  },
+  "Lunar": {
+    "Combat spells": [
+      { "name": "Monster Examine", "level": 66, "runes": "1 Astral, 1 Cosmic, 1 Mind", "desc": "Displays combat stats, defensive bonuses, and slayer task eligibility" },
+      { "name": "Cure Other", "level": 68, "runes": "10 Earth, 1 Astral, 1 Law", "desc": "Cures poison on a targeted player with Accept Aid enabled" },
+      { "name": "Cure Me", "level": 71, "runes": "2 Astral, 2 Cosmic, 1 Law", "desc": "Cures the caster of poison as though they consumed antipoison" },
+      { "name": "Cure Group", "level": 74, "runes": "2 Astral, 2 Cosmic, 2 Law", "desc": "Cures poison for all players within a 3x3 area" },
+      { "name": "Stat Spy", "level": 75, "runes": "2 Astral, 5 Body, 1 Cosmic", "desc": "Reveals targeted player's combat and non-combat stats" },
+      { "name": "Dream", "level": 79, "runes": "2 Astral, 5 Body, 1 Cosmic", "desc": "Caster enters dream state with hitpoints regenerating three times faster" },
+      { "name": "Stat Restore Pot Share", "level": 81, "runes": "10 Earth, 10 Water, 2 Astral", "desc": "Administers stat restore potion dose to players within 5x5 area" },
+      { "name": "Boost Potion Share", "level": 84, "runes": "12 Earth, 10 Water, 3 Astral", "desc": "Administers any potion dose to players within 5x5 area" },
+      { "name": "Energy Transfer", "level": 91, "runes": "3 Astral, 2 Law, 1 Nature", "desc": "Transfers 100% special attack energy and run energy to target" },
+      { "name": "Heal Other", "level": 92, "runes": "3 Astral, 1 Blood, 3 Law", "desc": "Transfers 75% of caster's hitpoints to targeted player" },
+      { "name": "Vengeance Other", "level": 93, "runes": "10 Earth, 3 Astral, 2 Death", "desc": "Applies Vengeance effect to targeted player" },
+      { "name": "Vengeance", "level": 94, "runes": "10 Earth, 4 Astral, 2 Death", "desc": "Next damaging attack hitting caster reflects up to 75% damage" },
+      { "name": "Heal Group", "level": 95, "runes": "4 Astral, 3 Blood, 6 Law", "desc": "Transfers 75% of hitpoints among injured players in 3x3 area" }
+    ],
+    "Teleport spells": [
+      { "name": "Lunar Home Teleport", "level": 0, "runes": "None", "desc": "Free teleport to Lunar Isle bank, 30-minute cooldown" },
+      { "name": "Minigame Teleport", "level": 0, "runes": "None", "desc": "Teleports to selected minigame, 20-minute cooldown" },
+      { "name": "Moonclan Teleport", "level": 69, "runes": "2 Earth, 2 Astral, 1 Law", "desc": "Teleports player outside Lunar Isle gates" },
+      { "name": "Tele Group Moonclan", "level": 70, "runes": "4 Earth, 2 Astral, 1 Law", "desc": "Group teleport to Moonclan town near bank" },
+      { "name": "Ourania Teleport", "level": 71, "runes": "6 Earth, 2 Astral, 1 Law", "desc": "Teleports to red salamander spawns outside Ourania Cave" },
+      { "name": "Waterbirth Teleport", "level": 72, "runes": "1 Water, 2 Astral, 1 Law", "desc": "Teleports beside Jarvald's ship on Waterbirth Island" },
+      { "name": "Tele Group Waterbirth", "level": 73, "runes": "5 Water, 2 Astral, 1 Law", "desc": "Group teleport to Waterbirth Island by ship" },
+      { "name": "Barbarian Teleport", "level": 75, "runes": "3 Fire, 2 Astral, 2 Law", "desc": "Teleports next to Barbarian Outpost" },
+      { "name": "Tele Group Barbarian", "level": 76, "runes": "6 Fire, 2 Astral, 2 Law", "desc": "Group teleport to Barbarian Outpost" },
+      { "name": "Khazard Teleport", "level": 78, "runes": "4 Water, 2 Astral, 2 Law", "desc": "Teleports to Port Khazard" },
+      { "name": "Tele Group Khazard", "level": 79, "runes": "8 Water, 2 Astral, 2 Law", "desc": "Group teleport to Port Khazard" },
+      { "name": "Fishing Guild Teleport", "level": 85, "runes": "10 Water, 3 Astral, 3 Law", "desc": "Teleports outside Fishing Guild door" },
+      { "name": "Teleport to Target", "level": 85, "runes": "1 Chaos, 1 Death, 1 Law", "desc": "Bounty Hunter spell teleporting to assigned target" },
+      { "name": "Tele Group Fishing Guild", "level": 86, "runes": "14 Water, 3 Astral, 3 Law", "desc": "Group teleport outside Fishing Guild" },
+      { "name": "Catherby Teleport", "level": 87, "runes": "10 Water, 3 Astral, 3 Law", "desc": "Teleports near bank in Catherby" },
+      { "name": "Tele Group Catherby", "level": 88, "runes": "15 Water, 3 Astral, 3 Law", "desc": "Group teleport to Catherby bank" },
+      { "name": "Ice Plateau Teleport", "level": 89, "runes": "8 Water, 3 Astral, 3 Law", "desc": "Teleports to Ice Plateau in level 53 Wilderness" },
+      { "name": "Tele Group Ice Plateau", "level": 90, "runes": "16 Water, 3 Astral, 3 Law", "desc": "Group teleport to Ice Plateau in Wilderness" }
+    ],
+    "Utility spells": [
+      { "name": "Bake Pie", "level": 65, "runes": "5 Fire, 4 Water, 1 Astral", "desc": "Automatically bakes all uncooked pies without burning" },
+      { "name": "Geomancy", "level": 65, "runes": "8 Earth, 3 Astral, 3 Nature", "desc": "Displays status of farmable patches across the game" },
+      { "name": "Cure Plant", "level": 66, "runes": "8 Earth, 1 Astral", "desc": "Cures disease from a Farming patch" },
+      { "name": "NPC Contact", "level": 67, "runes": "2 Air, 1 Astral, 1 Cosmic", "desc": "Allows telepathic communication with specific NPCs" },
+      { "name": "Humidify", "level": 68, "runes": "1 Fire, 3 Water, 1 Astral", "desc": "Fills vessels with water and waters seedlings" },
+      { "name": "Hunter Kit", "level": 71, "runes": "2 Earth, 2 Astral", "desc": "Provides hunter kit with various hunting tools" },
+      { "name": "Spin Flax", "level": 76, "runes": "5 Air, 1 Astral, 2 Nature", "desc": "Instantly spins up to five flax into bow strings" },
+      { "name": "Superglass Make", "level": 77, "runes": "10 Air, 6 Fire, 2 Astral", "desc": "Turns sand and ash instantly into molten glass" },
+      { "name": "Tan Leather", "level": 78, "runes": "5 Fire, 2 Astral, 1 Nature", "desc": "Tans up to five hides without tanner fees" },
+      { "name": "String Jewellery", "level": 80, "runes": "10 Earth, 5 Water, 2 Astral", "desc": "Immediately strings unstrung amulets" },
+      { "name": "Magic Imbue", "level": 82, "runes": "7 Fire, 7 Water, 2 Astral", "desc": "Enables combination rune creation without talismans" },
+      { "name": "Fertile Soil", "level": 83, "runes": "15 Earth, 3 Astral, 2 Nature", "desc": "Treats farming patch with supercompost or ultracompost" },
+      { "name": "Plank Make", "level": 86, "runes": "15 Earth, 2 Astral, 1 Nature", "desc": "Converts logs to planks at reduced cost" },
+      { "name": "Recharge Dragonstone", "level": 89, "runes": "4 Water, 1 Astral, 1 Soul", "desc": "Recharges all enchanted dragonstone jewelry" },
+      { "name": "Spellbook Swap", "level": 96, "runes": "3 Astral, 2 Cosmic, 1 Law", "desc": "Temporarily switches to another spellbook for one cast" }
+    ]
+  },
+  "Arceuus": {
+    "Teleportation spells": [
+      { "name": "Arceuus Home Teleport", "level": 1, "runes": "None", "desc": "Teleports to Dark Altar, usable once per 30 minutes" },
+      { "name": "Minigame Teleport", "level": 0, "runes": "None", "desc": "Teleports to chosen minigame, usable once per 20 minutes" },
+      { "name": "Arceuus Library Teleport", "level": 6, "runes": "2 Earth, 1 Law", "desc": "Teleports north of Arceuus Library" },
+      { "name": "Draynor Manor Teleport", "level": 17, "runes": "1 Earth, 1 Water, 1 Law", "desc": "Teleports to Draynor Manor" },
+      { "name": "Battlefront Teleport", "level": 23, "runes": "1 Earth, 1 Fire, 1 Law", "desc": "Teleports to Ancient Grave beyond Battlefront" },
+      { "name": "Mind Altar Teleport", "level": 28, "runes": "1 Law, 2 Mind", "desc": "Teleports to Mind Altar near Wilderness" },
+      { "name": "Respawn Teleport", "level": 34, "runes": "1 Law, 1 Soul", "desc": "Teleports to player's respawn point" },
+      { "name": "Salve Graveyard Teleport", "level": 40, "runes": "1 Law, 2 Soul", "desc": "Teleports to ghoul area by Mort Myre Swamp entrance" },
+      { "name": "Fenkenstrain's Castle Teleport", "level": 48, "runes": "1 Earth, 1 Law, 1 Soul", "desc": "Teleports to Fenkenstrain's Castle" },
+      { "name": "West Ardougne Teleport", "level": 61, "runes": "2 Law, 2 Soul", "desc": "Teleports to West Ardougne graveyard" },
+      { "name": "Harmony Island Teleport", "level": 65, "runes": "1 Law, 1 Nature, 1 Soul", "desc": "Teleports to Harmony Island" },
+      { "name": "Cemetery Teleport", "level": 71, "runes": "1 Blood, 1 Law, 1 Soul", "desc": "Teleports to Forgotten Cemetery in Wilderness" },
+      { "name": "Barrows Teleport", "level": 83, "runes": "1 Blood, 2 Law, 2 Soul", "desc": "Teleports to Barrows" },
+      { "name": "Teleport to Target", "level": 85, "runes": "1 Chaos, 1 Death, 1 Law", "desc": "Teleports to assigned target in Bounty Hunter" },
+      { "name": "Ape Atoll Teleport", "level": 90, "runes": "2 Blood, 2 Law, 2 Soul", "desc": "Teleports to Ape Atoll Dungeon" }
+    ],
+    "Grasp spells": [
+      { "name": "Ghostly Grasp", "level": 35, "runes": "4 Air, 1 Chaos", "desc": "Deals damage and provides chance to bind target for 1.2 seconds" },
+      { "name": "Skeletal Grasp", "level": 56, "runes": "8 Earth, 1 Death", "desc": "Deals damage and provides chance to bind target for 1.8 seconds" },
+      { "name": "Undead Grasp", "level": 79, "runes": "12 Fire, 1 Blood", "desc": "Deals damage and provides chance to bind target for 2.4 seconds" }
+    ],
+    "Demonbane spells": [
+      { "name": "Inferior Demonbane", "level": 44, "runes": "3 Fire, 1 Chaos", "desc": "Deals damage to demonic creatures with 20% accuracy bonus" },
+      { "name": "Superior Demonbane", "level": 62, "runes": "5 Fire, 1 Soul", "desc": "Deals damage to demonic creatures with 20% accuracy bonus" },
+      { "name": "Dark Demonbane", "level": 82, "runes": "7 Fire, 2 Soul", "desc": "Deals damage to demonic creatures with 20% accuracy bonus" }
+    ],
+    "Corruption spells": [
+      { "name": "Lesser Corruption", "level": 64, "runes": "1 Death, 2 Soul", "desc": "50% chance to corrupt target, draining 6 prayer points total" },
+      { "name": "Greater Corruption", "level": 85, "runes": "1 Blood, 3 Soul", "desc": "50% chance to corrupt target, draining 12 prayer points total" }
+    ],
+    "Resurrection spells": [
+      { "name": "Resurrect Lesser Ghost", "level": 38, "runes": "10 Air, 1 Cosmic, 5 Mind", "desc": "Summons magic-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Lesser Skeleton", "level": 38, "runes": "10 Air, 1 Cosmic, 5 Mind", "desc": "Summons ranged-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Lesser Zombie", "level": 38, "runes": "10 Air, 1 Cosmic, 5 Mind", "desc": "Summons melee-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Superior Ghost", "level": 57, "runes": "10 Earth, 1 Cosmic, 5 Death", "desc": "Summons magic-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Superior Skeleton", "level": 57, "runes": "10 Earth, 1 Cosmic, 5 Death", "desc": "Summons ranged-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Superior Zombie", "level": 57, "runes": "10 Earth, 1 Cosmic, 5 Death", "desc": "Summons melee-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Greater Ghost", "level": 76, "runes": "10 Fire, 5 Blood, 1 Cosmic", "desc": "Summons magic-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Greater Skeleton", "level": 76, "runes": "10 Fire, 5 Blood, 1 Cosmic", "desc": "Summons ranged-attacking thrall for duration based on Magic level" },
+      { "name": "Resurrect Greater Zombie", "level": 76, "runes": "10 Fire, 5 Blood, 1 Cosmic", "desc": "Summons melee-attacking thrall for duration based on Magic level" }
+    ],
+    "Other Combat spells": [
+      { "name": "Dark Lure", "level": 50, "runes": "1 Death, 1 Nature", "desc": "Forces monsters to attack and prevents them from retreating" },
+      { "name": "Mark of Darkness", "level": 59, "runes": "1 Cosmic, 1 Soul", "desc": "Grants offensive buffs for set duration" },
+      { "name": "Ward of Arceuus", "level": 73, "runes": "1 Cosmic, 2 Nature, 4 Soul", "desc": "Grants defensive buffs for set duration" }
+    ],
+    "Reanimation spells": [
+      { "name": "Basic Reanimation", "level": 16, "runes": "4 Body, 2 Nature", "desc": "Reanimates basic creatures like goblins and monkeys" },
+      { "name": "Adept Reanimation", "level": 41, "runes": "4 Body, 3 Nature, 1 Soul", "desc": "Reanimates intermediate creatures like dogs and ogres" },
+      { "name": "Expert Reanimation", "level": 72, "runes": "1 Blood, 3 Nature, 2 Soul", "desc": "Reanimates advanced creatures like kalphites and demons" },
+      { "name": "Master Reanimation", "level": 90, "runes": "2 Blood, 4 Nature, 4 Soul", "desc": "Reanimates powerful creatures like aviansies and dragons" }
+    ],
+    "Offering spells": [
+      { "name": "Demonic Offering", "level": 84, "runes": "1 Soul, 1 Wrath", "desc": "Converts up to three sets of ashes to prayer points" },
+      { "name": "Sinister Offering", "level": 92, "runes": "1 Blood, 1 Wrath", "desc": "Converts up to three sets of bones to prayer points" }
+    ],
+    "Other Utility spells": [
+      { "name": "Shadow Veil", "level": 47, "runes": "5 Earth, 5 Fire, 5 Cosmic", "desc": "Grants chance to avoid stun and damage while pickpocketing" },
+      { "name": "Vile Vigour", "level": 66, "runes": "3 Air, 1 Soul", "desc": "Converts remaining prayer points into run energy at 1:1 ratio" },
+      { "name": "Degrime", "level": 70, "runes": "4 Earth, 2 Nature", "desc": "Cleans grimy herbs in inventory for half normal experience" },
+      { "name": "Resurrect Crops", "level": 78, "runes": "25 Earth, 8 Blood, 12 Nature, 8 Soul", "desc": "Attempts to revive dead farming patches" },
+      { "name": "Death Charge", "level": 80, "runes": "1 Blood, 1 Death, 1 Soul", "desc": "Restores 15% of special attack energy upon killing monsters" }
+    ]
+  }
+}

@@ -14,7 +14,7 @@ import { EXTRA_THRESHOLDS } from './data/thresholds';
 import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
-import { UNIVERSAL_REGIONS } from './data/regions';
+import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from './data/regions';
 
 function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -164,6 +164,26 @@ export default function App() {
   const solvedCount = Object.values(skills)
     .filter(s => s.status === 'solved' || s.status === 'oversolved').length;
 
+  const unlockedSpellbooks = (() => {
+    const books = new Set(['Standard']);
+    const allRegions = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
+    const activeRegionObjs = allRegions.filter(r => activeRegionNames.includes(r.name));
+    const activeRelics = [...Object.values(selectedRelics).filter(Boolean), reloadedRelic].filter(Boolean);
+    for (const r of activeRegionObjs) (r.spellbook || []).forEach(b => books.add(b));
+    for (const r of activeRelics) (r.spellbook || []).forEach(b => books.add(b));
+    return books;
+  })();
+
+  const unlockedPrayerBooks = (() => {
+    const books = new Set(['Standard']);
+    const allRegions = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
+    const activeRegionObjs = allRegions.filter(r => activeRegionNames.includes(r.name));
+    const activeRelics = [...Object.values(selectedRelics).filter(Boolean), reloadedRelic].filter(Boolean);
+    for (const r of activeRegionObjs) (r.prayer || []).forEach(b => books.add(b));
+    for (const r of activeRelics) (r.prayer || []).forEach(b => books.add(b));
+    return books;
+  })();
+
   return (
     <div className="app">
 <Header
@@ -197,7 +217,7 @@ export default function App() {
       )}
 
       <div className="main-layout">
-        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} oversolvedFactor={settings.oversolvedFactor} />
+        <SkillsPanel skills={skills} extras={extras} solvedThreshold={settings.solvedThreshold} oversolvedFactor={settings.oversolvedFactor} unlockedSpellbooks={unlockedSpellbooks} unlockedPrayerBooks={unlockedPrayerBooks} />
 
         <div className="right-panel">
           <RelicTree
