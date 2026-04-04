@@ -131,6 +131,9 @@ function RegionCard({ region, selected, selectionOrder, totalSelected, disabled,
       skills: region.skills || {},
       extras: region.extras || {},
       drops: drops || [],
+      spellbooks: region.spellbook,
+      prayerBooks: region.prayer,
+      prayerUnlocks: region.prayerUnlocks,
     });
   };
 
@@ -202,7 +205,7 @@ function RegionSplitPanel({ selectedRegions, onSelectRegion, onReorderRegion, op
     const el = itemRefs.current[name];
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    onShowContrib({ pos: { left: rect.left, top: rect.bottom + 6 }, title: name, skills: region?.skills || {}, extras: region?.extras || {}, drops: DROPS_BY_REGION[name] || [] });
+    onShowContrib({ pos: { left: rect.left, top: rect.bottom + 6 }, title: name, skills: region?.skills || {}, extras: region?.extras || {}, drops: DROPS_BY_REGION[name] || [], spellbooks: region?.spellbook, prayerBooks: region?.prayer, prayerUnlocks: region?.prayerUnlocks });
   };
 
   const handleDrop = (toIndex) => {

@@ -242,6 +242,9 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
       extras: relic.extras || {},
       passiveSkills: Object.keys(passiveSkills).length > 0 ? passiveSkills : null,
       special: relic.special,
+      spellbooks: relic.spellbook,
+      prayerBooks: relic.prayer,
+      prayerUnlocks: relic.prayerUnlocks,
     });
   };
 

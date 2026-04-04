@@ -486,7 +486,7 @@ export const UNLOCKABLE_REGIONS = [
     skills: { runecrafting: 1, thieving: 1, crafting: 1, smithing: 1, fishing: 1 },
     extras: { travel: 1, ammo_source: 3, mega_rares: 1 },
     spellbook: ['Ancient'],
-    prayer: ['Ancient Curses'],
+    prayer: [],
   },
   {
     name: "Morytania",

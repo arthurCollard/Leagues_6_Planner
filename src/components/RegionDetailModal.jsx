@@ -86,10 +86,16 @@ export default function RegionDetailModal({ regionName, customWeights = {}, onCl
   const skillEntries = Object.entries(mergedSkills).filter(([, v]) => v > 0);
   const extraEntries = Object.entries(mergedExtras).filter(([, v]) => v > 0);
 
+  const extraSpellbooks = (region.spellbook || []).filter(b => b !== 'Standard');
+  const extraPrayerBooks = (region.prayer || []).filter(b => b !== 'Standard');
+  const prayerUnlocks = region.prayerUnlocks || [];
+  const hasSpellsPrayers = extraSpellbooks.length > 0 || extraPrayerBooks.length > 0 || prayerUnlocks.length > 0;
+
   const tabs = [
     pvm?.length        && { id: 'pvm',          label: 'PVM' },
     dropTable?.length  && { id: 'drops',         label: 'Drops' },
     (skillEntries.length > 0 || extraEntries.length > 0) && { id: 'weights', label: 'Bonuses' },
+    hasSpellsPrayers   && { id: 'spells',        label: 'Spellbooks & Prayers' },
     slayer?.length     && { id: 'slayer',        label: 'Slayer' },
     quests?.length     && { id: 'quests',        label: 'Quests' },
     activities?.length && { id: 'activities',    label: 'Activities' },
@@ -182,6 +188,29 @@ export default function RegionDetailModal({ regionName, customWeights = {}, onCl
                   </tbody>
                 </table>
               </div>
+            </div>
+          )}
+          {currentTab === 'spells' && (
+            <div className="rdm-weights">
+              {extraSpellbooks.length > 0 && (
+                <div className="rdm-weights-col">
+                  <div className="rdm-sub-label">Spellbooks</div>
+                  {extraSpellbooks.map(b => (
+                    <div key={b} className="rdm-weight-row"><span>{b}</span></div>
+                  ))}
+                </div>
+              )}
+              {(extraPrayerBooks.length > 0 || prayerUnlocks.length > 0) && (
+                <div className="rdm-weights-col">
+                  <div className="rdm-sub-label">Prayers</div>
+                  {extraPrayerBooks.map(b => (
+                    <div key={b} className="rdm-weight-row"><span>{b}</span></div>
+                  ))}
+                  {prayerUnlocks.map(p => (
+                    <div key={p} className="rdm-weight-row"><span>{p}</span></div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
           {currentTab === 'weights' && (

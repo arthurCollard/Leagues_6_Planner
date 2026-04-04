@@ -9,12 +9,15 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave, onMor
   const [activeTab, setActiveTab] = useState('bonuses');
 
   if (!data) return null;
-  const { pos, skills, extras, passiveSkills, special, description, drops, title } = data;
+  const { pos, skills, extras, passiveSkills, special, description, drops, title, spellbooks, prayerBooks, prayerUnlocks } = data;
   const skillEntries = Object.entries(skills || {}).filter(([, v]) => v > 0).sort(([, a], [, b]) => a - b);
   const extraEntries = Object.entries(extras || {}).filter(([, v]) => v > 0).sort(([, a], [, b]) => a - b);
   const clampedLeft = Math.min(pos.left, window.innerWidth - 230);
 
-  const hasContribs = skillEntries.length > 0 || extraEntries.length > 0;
+  const hasSpellbooks = spellbooks?.filter(b => b !== 'Standard').length > 0;
+  const hasPrayerBooks = prayerBooks?.filter(b => b !== 'Standard').length > 0;
+  const hasPrayerUnlocks = prayerUnlocks?.length > 0;
+  const hasContribs = skillEntries.length > 0 || extraEntries.length > 0 || hasSpellbooks || hasPrayerBooks || hasPrayerUnlocks;
   const hasDrops = drops?.length > 0;
   const showTabs = hasContribs && hasDrops;
   const sortedDrops = hasDrops
@@ -86,6 +89,31 @@ export default function ContribTooltip({ data, onMouseEnter, onMouseLeave, onMor
                         <div key={id} className="contrib-row">
                           <span>{EXTRA_NAME[id] || id}</span>
                           <span className="contrib-val">+{val}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {hasSpellbooks && (
+                    <div className="contrib-section">
+                      <div className="contrib-label">Spellbooks</div>
+                      {spellbooks.filter(b => b !== 'Standard').map(b => (
+                        <div key={b} className="contrib-row contrib-row-unlock">
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {(hasPrayerBooks || hasPrayerUnlocks) && (
+                    <div className="contrib-section">
+                      <div className="contrib-label">Prayers</div>
+                      {hasPrayerBooks && prayerBooks.filter(b => b !== 'Standard').map(b => (
+                        <div key={b} className="contrib-row contrib-row-unlock">
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                      {hasPrayerUnlocks && prayerUnlocks.map(p => (
+                        <div key={p} className="contrib-row contrib-row-unlock">
+                          <span>{p}</span>
                         </div>
                       ))}
                     </div>
