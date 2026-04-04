@@ -37,7 +37,7 @@ export default function SkillsPanel({ skills, extras, solvedThreshold, oversolve
   return (
     <aside className="skills-panel">
       <div className="panel-header">
-        <h2>Solve... <span className={`coverage-pct ${pct >= 100 ? 'pct-max' : pct >= 85 ? 'pct-high' : pct >= 67 ? 'pct-mid' : pct >= 50 ? 'pct-low' : ''}`}>({pct}%)</span></h2>
+        <h2>Solve Progress <span className={`coverage-pct ${pct >= 100 ? 'pct-max' : pct >= 85 ? 'pct-high' : pct >= 67 ? 'pct-mid' : pct >= 50 ? 'pct-low' : ''}`}>({pct}%)</span></h2>
       </div>
       <div className="status-legend">
         {Object.entries(STATUS_STYLES).map(([key, s]) => (
