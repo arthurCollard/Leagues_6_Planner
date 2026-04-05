@@ -51,12 +51,9 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [relicWeights, setRelicWeights] = useLocalStorage('ls6_relicWeights', {});
   const [regionWeights, setRegionWeights] = useLocalStorage('ls6_regionWeights', {});
-  const [selectedMasteries, setSelectedMasteries] = useLocalStorage('ls6_selectedMasteries', { Melee: 0, Range: 0, Magic: 0 });
+  const [selectedMasteries, setSelectedMasteries] = useLocalStorage('ls6_selectedMasteries', {});
   const [selectedRegions, setSelectedRegions] = useLocalStorage('ls6_selectedRegions', []);
   const [selectedGear, setSelectedGear] = useLocalStorage('ls6_selectedGear', EMPTY_GEAR);
-
-  const handleSelectMastery = (branch, depth) =>
-    setSelectedMasteries(prev => ({ ...prev, [branch]: depth }));
 
   const handleSelectRegion = (regionName) =>
     setSelectedRegions(prev =>
@@ -199,12 +196,12 @@ export default function App() {
 <Header
         relicCount={Object.keys(selectedRelics).length}
         solvedCount={solvedCount}
-        masteryPoints={Object.values(selectedMasteries).reduce((a, b) => a + b, 0)}
+        masteryPoints={Object.values(selectedMasteries).filter(Boolean).length}
         regionCount={selectedRegions.length}
         onToggleSettings={() => setShowSettings(s => !s)}
         onReset={() => {
           setSelectedRelics({});
-          setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 });
+          setSelectedMasteries({});
           setSelectedRegions([]);
           setReloadedRelic(null);
           setSelectedGear(EMPTY_GEAR);
@@ -219,8 +216,8 @@ export default function App() {
         extras={extras}
         activePassives={activePassives}
         onToggleSettings={() => setShowSettings(s => !s)}
-        onReset={() => { setSelectedRelics({}); setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 }); setSelectedRegions([]); setReloadedRelic(null); setSelectedGear(EMPTY_GEAR); }}
-        hasSelections={Object.keys(selectedRelics).length > 0 || selectedRegions.length > 0 || Object.values(selectedMasteries).some(v => v > 0)}
+        onReset={() => { setSelectedRelics({}); setSelectedMasteries({}); setSelectedRegions([]); setReloadedRelic(null); setSelectedGear(EMPTY_GEAR); }}
+        hasSelections={Object.keys(selectedRelics).length > 0 || selectedRegions.length > 0 || Object.keys(selectedMasteries).some(k => selectedMasteries[k])}
       />
 
       {showSettings && (
@@ -240,7 +237,7 @@ export default function App() {
             onSelectReloadedRelic={setReloadedRelic}
             onReset={() => { setSelectedRelics({}); setReloadedRelic(null); }}
           />
-          <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={handleSelectMastery} onReset={() => setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 })} />
+          <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={setSelectedMasteries} onReset={() => setSelectedMasteries({})} />
           <RegionTree
             selectedRegions={selectedRegions}
             onSelectRegion={handleSelectRegion}
@@ -254,7 +251,7 @@ export default function App() {
             selectedRegions={selectedRegions}
             onSelectGear={(slot, item) => setSelectedGear(prev => ({ ...prev, [slot]: item }))}
             onReset={() => setSelectedGear(EMPTY_GEAR)}
-            selectedMasteries={selectedMasteries}
+            selectedMasteries={{}}
           />
         </div>
       </div>

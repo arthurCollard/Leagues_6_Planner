@@ -3,15 +3,10 @@ import { COMBO_BONUSES } from '../data/combos';
 import { EXTRA_THRESHOLDS } from '../data/thresholds';
 import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/region/regions';
 import { TIER_PASSIVES } from '../data/tierPassives';
+import { PACTS } from '../data/masteries';
 
 const ALL_REGIONS = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
 const REGION_BY_NAME = Object.fromEntries(ALL_REGIONS.map(r => [r.name, r]));
-
-const MASTERY_SKILLS = {
-  Melee: { attack: 1, strength: 1, defence: 1, hitpoints: 1 },
-  Range:  { ranged: 1, defence: 1, hitpoints: 1 },
-  Magic:  { magic: 1, defence: 1, hitpoints: 1 },
-};
 
 function comboMatches(combo, selectedRelicNames, selectedRegions, extraScores) {
   const extrasOk = (combo.requiredExtras || []).every(e => {
@@ -94,12 +89,14 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
     });
   });
 
-  // Apply mastery points: each point adds +1 to the branch's skills
-  Object.entries(MASTERY_SKILLS).forEach(([branch, skills]) => {
-    const depth = selectedMasteries[branch] || 0;
-    if (depth === 0) return;
-    Object.entries(skills).forEach(([id, val]) => {
-      skillScores[id] = (skillScores[id] || 0) + val * depth;
+  // Apply pact bonuses for selected pacts
+  PACTS.forEach(pact => {
+    if (!selectedMasteries[pact.id]) return;
+    Object.entries(pact.skills || {}).forEach(([id, val]) => {
+      skillScores[id] = (skillScores[id] || 0) + val;
+    });
+    Object.entries(pact.extras || {}).forEach(([id, val]) => {
+      extraScores[id] = (extraScores[id] || 0) + val;
     });
   });
 

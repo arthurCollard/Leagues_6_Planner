@@ -2218,6 +2218,62 @@ body {
   border-color: #b8a282;
 }
 
+/* ── Pacts ──────────────────────────────────────────── */
+.pacts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.pact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.7rem 0.6rem 0.7rem;
+  border: 2px solid #b8a282;
+  background: #2a231b;
+  color: #d8ccb4;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.pact-card:hover {
+  border-color: #d8ccb4;
+  background: rgba(216, 204, 180, 0.1);
+  box-shadow: 0 0 12px rgba(184, 162, 130, 0.3);
+}
+
+.pact-card.selected {
+  border-color: #d8ccb4;
+  background: rgba(208, 189, 151, 0.2);
+  box-shadow: 0 0 20px rgba(216, 204, 180, 0.4);
+}
+
+.pact-branch-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #b8a282;
+  text-transform: uppercase;
+}
+
+.pact-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #d8ccb4;
+}
+
+.pact-desc {
+  font-size: 0.7rem;
+  color: #a89070;
+  line-height: 1.3;
+}
+
 /* ── Mastery Tree ──────────────────────────────────── */
 .mastery-placeholder-note {
   font-size: 0.78rem;

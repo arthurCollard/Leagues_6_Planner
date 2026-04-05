@@ -1,175 +1,32 @@
-export const MASTERIES = {
-  Melee: [
-    {
-      tier: 1,
-      name: 'Double Roll',
-      desc: 'Melee hits have a 25% chance to roll damage twice and take the highest result.',
-      dps: 'Flat 8.5% Extra DPS',
-      icon: '',
-    },
-    {
-      tier: 2,
-      name: 'Echo Hit',
-      desc: 'Melee hits have a 10% chance to generate an echo hit (50% max-hit, respects Accuracy, PvM only).',
-      dps: 'Flat 13.5% Extra DPS',
-      icon: '',
-    },
-    {
-      tier: 3,
-      name: 'Swift Strikes',
-      desc: 'Melee attack rate set to 80%, rounding down.',
-      dps: '30% to 150% Extra DPS (tick dependant)',
-      icon: '',
-    },
-    {
-      tier: 4,
-      name: 'Life Steal',
-      desc: 'Melee hits have a 5% chance to heal 40% of damage dealt.',
-      dps: 'Life Steal Effect',
-      icon: '',
-    },
-    {
-      tier: 5,
-      name: 'Rapid Assault',
-      desc: 'Melee attack rate set to 50%, rounding down above 5t, rounded up at 4t.',
-      dps: '150% to 250% Extra DPS (tick dependant)',
-      icon: '',
-    },
-    {
-      tier: 6,
-      name: 'Echo Cascade',
-      desc: 'Chance to generate a Melee echo increases to 20% and echos can generate additional echos (up to 8 times).',
-      dps: 'Flat 21% Extra DPS',
-      icon: '',
-    },
-  ],
+export const PACTS = [
+  {
+    id: 'melee_range',
+    name: '????????',
+    desc: 'Melee range is doubled whilst using two handed weapons.',
+    branch: 'Melee',
+    icon: '',
+    skills: { },
+    extras: {},
+  },
+  {
+    id: 'water_heal',
+    name: '????????',
+    desc: "Whenever your combat spells regenerate water runes, you're healed for one per rune regenerated.",
+    branch: 'Magic',
+    icon: '',
+    skills: { },
+    extras: {},
+  },
+  {
+    id: 'bow_speed',
+    name: '????????',
+    desc: 'Bows attack 1 tick faster.',
+    branch: 'Range',
+    icon: '',
+    skills: { ranged: 1 },
+    extras: {},
+  },
+];
 
-  Range: [
-    {
-      tier: 1,
-      name: 'Min Hit',
-      desc: 'Damage rolls beneath 30% of max hit with Ranged are increased to 30%.',
-      dps: 'Flat 17.5% Extra DPS',
-      icon: '',
-    },
-    {
-      tier: 2,
-      name: 'Momentum',
-      desc: 'Each subsequent Ranged attack has its max hit increased by an additional +5%, resetting after +20%.',
-      dps: '17.5% Extra DPS',
-      icon: '',
-    },
-    {
-      tier: 3,
-      name: 'Swift Shots',
-      desc: 'Ranged attack rate set to 80%, rounding down.',
-      dps: '30% to 150% Extra DPS (tick dependant)',
-      icon: '',
-    },
-    {
-      tier: 4,
-      name: 'Recuperate',
-      desc: 'Every 5th Ranged hit heals 5 hitpoints.',
-      dps: 'Life Steal Effect',
-      icon: '',
-    },
-    {
-      tier: 5,
-      name: 'Rapid Fire',
-      desc: 'Ranged attack rate set to 50%, rounded down above 5t, rounded up below 4t.',
-      dps: '150% to 250% Extra DPS (tick dependant)',
-      icon: '',
-    },
-    {
-      tier: 6,
-      name: 'True Shot',
-      desc: 'Never miss with Ranged (PvM only).',
-      dps: 'Never Miss!',
-      icon: '',
-    },
-  ],
-
-  Magic: [
-    {
-      tier: 1,
-      name: 'High Roll',
-      desc: 'When you roll above 90% of your max hit with Magic, damage is increased by 50%.',
-      dps: 'Flat 11.5% Extra DPS',
-      icon: '',
-    },
-    {
-      tier: 2,
-      name: 'Charge Up',
-      desc: 'Magic max hit is increased by 5% per tick in-between your attacks (up to 40%).',
-      dps: '5% Extra DPS per tick of weapon',
-      icon: '',
-    },
-    {
-      tier: 3,
-      name: 'Swift Cast',
-      desc: 'Magic attack rate set to 80%, rounding down.',
-      dps: '30% to 150% Extra DPS (tick dependant)',
-      icon: '',
-    },
-    {
-      tier: 4,
-      name: 'Drain',
-      desc: 'When you roll above 90% of your max hit with Magic, heal 10% of damage dealt.',
-      dps: 'Life Steal Effect',
-      icon: '',
-    },
-    {
-      tier: 5,
-      name: 'Rapid Spells',
-      desc: 'Magic attack rate set to 50%, rounded down above 5t, rounded up below 4t.',
-      dps: '150% to 250% Extra DPS (tick dependant)',
-      icon: '',
-    },
-    {
-      tier: 6,
-      name: 'Giant Slayer',
-      desc: 'Max hit increased by 1% per 100hp remaining on target (up to 10%). On a successful hit, if target hp is below your max hit, you max hit.',
-      dps: 'Giant Slayer Effect + Execute',
-      icon: '',
-    },
-  ],
-
-  Passives: [
-    {
-      tier: 1,
-      name: 'Conservation',
-      desc: '95% chance to save weapon charges, ammunition and runes used for spells.',
-      icon: '',
-    },
-    {
-      tier: 2,
-      name: 'Fortitude',
-      desc: 'Healing from all sources is increased by 20%.',
-      icon: '',
-    },
-    {
-      tier: 3,
-      name: 'Eagle Eye',
-      desc: 'Accuracy with all styles is increased by 100%.',
-      icon: '',
-    },
-    {
-      tier: 4,
-      name: 'Resilience',
-      desc: 'Damage taken is reduced by 15%.',
-      icon: '',
-    },
-    {
-      tier: 5,
-      name: 'Devotion',
-      desc: 'Prayer point gain from all sources is increased by 25%.',
-      icon: '',
-    },
-    {
-      tier: 6,
-      name: 'Penetration',
-      desc: 'Attacks with all styles now have 60% Prayer penetration.',
-      icon: '',
-    },
-  ],
-};
+// Legacy export for computeScores compatibility
+export const MASTERIES = { Melee: [], Range: [], Magic: [], Passives: [] };
