@@ -798,23 +798,28 @@ body {
 }
 
 .relic-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .relic-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 1.2rem;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  padding: 0.8rem 0.6rem 2rem;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
   border: 2px solid #b8a282;
   background: #2a231b;
   color: #d8ccb4;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: left;
+  text-align: center;
   position: relative;
 }
 
@@ -833,15 +838,17 @@ body {
 
 .relic-emoji { font-size: 1.8rem; flex-shrink: 0; }
 
-.relic-info { flex: 1; display: flex; align-items: center; gap: 0.5rem; }
-.relic-info strong { display: block; font-size: 0.95rem; color: #d8ccb4; }
-.relic-info small  { color: #b8a282; font-size: 0.78rem; line-height: 1.3; margin-top: 0.2rem; display: block; }
+.relic-info { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.relic-info strong { font-size: 0.8rem; color: #d8ccb4; line-height: 1.2; }
+.relic-info small  { color: #b8a282; font-size: 0.68rem; line-height: 1.3; }
 
 .check {
+  position: absolute;
+  top: 6px;
+  right: 8px;
   color: #d8ccb4;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
-  flex-shrink: 0;
 }
 
 .region-split-panel {
@@ -1051,10 +1058,10 @@ body {
     padding: 1rem;
   }
   .relic-row {
-    grid-template-columns: 1fr;
+    gap: 0.4rem;
   }
   .relic-btn {
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.4rem 2rem;
   }
   .mastery-row-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1097,17 +1104,92 @@ body {
 
 .relic-btn-outer {
   position: relative;
+  flex: 0 0 calc((100% - 3rem) / 3);
+  min-width: 0;
+}
+
+.region-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.region-btn-outer {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.region-btn {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  width: 100%;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.65rem 1.2rem 0.65rem 0.9rem;
+  border: 2px solid #b8a282;
+  background: #2a231b;
+  color: #d8ccb4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  position: relative;
+}
+
+.region-btn:hover {
+  border-color: #d8ccb4;
+  background: rgba(216, 204, 180, 0.1);
+  box-shadow: 0 0 10px rgba(184, 162, 130, 0.3);
+}
+
+.region-btn.selected {
+  border-color: #d8ccb4;
+  background: rgba(208, 189, 151, 0.2);
+  box-shadow: 0 0 16px rgba(216, 204, 180, 0.4);
+}
+
+.region-btn .relic-info {
+  flex-direction: row;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.region-btn .relic-info strong {
+  font-size: 0.9rem;
+}
+
+.region-btn .region-badge-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.region-cog {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.7rem;
+  opacity: 0.5;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.region-btn:hover .region-cog,
+.region-cog.cog-active {
+  opacity: 1;
+}
+
+.relic-card-wrap {
+  position: relative;
 }
 
 .relic-btn-wrapper {
-  flex: 1;
-  min-width: 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .relic-btn-wrapper .relic-btn {
@@ -1151,8 +1233,11 @@ body {
 }
 
 .relic-side-btns {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 4px;
 }

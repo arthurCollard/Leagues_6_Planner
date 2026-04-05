@@ -256,18 +256,31 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
         onMouseEnter={handleMouseEnter}
         onMouseLeave={onHideContrib}
       >
-        <button
-          className={`relic-btn ${selected ? 'selected' : ''}`}
-          onClick={locked ? undefined : onSelect}
-          disabled={locked}
-        >
-          <RelicIcon src={relic.icon} name={relic.name} />
-          <div className="relic-info">
-            <strong>{relic.name}</strong>
-            <small>{relic.desc}</small>
+        <div className="relic-card-wrap">
+          <button
+            className={`relic-btn ${selected ? 'selected' : ''}`}
+            onClick={locked ? undefined : onSelect}
+            disabled={locked}
+          >
+            <RelicIcon src={relic.icon} name={relic.name} />
+            <div className="relic-info">
+              <strong>{relic.name}</strong>
+              <small>{relic.desc}</small>
+            </div>
+            {selected && <span className="check">✓</span>}
+          </button>
+
+          <div className="relic-side-btns">
+            <RelicDescButton relic={relic} />
+            <button
+              className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
+              onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : relic.name); }}
+              title="Adjust relic weights"
+            >
+              ⚙️
+            </button>
           </div>
-          {selected && <span className="check">✓</span>}
-        </button>
+        </div>
 
         {selected && isReloaded && (
           <ReloadedPicker
@@ -276,17 +289,6 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
             onSelectReloadedRelic={onSelectReloadedRelic}
           />
         )}
-      </div>
-
-      <div className="relic-side-btns">
-        <RelicDescButton relic={relic} />
-        <button
-          className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
-          onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : relic.name); }}
-          title="Adjust relic weights"
-        >
-          ⚙️
-        </button>
       </div>
 
       {showSettings && (

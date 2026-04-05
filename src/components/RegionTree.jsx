@@ -138,7 +138,7 @@ function RegionCard({ region, selected, selectionOrder, totalSelected, disabled,
   };
 
   return (
-    <div className="relic-btn-outer">
+    <div className="region-btn-outer">
       <div
         ref={wrapperRef}
         className="region-card-wrapper"
@@ -147,7 +147,7 @@ function RegionCard({ region, selected, selectionOrder, totalSelected, disabled,
         onMouseLeave={onHideContrib}
       >
         <div
-          className={`relic-btn${selected ? ' selected' : ''}${disabled ? ' mastery-locked' : ''}`}
+          className={`region-btn${selected ? ' selected' : ''}${disabled ? ' mastery-locked' : ''}`}
           style={{ width: '100%' }}
           onClick={onClick}
         >
@@ -171,6 +171,13 @@ function RegionCard({ region, selected, selectionOrder, totalSelected, disabled,
               )}
             </span>
           )}
+          <button
+            className={`relic-cog region-cog ${hasCustomWeights ? 'cog-active' : ''}`}
+            onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : region.name); }}
+            title="Adjust region weights"
+          >
+            ⚙️
+          </button>
         </div>
 
         {showSettings && (
@@ -182,14 +189,6 @@ function RegionCard({ region, selected, selectionOrder, totalSelected, disabled,
           />
         )}
       </div>
-
-      <button
-        className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
-        onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : region.name); }}
-        title="Adjust region weights"
-      >
-        ⚙️
-      </button>
     </div>
   );
 }
@@ -371,7 +370,7 @@ export default function RegionTree({ selectedRegions, onSelectRegion, onReorderR
             <span>Universal</span>
             <span className="tier-chosen">Always unlocked</span>
           </div>
-          <div className="relic-row">
+          <div className="region-row">
             {UNIVERSAL_REGIONS.map(region => (
               <RegionCard
                 key={region.name}
