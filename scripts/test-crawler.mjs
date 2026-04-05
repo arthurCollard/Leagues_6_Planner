@@ -44,14 +44,17 @@ function stripTags(html) {
 
 function parseTable(html) {
   const headers = [];
-  // Find the first <tr> that contains <th> elements (may not be the first row)
   const allRows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)];
   const headerRow = allRows.find(r => /<th/i.test(r[1]));
   if (headerRow) {
-    const thRe = /<th[^>]*>([\s\S]*?)<\/th>/gi;
+    const thRe = /<th([^>]*)>([\s\S]*?)<\/th>/gi;
     let m;
-    while ((m = thRe.exec(headerRow[1])) !== null)
-      headers.push(m[1].replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim());
+    while ((m = thRe.exec(headerRow[1])) !== null) {
+      const colspan = parseInt(m[1].match(/colspan="?(\d+)"?/i)?.[1] ?? '1');
+      const text = m[2].replace(/<br\s*\/?>/gi, ' ').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      headers.push(text);
+      for (let c = 1; c < colspan; c++) headers.push('');
+    }
   }
   const rows = [];
   const trRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
@@ -67,12 +70,23 @@ function parseTable(html) {
     if (!cells.length) continue;
     if (headers.length) {
       const row = {};
-      headers.forEach((h, i) => { row[h || `col${i}`] = cells[i] ?? ''; });
+      headers.forEach((h, i) => { row[h || `_col${i}`] = cells[i] ?? ''; });
       rows.push(row);
     } else {
       rows.push(cells);
     }
   }
+
+  // Merge colspan-expanded Item columns: image cell (stripped to empty) + name cell
+  const itemIdx = headers.indexOf('Item');
+  if (itemIdx !== -1 && headers[itemIdx + 1] === '') {
+    const nameKey = `_col${itemIdx + 1}`;
+    if (rows.every(r => !r['Item']) && rows.some(r => r[nameKey])) {
+      rows.forEach(r => { r['Item'] = r[nameKey] ?? ''; delete r[nameKey]; });
+      headers.splice(itemIdx + 1, 1);
+    }
+  }
+
   return { headers, rows };
 }
 
@@ -118,7 +132,9 @@ for (let i = 0; i < TEST_SHOPS.length; i++) {
   if (result.ok) {
     const itemCount = result.stockTables.reduce((n, t) => n + t.stock.length, 0);
     const cols = result.stockTables[0]?.columns.join(', ');
-    console.log(`PASS — ${itemCount} item(s) | columns: ${cols}`);
+    const first = result.stockTables[0]?.stock[0];
+    const sample = first ? ` | first: "${first['Item']}" stock=${first['Number in stock']} price=${first['Price sold at']}` : '';
+    console.log(`PASS — ${itemCount} item(s) | cols: ${cols}${sample}`);
     passed++;
   } else {
     console.log(`FAIL — ${result.reason}`);

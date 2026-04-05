@@ -1,0 +1,257 @@
+{
+  "scrapedAt": "2026-04-05T21:45:23.832Z",
+  "regions": {
+    "Wilderness": {
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Wilderness",
+      "locations": [
+        {
+          "location": "Bandit Camp (Wilderness)",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Bandit_Camp_(Wilderness)",
+          "shops": [
+            {
+              "name": "Bandit Bargains",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Bandit_Bargains",
+              "description": "Bandit Bargains is a general store in the Bandit Camp, owned by the Bandit shopkeeper. Like most general stores in the Kharidian Desert, it sells desert survival equipment. However, unlike usual general stores, you may not sell any tradeable item to this store. The owner will not attack if a player ",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Waterskin(4)",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "30",
+                      "Price bought at": "21",
+                      "GE price": "136"
+                    },
+                    {
+                      "Item": "Waterskin(0)",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "15",
+                      "Price bought at": "10",
+                      "GE price": "20"
+                    },
+                    {
+                      "Item": "Jug of water",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "11"
+                    },
+                    {
+                      "Item": "Bowl of water",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "65"
+                    },
+                    {
+                      "Item": "Bucket of water",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "38"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "8",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "140",
+                      "Price bought at": "98",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Bowl",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "15"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "15",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "500",
+                      "Price bought at": "350",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Desert boots",
+                      "Number in stock": "5",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "20",
+                      "Price bought at": "14",
+                      "GE price": "313"
+                    },
+                    {
+                      "Item": "Desert shirt",
+                      "Number in stock": "5",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "40",
+                      "Price bought at": "28",
+                      "GE price": "340"
+                    },
+                    {
+                      "Item": "Desert robe",
+                      "Number in stock": "5",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "40",
+                      "Price bought at": "28",
+                      "GE price": "353"
+                    },
+                    {
+                      "Item": "Knife",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "79"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Bandit Duty Free",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Bandit_Duty_Free",
+              "description": "Bandit Duty Free, owned by Noterazzo, is a general store located in the Wilderness Bandit Camp. It offers some of the best prices among general stores, initially buying items at their high alchemy value (60% of the base value) while most others buy at low alchemy value (40%).",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot",
+                      "Number in stock": "5",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "5",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "126",
+                      "Price bought at": "84",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Tinderbox",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93"
+                    },
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Bronze pickaxe",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "97"
+                    },
+                    {
+                      "Item": "Bronze axe",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "14",
+                      "Price bought at": "9",
+                      "GE price": "61"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Tony's Pizza Bases",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Tony's_Pizza_Bases",
+              "description": "Tony's Pizza Bases is a shop owned by Fat Tony that sells pizza bases for 4 coins each stocking them 30 at a time. The shop is located in the Wilderness Bandit Camp. Players should be careful as the shop is in the Wilderness and they risk getting attacked by PKers and Bandits.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pizza base",
+                      "Number in stock": "30",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "115"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1337 @@
+{
+  "scrapedAt": "2026-04-05T21:45:11.923Z",
+  "regions": {
+    "Tirannwn": {
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Tirannwn",
+      "locations": [
+        {
+          "location": "Prifddinas",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas",
+          "shops": [
+            {
+              "name": "Amlodd's Magical Supplies",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Amlodd's_Magical_Supplies",
+              "description": "Amlodd's Magical Supplies is a rune shop run by Efa on the north-west side of Prifddinas. It is one of few shops to stock cosmic runes, and the only shop to stock more than 30.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Air rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Water rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Earth rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Fire rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Mind rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Body rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "4"
+                    },
+                    {
+                      "Item": "Chaos rune",
+                      "Number in stock": "250",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "90",
+                      "Price bought at": "49",
+                      "GE price": "106"
+                    },
+                    {
+                      "Item": "Nature rune",
+                      "Number in stock": "250",
+                      "Restock time": "18s (30t)",
+                      "Price sold at": "180",
+                      "Price bought at": "99",
+                      "GE price": "106"
+                    },
+                    {
+                      "Item": "Cosmic rune",
+                      "Number in stock": "250",
+                      "Restock time": "18s (30t)",
+                      "Price sold at": "50",
+                      "Price bought at": "27",
+                      "GE price": "97"
+                    },
+                    {
+                      "Item": "Law rune",
+                      "Number in stock": "250",
+                      "Restock time": "18s (30t)",
+                      "Price sold at": "240",
+                      "Price bought at": "132",
+                      "GE price": "126"
+                    },
+                    {
+                      "Item": "Death rune",
+                      "Number in stock": "250",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "180",
+                      "Price bought at": "99",
+                      "GE price": "184"
+                    },
+                    {
+                      "Item": "Blood rune",
+                      "Number in stock": "250",
+                      "Restock time": "18s (30t)",
+                      "Price sold at": "400",
+                      "Price bought at": "220",
+                      "GE price": "286"
+                    },
+                    {
+                      "Item": "Fire rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "236",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Water rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "236",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Air rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "236",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Earth rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "236",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Mind rune pack",
+                      "Number in stock": "40",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "330",
+                      "Price bought at": "181",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Chaos rune pack",
+                      "Number in stock": "35",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "9,950",
+                      "Price bought at": "5,472",
+                      "GE price": "Not sold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hefin Inn",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Hefin_Inn",
+              "description": "The Hefin Inn is a bar and an inn found on the north side of Prifddinas. Beer (\"Just a beer\"), Cider (\"Something a bit fruity\"), Stew (\"Something to eat\") and Elven dawn (\"Some kind of local specialty\") are all purchasable from Eira.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Price sold at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Beer",
+                      "Price sold at": "2",
+                      "GE price": "69"
+                    },
+                    {
+                      "Item": "Cider",
+                      "Price sold at": "2",
+                      "GE price": "105"
+                    },
+                    {
+                      "Item": "Stew",
+                      "Price sold at": "20",
+                      "GE price": "88"
+                    },
+                    {
+                      "Item": "Elven dawn",
+                      "Price sold at": "6",
+                      "GE price": "335"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Iorwerth's Arms",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Iorwerth's_Arms",
+              "description": "Iorwerth's Arms is a weapons shop run by Celyn on the south side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Adamant dagger",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1,200",
+                      "Price bought at": "200",
+                      "GE price": "271"
+                    },
+                    {
+                      "Item": "Rune dagger",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "12,000",
+                      "Price bought at": "2,000",
+                      "GE price": "4,471"
+                    },
+                    {
+                      "Item": "Dragon dagger",
+                      "Number in stock": "2",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "45,000",
+                      "Price bought at": "7,500",
+                      "GE price": "17,092"
+                    },
+                    {
+                      "Item": "Adamant scimitar",
+                      "Number in stock": "2",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "3,840",
+                      "Price bought at": "640",
+                      "GE price": "1,661"
+                    },
+                    {
+                      "Item": "Rune scimitar",
+                      "Number in stock": "1",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "38,400",
+                      "Price bought at": "6,400",
+                      "GE price": "14,931"
+                    },
+                    {
+                      "Item": "Adamant halberd",
+                      "Number in stock": "7",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "9,600",
+                      "Price bought at": "1,600",
+                      "GE price": "3,359"
+                    },
+                    {
+                      "Item": "Rune halberd",
+                      "Number in stock": "7",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "96,000",
+                      "Price bought at": "16,000",
+                      "GE price": "37,738"
+                    },
+                    {
+                      "Item": "Dragon halberd",
+                      "Number in stock": "5",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "375,000",
+                      "Price bought at": "62,500",
+                      "GE price": "149,270"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas Foodstuffs",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas_Foodstuffs",
+              "description": "Prifddinas Foodstuffs is a food shop run by Derwen on the north-east side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot of flour",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "84"
+                    },
+                    {
+                      "Item": "Bucket of milk",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "29"
+                    },
+                    {
+                      "Item": "Cod",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "26"
+                    },
+                    {
+                      "Item": "Trout",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "31"
+                    },
+                    {
+                      "Item": "Bass",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "40",
+                      "Price bought at": "28",
+                      "GE price": "65"
+                    },
+                    {
+                      "Item": "Stew",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "20",
+                      "Price bought at": "14",
+                      "GE price": "88"
+                    },
+                    {
+                      "Item": "Bread",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "12",
+                      "Price bought at": "8",
+                      "GE price": "79"
+                    },
+                    {
+                      "Item": "Cheese",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "45"
+                    },
+                    {
+                      "Item": "Potato",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "16"
+                    },
+                    {
+                      "Item": "Onion",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "13"
+                    },
+                    {
+                      "Item": "Tomato",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "14"
+                    },
+                    {
+                      "Item": "Cabbage",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7"
+                    },
+                    {
+                      "Item": "Banana",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "49"
+                    },
+                    {
+                      "Item": "Redberries",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "115"
+                    },
+                    {
+                      "Item": "Raw beef",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "41"
+                    },
+                    {
+                      "Item": "Raw chicken",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "24"
+                    },
+                    {
+                      "Item": "Chocolate bar",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "39"
+                    },
+                    {
+                      "Item": "Cake",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "50",
+                      "Price bought at": "35",
+                      "GE price": "278"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas Gem Stall",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas_Gem_Stall",
+              "description": "Prifddinas Gem Stall is a Gem stall run by Glenda on the north-east side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Sapphire",
+                      "Number in stock": "2",
+                      "Restock time": "2h 30m (15,000t)",
+                      "Price sold at": "250",
+                      "Price bought at": "200",
+                      "GE price": "288"
+                    },
+                    {
+                      "Item": "Emerald",
+                      "Number in stock": "1",
+                      "Restock time": "5h 50m (35,000t)",
+                      "Price sold at": "500",
+                      "Price bought at": "400",
+                      "GE price": "479"
+                    },
+                    {
+                      "Item": "Ruby",
+                      "Number in stock": "1",
+                      "Restock time": "10h (60,000t)",
+                      "Price sold at": "1,000",
+                      "Price bought at": "800",
+                      "GE price": "938"
+                    },
+                    {
+                      "Item": "Diamond",
+                      "Number in stock": "0",
+                      "Restock time": "40m (4,000t)",
+                      "Price sold at": "2,000",
+                      "Price bought at": "1,600",
+                      "GE price": "1,754"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas General Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas_General_Store",
+              "description": "The Prifddinas General Store is a general store run by Gwallter on the south-east side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Bowl",
+                      "Number in stock": "2",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "5",
+                      "Price bought at": "1",
+                      "GE price": "15"
+                    },
+                    {
+                      "Item": "Cake tin",
+                      "Number in stock": "2",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "76"
+                    },
+                    {
+                      "Item": "Vial",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Tinderbox",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93"
+                    },
+                    {
+                      "Item": "Spade",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "122"
+                    },
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Knife",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "7",
+                      "Price bought at": "2",
+                      "GE price": "79"
+                    },
+                    {
+                      "Item": "Empty vial pack",
+                      "Number in stock": "100",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "260",
+                      "Price bought at": "80",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Papyrus",
+                      "Number in stock": "50",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "114"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "5",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "182",
+                      "Price bought at": "56",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "15",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "650",
+                      "Price bought at": "200",
+                      "GE price": "Not sold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas Herbal Supplies",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas_Herbal_Supplies",
+              "description": "The Prifddinas Herbal Supplies is a herblore shop run by Llio found on the north-east side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pestle and mortar",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "112"
+                    },
+                    {
+                      "Item": "Vial",
+                      "Number in stock": "100",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Vial of water",
+                      "Number in stock": "100",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Eye of newt",
+                      "Number in stock": "50",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "4"
+                    },
+                    {
+                      "Item": "Empty vial pack",
+                      "Number in stock": "100",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "200",
+                      "Price bought at": "140",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Water-filled vial pack",
+                      "Number in stock": "100",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "201",
+                      "Price bought at": "140",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Eye of newt pack",
+                      "Number in stock": "50",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "300",
+                      "Price bought at": "210",
+                      "GE price": "Not sold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas Silver Stall",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas_Silver_Stall",
+              "description": "Prifddinas Silver Stall is a Silver stall run by Osian on the north-east side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Unstrung symbol",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "200",
+                      "Price bought at": "140",
+                      "GE price": "82"
+                    },
+                    {
+                      "Item": "Silver ore",
+                      "Number in stock": "1",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "75",
+                      "Price bought at": "52",
+                      "GE price": "62"
+                    },
+                    {
+                      "Item": "Silver bar",
+                      "Number in stock": "1",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "150",
+                      "Price bought at": "105",
+                      "GE price": "90"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas Spice Stall",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas_Spice_Stall",
+              "description": "Prifddinas Spice Stall is a Spice stall run by Caerwyn on the north-east side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Spice",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "230",
+                      "Price bought at": "161",
+                      "GE price": "59"
+                    },
+                    {
+                      "Item": "Knife",
+                      "Number in stock": "1",
+                      "Restock time": "1.2s (2t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "79"
+                    },
+                    {
+                      "Item": "Garlic",
+                      "Number in stock": "2",
+                      "Restock time": "3s (5t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "14"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Prifddinas' Seamstress",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Prifddinas'_Seamstress",
+              "description": "Prifddinas' Seamstress is a crafting shop run by Nia on the west side of Prifddinas.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Thread",
+                      "Number in stock": "100",
+                      "Restock time": "3s (5t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7"
+                    },
+                    {
+                      "Item": "Needle",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "44"
+                    },
+                    {
+                      "Item": "Ball of wool",
+                      "Number in stock": "20",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "43"
+                    },
+                    {
+                      "Item": "Silk",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "39",
+                      "Price bought at": "12",
+                      "GE price": "13"
+                    },
+                    {
+                      "Item": "Fur",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "267"
+                    },
+                    {
+                      "Item": "Bear fur",
+                      "Number in stock": "3",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "45"
+                    },
+                    {
+                      "Item": "Grey wolf fur",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "65",
+                      "Price bought at": "20",
+                      "GE price": "15"
+                    },
+                    {
+                      "Item": "Polar kebbit fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "3,044"
+                    },
+                    {
+                      "Item": "Common kebbit fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "15",
+                      "Price bought at": "4",
+                      "GE price": "1,060"
+                    },
+                    {
+                      "Item": "Feldip weasel fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "18",
+                      "Price bought at": "5",
+                      "GE price": "60"
+                    },
+                    {
+                      "Item": "Desert devil fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "22",
+                      "Price bought at": "6",
+                      "GE price": "491"
+                    },
+                    {
+                      "Item": "Tatty larupia fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "78",
+                      "Price bought at": "24",
+                      "GE price": "26"
+                    },
+                    {
+                      "Item": "Larupia fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "104",
+                      "Price bought at": "32",
+                      "GE price": "346"
+                    },
+                    {
+                      "Item": "Tatty graahk fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "117",
+                      "Price bought at": "36",
+                      "GE price": "55"
+                    },
+                    {
+                      "Item": "Graahk fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "156",
+                      "Price bought at": "48",
+                      "GE price": "511"
+                    },
+                    {
+                      "Item": "Tatty kyatt fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "156",
+                      "Price bought at": "48",
+                      "GE price": "53"
+                    },
+                    {
+                      "Item": "Kyatt fur",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "208",
+                      "Price bought at": "64",
+                      "GE price": "345"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Lletya",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Lletya",
+          "shops": [
+            {
+              "name": "Lletya Archery Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Lletya_Archery_Shop",
+              "description": "Lletya Archery Shop is a store run by Dalldav in Lletya that sells bows and arrows.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Iron arrow",
+                      "Number in stock": "2000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Steel arrow",
+                      "Number in stock": "500",
+                      "Restock time": "24s (40t)",
+                      "Price sold at": "15",
+                      "Price bought at": "4",
+                      "GE price": "11"
+                    },
+                    {
+                      "Item": "Mithril arrow",
+                      "Number in stock": "500",
+                      "Restock time": "36s (60t)",
+                      "Price sold at": "41",
+                      "Price bought at": "12",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Adamant arrow",
+                      "Number in stock": "450",
+                      "Restock time": "1m 12s (120t)",
+                      "Price sold at": "104",
+                      "Price bought at": "32",
+                      "GE price": "37"
+                    },
+                    {
+                      "Item": "Rune arrow",
+                      "Number in stock": "400",
+                      "Restock time": "1m 18s (130t)",
+                      "Price sold at": "520",
+                      "Price bought at": "160",
+                      "GE price": "73"
+                    },
+                    {
+                      "Item": "Bronze bolts",
+                      "Number in stock": "1500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Oak shortbow",
+                      "Number in stock": "5",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "130",
+                      "Price bought at": "40",
+                      "GE price": "36"
+                    },
+                    {
+                      "Item": "Oak longbow",
+                      "Number in stock": "5",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "208",
+                      "Price bought at": "64",
+                      "GE price": "39"
+                    },
+                    {
+                      "Item": "Crossbow",
+                      "Number in stock": "5",
+                      "Restock time": "4m (400t)",
+                      "Price sold at": "91",
+                      "Price bought at": "28",
+                      "GE price": "317"
+                    },
+                    {
+                      "Item": "Willow shortbow",
+                      "Number in stock": "5",
+                      "Restock time": "42s (70t)",
+                      "Price sold at": "260",
+                      "Price bought at": "80",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Willow longbow",
+                      "Number in stock": "5",
+                      "Restock time": "42s (70t)",
+                      "Price sold at": "416",
+                      "Price bought at": "128",
+                      "GE price": "147"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lletya Food Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Lletya_Food_Store",
+              "description": "The Lletya Food Store is located on the second level of the buildings in Lletya. The shop owner is called Gethin. The store is stocked with bread, cooked lobsters, jugs of wine, cheese, and cakes.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bread",
+                      "Number in stock": "10",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "15",
+                      "Price bought at": "4",
+                      "GE price": "79"
+                    },
+                    {
+                      "Item": "Lobster",
+                      "Number in stock": "15",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "91",
+                      "Price bought at": "28",
+                      "GE price": "132"
+                    },
+                    {
+                      "Item": "Jug of wine",
+                      "Number in stock": "3",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Cheese",
+                      "Number in stock": "10",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "5",
+                      "Price bought at": "1",
+                      "GE price": "45"
+                    },
+                    {
+                      "Item": "Cake",
+                      "Number in stock": "5",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "65",
+                      "Price bought at": "20",
+                      "GE price": "278"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lletya General Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Lletya_General_Store",
+              "description": "Lletya General Store is a store run by Eudav, an elven proprietor in Lletya, which sells a few commonly used, inexpensive items which are typically found in every General store. The Mourning's End Part I quest needs to be started to in order to access Lletya.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "5",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "182",
+                      "Price bought at": "56",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Shears",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "75"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "10",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "650",
+                      "Price bought at": "200",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Tinderbox",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93"
+                    },
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Spade",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "122"
+                    },
+                    {
+                      "Item": "Knife",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "7",
+                      "Price bought at": "2",
+                      "GE price": "79"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lletya Seamstress",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Lletya_Seamstress",
+              "description": "Lletya Seamstress is a store run by Oronwen, an elven proprietor in Lletya, that sells crafting items including the main six colours of dyes pre-made. Partial completion of Mourning's End Part I is required to access Lletya.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Thread",
+                      "Number in stock": "8",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7"
+                    },
+                    {
+                      "Item": "Needle",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "44"
+                    },
+                    {
+                      "Item": "Ball of wool",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "43"
+                    },
+                    {
+                      "Item": "Red dye",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "2",
+                      "GE price": "520"
+                    },
+                    {
+                      "Item": "Yellow dye",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "2",
+                      "GE price": "173"
+                    },
+                    {
+                      "Item": "Blue dye",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "2",
+                      "GE price": "246"
+                    },
+                    {
+                      "Item": "Orange dye",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "2",
+                      "GE price": "755"
+                    },
+                    {
+                      "Item": "Green dye",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "2",
+                      "GE price": "601"
+                    },
+                    {
+                      "Item": "Purple dye",
+                      "Number in stock": "10",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "2",
+                      "GE price": "398"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

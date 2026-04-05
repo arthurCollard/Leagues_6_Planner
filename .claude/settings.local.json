@@ -35,7 +35,20 @@
       "Bash(curl -s \"https://oldschool.runescape.wiki/api.php?action=query&redirects=1&prop=revisions&rvslots=main&rvprop=content&format=json&titles=Blue_moon_chestplate\")",
       "Bash(curl -s \"https://oldschool.runescape.wiki/api.php?action=query&redirects=1&prop=revisions&rvslots=main&rvprop=content&format=json&titles=Blue_moon_tassets\")",
       "Bash(node scripts/test-crawler.mjs)",
-      "Bash(node -e ':*)"
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const d = JSON.parse\\(require\\('fs'\\).readFileSync\\('scripts/varlamore-shops.json','utf8'\\)\\); d.locations.forEach\\(l => { console.log\\(l.location, '—', l.shops.length, 'shops'\\); l.shops.forEach\\(s => { const t = s.stockTables[0]; console.log\\('  ', s.name, '—', t?.stock?.length, 'items, cols:', t?.columns?.join\\(' | '\\)\\); }\\); }\\);\")",
+      "Bash(node -e \"const d = JSON.parse\\(require\\('fs'\\).readFileSync\\('scripts/varlamore-shops.json','utf8'\\)\\); const s = d.locations[0].shops.find\\(s => s.name === \\\\\"The Flaming Arrow\\\\\"\\); console.log\\(JSON.stringify\\(s.stockTables[0].stock.slice\\(0,3\\), null, 2\\)\\);\")",
+      "Bash(node -e \"const r = require\\('./src/data/region/regions.js'\\); const all = [...r.UNIVERSAL_REGIONS, ...r.UNLOCKABLE_REGIONS]; console.log\\(all.map\\(r => r.name\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(node scripts/crawler.mjs scripts/all-shops.json)",
+      "Bash(node scripts/validate-crawler.mjs)",
+      "Bash(node scripts/crawler.mjs --region Asgarnia)",
+      "Bash(node -e \"const d = JSON.parse\\(require\\('fs'\\).readFileSync\\('scripts/asgarnia-shops.json'\\)\\); const portSarim = d.regions.Asgarnia.locations.find\\(l => l.location === 'Port Sarim'\\); portSarim.shops.forEach\\(s => console.log\\(s.name + ' — ' + s.stockTables[0].stock.length + ' items'\\)\\);\")",
+      "Bash(node -e \"const d = JSON.parse\\(require\\('fs'\\).readFileSync\\('scripts/asgarnia-shops.json'\\)\\); Object.values\\(d.regions\\)[0].locations.forEach\\(l => { console.log\\('\\\\n' + l.location + ':'\\); l.shops.forEach\\(s => console.log\\('  ' + s.name + ' \\(' + s.stockTables[0].stock.length + ' items\\)'\\)\\); }\\);\")",
+      "Bash(node -e \"const d = JSON.parse\\(require\\('fs'\\).readFileSync\\('scripts/all-shops.json'\\)\\); console.log\\(Object.keys\\(d.regions\\)\\);\")",
+      "Bash(node scripts/crawler.mjs --region Tirannwn)",
+      "Bash(node scripts/crawler.mjs --region Wilderness)",
+      "Bash(echo \"Exit: $?\")",
+      "Read(//tmp/**)"
     ]
   }
 }

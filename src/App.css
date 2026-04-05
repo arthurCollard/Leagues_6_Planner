@@ -1,6 +1,20 @@
 /* src/App.css - Demonic Pacts League Wiki Theme */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Global scrollbars ───────────────────────────────────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 162, 130, 0.35) transparent;
+}
+*::-webkit-scrollbar { width: 5px; height: 5px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(184, 162, 130, 0.35);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb:hover { background: rgba(184, 162, 130, 0.6); }
+*::-webkit-scrollbar-corner { background: transparent; }
+
 body {
   background: #1a1612;
   color: #d8ccb4;
@@ -274,7 +288,6 @@ body {
 .passive-chip[data-tooltip]:hover::after,
 .tier-lock-toggle[data-tooltip]:hover::after,
 .combo-pending[data-tooltip]:hover::after,
-.skill-icon[data-tooltip]:hover::after,
 .relic-btn[data-tooltip]:hover::after,
 .mastery-tier-btn[data-tooltip]:hover::after {
   content: attr(data-tooltip);
@@ -292,6 +305,7 @@ body {
   pointer-events: none;
   z-index: 10;
 }
+
 
 .combo-pending[data-tooltip]:hover::after {
   color: #ffd966;
@@ -648,6 +662,20 @@ body {
 
 .skill-name  { font-size: 0.55rem; color: #b8a282; margin-top: 0.15rem; line-height: 1.2; }
 .skill-score { font-size: 0.65rem; font-weight: 700; margin-top: 0.1rem; color: #d8ccb4; }
+
+.skill-tooltip {
+  position: fixed;
+  background: #1a1209;
+  color: #c8b896;
+  border: 1px solid #b8a282;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateX(-50%);
+}
 
 .relic-tree {
   background: #231e18;
@@ -1785,6 +1813,90 @@ body {
   align-items: start;
 }
 
+.rdm-shops {
+  display: flex;
+  gap: 0;
+  height: 100%;
+  min-height: 0;
+}
+
+.rdm-shops-sidebar {
+  width: 180px;
+  min-width: 140px;
+  flex-shrink: 0;
+  border-right: 1px solid #3a3020;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+.rdm-shops-list {
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+.rdm-shops-search {
+  margin-bottom: 0.25rem;
+  flex-shrink: 0;
+  display: flex;
+  width: 100%;
+}
+
+.rdm-shops-search .rdm-filter-input {
+  width: 100%;
+  padding-right: 1.4rem;
+}
+
+.rdm-shops-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.rdm-shops-location {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #7a6a4a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.4rem;
+}
+
+.rdm-shop-btn {
+  background: none;
+  border: none;
+  color: #c8b98a;
+  font-size: 0.72rem;
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.rdm-shop-btn:hover { background: rgba(255,255,255,0.05); }
+.rdm-shop-btn.active { background: rgba(200,185,138,0.15); color: #e8d8a0; }
+
+.rdm-shops-stock {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 0.75rem;
+  min-width: 0;
+}
+
+.rdm-shops-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e8d8a0;
+  margin-bottom: 0.5rem;
+}
+
 .rdm-weights-col {
   display: flex;
   flex-direction: column;
@@ -1945,7 +2057,8 @@ body {
 .rdm-filter-input:focus { border-color: rgba(184, 162, 130, 0.5); }
 
 .rdm-table-wrap {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
   transition: max-height 0.25s ease;
 }
 

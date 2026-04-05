@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/region/regions';
 import { SKILLS, EXTRAS } from '../data/skills';
 import regionData from '../data/region/region-data.json';
+import shopData from '../data/region/all-shops.json';
 
 const ALL_REGIONS = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
 
@@ -66,7 +67,9 @@ function getDropTable(scraped) {
 
 export default function RegionDetailModal({ regionName, customWeights = {}, onClose }) {
   const [activeTab, setActiveTab] = useState(null);
+  const [activeShop, setActiveShop] = useState(null);
   const [dropFilter, setDropFilter] = useState('');
+  const [shopSearch, setShopSearch] = useState('');
 
   if (!regionName) return null;
   const region = ALL_REGIONS.find(r => r.name === regionName);
@@ -91,11 +94,32 @@ export default function RegionDetailModal({ regionName, customWeights = {}, onCl
   const prayerUnlocks = region.prayerUnlocks || [];
   const hasSpellsPrayers = extraSpellbooks.length > 0 || extraPrayerBooks.length > 0 || prayerUnlocks.length > 0;
 
+  const regionShops = shopData.regions[regionName]?.locations ?? [];
+  const hasShops = regionShops.length > 0;
+
+  const shopQ = shopSearch.toLowerCase();
+  const filteredShopLocations = shopQ
+    ? regionShops
+        .map(loc => ({
+          ...loc,
+          shops: loc.shops.filter(shop =>
+            shop.stockTables[0]?.stock.some(row => row['Item']?.toLowerCase().includes(shopQ))
+          ),
+        }))
+        .filter(loc => loc.shops.length > 0)
+    : regionShops;
+
+  const allFilteredShops = filteredShopLocations.flatMap(l => l.shops);
+  const defaultShop = allFilteredShops[0] ?? null;
+  const currentShop = (activeShop && allFilteredShops.find(s => s.name === activeShop))
+    ?? defaultShop;
+
   const tabs = [
     pvm?.length        && { id: 'pvm',          label: 'PVM' },
     dropTable?.length  && { id: 'drops',         label: 'Drops' },
     (skillEntries.length > 0 || extraEntries.length > 0) && { id: 'weights', label: 'Bonuses' },
     hasSpellsPrayers   && { id: 'spells',        label: 'Spellbooks & Prayers' },
+    hasShops           && { id: 'shops',          label: 'Shops' },
     slayer?.length     && { id: 'slayer',        label: 'Slayer' },
     quests?.length     && { id: 'quests',        label: 'Quests' },
     activities?.length && { id: 'activities',    label: 'Activities' },
@@ -211,6 +235,73 @@ export default function RegionDetailModal({ regionName, customWeights = {}, onCl
                   ))}
                 </div>
               )}
+            </div>
+          )}
+          {currentTab === 'shops' && (
+            <div className="rdm-shops">
+              <div className="rdm-shops-sidebar">
+                <div className="rdm-filter-wrap rdm-shops-search">
+                  <input
+                    className="rdm-filter-input"
+                    type="text"
+                    placeholder="Search items…"
+                    value={shopSearch}
+                    onChange={e => { setShopSearch(e.target.value); setActiveShop(null); }}
+                  />
+                  {shopSearch && (
+                    <button className="rdm-filter-clear" onClick={() => { setShopSearch(''); setActiveShop(null); }}>✕</button>
+                  )}
+                </div>
+                <div className="rdm-shops-list">
+                  {filteredShopLocations.map(loc => (
+                    <div key={loc.location} className="rdm-shops-group">
+                      <div className="rdm-shops-location">{loc.location}</div>
+                      {loc.shops.map(shop => (
+                        <button
+                          key={shop.name}
+                          className={`rdm-shop-btn${currentShop?.name === shop.name ? ' active' : ''}`}
+                          onClick={() => setActiveShop(shop.name)}
+                        >
+                          {shop.name}
+                        </button>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rdm-shops-stock">
+                {currentShop && (
+                  <>
+                    <div className="rdm-shops-title">{currentShop.name}</div>
+                    <div className="rdm-table-wrap">
+                      <table className="rdm-drop-table">
+                        <thead>
+                          <tr><th>Item</th><th>Stock</th><th>Restock</th><th>Price</th></tr>
+                        </thead>
+                        <tbody>
+                          {currentShop.stockTables[0]?.stock.filter(row =>
+                            !shopQ || row['Item']?.toLowerCase().includes(shopQ)
+                          ).map((row, i) => {
+                            const name = row['Item'];
+                            if (!name) return null;
+                            const stock = row['Number in stock'];
+                            const restock = (row['Restock time'] || '').replace(/\s*\([\d,]+t\)/gi, '').trim();
+                            const price = row['Price sold at'];
+                            return (
+                              <tr key={i}>
+                                <td>{name}</td>
+                                <td className="rdm-rarity">{/^\d+$/.test(stock) ? stock : '–'}</td>
+                                <td className="rdm-rarity">{restock || '–'}</td>
+                                <td className="rdm-rarity">{price || '–'}</td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
           )}
           {currentTab === 'weights' && (

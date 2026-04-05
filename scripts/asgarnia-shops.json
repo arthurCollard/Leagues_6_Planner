@@ -1,0 +1,2583 @@
+{
+  "scrapedAt": "2026-04-05T21:19:06.612Z",
+  "regions": {
+    "Asgarnia": {
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Asgarnia",
+      "locations": [
+        {
+          "location": "Falador",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Falador",
+          "shops": [
+            {
+              "name": "Falador General Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Falador_General_Store",
+              "description": "The Falador General Store mainly consists of useful low level items. It is the first building on the west side when entering through the north gate. The ground floor of the general store contains the shop keeper and the shop assistant.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot",
+                      "Number in stock": "5",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "5",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "182",
+                      "Price bought at": "56",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Shears",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "75"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "3",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "15",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "650",
+                      "Price bought at": "200",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Bowl",
+                      "Number in stock": "2",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "5",
+                      "Price bought at": "1",
+                      "GE price": "15"
+                    },
+                    {
+                      "Item": "Cake tin",
+                      "Number in stock": "2",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "76"
+                    },
+                    {
+                      "Item": "Tinderbox",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93"
+                    },
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Newcomer map",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Security book",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "96"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Flynn's Mace Market",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Flynn's_Mace_Market",
+              "description": "Flynn's Mace Market is a mace shop owned by Flynn in Falador. It is located between the Falador General Store and the Hairdresser in the north-western part of the city.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bronze mace",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "18",
+                      "Price bought at": "10",
+                      "GE price": "15"
+                    },
+                    {
+                      "Item": "Iron mace",
+                      "Number in stock": "4",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "63",
+                      "Price bought at": "37",
+                      "GE price": "11"
+                    },
+                    {
+                      "Item": "Steel mace",
+                      "Number in stock": "4",
+                      "Restock time": "4m (400t)",
+                      "Price sold at": "225",
+                      "Price bought at": "135",
+                      "GE price": "24"
+                    },
+                    {
+                      "Item": "Mithril mace",
+                      "Number in stock": "3",
+                      "Restock time": "30m (3,000t)",
+                      "Price sold at": "585",
+                      "Price bought at": "351",
+                      "GE price": "133"
+                    },
+                    {
+                      "Item": "Adamant mace",
+                      "Number in stock": "2",
+                      "Restock time": "2h (12,000t)",
+                      "Price sold at": "1,440",
+                      "Price bought at": "864",
+                      "GE price": "638"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Cassie's Shield Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Cassie's_Shield_Shop",
+              "description": "Cassie's Shield Shop is a specialty shop owned by Cassie that sells shields. It is located in Falador, just west of the park and south-east of the northern gate of the city.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Wooden shield",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "20",
+                      "Price bought at": "12",
+                      "GE price": "148"
+                    },
+                    {
+                      "Item": "Bronze sq shield",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "48",
+                      "Price bought at": "28",
+                      "GE price": "18"
+                    },
+                    {
+                      "Item": "Bronze kiteshield",
+                      "Number in stock": "3",
+                      "Restock time": "3m (300t)",
+                      "Price sold at": "68",
+                      "Price bought at": "40",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Iron sq shield",
+                      "Number in stock": "2",
+                      "Restock time": "4m (400t)",
+                      "Price sold at": "168",
+                      "Price bought at": "100",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Iron kiteshield",
+                      "Number in stock": "0",
+                      "Restock time": "15m (1,500t)",
+                      "Price sold at": "238",
+                      "Price bought at": "142",
+                      "GE price": "79"
+                    },
+                    {
+                      "Item": "Steel sq shield",
+                      "Number in stock": "0",
+                      "Restock time": "15m (1,500t)",
+                      "Price sold at": "600",
+                      "Price bought at": "360",
+                      "GE price": "144"
+                    },
+                    {
+                      "Item": "Steel kiteshield",
+                      "Number in stock": "0",
+                      "Restock time": "15m (1,500t)",
+                      "Price sold at": "850",
+                      "Price bought at": "510",
+                      "GE price": "298"
+                    },
+                    {
+                      "Item": "Mithril sq shield",
+                      "Number in stock": "0",
+                      "Restock time": "15m (1,500t)",
+                      "Price sold at": "1,560",
+                      "Price bought at": "936",
+                      "GE price": "663"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Herquin's Gems",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Herquin's_Gems",
+              "description": "Herquin's Gems is located on the west side of Falador, just south of the west bank. It is owned by Herquin.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Uncut sapphire",
+                      "Number in stock": "1",
+                      "Restock time": "4h 10m (25,000t)",
+                      "Price sold at": "25",
+                      "Price bought at": "17",
+                      "GE price": "295"
+                    },
+                    {
+                      "Item": "Uncut emerald",
+                      "Number in stock": "0",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "50",
+                      "Price bought at": "35",
+                      "GE price": "531"
+                    },
+                    {
+                      "Item": "Uncut ruby",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "100",
+                      "Price bought at": "70",
+                      "GE price": "1,210"
+                    },
+                    {
+                      "Item": "Uncut diamond",
+                      "Number in stock": "0",
+                      "Restock time": "40m (4,000t)",
+                      "Price sold at": "200",
+                      "Price bought at": "140",
+                      "GE price": "2,732"
+                    },
+                    {
+                      "Item": "Sapphire",
+                      "Number in stock": "1",
+                      "Restock time": "2h 30m (15,000t)",
+                      "Price sold at": "250",
+                      "Price bought at": "175",
+                      "GE price": "288"
+                    },
+                    {
+                      "Item": "Emerald",
+                      "Number in stock": "0",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "500",
+                      "Price bought at": "350",
+                      "GE price": "479"
+                    },
+                    {
+                      "Item": "Ruby",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "1,000",
+                      "Price bought at": "700",
+                      "GE price": "938"
+                    },
+                    {
+                      "Item": "Diamond",
+                      "Number in stock": "0",
+                      "Restock time": "40m (4,000t)",
+                      "Price sold at": "2,000",
+                      "Price bought at": "1,400",
+                      "GE price": "1,754"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Wayne's Chains",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Wayne's_Chains!_-_Chainmail_specialist",
+              "description": "Wayne's Chains is a shop owned by Wayne located in southern Falador. It is the only shop that specialises exclusively in chainbodies.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bronze chainbody",
+                      "Number in stock": "3",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "60",
+                      "Price bought at": "39",
+                      "GE price": "18"
+                    },
+                    {
+                      "Item": "Iron chainbody",
+                      "Number in stock": "2",
+                      "Restock time": "3m (300t)",
+                      "Price sold at": "210",
+                      "Price bought at": "136",
+                      "GE price": "68"
+                    },
+                    {
+                      "Item": "Steel chainbody",
+                      "Number in stock": "1",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "750",
+                      "Price bought at": "487",
+                      "GE price": "234"
+                    },
+                    {
+                      "Item": "Black chainbody",
+                      "Number in stock": "1",
+                      "Restock time": "25m (2,500t)",
+                      "Price sold at": "1,440",
+                      "Price bought at": "936",
+                      "GE price": "2,361"
+                    },
+                    {
+                      "Item": "Mithril chainbody",
+                      "Number in stock": "1",
+                      "Restock time": "35m (3,500t)",
+                      "Price sold at": "1,950",
+                      "Price bought at": "1,267",
+                      "GE price": "951"
+                    },
+                    {
+                      "Item": "Adamant chainbody",
+                      "Number in stock": "1",
+                      "Restock time": "1h 30m (9,000t)",
+                      "Price sold at": "4,800",
+                      "Price bought at": "3,120",
+                      "GE price": "2,599"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Port Sarim",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Port_Sarim",
+          "shops": [
+            {
+              "name": "Betty's Magic Emporium",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Betty's_Magic_Emporium",
+              "description": "Betty's Magic Emporium is located in Port Sarim and owned by Betty. Free players must visit this store to buy an eye of newt for the Witch's Potion quest.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Fire rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Water rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Air rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Earth rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Mind rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Body rune",
+                      "Number in stock": "5000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "4"
+                    },
+                    {
+                      "Item": "Chaos rune",
+                      "Number in stock": "250",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "90",
+                      "Price bought at": "54",
+                      "GE price": "106"
+                    },
+                    {
+                      "Item": "Death rune",
+                      "Number in stock": "250",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "180",
+                      "Price bought at": "108",
+                      "GE price": "184"
+                    },
+                    {
+                      "Item": "Fire rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "258",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Water rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "258",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Air rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "258",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Earth rune pack",
+                      "Number in stock": "80",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "430",
+                      "Price bought at": "258",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Mind rune pack",
+                      "Number in stock": "40",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "330",
+                      "Price bought at": "198",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Chaos rune pack",
+                      "Number in stock": "35",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "9,950",
+                      "Price bought at": "5,970",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Eye of newt",
+                      "Number in stock": "300",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "4"
+                    },
+                    {
+                      "Item": "Eye of newt pack",
+                      "Number in stock": "60",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "300",
+                      "Price bought at": "180",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Blue wizard hat",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "289"
+                    },
+                    {
+                      "Item": "Wizard hat",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "265"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Brian's Battleaxe Bazaar",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Brian's_Battleaxe_Bazaar",
+              "description": "Brian's Battleaxe Bazaar is located in Port Sarim and owned by Brian. It is one of the two battleaxe stores in RuneScape - the other is located in Lumbridge. The shop stocks battleaxes from bronze to adamant.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bronze battleaxe",
+                      "Number in stock": "4",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "52",
+                      "Price bought at": "28",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Iron battleaxe",
+                      "Number in stock": "3",
+                      "Restock time": "3m (300t)",
+                      "Price sold at": "182",
+                      "Price bought at": "100",
+                      "GE price": "53"
+                    },
+                    {
+                      "Item": "Steel battleaxe",
+                      "Number in stock": "2",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "650",
+                      "Price bought at": "357",
+                      "GE price": "174"
+                    },
+                    {
+                      "Item": "Black battleaxe",
+                      "Number in stock": "1",
+                      "Restock time": "7m (700t)",
+                      "Price sold at": "1,248",
+                      "Price bought at": "686",
+                      "GE price": "468"
+                    },
+                    {
+                      "Item": "Mithril battleaxe",
+                      "Number in stock": "1",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "1,690",
+                      "Price bought at": "929",
+                      "GE price": "957"
+                    },
+                    {
+                      "Item": "Adamant battleaxe",
+                      "Number in stock": "1",
+                      "Restock time": "2h 30m (15,000t)",
+                      "Price sold at": "4,160",
+                      "Price bought at": "2,288",
+                      "GE price": "2,436"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Grum's Gold Exchange",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Grum's_Gold_Exchange",
+              "description": "Grum's Gold Exchange is located in Port Sarim and operated by Grum. The store buys and sells many kinds of unenchanted jewellery, though it does not deal in dragonstone, onyx, or zenyte jewellery or bracelets. It is one of only two jewellery stores in RuneScape (the other being Conara's Jewels), and",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Gold ring",
+                      "Number in stock": "0",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "350",
+                      "Price bought at": "245",
+                      "GE price": "142"
+                    },
+                    {
+                      "Item": "Sapphire ring",
+                      "Number in stock": "0",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "900",
+                      "Price bought at": "630",
+                      "GE price": "468"
+                    },
+                    {
+                      "Item": "Emerald ring",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "1,275",
+                      "Price bought at": "892",
+                      "GE price": "650"
+                    },
+                    {
+                      "Item": "Ruby ring",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "2,025",
+                      "Price bought at": "1,417",
+                      "GE price": "1,047"
+                    },
+                    {
+                      "Item": "Diamond ring",
+                      "Number in stock": "0",
+                      "Restock time": "30m (3,000t)",
+                      "Price sold at": "3,525",
+                      "Price bought at": "2,467",
+                      "GE price": "1,904"
+                    },
+                    {
+                      "Item": "Gold necklace",
+                      "Number in stock": "0",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "450",
+                      "Price bought at": "315",
+                      "GE price": "138"
+                    },
+                    {
+                      "Item": "Sapphire necklace",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "1,050",
+                      "Price bought at": "735",
+                      "GE price": "470"
+                    },
+                    {
+                      "Item": "Emerald necklace",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "1,425",
+                      "Price bought at": "997",
+                      "GE price": "671"
+                    },
+                    {
+                      "Item": "Ruby necklace",
+                      "Number in stock": "0",
+                      "Restock time": "30m (3,000t)",
+                      "Price sold at": "2,175",
+                      "Price bought at": "1,522",
+                      "GE price": "1,148"
+                    },
+                    {
+                      "Item": "Diamond necklace",
+                      "Number in stock": "0",
+                      "Restock time": "30m (3,000t)",
+                      "Price sold at": "3,675",
+                      "Price bought at": "2,572",
+                      "GE price": "2,005"
+                    },
+                    {
+                      "Item": "Gold amulet",
+                      "Number in stock": "0",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "350",
+                      "Price bought at": "245",
+                      "GE price": "141"
+                    },
+                    {
+                      "Item": "Sapphire amulet",
+                      "Number in stock": "0",
+                      "Restock time": "20m (2,000t)",
+                      "Price sold at": "900",
+                      "Price bought at": "630",
+                      "GE price": "458"
+                    },
+                    {
+                      "Item": "Emerald amulet",
+                      "Number in stock": "0",
+                      "Restock time": "30m (3,000t)",
+                      "Price sold at": "1,275",
+                      "Price bought at": "892",
+                      "GE price": "702"
+                    },
+                    {
+                      "Item": "Ruby amulet",
+                      "Number in stock": "0",
+                      "Restock time": "40m (4,000t)",
+                      "Price sold at": "2,025",
+                      "Price bought at": "1,417",
+                      "GE price": "1,166"
+                    },
+                    {
+                      "Item": "Diamond amulet",
+                      "Number in stock": "0",
+                      "Restock time": "50m (5,000t)",
+                      "Price sold at": "3,525",
+                      "Price bought at": "2,467",
+                      "GE price": "2,072"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sarah's Farming Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Sarah's_Farming_shop",
+              "description": "Sarah's Farming shop is a Farming shop at Sarah's farm south of Falador that sells various Farming items and buys certain crops.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Rake",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "148"
+                    },
+                    {
+                      "Item": "Seed dibber",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "133"
+                    },
+                    {
+                      "Item": "Secateurs",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "194"
+                    },
+                    {
+                      "Item": "Spade",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "122"
+                    },
+                    {
+                      "Item": "Gardening trowel",
+                      "Number in stock": "500",
+                      "Restock time": "1m 12s (120t)",
+                      "Price sold at": "12",
+                      "Price bought at": "8",
+                      "GE price": "221"
+                    },
+                    {
+                      "Item": "Watering can",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "8",
+                      "Price bought at": "5",
+                      "GE price": "263"
+                    },
+                    {
+                      "Item": "Filled plant pot",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Plant pot pack",
+                      "Number in stock": "30",
+                      "Restock time": "1.2s (2t)",
+                      "Price sold at": "100",
+                      "Price bought at": "70",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Compost",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "20",
+                      "Price bought at": "14",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Compost pack",
+                      "Number in stock": "10",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "2,000",
+                      "Price bought at": "1,400",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Empty sack",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Sack pack",
+                      "Number in stock": "30",
+                      "Restock time": "1.2s (2t)",
+                      "Price sold at": "100",
+                      "Price bought at": "70",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Basket",
+                      "Number in stock": "500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "2"
+                    },
+                    {
+                      "Item": "Basket pack",
+                      "Number in stock": "30",
+                      "Restock time": "1.2s (2t)",
+                      "Price sold at": "100",
+                      "Price bought at": "70",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "100",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "15",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "500",
+                      "Price bought at": "350",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Potato",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "16"
+                    },
+                    {
+                      "Item": "Onion",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "13"
+                    },
+                    {
+                      "Item": "Cabbage",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7"
+                    },
+                    {
+                      "Item": "Tomato",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "14"
+                    },
+                    {
+                      "Item": "Sweetcorn",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "9",
+                      "Price bought at": "6",
+                      "GE price": "65"
+                    },
+                    {
+                      "Item": "Strawberry",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "17",
+                      "Price bought at": "11",
+                      "GE price": "80"
+                    },
+                    {
+                      "Item": "Watermelon",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "48",
+                      "Price bought at": "33",
+                      "GE price": "18"
+                    },
+                    {
+                      "Item": "Hammerstone hops",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "371"
+                    },
+                    {
+                      "Item": "Asgarnian hops",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "332"
+                    },
+                    {
+                      "Item": "Yanillian hops",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "7",
+                      "Price bought at": "4",
+                      "GE price": "747"
+                    },
+                    {
+                      "Item": "Krandorian hops",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "102"
+                    },
+                    {
+                      "Item": "Wildblood hops",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "15",
+                      "Price bought at": "10",
+                      "GE price": "37"
+                    },
+                    {
+                      "Item": "Jute fibre",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6",
+                      "Price bought at": "4",
+                      "GE price": "591"
+                    },
+                    {
+                      "Item": "Barley",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "524"
+                    },
+                    {
+                      "Item": "Plant cure",
+                      "Number in stock": "100",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "40",
+                      "Price bought at": "28",
+                      "GE price": "179"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Gerrant's Fishy Business",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Gerrant's_Fishy_Business",
+              "description": "Gerrant's Fishy Business is located in Port Sarim. The shop sells Fishing supplies. It is run by Gerrant.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Small fishing net",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "146"
+                    },
+                    {
+                      "Item": "Fishing rod",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "97"
+                    },
+                    {
+                      "Item": "Fly fishing rod",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "105"
+                    },
+                    {
+                      "Item": "Harpoon",
+                      "Number in stock": "2",
+                      "Restock time": "4m (400t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "99"
+                    },
+                    {
+                      "Item": "Lobster pot",
+                      "Number in stock": "2",
+                      "Restock time": "4m (400t)",
+                      "Price sold at": "20",
+                      "Price bought at": "14",
+                      "GE price": "138"
+                    },
+                    {
+                      "Item": "Fishing bait",
+                      "Number in stock": "1500",
+                      "Restock time": "0.6s (1t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Bait pack",
+                      "Number in stock": "80",
+                      "Restock time": "3s (5t)",
+                      "Price sold at": "300",
+                      "Price bought at": "210",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Feather",
+                      "Number in stock": "1000",
+                      "Restock time": "0.6s (1t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Feather pack",
+                      "Number in stock": "100",
+                      "Restock time": "1.2s (2t)",
+                      "Price sold at": "200",
+                      "Price bought at": "140",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Raw shrimps",
+                      "Number in stock": "0",
+                      "Restock time": "3m (300t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "36"
+                    },
+                    {
+                      "Item": "Raw sardine",
+                      "Number in stock": "200",
+                      "Restock time": "0.6s (1t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "36"
+                    },
+                    {
+                      "Item": "Raw herring",
+                      "Number in stock": "0",
+                      "Restock time": "9m (900t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "61"
+                    },
+                    {
+                      "Item": "Raw anchovies",
+                      "Number in stock": "0",
+                      "Restock time": "12m (1,200t)",
+                      "Price sold at": "15",
+                      "Price bought at": "10",
+                      "GE price": "25"
+                    },
+                    {
+                      "Item": "Raw trout",
+                      "Number in stock": "0",
+                      "Restock time": "15m (1,500t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "38"
+                    },
+                    {
+                      "Item": "Raw pike",
+                      "Number in stock": "0",
+                      "Restock time": "18m (1,800t)",
+                      "Price sold at": "20",
+                      "Price bought at": "14",
+                      "GE price": "179"
+                    },
+                    {
+                      "Item": "Raw salmon",
+                      "Number in stock": "0",
+                      "Restock time": "21m (2,100t)",
+                      "Price sold at": "30",
+                      "Price bought at": "21",
+                      "GE price": "47"
+                    },
+                    {
+                      "Item": "Raw tuna",
+                      "Number in stock": "0",
+                      "Restock time": "23m (2,300t)",
+                      "Price sold at": "40",
+                      "Price bought at": "28",
+                      "GE price": "60"
+                    },
+                    {
+                      "Item": "Raw lobster",
+                      "Number in stock": "0",
+                      "Restock time": "26m (2,600t)",
+                      "Price sold at": "70",
+                      "Price bought at": "49",
+                      "GE price": "154"
+                    },
+                    {
+                      "Item": "Raw swordfish",
+                      "Number in stock": "0",
+                      "Restock time": "29m (2,900t)",
+                      "Price sold at": "80",
+                      "Price bought at": "56",
+                      "GE price": "196"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Wydin's Food Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Food_Store",
+              "description": "The Food Store, operated by Wydin, sells a variety of fresh food, and is located in Port Sarim. It plays a notable role in the Pirate's Treasure quest - it is the drop off point between Karamja and Asgarnia to find the otherwise illegal beverage Karamjan rum, after smuggling it from Karamja.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price",
+                    "Heals"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot of flour",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "84",
+                      "Heals": "N/A"
+                    },
+                    {
+                      "Item": "Raw beef",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "41",
+                      "Heals": "3"
+                    },
+                    {
+                      "Item": "Raw chicken",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "24",
+                      "Heals": "3"
+                    },
+                    {
+                      "Item": "Cabbage",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7",
+                      "Heals": "1"
+                    },
+                    {
+                      "Item": "Banana",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "49",
+                      "Heals": "2"
+                    },
+                    {
+                      "Item": "Redberries",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "115",
+                      "Heals": "N/A"
+                    },
+                    {
+                      "Item": "Bread",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "12",
+                      "Price bought at": "8",
+                      "GE price": "79",
+                      "Heals": "5"
+                    },
+                    {
+                      "Item": "Chocolate bar",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "10",
+                      "Price bought at": "7",
+                      "GE price": "39",
+                      "Heals": "3"
+                    },
+                    {
+                      "Item": "Cheese",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "45",
+                      "Heals": "2"
+                    },
+                    {
+                      "Item": "Tomato",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "14",
+                      "Heals": "2"
+                    },
+                    {
+                      "Item": "Potato",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "16",
+                      "Heals": "4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Rimmington",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Rimmington",
+          "shops": [
+            {
+              "name": "Rimmington General Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Rimmington_General_Store",
+              "description": "The Rimmington General Store is a general store in Rimmington. It is run by the shop keeper and his assistant. The shop is most notable for being the location of Phials, who is often used in conjunction with the nearby POH portal for fast Construction and Prayer training.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot",
+                      "Number in stock": "5",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "5",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "182",
+                      "Price bought at": "56",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Shears",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "75"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "3",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "15",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "650",
+                      "Price bought at": "200",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Bowl",
+                      "Number in stock": "2",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "5",
+                      "Price bought at": "1",
+                      "GE price": "15"
+                    },
+                    {
+                      "Item": "Cake tin",
+                      "Number in stock": "2",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "13",
+                      "Price bought at": "4",
+                      "GE price": "76"
+                    },
+                    {
+                      "Item": "Tinderbox",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93"
+                    },
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Newcomer map",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Security book",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "96"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Rommik's Crafty Supplies",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Rommik's_Crafty_Supplies",
+              "description": "Rommik's Crafty Supplies is located in Rimmington and owned by Rommik. It is a convenient place to buy Crafting supplies due to its close proximity to the Crafting Guild.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price",
+                    "Members"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Ring mould",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "124",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Necklace mould",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "341",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Amulet mould",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "302",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Needle",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "44",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Thread",
+                      "Number in stock": "100",
+                      "Restock time": "3s (5t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Holy mould",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "14",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Sickle mould",
+                      "Number in stock": "6",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "10",
+                      "Price bought at": "6",
+                      "GE price": "46",
+                      "Members": "1"
+                    },
+                    {
+                      "Item": "Tiara mould",
+                      "Number in stock": "10",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "100",
+                      "Price bought at": "65",
+                      "GE price": "296",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Bolt mould",
+                      "Number in stock": "10",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "25",
+                      "Price bought at": "16",
+                      "GE price": "26",
+                      "Members": "1"
+                    },
+                    {
+                      "Item": "Bracelet mould",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "423",
+                      "Members": "1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dommik's Crafting Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Dommik's_Crafting_Store",
+              "description": "Dommik's Crafting Store is a Crafting supplies store owned by Dommik located in north-eastern Al Kharid. It is a convenient place to buy Crafting supplies due to its close proximity to a bank and a tanner.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price",
+                    "Members"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Ring mould",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "124",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Necklace mould",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "341",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Amulet mould",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "302",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Needle",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "44",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Thread",
+                      "Number in stock": "100",
+                      "Restock time": "3s (5t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "7",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Holy mould",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "14",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Sickle mould",
+                      "Number in stock": "6",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "10",
+                      "Price bought at": "6",
+                      "GE price": "46",
+                      "Members": "1"
+                    },
+                    {
+                      "Item": "Tiara mould",
+                      "Number in stock": "10",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "100",
+                      "Price bought at": "65",
+                      "GE price": "296",
+                      "Members": "0"
+                    },
+                    {
+                      "Item": "Bolt mould",
+                      "Number in stock": "10",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "25",
+                      "Price bought at": "16",
+                      "GE price": "26",
+                      "Members": "1"
+                    },
+                    {
+                      "Item": "Bracelet mould",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5",
+                      "Price bought at": "3",
+                      "GE price": "423",
+                      "Members": "1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Brian's Archery Supplies",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Brian's_Archery_Supplies",
+              "description": "Brian's Archery Supplies is a Ranged supplies shop owned by Brian and located in Rimmington.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Steel arrow",
+                      "Number in stock": "1500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "12",
+                      "Price bought at": "7",
+                      "GE price": "11"
+                    },
+                    {
+                      "Item": "Mithril arrow",
+                      "Number in stock": "1000",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "32",
+                      "Price bought at": "20",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Adamant arrow",
+                      "Number in stock": "800",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "80",
+                      "Price bought at": "52",
+                      "GE price": "37"
+                    },
+                    {
+                      "Item": "Oak shortbow",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "100",
+                      "Price bought at": "65",
+                      "GE price": "36"
+                    },
+                    {
+                      "Item": "Oak longbow",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "160",
+                      "Price bought at": "104",
+                      "GE price": "39"
+                    },
+                    {
+                      "Item": "Willow shortbow",
+                      "Number in stock": "3",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "200",
+                      "Price bought at": "130",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Willow longbow",
+                      "Number in stock": "3",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "320",
+                      "Price bought at": "208",
+                      "GE price": "147"
+                    },
+                    {
+                      "Item": "Maple shortbow",
+                      "Number in stock": "2",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "400",
+                      "Price bought at": "260",
+                      "GE price": "192"
+                    },
+                    {
+                      "Item": "Maple longbow",
+                      "Number in stock": "2",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "640",
+                      "Price bought at": "416",
+                      "GE price": "314"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Lowe's Archery Emporium",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Lowe's_Archery_Emporium",
+              "description": "Lowe's Archery Emporium is located near central Varrock just east of the main square. This store is operated by Lowe.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bronze arrow",
+                      "Number in stock": "2000",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "5"
+                    },
+                    {
+                      "Item": "Iron arrow",
+                      "Number in stock": "1500",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "3",
+                      "Price bought at": "1",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Steel arrow",
+                      "Number in stock": "1000",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "12",
+                      "Price bought at": "6",
+                      "GE price": "11"
+                    },
+                    {
+                      "Item": "Mithril arrow",
+                      "Number in stock": "800",
+                      "Restock time": "9s (15t)",
+                      "Price sold at": "32",
+                      "Price bought at": "17",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Adamant arrow",
+                      "Number in stock": "600",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "80",
+                      "Price bought at": "44",
+                      "GE price": "37"
+                    },
+                    {
+                      "Item": "Bronze bolts",
+                      "Number in stock": "1500",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Shortbow",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "50",
+                      "Price bought at": "27",
+                      "GE price": "51"
+                    },
+                    {
+                      "Item": "Longbow",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "80",
+                      "Price bought at": "44",
+                      "GE price": "19"
+                    },
+                    {
+                      "Item": "Oak shortbow",
+                      "Number in stock": "3",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "100",
+                      "Price bought at": "55",
+                      "GE price": "36"
+                    },
+                    {
+                      "Item": "Oak longbow",
+                      "Number in stock": "3",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "160",
+                      "Price bought at": "88",
+                      "GE price": "39"
+                    },
+                    {
+                      "Item": "Willow shortbow",
+                      "Number in stock": "2",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "200",
+                      "Price bought at": "110",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Willow longbow",
+                      "Number in stock": "2",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "320",
+                      "Price bought at": "176",
+                      "GE price": "147"
+                    },
+                    {
+                      "Item": "Maple shortbow",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "400",
+                      "Price bought at": "220",
+                      "GE price": "192"
+                    },
+                    {
+                      "Item": "Maple longbow",
+                      "Number in stock": "1",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "640",
+                      "Price bought at": "352",
+                      "GE price": "314"
+                    },
+                    {
+                      "Item": "Crossbow",
+                      "Number in stock": "2",
+                      "Restock time": "4m (400t)",
+                      "Price sold at": "70",
+                      "Price bought at": "38",
+                      "GE price": "317"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Burthorpe",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Burthorpe",
+          "shops": [
+            {
+              "name": "The Toad and Chicken",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/The_Toad_and_Chicken",
+              "description": "The Toad and Chicken is a bar and an inn found in Burthorpe, north of Taverley. It caters primarily to the soldiers and citizens of Burthorpe. Wizard's mind bomb, Dwarven stout and Asgarnian ale are all purchasable from Tostig for two coins each. Players can also find a trapdoor leading to the Rogue",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Asgarnian ale",
+                      "Number in stock": "12",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "67"
+                    },
+                    {
+                      "Item": "Wizard's mind bomb",
+                      "Number in stock": "12",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "68"
+                    },
+                    {
+                      "Item": "Dwarven stout",
+                      "Number in stock": "12",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "66"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Taverley",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Taverley",
+          "shops": [
+            {
+              "name": "Gaius' Two Handed Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Gaius'_Two_Handed_Shop",
+              "description": "Gaius' Two Handed Shop is a shop in Taverley owned by Gaius that has a variety of two-handed swords ranging from bronze to adamant. This store does not sell the rune or dragon two-handed sword. It can be used as an easy source for the adamant two-handed sword needed for a hard emote clue scroll.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bronze 2h sword",
+                      "Number in stock": "4",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "80",
+                      "Price bought at": "48",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Iron 2h sword",
+                      "Number in stock": "3",
+                      "Restock time": "3m (300t)",
+                      "Price sold at": "280",
+                      "Price bought at": "168",
+                      "GE price": "63"
+                    },
+                    {
+                      "Item": "Steel 2h sword",
+                      "Number in stock": "2",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "1,000",
+                      "Price bought at": "600",
+                      "GE price": "347"
+                    },
+                    {
+                      "Item": "Black 2h sword",
+                      "Number in stock": "1",
+                      "Restock time": "7m (700t)",
+                      "Price sold at": "1,920",
+                      "Price bought at": "1,152",
+                      "GE price": "846"
+                    },
+                    {
+                      "Item": "Mithril 2h sword",
+                      "Number in stock": "1",
+                      "Restock time": "10m (1,000t)",
+                      "Price sold at": "2,600",
+                      "Price bought at": "1,560",
+                      "GE price": "1,194"
+                    },
+                    {
+                      "Item": "Adamant 2h sword",
+                      "Number in stock": "1",
+                      "Restock time": "2h 30m (15,000t)",
+                      "Price sold at": "6,400",
+                      "Price bought at": "3,840",
+                      "GE price": "3,477"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Jatix's Herblore Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Jatix's_Herblore_Shop",
+              "description": "Jatix's Herblore Shop is a shop in Taverley owned by Jatix that sells Herblore supplies. This shop sells empty vials and eyes of newt in packs.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Vial",
+                      "Number in stock": "800",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty vial pack",
+                      "Number in stock": "800",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "200",
+                      "Price bought at": "140",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Vial of water",
+                      "Number in stock": "750",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2",
+                      "Price bought at": "1",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Water-filled vial pack",
+                      "Number in stock": "750",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "201",
+                      "Price bought at": "140",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Pestle and mortar",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "4",
+                      "Price bought at": "2",
+                      "GE price": "112"
+                    },
+                    {
+                      "Item": "Eye of newt",
+                      "Number in stock": "800",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "4"
+                    },
+                    {
+                      "Item": "Eye of newt pack",
+                      "Number in stock": "100",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "300",
+                      "Price bought at": "210",
+                      "GE price": "Not sold"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Dwarven Mine",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Dwarven_Mine",
+          "shops": [
+            {
+              "name": "Nurmof's Pickaxe Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Nurmof's_Pickaxe_Shop",
+              "description": "Nurmof's Pickaxe Shop is located in the north-west cul-de-sac of the Dwarven Mine, accessed through the alley with the anvil, south-west from the north entrance. Alternatively, a disk of returning can be used anywhere within the mine to teleport players south west of the cul-de-sac entrance.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Bronze pickaxe",
+                      "Number in stock": "6",
+                      "Restock time": "30s (50t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "97"
+                    },
+                    {
+                      "Item": "Iron pickaxe",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "140",
+                      "Price bought at": "84",
+                      "GE price": "219"
+                    },
+                    {
+                      "Item": "Steel pickaxe",
+                      "Number in stock": "4",
+                      "Restock time": "2m (200t)",
+                      "Price sold at": "500",
+                      "Price bought at": "300",
+                      "GE price": "492"
+                    },
+                    {
+                      "Item": "Mithril pickaxe",
+                      "Number in stock": "3",
+                      "Restock time": "3m (300t)",
+                      "Price sold at": "1,300",
+                      "Price bought at": "780",
+                      "GE price": "428"
+                    },
+                    {
+                      "Item": "Adamant pickaxe",
+                      "Number in stock": "2",
+                      "Restock time": "5m (500t)",
+                      "Price sold at": "3,200",
+                      "Price bought at": "1,920",
+                      "GE price": "1,662"
+                    },
+                    {
+                      "Item": "Rune pickaxe",
+                      "Number in stock": "1",
+                      "Restock time": "7m (700t)",
+                      "Price sold at": "32,000",
+                      "Price bought at": "19,200",
+                      "GE price": "18,641"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Drogo's Mining Emporium",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Drogo's_Mining_Emporium",
+              "description": "Drogo's Mining Emporium is located in the Dwarven Mines, run by Drogo. Although labelled as a mining shop, it only sells hammers and bronze pickaxes. It does provide a place for players to sell their ores or bars, but it is relatively unpopular due to its inconvenient location.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    },
+                    {
+                      "Item": "Bronze pickaxe",
+                      "Number in stock": "4",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "97"
+                    },
+                    {
+                      "Item": "Copper ore",
+                      "Number in stock": "0",
+                      "Restock time": "2h 30m (15,000t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "13"
+                    },
+                    {
+                      "Item": "Tin ore",
+                      "Number in stock": "0",
+                      "Restock time": "2h 30m (15,000t)",
+                      "Price sold at": "3",
+                      "Price bought at": "2",
+                      "GE price": "13"
+                    },
+                    {
+                      "Item": "Iron ore",
+                      "Number in stock": "0",
+                      "Restock time": "50m (5,000t)",
+                      "Price sold at": "17",
+                      "Price bought at": "11",
+                      "GE price": "81"
+                    },
+                    {
+                      "Item": "Coal",
+                      "Number in stock": "0",
+                      "Restock time": "50m (5,000t)",
+                      "Price sold at": "45",
+                      "Price bought at": "31",
+                      "GE price": "163"
+                    },
+                    {
+                      "Item": "Bronze bar",
+                      "Number in stock": "0",
+                      "Restock time": "40m (4,000t)",
+                      "Price sold at": "8",
+                      "Price bought at": "5",
+                      "GE price": "55"
+                    },
+                    {
+                      "Item": "Iron bar",
+                      "Number in stock": "0",
+                      "Restock time": "40m (4,000t)",
+                      "Price sold at": "28",
+                      "Price bought at": "19",
+                      "GE price": "145"
+                    },
+                    {
+                      "Item": "Gold bar",
+                      "Number in stock": "0",
+                      "Restock time": "30m (3,000t)",
+                      "Price sold at": "300",
+                      "Price bought at": "210",
+                      "GE price": "112"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Crossbow Shop (Dwarven Mine)",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Crossbow_Shop_(Dwarven_Mine)",
+              "description": "Hura's Crossbow Shop is a Crossbow stall run by Hura in the Dwarven Mine. It sells crossbow components, and has the same stock and prices as the White Wolf Mountain Crossbow Shop.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Wooden stock",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "72",
+                      "Price bought at": "10",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Oak stock",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "97",
+                      "Price bought at": "13",
+                      "GE price": "12"
+                    },
+                    {
+                      "Item": "Willow stock",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "190",
+                      "Price bought at": "26",
+                      "GE price": "2"
+                    },
+                    {
+                      "Item": "Teak stock",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "277",
+                      "Price bought at": "38",
+                      "GE price": "43"
+                    },
+                    {
+                      "Item": "Maple stock",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "360",
+                      "Price bought at": "50",
+                      "GE price": "14"
+                    },
+                    {
+                      "Item": "Mahogany stock",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "478",
+                      "Price bought at": "66",
+                      "GE price": "10"
+                    },
+                    {
+                      "Item": "Yew stock",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "601",
+                      "Price bought at": "83",
+                      "GE price": "179"
+                    },
+                    {
+                      "Item": "Bronze limbs",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "72",
+                      "Price bought at": "10",
+                      "GE price": "38"
+                    },
+                    {
+                      "Item": "Iron limbs",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "252",
+                      "Price bought at": "35",
+                      "GE price": "85"
+                    },
+                    {
+                      "Item": "Steel limbs",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "900",
+                      "Price bought at": "125",
+                      "GE price": "122"
+                    },
+                    {
+                      "Item": "Mithril limbs",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2,340",
+                      "Price bought at": "325",
+                      "GE price": "534"
+                    },
+                    {
+                      "Item": "Adamantite limbs",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "5,760",
+                      "Price bought at": "800",
+                      "GE price": "1,706"
+                    },
+                    {
+                      "Item": "Runite limbs",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "57,600",
+                      "Price bought at": "8,000",
+                      "GE price": "9,156"
+                    },
+                    {
+                      "Item": "Bronze crossbow",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "262",
+                      "Price bought at": "36",
+                      "GE price": "633"
+                    },
+                    {
+                      "Item": "Iron crossbow",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "565",
+                      "Price bought at": "78",
+                      "GE price": "359"
+                    },
+                    {
+                      "Item": "Steel crossbow",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1,296",
+                      "Price bought at": "180",
+                      "GE price": "134"
+                    },
+                    {
+                      "Item": "Mithril crossbow",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "2,818",
+                      "Price bought at": "391",
+                      "GE price": "763"
+                    },
+                    {
+                      "Item": "Adamant crossbow",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "6,361",
+                      "Price bought at": "883",
+                      "GE price": "1,677"
+                    },
+                    {
+                      "Item": "Rune crossbow",
+                      "Number in stock": "0",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "58,320",
+                      "Price bought at": "8,100",
+                      "GE price": "9,245"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dwarven Shopping Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Dwarven_shopping_store",
+              "description": "The Dwarven shopping store is a general store run by a dwarf in the Dwarven Mine. It is almost never visited, mainly because of its location; there are many general stores nearby (such as the ones in Falador or Edgeville) which are much easier to reach.",
+              "stockTables": [
+                {
+                  "columns": [
+                    "Item",
+                    "Number in stock",
+                    "Restock time",
+                    "Price sold at",
+                    "Price bought at",
+                    "GE price"
+                  ],
+                  "stock": [
+                    {
+                      "Item": "Pot",
+                      "Number in stock": "3",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "34"
+                    },
+                    {
+                      "Item": "Jug",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "3"
+                    },
+                    {
+                      "Item": "Empty jug pack",
+                      "Number in stock": "5",
+                      "Restock time": "12s (20t)",
+                      "Price sold at": "182",
+                      "Price bought at": "42",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Shears",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "75"
+                    },
+                    {
+                      "Item": "Bucket",
+                      "Number in stock": "3",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "2",
+                      "Price bought at": "0",
+                      "GE price": "8"
+                    },
+                    {
+                      "Item": "Empty bucket pack",
+                      "Number in stock": "15",
+                      "Restock time": "6s (10t)",
+                      "Price sold at": "650",
+                      "Price bought at": "150",
+                      "GE price": "Not sold"
+                    },
+                    {
+                      "Item": "Tinderbox",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "92"
+                    },
+                    {
+                      "Item": "Chisel",
+                      "Number in stock": "2",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "93"
+                    },
+                    {
+                      "Item": "Hammer",
+                      "Number in stock": "5",
+                      "Restock time": "1m (100t)",
+                      "Price sold at": "1",
+                      "Price bought at": "0",
+                      "GE price": "94"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
