@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { SKILLS, EXTRAS, CATEGORIES, EXTRA_CATEGORIES, STATUS_STYLES } from '../data/skills';
 import SkillIcon from './SkillIcon';
-import SPELLBOOKS from '../data/spellbooks.json';
-import PRAYERS from '../data/prayers.json';
+import SPELLBOOKS from '../data/region/spellbooks.json';
+import PRAYERS from '../data/region/prayers.json';
 
 function getStatusRange(key, solvedThreshold, oversolvedFactor) {
   const half = solvedThreshold / 2;

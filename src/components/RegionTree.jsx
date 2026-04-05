@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS, MAX_UNLOCKABLE_REGIONS } from '../data/regions';
+import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS, MAX_UNLOCKABLE_REGIONS } from '../data/region/regions';
 import { SKILLS, EXTRAS } from '../data/skills';
 import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD, AMMO } from '../data/gear/index';
 import ContribTooltip from './ContribTooltip';

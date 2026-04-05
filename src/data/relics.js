@@ -163,7 +163,28 @@ export const RELICS = {
         ],
       },
       skills: { slayer: 1 },
-      extras: { travel: 3 },
+      extras: { travel: 2 },
+    },
+    {
+      name: 'Map of Alacrity',
+      icon: `${process.env.PUBLIC_URL}/relics/Map_of_Alacrity.png`,
+      desc: 'Teleport to any agility shortcut (sent to less favourable side), ignores Wilderness restrictions',
+      description: {
+        grant: 'Upon choosing this relic you will receive the map of alacrity.',
+        effects: [
+          'The map allows you to teleport to agility shortcuts.',
+          'You will be sent to the less favourable side of the shortcut, or the starting side if it is one-way.',
+          'Teleports can only be used if you meet all of the requirements to reach the shortcut\'s location.',
+          'Shortcuts retain all of their typical requirements to use.',
+          'However, teleporting to a shortcut does not require you to have the Agility level to use it.',
+          'The map ignores Wilderness teleport restrictions.',
+        ],
+        notes: [
+          'The map can be retrieved from the Leagues Tutor in Yama\'s Lair if lost.',
+        ],
+      },
+      skills: {},
+      extras: { travel: 2 },
     },
   ],
   4: [

@@ -1,7 +1,7 @@
 import { SKILLS, EXTRAS } from '../data/skills';
 import { COMBO_BONUSES } from '../data/combos';
 import { EXTRA_THRESHOLDS } from '../data/thresholds';
-import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/regions';
+import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/region/regions';
 import { TIER_PASSIVES } from '../data/tierPassives';
 
 const ALL_REGIONS = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];

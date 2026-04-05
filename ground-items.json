@@ -1,0 +1,133 @@
+{
+  "scrapedAt": "2026-04-05T15:02:55.302Z",
+  "startPage": "Varlamore",
+  "pagesChecked": 222,
+  "locationsWithGroundItems": 6,
+  "locations": [
+    {
+      "page": "Auburnvale",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Auburnvale",
+      "groundItems": [
+        {
+          "sectionTitle": "Item spawns",
+          "items": [
+            {
+              "Item": "Beer glass (x2)",
+              "Location": "Auburn Pub"
+            },
+            {
+              "Item": "Cider",
+              "Location": "Auburn Pub"
+            },
+            {
+              "Item": "Jug",
+              "Location": "Upstairs of Auburn Pub"
+            },
+            {
+              "Item": "Hammer",
+              "Location": "Lunami's Axe Shop, next to the furnace"
+            },
+            {
+              "Item": "Iron axe",
+              "Location": "Sawmill"
+            },
+            {
+              "Item": "Bucket",
+              "Location": "Building north of Auburnvale bank"
+            },
+            {
+              "Item": "Knife",
+              "Location": "Easternmost house next to the Belladonna patch, upstairs Auburnvale General Store"
+            },
+            {
+              "Item": "Letter",
+              "Location": "Easternmost house next to the Belladonna patch"
+            },
+            {
+              "Item": "Potato",
+              "Location": "Upstairs the easternmost house next to the Belladonna patch"
+            },
+            {
+              "Item": "Needle",
+              "Location": "Chouani's Tannery"
+            }
+          ],
+          "notes": null,
+          "columns": [
+            "Item",
+            "Location"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "Custodia Pass",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Custodia_Pass",
+      "groundItems": [
+        {
+          "sectionTitle": "Item spawns",
+          "items": [
+            "Tinderbox",
+            "Rope",
+            "Fishing rod"
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "page": "Ruins of Tapoyauik",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Ruins_of_Tapoyauik",
+      "groundItems": [
+        {
+          "sectionTitle": "Item spawns",
+          "items": [
+            "Many blue dragon scales, scattered about the dragon spawns."
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "page": "Shipwreck Cove",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Shipwreck_Cove",
+      "groundItems": [
+        {
+          "sectionTitle": "Spawns",
+          "items": null,
+          "notes": "[edit | edit source] The cove has multiple spawns of seaweed scattered around it. There are several rope and plank spawns around the cove, as well as single spawns of a big fishing net and small fishing net respectively. Two piles of bones spawn in the general vicinity of the cove."
+        }
+      ]
+    },
+    {
+      "page": "Tapoyauik",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Tapoyauik",
+      "groundItems": [
+        {
+          "sectionTitle": "Item spawns",
+          "items": [
+            "Many blue dragon scales, scattered about the dragon spawns."
+          ],
+          "notes": null
+        }
+      ]
+    },
+    {
+      "page": "Varrock",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Varrock",
+      "groundItems": [
+        {
+          "sectionTitle": "Spawns",
+          "items": [
+            "A gold bar, a gold ore, a ruby ring, a brass necklace, and 225 coins spawn in the basement of the Varrock west bank.",
+            "2 buckets spawn on the second floor of the Varrock Castle, and a pie dish spawns in the castle kitchen.",
+            "A leather body spawns in the building next to Aubury's Rune Shop, and a jug spawns by the nearby tea seller.",
+            "6 logs can be found in Varrock, four in the sawmill and two in the Daddy's Home building.",
+            "A pot spawns in the back of the Blue Moon Inn, a thread kitchen of the Jolly Boar Inn, and a body rune spawns just outside the eastern entrance to the Grand Exchange"
+          ],
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

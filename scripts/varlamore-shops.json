@@ -1,0 +1,1670 @@
+{
+  "scrapedAt": "2026-04-05T15:20:03.420Z",
+  "subLocationsChecked": 6,
+  "shopsScraped": 15,
+  "locationsWithShops": 2,
+  "locations": [
+    {
+      "location": "Civitas illa Fortis",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Civitas_illa_Fortis",
+      "shops": [
+        {
+          "name": "Artima's Crafting Supplies",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Artima's_Crafting_Supplies",
+          "description": "Artima's Crafting Supplies is a crafting shop owned by Artima in Civitas illa Fortis, just south of the Fortis Cothon.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Chisel",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Hammer",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Needle",
+                  "Restock time": "5",
+                  "Price sold at": "6s (10t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Thread",
+                  "Restock time": "50",
+                  "Price sold at": "3s (5t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Shears",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Glassblowing pipe",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Ring mould",
+                  "Restock time": "4",
+                  "Price sold at": "30s (50t)",
+                  "Price bought at": "5",
+                  "GE price": "3"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Necklace mould",
+                  "Restock time": "4",
+                  "Price sold at": "30s (50t)",
+                  "Price bought at": "5",
+                  "GE price": "3"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Amulet mould",
+                  "Restock time": "4",
+                  "Price sold at": "30s (50t)",
+                  "Price bought at": "5",
+                  "GE price": "3"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bracelet mould",
+                  "Restock time": "4",
+                  "Price sold at": "30s (50t)",
+                  "Price bought at": "5",
+                  "GE price": "3"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tiara mould",
+                  "Restock time": "4",
+                  "Price sold at": "30s (50t)",
+                  "Price bought at": "100",
+                  "GE price": "65"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bolt mould",
+                  "Restock time": "4",
+                  "Price sold at": "30s (50t)",
+                  "Price bought at": "25",
+                  "GE price": "16"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cobado's Groceries",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Cobado's_Groceries",
+          "description": "Cobado's Groceries is a cooking shop run by Cobado in Civitas illa Fortis, Varlamore.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Cooking apple",
+                  "Restock time": "20",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Pineapple",
+                  "Restock time": "15",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Banana",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tomato",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "4",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Potato",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Onion",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "3",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Cabbage",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Orange",
+                  "Restock time": "2",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Papaya fruit",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "64",
+                  "GE price": "44"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Coconut",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "87",
+                  "GE price": "60"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Strawberry",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "17",
+                  "GE price": "11"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Watermelon",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "48",
+                  "GE price": "33"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Sweetcorn",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "9",
+                  "GE price": "6"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Redberries",
+                  "Restock time": "2",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "3",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Cheese",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "4",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Chocolate bar",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "10",
+                  "GE price": "7"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw chicken",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw beef",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw rabbit",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "20",
+                  "GE price": "14"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw herring",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "10",
+                  "GE price": "7"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw cod",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "10",
+                  "GE price": "7"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw tuna",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "40",
+                  "GE price": "28"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw bass",
+                  "Restock time": "3",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "40",
+                  "GE price": "28"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Raw swordfish",
+                  "Restock time": "2",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "80",
+                  "GE price": "56"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "The Flaming Arrow",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/The_Flaming_Arrow",
+          "description": "The Flaming Arrow is a bar found in Civitas illa Fortis.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Price sold at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Price sold at": "Beer",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Cider",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Sunbeam ale",
+                  "GE price": "8"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Vodka",
+                  "GE price": "5"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Rum",
+                  "GE price": "5"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Whisky",
+                  "GE price": "5"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Gin",
+                  "GE price": "5"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Moon-lite",
+                  "GE price": "15"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Jug of wine",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Metztonalli white",
+                  "GE price": "500"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Blackbird red",
+                  "GE price": "300"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Eclipse red",
+                  "GE price": "1,000"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Cup of tea",
+                  "GE price": "10"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Stew",
+                  "GE price": "20"
+                },
+                {
+                  "Item": "",
+                  "Price sold at": "Meat pie",
+                  "GE price": "15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis Blacksmith",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Blacksmith",
+          "description": "The Fortis Blacksmith is a sword shop in Civitas illa Fortis that sells various metal armour and weapons. It is run by the blacksmith.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Bronze platebody",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "160",
+                  "GE price": "96"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Iron platebody",
+                  "Restock time": "4",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "560",
+                  "GE price": "336"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Steel platebody",
+                  "Restock time": "4",
+                  "Price sold at": "4m (400t)",
+                  "Price bought at": "2,000",
+                  "GE price": "1,200"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Mithril platebody",
+                  "Restock time": "3",
+                  "Price sold at": "30m (3,000t)",
+                  "Price bought at": "5,200",
+                  "GE price": "3,120"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Adamant platebody",
+                  "Restock time": "2",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "16,640",
+                  "GE price": "9,984"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bronze platelegs",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "80",
+                  "GE price": "48"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Iron platelegs",
+                  "Restock time": "4",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "280",
+                  "GE price": "168"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Steel platelegs",
+                  "Restock time": "4",
+                  "Price sold at": "4m (400t)",
+                  "Price bought at": "1,000",
+                  "GE price": "600"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Mithril platelegs",
+                  "Restock time": "3",
+                  "Price sold at": "30m (3,000t)",
+                  "Price bought at": "2,600",
+                  "GE price": "1,560"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Adamant platelegs",
+                  "Restock time": "2",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "6,400",
+                  "GE price": "3,840"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bronze plateskirt",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "80",
+                  "GE price": "48"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Iron plateskirt",
+                  "Restock time": "4",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "280",
+                  "GE price": "168"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Steel plateskirt",
+                  "Restock time": "4",
+                  "Price sold at": "4m (400t)",
+                  "Price bought at": "1,000",
+                  "GE price": "600"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Mithril plateskirt",
+                  "Restock time": "3",
+                  "Price sold at": "30m (3,000t)",
+                  "Price bought at": "2,600",
+                  "GE price": "1,560"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Adamant plateskirt",
+                  "Restock time": "2",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "6,400",
+                  "GE price": "3,840"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bronze longsword",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "40",
+                  "GE price": "24"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Iron longsword",
+                  "Restock time": "4",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "140",
+                  "GE price": "84"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Steel longsword",
+                  "Restock time": "4",
+                  "Price sold at": "4m (400t)",
+                  "Price bought at": "500",
+                  "GE price": "300"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Mithril longsword",
+                  "Restock time": "3",
+                  "Price sold at": "30m (3,000t)",
+                  "Price bought at": "1,300",
+                  "GE price": "780"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Adamant longsword",
+                  "Restock time": "2",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "3,200",
+                  "GE price": "1,920"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bronze scimitar",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "32",
+                  "GE price": "19"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Iron scimitar",
+                  "Restock time": "4",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "112",
+                  "GE price": "67"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Steel scimitar",
+                  "Restock time": "4",
+                  "Price sold at": "4m (400t)",
+                  "Price bought at": "400",
+                  "GE price": "240"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Mithril scimitar",
+                  "Restock time": "3",
+                  "Price sold at": "30m (3,000t)",
+                  "Price bought at": "1,040",
+                  "GE price": "624"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Adamant scimitar",
+                  "Restock time": "2",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "2,560",
+                  "GE price": "1,536"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bronze spear",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "26",
+                  "GE price": "15"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Iron spear",
+                  "Restock time": "4",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "91",
+                  "GE price": "54"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Steel spear",
+                  "Restock time": "4",
+                  "Price sold at": "4m (400t)",
+                  "Price bought at": "325",
+                  "GE price": "195"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Mithril spear",
+                  "Restock time": "3",
+                  "Price sold at": "30m (3,000t)",
+                  "Price bought at": "845",
+                  "GE price": "507"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Adamant spear",
+                  "Restock time": "2",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "2,080",
+                  "GE price": "1,248"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Floria's Fashion",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Floria's_Fashion",
+          "description": "Floria's Fashion is a clothes shop in Civitas illa Fortis. It is run by Floria and stocks various skirts, capes, and aprons along with leather gloves and boots.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Leather gloves",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "6",
+                  "GE price": "3"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Leather boots",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "6",
+                  "GE price": "3"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Black skirt",
+                  "Restock time": "3",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Blue skirt",
+                  "Restock time": "2",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Pink skirt",
+                  "Restock time": "2",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Green cape",
+                  "Restock time": "4",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "32",
+                  "GE price": "17"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Blue cape",
+                  "Restock time": "4",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "32",
+                  "GE price": "17"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Yellow cape",
+                  "Restock time": "4",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "32",
+                  "GE price": "17"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Red cape",
+                  "Restock time": "4",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "White apron",
+                  "Restock time": "3",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Brown apron",
+                  "Restock time": "3",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis Baker's Stall",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Baker's_Stall",
+          "description": "The Fortis Baker's Stall is a bakery stall in the bazaar within Civitas illa Fortis. It is run by the baker and stocks cake, bread, and chocolate slices.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Bread",
+                  "Restock time": "15",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "12",
+                  "GE price": "9"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Cake",
+                  "Restock time": "5",
+                  "Price sold at": "8m (800t)",
+                  "Price bought at": "50",
+                  "GE price": "40"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Chocolate slice",
+                  "Restock time": "5",
+                  "Price sold at": "2m (200t)",
+                  "Price bought at": "30",
+                  "GE price": "24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis Fur Stall",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Fur_Stall",
+          "description": "The Fortis Fur Stall is a fur shop in the bazaar within Civitas illa Fortis. It is run by the Fur Merchant, and stocks bear, grey wolf, and jaguar furs.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Bear fur",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "12",
+                  "GE price": "9"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Grey wolf fur",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "60",
+                  "GE price": "47"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Jaguar fur",
+                  "Restock time": "2",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "96",
+                  "GE price": "76"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Fox fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "12",
+                  "GE price": "9"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Moonlight antelope fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "12",
+                  "GE price": "9"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Sunlight antelope fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "12",
+                  "GE price": "9"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Polar kebbit fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "12",
+                  "GE price": "9"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Common kebbit fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "14",
+                  "GE price": "11"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Feldip weasel fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "16",
+                  "GE price": "13"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Desert devil fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "20",
+                  "GE price": "16"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tatty larupia fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "72",
+                  "GE price": "57"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Larupia fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "96",
+                  "GE price": "76"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tatty graahk fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "108",
+                  "GE price": "85"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Graahk fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "144",
+                  "GE price": "114"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tatty kyatt fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "144",
+                  "GE price": "114"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Kyatt fur",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "192",
+                  "GE price": "152"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis Gem Stall",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Gem_Stall",
+          "description": "The Fortis Gem Stall is a gem shop in the bazaar within Civitas illa Fortis. It is run by the gem merchant, and stocks cut sapphires, emeralds, and rubies.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Sapphire",
+                  "Restock time": "2",
+                  "Price sold at": "2h 30m (15,000t)",
+                  "Price bought at": "375",
+                  "GE price": "200"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Emerald",
+                  "Restock time": "1",
+                  "Price sold at": "5h 50m (35,000t)",
+                  "Price bought at": "750",
+                  "GE price": "400"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Ruby",
+                  "Restock time": "1",
+                  "Price sold at": "10h (60,000t)",
+                  "Price bought at": "1,500",
+                  "GE price": "800"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Diamond",
+                  "Restock time": "0",
+                  "Price sold at": "40m (4,000t)",
+                  "Price bought at": "3,000",
+                  "GE price": "1,600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis General Store",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_General_Store",
+          "description": "The Fortis General Store is a general store in Civitas illa Fortis. It is run by the shopkeeper, and stocks a variety of common goods.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Chisel",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Spade",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "3",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Hammer",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Knife",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "7",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tinderbox",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Needle",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Thread",
+                  "Restock time": "30",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Rope",
+                  "Restock time": "10",
+                  "Price sold at": "18s (30t)",
+                  "Price bought at": "23",
+                  "GE price": "7"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Pot",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Jug",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bucket",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "2",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bowl",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "5",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Cake tin",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "13",
+                  "GE price": "4"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Empty jug pack",
+                  "Restock time": "5",
+                  "Price sold at": "18s (30t)",
+                  "Price bought at": "182",
+                  "GE price": "56"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Empty bucket pack",
+                  "Restock time": "5",
+                  "Price sold at": "18s (30t)",
+                  "Price bought at": "650",
+                  "GE price": "200"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis Silk Stall",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Silk_Stall",
+          "description": "The Fortis Silk Stall is a silk shop in the bazaar within Civitas illa Fortis. It is run by the silk merchant, and stocks needles, thread, and silk.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Needle",
+                  "Restock time": "5",
+                  "Price sold at": "3s (5t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Thread",
+                  "Restock time": "100",
+                  "Price sold at": "3s (5t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Silk",
+                  "Restock time": "50",
+                  "Price sold at": "15s (25t)",
+                  "Price bought at": "15",
+                  "GE price": "15"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Fortis Spice Stall",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Fortis_Spice_Stall",
+          "description": "The Fortis Spice Stall is a spice shop in the bazaar within Civitas illa Fortis. It is run by the Spice Merchant, and stocks knives, spice, and garlic.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Knife",
+                  "Restock time": "5",
+                  "Price sold at": "3s (5t)",
+                  "Price bought at": "6",
+                  "GE price": "4"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Spice",
+                  "Restock time": "20",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "230",
+                  "GE price": "161"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Garlic",
+                  "Restock time": "10",
+                  "Price sold at": "6s (10t)",
+                  "Price bought at": "3",
+                  "GE price": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "location": "Aldarin",
+      "wikiUrl": "https://oldschool.runescape.wiki/w/Aldarin",
+      "shops": [
+        {
+          "name": "Aldarin General Store",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Aldarin_General_Store",
+          "description": "Aldarin General Store is a general store run by a shopkeeper in north-eastern Aldarin.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Chisel",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Spade",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "3",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Hammer",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Knife",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "7",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tinderbox",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Pestle and mortar",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "5",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Needle",
+                  "Restock time": "5",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Thread",
+                  "Restock time": "30",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Rope",
+                  "Restock time": "10",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "23",
+                  "GE price": "7"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Pot",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Jug",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bucket",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "2",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Bowl",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "5",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Cake tin",
+                  "Restock time": "15",
+                  "Price sold at": "12s (20t)",
+                  "Price bought at": "13",
+                  "GE price": "4"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Vial",
+                  "Restock time": "15",
+                  "Price sold at": "1m 30s (150t)",
+                  "Price bought at": "2",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Empty jug pack",
+                  "Restock time": "5",
+                  "Price sold at": "18s (30t)",
+                  "Price bought at": "182",
+                  "GE price": "56"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Empty bucket pack",
+                  "Restock time": "5",
+                  "Price sold at": "18s (30t)",
+                  "Price bought at": "650",
+                  "GE price": "200"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Empty vial pack",
+                  "Restock time": "5",
+                  "Price sold at": "18s (30t)",
+                  "Price bought at": "260",
+                  "GE price": "80"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Faustus' Fruit and Veg",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Faustus'_Fruit_and_Veg",
+          "description": "Faustus' Fruit and Veg is a food shop in Aldarin run by Faustus. It is notable for having stock of grapes used for making wine a common way of training cooking. This is the only shop with grapes aside from the Culinaromancer's Chest.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Cooking apple",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Banana",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Orange",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Lemon",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Lime",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Pineapple",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "2",
+                  "GE price": "1"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Redberries",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "3",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Grapes",
+                  "Restock time": "5",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Tomato",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "4",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Potato",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Onion",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "3",
+                  "GE price": "2"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Cabbage",
+                  "Restock time": "10",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "1",
+                  "GE price": "0"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Papaya fruit",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "64",
+                  "GE price": "44"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Coconut",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "87",
+                  "GE price": "60"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Strawberry",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "17",
+                  "GE price": "11"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Watermelon",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "48",
+                  "GE price": "33"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Sweetcorn",
+                  "Restock time": "0",
+                  "Price sold at": "1m (100t)",
+                  "Price bought at": "9",
+                  "GE price": "6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Toci's Gem Store",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Toci's_Gem_Store",
+          "description": "Toci's Gem Store is a gem shop in Aldarin run by Toci. It has the highest amount in stock of sapphires, emeralds, and rubies of any shop outside of Mor Ul Rek, making it a good place for Ironman Mode players to obtain gems.",
+          "stockTables": [
+            {
+              "columns": [
+                "Item",
+                "Number in stock",
+                "Restock time",
+                "Price sold at",
+                "Price bought at",
+                "GE price"
+              ],
+              "stock": [
+                {
+                  "Item": "",
+                  "Number in stock": "Uncut sapphire",
+                  "Restock time": "3",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "25",
+                  "GE price": "17"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Uncut emerald",
+                  "Restock time": "2",
+                  "Price sold at": "4h (24,000t)",
+                  "Price bought at": "50",
+                  "GE price": "35"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Uncut ruby",
+                  "Restock time": "1",
+                  "Price sold at": "6h (36,000t)",
+                  "Price bought at": "100",
+                  "GE price": "70"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Uncut diamond",
+                  "Restock time": "0",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "200",
+                  "GE price": "140"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Sapphire",
+                  "Restock time": "3",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "250",
+                  "GE price": "175"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Emerald",
+                  "Restock time": "2",
+                  "Price sold at": "4h (24,000t)",
+                  "Price bought at": "500",
+                  "GE price": "350"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Ruby",
+                  "Restock time": "1",
+                  "Price sold at": "6h (36,000t)",
+                  "Price bought at": "1,000",
+                  "GE price": "700"
+                },
+                {
+                  "Item": "",
+                  "Number in stock": "Diamond",
+                  "Restock time": "0",
+                  "Price sold at": "2h (12,000t)",
+                  "Price bought at": "2,000",
+                  "GE price": "1,400"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ import { EXTRA_THRESHOLDS } from './data/thresholds';
 import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
-import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from './data/regions';
+import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from './data/region/regions';
 
 function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -207,6 +207,7 @@ export default function App() {
           setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 });
           setSelectedRegions([]);
           setReloadedRelic(null);
+          setSelectedGear(EMPTY_GEAR);
         }}
       />
 
@@ -218,7 +219,7 @@ export default function App() {
         extras={extras}
         activePassives={activePassives}
         onToggleSettings={() => setShowSettings(s => !s)}
-        onReset={() => { setSelectedRelics({}); setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 }); setSelectedRegions([]); setReloadedRelic(null); }}
+        onReset={() => { setSelectedRelics({}); setSelectedMasteries({ Melee: 0, Range: 0, Magic: 0 }); setSelectedRegions([]); setReloadedRelic(null); setSelectedGear(EMPTY_GEAR); }}
         hasSelections={Object.keys(selectedRelics).length > 0 || selectedRegions.length > 0 || Object.values(selectedMasteries).some(v => v > 0)}
       />
 

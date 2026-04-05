@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { HEAD, BODY, LEGS, HANDS, FEET, CAPE, NECK, RING, WEAPON, SHIELD, AMMO } from '../data/gear/index';
-import { UNIVERSAL_REGIONS } from '../data/regions';
+import { UNIVERSAL_REGIONS } from '../data/region/regions';
 
 const UNIVERSAL_REGION_NAMES = UNIVERSAL_REGIONS.map(r => r.name);
 
@@ -384,6 +384,7 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
   }, [weapon, selectedStyle]);
 
   // Clear ammo when weapon changes to an incompatible ammo type
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const ammo = selectedGear.ammo;
     if (!ammo) return;
@@ -398,6 +399,7 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
   }, [weapon]);
 
   // Clear shield when a two-handed weapon is equipped
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (weapon?.twoHanded && selectedGear.shield) {
       onSelectGear('shield', null);

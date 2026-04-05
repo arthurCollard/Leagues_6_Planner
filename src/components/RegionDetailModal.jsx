@@ -1,8 +1,8 @@
 import { createPortal } from 'react-dom';
 import { useState } from 'react';
-import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/regions';
+import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from '../data/region/regions';
 import { SKILLS, EXTRAS } from '../data/skills';
-import regionData from '../data/region-data.json';
+import regionData from '../data/region/region-data.json';
 
 const ALL_REGIONS = [...UNIVERSAL_REGIONS, ...UNLOCKABLE_REGIONS];
 
