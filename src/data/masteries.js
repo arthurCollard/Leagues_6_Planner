@@ -26,6 +26,15 @@ export const PACTS = [
     skills: { ranged: 1 },
     extras: {},
   },
+  {
+    id: 'regenerate',
+    name: 'Regenerate',
+    desc: 'Whenever you use runes to cast a spell, fire ammunition from a ranged weapon or consume charges with a charged weapon, there is a X% chance to generate an additional resource spent.',
+    branch: 'General',
+    icon: '',
+    skills: {},
+    extras: {},
+  },
 ];
 
 // Legacy export for computeScores compatibility
