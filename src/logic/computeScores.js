@@ -95,7 +95,7 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
     Object.entries(pact.skills || {}).forEach(([id, val]) => {
       skillScores[id] = (skillScores[id] || 0) + val;
     });
-    Object.entries(pact.extras || {}).forEach(([id, val]) => {
+    Object.entries(pact.effect || {}).forEach(([id, val]) => {
       extraScores[id] = (extraScores[id] || 0) + val;
     });
   });

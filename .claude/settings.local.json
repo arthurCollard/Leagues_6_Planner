@@ -48,7 +48,8 @@
       "Bash(node scripts/crawler.mjs --region Tirannwn)",
       "Bash(node scripts/crawler.mjs --region Wilderness)",
       "Bash(echo \"Exit: $?\")",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "WebFetch(domain:secure.runescape.com)"
     ]
   }
 }

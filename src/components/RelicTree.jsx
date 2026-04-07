@@ -107,7 +107,7 @@ function RelicDescModal({ relic, onClose }) {
   );
 }
 
-function RelicDescButton({ relic }) {
+function RelicDescButton({ relic, onModalOpen }) {
   const [open, setOpen] = useState(false);
   if (!relic.description) return null;
 
@@ -115,7 +115,7 @@ function RelicDescButton({ relic }) {
     <>
       <button
         className="relic-info-btn"
-        onClick={e => { e.stopPropagation(); setOpen(true); }}
+        onClick={e => { e.stopPropagation(); onModalOpen?.(); setOpen(true); }}
         aria-label="Relic description"
       >i</button>
       {open && <RelicDescModal relic={relic} onClose={() => setOpen(false)} />}
@@ -271,7 +271,7 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
           </button>
 
           <div className="relic-side-btns">
-            <RelicDescButton relic={relic} />
+            <RelicDescButton relic={relic} onModalOpen={onHideContrib} />
             <button
               className={`relic-cog ${hasCustomWeights ? 'cog-active' : ''}`}
               onClick={e => { e.stopPropagation(); onOpenSettings(showSettings ? null : relic.name); }}
