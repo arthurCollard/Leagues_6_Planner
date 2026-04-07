@@ -1,12 +1,9 @@
-import { useState, useMemo } from 'react';
-import { PACTS } from '../data/masteries';
+import { useState, useMemo, useRef, useEffect } from 'react';
+import { PACTS, PACT_ICONS } from '../data/masteries';
 
 const PACTS_WIP = true; // set to false when pacts are finalized
 
-const NODE_W = 145;
-const NODE_H = 75;
-const H_GAP = 12;
-const V_GAP = 40;
+const NODE_BASE = 76; // base size; slider scales from this
 
 const BRANCH_COLORS = {
   General: '#b8a282',
@@ -31,9 +28,74 @@ const EFFECT_LABELS = {
   water_rune_regen:       { label: 'Water Rune Regen',    format: v => `+${v} per charge regen` },
   earth_rune_regen:       { label: 'Earth Rune Regen',    format: v => `+${v} per charge regen` },
   fire_rune_regen:        { label: 'Fire Rune Regen',     format: v => `+${v} per charge regen` },
+  air_spell_dmg_pct:      { label: 'Air Spell Damage',    format: v => `+${v}% per active prayer` },
+  water_spell_dmg_pct:    { label: 'Water Spell Damage',  format: v => `up to +${v}% at full HP`  },
+  fire_spell_burn_pct:    { label: 'Fire Spell Burn',     format: v => `up to ${v}% HP → 2x dmg`  },
+  earth_spell_defence_reduce: { label: 'Earth Spell Reduce', format: v => `-${v} Def & Magic Def` },
+  earth_spell_defence_dmg:    { label: 'Earth Spell Bonus',  format: v => v ? `+1 dmg per ${v} Def` : 'TBD' },
+  fire_spell_burn_stacks:     { label: 'Fire Burn Stacks',   format: v => `max ${v} stacks`           },
+  fire_spell_bounce_targets:  { label: 'Fire Bounce',        format: v => `up to ${v} targets`        },
+  water_spell_lifesteal_pct:  { label: 'Water Lifesteal',    format: v => `${v}% of damage dealt`     },
+  air_spell_max_hit_pct_per_prayer_bonus: { label: 'Air Max Hit Chance', format: v => `+${v}% per prayer bonus` },
+  prayer_penetration_pct: { label: 'Prayer Penetration', format: v => `+${v}%` },
+  melee_min_hit:          { label: 'Melee Min Hit',      format: v => `+${v} (+${v}/tile)` },
+  thorns_dmg:             { label: 'Thorns',             format: v => `${v} dmg on hit`       },
+  light_weapon_bonus_hit_pct: { label: 'Light Weapon Hit', format: v => `+${v}% max hit bonus`   },
+  blindbag_chance:            { label: 'Blindbag',         format: v => v ? `${v}% chance` : 'TBD' },
+  melee_range_double:         { label: 'Melee Range',       format: () => '2x (2h weapons)'          },
+  shield_reflect_pct_per_def: { label: 'Shield Reflect',    format: v => `${v}% per Def level`       },
+  spec_energy_save_pct:       { label: 'Spec Energy Save',  format: v => `${v}% chance`               },
+  spec_energy_regen_pct:      { label: 'Spec Energy Regen', format: v => `${v}% per ranged attack`     },
+  block_heal:             { label: 'Block Heal',          format: v => `+${v} HP`           },
+  block_prayer_restore:   { label: 'Block Prayer',        format: v => `+${v} prayer points` },
   spell_tick_reduction:   { label: 'Spell Attack Rate',   format: v => v ? `${v} ticks faster` : 'TBD' },
   staff_tick_reduction:   { label: 'Staff Attack Rate',   format: v => `${v} ticks faster`      },
   staff_max_hit_reduction:{ label: 'Staff Max Hit',       format: v => `-${v} (1h only)`        },
+  // Melee
+  melee_damage_pct:           { label: 'Melee Damage',        format: v => `+${v}%`                        },
+  melee_str_pct_strength:     { label: 'Melee Str (Str%)',    format: v => `+${v}% of Str level`           },
+  melee_str_pct_prayer:       { label: 'Melee Str (Prayer%)', format: v => `+${v}% of prayer bonus`        },
+  overheal_min_hit:           { label: 'Overheal Min Hit',    format: v => `+${v} (consumes 5 overheal)`   },
+  two_hand_ranged_echo_pct:   { label: '2H Ranged Echo',      format: v => `${v}% chance`                  },
+  melee_thorns_heal_pct:      { label: 'Melee/Thorns Heal',   format: v => `${v}% chance per tile`         },
+  thorns_def_bonus_pct:       { label: 'Thorns/Recoil Bonus', format: v => `+${v}% of def bonuses`         },
+  light_weapon_tick_reduction:{ label: 'Light Weapon Speed',  format: v => `${v} tick faster`              },
+  blindbag_chance_per_weapon: { label: 'Blindbag Scaling',    format: v => `+${v}% per heavy weapon`       },
+  melee_max_hit_pct_per_tile: { label: 'Melee Max Hit',       format: v => `+${v}% (+${v}% per 3 tiles)`   },
+  thorns_double_hit:          { label: 'Thorns Double Hit',   format: () => '2nd hit at 50%'               },
+  melee_spec_regen_per_hit:   { label: 'Spec Regen/Hit',      format: v => `${v}% per melee hit`           },
+  blindbag_max_hit_per_weapon:{ label: 'Blindbag Max Hit',    format: v => v ? `+${v}% per weapon` : 'TBD' },
+  melee_range_max:            { label: 'Melee Range Max',     format: v => `${v} tiles`                    },
+  spec_energy_save_pct:       { label: 'Spec Energy Save',    format: v => `${v}% chance`                  },
+  spec_energy_regen_pct:      { label: 'Spec Energy Regen',   format: v => `${v}% per ranged attack`       },
+  melee_range_double:         { label: 'Melee Range',         format: () => '2x (2h weapons)'              },
+  shield_reflect_pct_per_def: { label: 'Shield Reflect',      format: v => `${v}% per Def level`           },
+  // General / hybrid
+  max_acc_chance_pct:         { label: 'Max Acc Chance',      format: v => `${v}% (+${v}%/tile)`           },
+  offhand_melee_str:          { label: 'Off-hand Melee Str',  format: v => `+${v}`                         },
+  offhand_ranged_str:         { label: 'Off-hand Ranged Str', format: v => `+${v}`                         },
+  offhand_magic_dmg_pct:      { label: 'Off-hand Magic Dmg',  format: v => `+${v}%`                        },
+  style_swap_bonus_pct:       { label: 'Style Swap Bonus',    format: v => `+${v}% next style hit`         },
+  // Range
+  ranged_echo_chance:         { label: 'Ranged Echo Chance',  format: v => `+${v}%`                        },
+  bow_echo_never_miss:        { label: 'Bow Echo',            format: () => 'never miss'                   },
+  crossbow_echo_chance:       { label: 'Crossbow Echo',       format: v => `+${v}% trigger chance`         },
+  thrown_echo_max_hit_pct:    { label: 'Thrown Echo',         format: v => `${v}% max hit chance`          },
+  ranged_prayer_effectiveness:{ label: 'Ranged Prayers',      format: v => `${v}% more effective`          },
+  ranged_str_per_10hp:        { label: 'Ranged Str (HP)',     format: v => `+${v} per 10 HP diff`          },
+  echo_chain_max:             { label: 'Echo Chain',          format: v => `up to ${v}x`                   },
+  bow_tick_reduction:         { label: 'Bow Speed',           format: v => `${v} tick faster`              },
+  thrown_str_from_melee_pct:  { label: 'Thrown Str (Melee)',  format: v => `+${v}% of melee str`           },
+  crossbow_dmg_boost_pct:     { label: 'Crossbow Damage',     format: v => `+${v}% (2 ticks slower)`       },
+  ranged_damage_pct:          { label: 'Ranged Damage',       format: v => `+${v}%`                        },
+  bow_min_hit_stack:          { label: 'Bow Min Hit',         format: () => '+1 per hit (cap 15%)'         },
+  bow_max_hit_stack:          { label: 'Bow Max Hit',         format: () => '+1 per hit (cap 15%)'         },
+  crossbow_always_max:        { label: 'Crossbow Max Hit',    format: () => 'always'                       },
+  crossbow_double_accuracy:   { label: 'Crossbow Accuracy',   format: () => 'double roll'                  },
+  thrown_accuracy_flat:       { label: 'Thrown Accuracy',     format: v => `+${v}`                         },
+  thrown_multi_target:        { label: 'Thrown Multi-target', format: () => '+1 target'                    },
+  // Magic
+  prayer_restore_passive:     { label: 'Passive Prayer Regen',format: () => '1 pt / 15t (off-prayer)'      },
 };
 
 function accumulateEffects(selected) {
@@ -47,61 +109,78 @@ function accumulateEffects(selected) {
   return totals;
 }
 
-function computeLayout(pacts) {
-  // For layout, assign each node to its first listed parent
-  const layoutChildMap = {};
-  pacts.forEach(p => {
-    if (!p.requires.length) return;
-    const primary = p.requires[0];
-    if (!layoutChildMap[primary]) layoutChildMap[primary] = [];
-    layoutChildMap[primary].push(p.id);
-  });
+function readLayout(pacts, nodeSize) {
+  const NODE_W = nodeSize;
+  const NODE_H = nodeSize;
+  const raw = {};
+  pacts.forEach(p => { raw[p.id] = { x: p.x ?? 0, y: p.y ?? 0 }; });
 
-  const roots = pacts.filter(p => p.requires.length === 0);
-
-  const subtreeWidth = {};
-  function getWidth(id) {
-    if (subtreeWidth[id] !== undefined) return subtreeWidth[id];
-    const children = layoutChildMap[id] || [];
-    if (!children.length) return (subtreeWidth[id] = NODE_W);
-    const total = children.reduce((s, c) => s + getWidth(c), 0) + H_GAP * (children.length - 1);
-    return (subtreeWidth[id] = Math.max(NODE_W, total));
-  }
-  roots.forEach(r => getWidth(r.id));
+  // Offset so all coordinates are non-negative
+  const allX = Object.values(raw).map(p => p.x);
+  const allY = Object.values(raw).map(p => p.y);
+  const PADDING = 80;
+  const minX = allX.length ? Math.min(...allX) : 0;
+  const minY = allY.length ? Math.min(...allY) : 0;
+  const offsetX = minX < 0 ? -minX + PADDING : PADDING;
+  const offsetY = minY < 0 ? -minY + PADDING : PADDING;
 
   const positions = {};
-  function assignPos(id, left, top) {
-    const children = layoutChildMap[id] || [];
-    const w = subtreeWidth[id];
-    positions[id] = { x: left + (w - NODE_W) / 2, y: top };
-    let cx = left;
-    children.forEach(cid => {
-      assignPos(cid, cx, top + NODE_H + V_GAP);
-      cx += subtreeWidth[cid] + H_GAP;
-    });
-  }
-  let rx = 0;
-  roots.forEach(r => { assignPos(r.id, rx, 0); rx += subtreeWidth[r.id] + H_GAP; });
+  Object.entries(raw).forEach(([id, p]) => {
+    positions[id] = { x: p.x + offsetX, y: p.y + offsetY };
+  });
 
-  const totalWidth  = Math.max(...Object.values(positions).map(p => p.x + NODE_W));
-  const totalHeight = Math.max(...Object.values(positions).map(p => p.y + NODE_H));
-
-  // Draw edges from ALL parents (including secondary parents of shared nodes)
   const edges = [];
   pacts.forEach(p => {
-    p.requires.forEach(pid => {
+    (p.requires || []).forEach(pid => {
       if (positions[pid] && positions[p.id]) {
         edges.push({
+          fromId: pid,
+          toId: p.id,
           x1: positions[pid].x + NODE_W / 2,
-          y1: positions[pid].y + NODE_H,
+          y1: positions[pid].y + NODE_H / 2,
           x2: positions[p.id].x + NODE_W / 2,
-          y2: positions[p.id].y,
+          y2: positions[p.id].y + NODE_H / 2,
         });
       }
     });
   });
 
-  return { positions, totalWidth, totalHeight, edges };
+  const shiftedX = Object.values(positions).map(p => p.x);
+  const shiftedY = Object.values(positions).map(p => p.y);
+  const totalWidth  = (shiftedX.length ? Math.max(...shiftedX) : 0) + NODE_W + PADDING;
+  const totalHeight = (shiftedY.length ? Math.max(...shiftedY) : 0) + NODE_H + PADDING;
+
+  return { positions, totalWidth, totalHeight, edges, nodeSize: NODE_W };
+
+}
+
+function shortestPath(pacts, targetId) {
+  if (!targetId) return new Set();
+  const requiresMap = Object.fromEntries(pacts.map(p => [p.id, p.requires || []]));
+
+  // BFS backwards from target through requires edges
+  const prev = { [targetId]: null };
+  const queue = [targetId];
+  let rootId = null;
+
+  outer: while (queue.length) {
+    const curr = queue.shift();
+    const parents = requiresMap[curr] || [];
+    if (parents.length === 0 && curr !== targetId) { rootId = curr; break; }
+    for (const parent of parents) {
+      if (!(parent in prev)) {
+        prev[parent] = curr;
+        if ((requiresMap[parent] || []).length === 0) { rootId = parent; break outer; }
+        queue.push(parent);
+      }
+    }
+  }
+
+  if (!rootId) return new Set([targetId]);
+  const path = new Set();
+  let cur = rootId;
+  while (cur !== null) { path.add(cur); cur = prev[cur]; }
+  return path;
 }
 
 export default function MasteryTree({ selectedMasteries, onSelectMastery, onReset }) {
@@ -109,7 +188,60 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
   const selected = selectedMasteries || {};
   const totalSpent = Object.values(selected).filter(Boolean).length;
 
-  const { positions, totalWidth, totalHeight, edges } = useMemo(() => computeLayout(PACTS), []);
+  const [nodeSize, setNodeSize] = useState(NODE_BASE * 2);
+  const { positions, totalWidth, totalHeight, edges } = useMemo(() => readLayout(PACTS, nodeSize), [nodeSize]);
+
+  // Pan / zoom
+  const viewportRef = useRef(null);
+  const dragStart   = useRef(null);
+  const dragMoved   = useRef(false);
+  const [pan,   setPan]   = useState({ x: 0, y: 0 });
+  const [scale, setScale] = useState(0.4);
+  const [isDragging, setIsDragging] = useState(false);
+  const [hoveredId, setHoveredId] = useState(null);
+
+  const zoom = (factor, cx, cy) => {
+    const el = viewportRef.current;
+    const rect = el ? el.getBoundingClientRect() : { left: 0, top: 0, width: 0, height: 0 };
+    const pivotX = cx ?? rect.width / 2;
+    const pivotY = cy ?? rect.height / 2;
+    setScale(prev => {
+      const next = Math.max(0.15, Math.min(3, prev * factor));
+      const ratio = next / prev;
+      setPan(p => ({ x: pivotX - ratio * (pivotX - p.x), y: pivotY - ratio * (pivotY - p.y) }));
+      return next;
+    });
+  };
+
+  const handleMouseDown = (e) => {
+    if (e.button !== 0) return;
+    e.preventDefault();
+    setIsDragging(true);
+    dragMoved.current = false;
+    dragStart.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
+  };
+  const handleMouseMove = (e) => {
+    if (!dragStart.current) return;
+    dragMoved.current = true;
+    setPan({ x: e.clientX - dragStart.current.x, y: e.clientY - dragStart.current.y });
+  };
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    dragStart.current = null;
+  };
+
+  // Non-passive wheel listener so we can preventDefault (stops page scroll while zooming)
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    const onWheel = (e) => {
+      e.preventDefault();
+      const rect = el.getBoundingClientRect();
+      zoom(e.deltaY < 0 ? 1.1 : 0.9, e.clientX - rect.left, e.clientY - rect.top);
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
 
   const togglePact = (id) => {
     if (selected[id]) {
@@ -131,7 +263,11 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
       }
       onSelectMastery(next);
     } else {
-      onSelectMastery({ ...selected, [id]: true });
+      // Select all nodes along the shortest path to this node
+      const path = shortestPath(PACTS, id);
+      const next = { ...selected };
+      path.forEach(pid => { next[pid] = true; });
+      onSelectMastery(next);
     }
   };
 
@@ -171,22 +307,53 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
           </div>
         )}
 
-        <div className="pact-tree-canvas-wrap">
-          <div style={{ position: 'relative', width: totalWidth, height: totalHeight, flexShrink: 0 }}>
+        <div className="pact-tree-canvas-wrap" style={{ position: 'relative' }}>
+          <div className="pact-zoom-controls">
+            <button className="pact-zoom-btn" onClick={() => zoom(1.25)} title="Zoom in">+</button>
+            <button className="pact-zoom-btn" onClick={() => { setScale(0.4); setPan({ x: 0, y: 0 }); }} title="Reset zoom">{Math.round(scale * 100)}%</button>
+            <button className="pact-zoom-btn" onClick={() => zoom(0.8)} title="Zoom out">−</button>
+            <div className="pact-zoom-divider" />
+            <input
+              type="range"
+              className="pact-size-slider"
+              min={40}
+              max={240}
+              step={4}
+              value={nodeSize}
+              onChange={e => setNodeSize(Number(e.target.value))}
+              title={`Icon size: ${nodeSize}px`}
+            />
+          </div>
+          <div
+            ref={viewportRef}
+            style={{ width: '100%', height: '100%', cursor: isDragging ? 'grabbing' : 'grab' }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+          >
+          <div style={{
+            position: 'relative',
+            width: totalWidth,
+            height: totalHeight,
+            transform: `translate(${pan.x}px, ${pan.y}px) scale(${scale})`,
+            transformOrigin: '0 0',
+            userSelect: 'none',
+          }}>
             <svg
               style={{ position: 'absolute', inset: 0, width: totalWidth, height: totalHeight, pointerEvents: 'none', overflow: 'visible' }}
             >
               {edges.map((e, i) => {
-                const mx = (e.x1 + e.x2) / 2;
-                const my = (e.y1 + e.y2) / 2;
+                const isConnected = hoveredId && (e.fromId === hoveredId || e.toId === hoveredId);
+                const isSelectedEdge = selected[e.fromId] && selected[e.toId];
                 return (
-                  <path
+                  <line
                     key={i}
-                    d={`M ${e.x1} ${e.y1} C ${e.x1} ${my}, ${e.x2} ${my}, ${e.x2} ${e.y2}`}
-                    stroke="#6b5c3e"
-                    strokeWidth="1.5"
-                    fill="none"
-                    opacity="0.8"
+                    x1={e.x1} y1={e.y1}
+                    x2={e.x2} y2={e.y2}
+                    stroke={isConnected ? '#f0c040' : isSelectedEdge ? '#c8a84a' : '#5a4a30'}
+                    strokeWidth={isConnected ? 3 : isSelectedEdge ? 2.5 : 1.5}
+                    opacity={isConnected ? 1 : isSelectedEdge ? 0.85 : 0.45}
                   />
                 );
               })}
@@ -196,25 +363,40 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
               const pos = positions[pact.id];
               if (!pos) return null;
               const isSelected = !!selected[pact.id];
-              const isUnlocked = !pact.requires.length || pact.requires.some(pid => selected[pid]);
+              const isUnlocked = true;
+              const branchColor = BRANCH_COLORS[pact.branch] || BRANCH_COLORS.General;
               return (
                 <button
                   key={pact.id}
                   className={`pact-node-card${isSelected ? ' selected' : ''}${!isUnlocked ? ' locked' : ''}`}
-                  style={{ position: 'absolute', left: pos.x, top: pos.y, width: NODE_W, height: NODE_H }}
-                  onClick={() => isUnlocked && togglePact(pact.id)}
-                  title={pact.desc}
+                  style={{
+                    position: 'absolute',
+                    left: pos.x,
+                    top: pos.y,
+                    width: nodeSize,
+                    height: nodeSize,
+                    '--branch-color': branchColor,
+                    '--node-size': `${nodeSize}px`,
+                  }}
+                  onClick={() => !dragMoved.current && isUnlocked && togglePact(pact.id)}
+                  onMouseEnter={() => setHoveredId(pact.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  title={pact.summary}
                   disabled={!isUnlocked}
                 >
-                  <div className="pact-node-branch" style={{ color: BRANCH_COLORS[pact.branch] || BRANCH_COLORS.General }}>
-                    {pact.branch}
+                  <div className="pact-node-icon-wrap">
+                    <img
+                      src={PACT_ICONS[pact.wikiCode] || `/pacts/Pact_${pact.wikiCode}.png`}
+                      className="pact-node-icon"
+                      alt={pact.wikiCode}
+                      draggable={false}
+                    />
                   </div>
-                  <div className="pact-node-name">{pact.name === '????????' ? pact.id : pact.name}</div>
-                  <div className="pact-node-summary">{pact.summary}</div>
-                  {isSelected && <span className="pact-node-check">✓</span>}
+                  <div className="pact-node-label">{pact.wikiCode}</div>
                 </button>
               );
             })}
+          </div>
           </div>
         </div>
       </div>

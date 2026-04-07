@@ -49,7 +49,9 @@
       "Bash(node scripts/crawler.mjs --region Wilderness)",
       "Bash(echo \"Exit: $?\")",
       "Read(//tmp/**)",
-      "WebFetch(domain:secure.runescape.com)"
+      "WebFetch(domain:secure.runescape.com)",
+      "WebFetch(domain:www.osrsleaguescountdown.io)",
+      "Bash(python3 -c ':*)"
     ]
   }
 }
