@@ -407,8 +407,8 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                     key={i}
                     x1={e.x1} y1={e.y1}
                     x2={e.x2} y2={e.y2}
-                    stroke={isConnected ? '#f0c040' : isSelectedEdge ? '#c8a84a' : '#5a4a30'}
-                    strokeWidth={isConnected ? 3 : isSelectedEdge ? 2.5 : 1.5}
+                    stroke={isConnected ? '#f0c040' : isSelectedEdge ? '#c8a84a' : '#a08a5a'}
+                    strokeWidth={isConnected ? 3 : isSelectedEdge ? 2.5 : 2.5}
                     opacity={isConnected ? 1 : isSelectedEdge ? 0.95 : 0.85}
                   />
                 );
@@ -448,7 +448,6 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                       draggable={false}
                     />
                   </div>
-                  <div className="pact-node-label">{pact.wikiCode}</div>
                 </button>
               );
             })}
