@@ -2473,11 +2473,11 @@ body {
 
 
 .pact-node-card:hover:not(:disabled) .pact-node-icon-wrap {
-  filter: drop-shadow(0 0 5px var(--branch-color)) brightness(1.1);
+  filter: drop-shadow(0 0 8px var(--branch-color)) brightness(1.1);
 }
 
 .pact-node-card.selected .pact-node-icon-wrap {
-  filter: drop-shadow(0 0 8px var(--branch-color)) drop-shadow(0 0 16px var(--branch-color)) brightness(1.2);
+  filter: drop-shadow(0 0 12px var(--branch-color)) drop-shadow(0 0 24px var(--branch-color)) brightness(1.2);
 }
 
 /* keep diamond styles below for reference — no longer used */
@@ -2501,14 +2501,14 @@ body {
 .pact-node-card:hover:not(:disabled) .pact-node-diamond {
   border-color: var(--branch-color);
   background: color-mix(in srgb, var(--branch-color) 12%, #1e1810);
-  box-shadow: 0 0 8px color-mix(in srgb, var(--branch-color) 60%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--branch-color) 60%, transparent);
 }
 
 .pact-node-card.selected .pact-node-diamond {
   border-color: var(--branch-color);
   background: color-mix(in srgb, var(--branch-color) 25%, #1e1810);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--branch-color) 80%, transparent),
-              inset 0 0 6px color-mix(in srgb, var(--branch-color) 20%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--branch-color) 80%, transparent),
+              inset 0 0 8px color-mix(in srgb, var(--branch-color) 20%, transparent);
 }
 
 .pact-node-label {

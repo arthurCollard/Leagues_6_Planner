@@ -6,8 +6,8 @@ const NODE_BASE = 76; // base size; slider scales from this
 
 const BRANCH_COLORS = {
   General: '#b8a282',
-  Melee:   '#e07848',
-  Range:   '#70b870',
+  Melee:   '#d94040',
+  Range:   '#48c048',
   Magic:   '#7090d8',
 };
 
@@ -222,6 +222,9 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
   };
   const handleMouseMove = (e) => {
     if (!dragStart.current) return;
+    const dx = e.clientX - (dragStart.current.x + pan.x);
+    const dy = e.clientY - (dragStart.current.y + pan.y);
+    if (!dragMoved.current && Math.abs(dx) < 4 && Math.abs(dy) < 4) return;
     dragMoved.current = true;
     setPan({ x: e.clientX - dragStart.current.x, y: e.clientY - dragStart.current.y });
   };

@@ -27,10 +27,6 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
   const skillScores = {};
   const extraScores = {};
 
-  // Base score of 2 for all combat skills except prayer
-  SKILLS.filter(s => s.category === 'combat' && s.id !== 'prayer')
-        .forEach(s => { skillScores[s.id] = 2; });
-
   const relicsToScore = [...Object.values(selectedRelics), reloadedRelic].filter(Boolean);
 
   relicsToScore.forEach(relic => {
@@ -94,6 +90,7 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
   });
 
   // Apply pact bonuses for selected pacts
+  const branchCounts = { Magic: 0, Range: 0, Melee: 0 };
   PACTS.forEach(pact => {
     if (!selectedMasteries[pact.id]) return;
     Object.entries(pact.skills || {}).forEach(([id, val]) => {
@@ -102,7 +99,18 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
     Object.entries(pact.effect || {}).forEach(([id, val]) => {
       extraScores[id] = (extraScores[id] || 0) + val;
     });
+    if (pact.branch === 'Magic') branchCounts.Magic++;
+    else if (pact.branch === 'Range' || pact.branch === 'Ranged') branchCounts.Range++;
+    else if (pact.branch === 'Melee') branchCounts.Melee++;
   });
+
+  // +1 to respective skills per 7 pacts spent in a branch
+  const magicBonus = Math.floor(branchCounts.Magic / 3);
+  const rangeBonus = Math.floor(branchCounts.Range / 3);
+  const meleeBonus = Math.floor(branchCounts.Melee / 3);
+  if (magicBonus > 0) ['magic', 'hitpoints', 'defence'].forEach(id => { skillScores[id] = (skillScores[id] || 0) + magicBonus; });
+  if (rangeBonus > 0) ['ranged', 'hitpoints', 'defence'].forEach(id => { skillScores[id] = (skillScores[id] || 0) + rangeBonus; });
+  if (meleeBonus > 0) ['attack', 'strength', 'defence', 'hitpoints'].forEach(id => { skillScores[id] = (skillScores[id] || 0) + meleeBonus; });
 
   const selectedNames = relicsToScore.map(r => r.name);
 
