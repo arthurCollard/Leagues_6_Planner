@@ -68,7 +68,7 @@ export const PACTS = [
     id: "pact_bb",
     wikiCode: "BB",
     name: "????????",
-    summary: "+15% accuracy in all combat styles",
+    summary: "+5% chance to Regenerate runes, ammo and charges",
     desc: "",
     branch: "General",
     x: -414, y: 712,

@@ -54,7 +54,8 @@
       "Bash(python3 -c ':*)",
       "Bash(node /tmp/update_pacts.js)",
       "Bash(node \"C:/Users/colla/AppData/Local/Temp/update_pacts.js\")",
-      "Bash(node update_pacts_temp.js)"
+      "Bash(node update_pacts_temp.js)",
+      "Bash(sort -k5 -n)"
     ]
   }
 }

@@ -2259,6 +2259,7 @@ body {
 .pact-summary-section-magic { color: #7090d8; }
 .pact-summary-section-melee { color: #e07848; }
 .pact-summary-section-range { color: #70b870; }
+.pact-spent-count { font-size: 0.7rem; font-weight: 600; color: #c8b48a; background: rgba(74, 63, 46, 0.5); border: 1px solid #4a3f2e; border-radius: 999px; padding: 0.15rem 0.55rem; }
 .pact-summary-divider {
   border: none;
   border-top: 1px solid #3a3020;

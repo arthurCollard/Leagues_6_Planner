@@ -287,6 +287,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
           <p className="relic-tree-desc">Choose pacts to enhance your combat style</p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+          <span className="pact-spent-count">{totalSpent} pts spent</span>
           <button className="close-btn" disabled={totalSpent === 0} onClick={e => { e.stopPropagation(); onReset(); }}>Reset</button>
           <div className={`collapse-chevron ${isOpen ? 'open' : ''}`} />
         </div>
