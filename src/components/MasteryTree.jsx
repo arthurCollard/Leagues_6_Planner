@@ -265,6 +265,8 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
     setPan(clampPan(vw / 2 - nodeCx * scale, vh / 2 - nodeCy * scale, scale));
   };
 
+  useEffect(() => { centerOnAA(); }, []);
+
   // Non-passive wheel listener so we can preventDefault (stops page scroll while zooming)
   useEffect(() => {
     const el = viewportRef.current;
