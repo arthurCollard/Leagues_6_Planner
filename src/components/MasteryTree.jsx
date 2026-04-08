@@ -1,7 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { PACTS, PACT_ICONS } from '../data/masteries';
 
-const PACTS_WIP = true; // set to false when pacts are finalized
 
 const NODE_BASE = 76; // base size; slider scales from this
 
@@ -185,7 +184,7 @@ function shortestPath(pacts, targetId) {
 
 export default function MasteryTree({ selectedMasteries, onSelectMastery, onReset }) {
   const [isOpen, setIsOpen] = useState(true);
-  const selected = selectedMasteries || {};
+  const selected = { ...(selectedMasteries || {}), pact_aa: true };
   const totalSpent = Object.values(selected).filter(Boolean).length;
 
   const [nodeSize, setNodeSize] = useState(NODE_BASE * 2);
@@ -199,6 +198,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
   const [scale, setScale] = useState(0.4);
   const [isDragging, setIsDragging] = useState(false);
   const [hoveredId, setHoveredId] = useState(null);
+  const [tooltip, setTooltip] = useState(null); // { pact, x, y }
 
   const zoom = (factor, cx, cy) => {
     const el = viewportRef.current;
@@ -263,11 +263,16 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
       }
       onSelectMastery(next);
     } else {
-      // Select all nodes along the shortest path to this node
-      const path = shortestPath(PACTS, id);
-      const next = { ...selected };
-      path.forEach(pid => { next[pid] = true; });
-      onSelectMastery(next);
+      const pact = PACTS.find(p => p.id === id);
+      const isAdjacentToSelected = pact && pact.requires.some(rid => selected[rid]);
+      if (isAdjacentToSelected) {
+        onSelectMastery({ ...selected, [id]: true });
+      } else {
+        const path = shortestPath(PACTS, id);
+        const next = { ...selected };
+        path.forEach(pid => { next[pid] = true; });
+        onSelectMastery(next);
+      }
     }
   };
 
@@ -288,11 +293,6 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
       </h2>
 
       <div className={`collapsible-body ${isOpen ? 'open' : ''}`}>
-        {PACTS_WIP && (
-          <div className="wip-banner">
-            Work in progress — pact data is incomplete and may change.
-          </div>
-        )}
         {activeEffects.length > 0 && (
           <div className="pact-effects-summary">
             {activeEffects.map(([key, val]) => {
@@ -353,7 +353,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                     x2={e.x2} y2={e.y2}
                     stroke={isConnected ? '#f0c040' : isSelectedEdge ? '#c8a84a' : '#5a4a30'}
                     strokeWidth={isConnected ? 3 : isSelectedEdge ? 2.5 : 1.5}
-                    opacity={isConnected ? 1 : isSelectedEdge ? 0.85 : 0.45}
+                    opacity={isConnected ? 1 : isSelectedEdge ? 0.95 : 0.85}
                   />
                 );
               })}
@@ -379,9 +379,9 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                     '--node-size': `${nodeSize}px`,
                   }}
                   onClick={() => !dragMoved.current && isUnlocked && togglePact(pact.id)}
-                  onMouseEnter={() => setHoveredId(pact.id)}
-                  onMouseLeave={() => setHoveredId(null)}
-                  title={pact.summary}
+                  onMouseEnter={(e) => { setHoveredId(pact.id); if (pact.summary) setTooltip({ pact, x: e.clientX, y: e.clientY }); }}
+                  onMouseMove={(e) => { if (tooltip) setTooltip(t => t ? { ...t, x: e.clientX, y: e.clientY } : null); }}
+                  onMouseLeave={() => { setHoveredId(null); setTooltip(null); }}
                   disabled={!isUnlocked}
                 >
                   <div className="pact-node-icon-wrap">
@@ -392,14 +392,74 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                       draggable={false}
                     />
                   </div>
-                  <div className="pact-node-label">{pact.wikiCode}</div>
                 </button>
               );
             })}
           </div>
           </div>
+          {Object.keys(selected).filter(id => selected[id]).length > 0 && (() => {
+            const SECTIONS = [
+              { label: 'General', branch: '' },
+              { label: 'Magic',   branch: 'Magic' },
+              { label: 'Melee',   branch: 'Melee' },
+              { label: 'Range',   branch: 'Range' },
+            ];
+            const normKey = s => s.replace(/^[+]/, '').replace(/\d+(?:\.\d+)?/, '#');
+            const buildGroups = (pacts) => {
+              const groups = [];
+              const seen = new Map();
+              pacts.forEach(p => {
+                const key = normKey(p.summary);
+                if (seen.has(key)) {
+                  const entry = seen.get(key);
+                  entry.pacts.push(p);
+                  const m = p.summary.match(/(\d+(?:\.\d+)?)/);
+                  if (m) entry.total += parseFloat(m[1]);
+                } else {
+                  const m = p.summary.match(/(\d+(?:\.\d+)?)/);
+                  seen.set(key, { summary: p.summary, pacts: [p], total: m ? parseFloat(m[1]) : null });
+                  groups.push(seen.get(key));
+                }
+              });
+              return groups;
+            };
+            const renderText = (summary, total) => {
+              const display = total !== null ? summary.replace(/\d+(?:\.\d+)?/, Number.isInteger(total) ? total : total.toFixed(1)) : summary;
+              const parts = display.split(/(\d+(?:\.\d+)?(?:%|kg)?)/);
+              return parts.map((part, i) => /^\d+(?:\.\d+)?(?:%|kg)?$/.test(part) && /\d/.test(part)
+                ? <span key={i} className="pact-summary-number">{part}</span>
+                : part
+              );
+            };
+            const sections = SECTIONS.map(({ label, branch }) => ({
+              label,
+              branch,
+              groups: buildGroups(PACTS.filter(p => selected[p.id] && p.summary && (label === 'General' ? !['Magic', 'Melee', 'Range'].includes(p.branch) : p.branch === branch))),
+            })).filter(s => s.groups.length > 0);
+            return (
+              <div className="pact-selected-summary">
+                {sections.map(({ label, groups }, si) => (
+                  <div key={label}>
+                    {si > 0 && <div className="pact-summary-divider" />}
+                    <div className={`pact-summary-section-title pact-summary-section-${label.toLowerCase()}`}>{label}</div>
+                    {groups.map(({ summary, total }) => (
+                      <div key={summary} className="pact-selected-summary-row">
+                        <span className="pact-selected-summary-text">{renderText(summary, total)}</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
         </div>
       </div>
+      {tooltip && (
+        <div className="pact-custom-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
+          {tooltip.pact.name !== '????????' && <div className="pact-custom-tooltip-code">{tooltip.pact.name}</div>}
+          <div className="pact-custom-tooltip-summary">{tooltip.pact.summary}</div>
+        </div>
+      )}
     </main>
   );
 }

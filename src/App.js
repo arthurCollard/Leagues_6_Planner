@@ -237,7 +237,7 @@ export default function App() {
             onSelectReloadedRelic={setReloadedRelic}
             onReset={() => { setSelectedRelics({}); setReloadedRelic(null); }}
           />
-          <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={setSelectedMasteries} onReset={() => setSelectedMasteries({})} />
+          <MasteryTree selectedMasteries={selectedMasteries} onSelectMastery={setSelectedMasteries} onReset={() => setSelectedMasteries({ pact_aa: true })} />
           <RegionTree
             selectedRegions={selectedRegions}
             onSelectRegion={handleSelectRegion}
