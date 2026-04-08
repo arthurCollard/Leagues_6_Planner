@@ -207,6 +207,17 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
   const [hoveredId, setHoveredId] = useState(null);
   const [tooltip, setTooltip] = useState(null); // { pact, x, y }
 
+  const clampPan = (px, py, sc) => {
+    const el = viewportRef.current;
+    if (!el) return { x: px, y: py };
+    const { width: vw, height: vh } = el.getBoundingClientRect();
+    const margin = 80;
+    return {
+      x: Math.min(vw - margin, Math.max(margin - totalWidth * sc, px)),
+      y: Math.min(vh - margin, Math.max(margin - totalHeight * sc, py)),
+    };
+  };
+
   const zoom = (factor, cx, cy) => {
     const el = viewportRef.current;
     const rect = el ? el.getBoundingClientRect() : { left: 0, top: 0, width: 0, height: 0 };
@@ -215,7 +226,11 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
     setScale(prev => {
       const next = Math.max(0.15, Math.min(3, prev * factor));
       const ratio = next / prev;
-      setPan(p => ({ x: pivotX - ratio * (pivotX - p.x), y: pivotY - ratio * (pivotY - p.y) }));
+      setPan(p => {
+        const nx = pivotX - ratio * (pivotX - p.x);
+        const ny = pivotY - ratio * (pivotY - p.y);
+        return clampPan(nx, ny, next);
+      });
       return next;
     });
   };
@@ -233,11 +248,21 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
     const dy = e.clientY - (dragStart.current.y + pan.y);
     if (!dragMoved.current && Math.abs(dx) < 4 && Math.abs(dy) < 4) return;
     dragMoved.current = true;
-    setPan({ x: e.clientX - dragStart.current.x, y: e.clientY - dragStart.current.y });
+    const raw = { x: e.clientX - dragStart.current.x, y: e.clientY - dragStart.current.y };
+    setPan(clampPan(raw.x, raw.y, scale));
   };
   const handleMouseUp = () => {
     setIsDragging(false);
     dragStart.current = null;
+  };
+
+  const centerOnAA = () => {
+    const el = viewportRef.current;
+    if (!el || !positions['pact_aa']) return;
+    const { width: vw, height: vh } = el.getBoundingClientRect();
+    const nodeCx = positions['pact_aa'].x + nodeSize / 2;
+    const nodeCy = positions['pact_aa'].y + nodeSize / 2;
+    setPan(clampPan(vw / 2 - nodeCx * scale, vh / 2 - nodeCy * scale, scale));
   };
 
   // Non-passive wheel listener so we can preventDefault (stops page scroll while zooming)
@@ -324,8 +349,22 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
 
         <div className="pact-tree-canvas-wrap" style={{ position: 'relative' }}>
           <div className="pact-zoom-controls">
+            <button className="pact-zoom-btn" onClick={centerOnAA} title="Center on AA node">⊙</button>
+            <div className="pact-zoom-divider" />
             <button className="pact-zoom-btn" onClick={() => zoom(1.25)} title="Zoom in">+</button>
-            <button className="pact-zoom-btn" onClick={() => { setScale(0.4); setPan({ x: 0, y: 0 }); }} title="Reset zoom">{Math.round(scale * 100)}%</button>
+            <button className="pact-zoom-btn" onClick={() => {
+              const el = viewportRef.current;
+              const newScale = 0.4;
+              setScale(newScale);
+              if (el && positions['pact_aa']) {
+                const { width: vw, height: vh } = el.getBoundingClientRect();
+                const nodeCx = positions['pact_aa'].x + nodeSize / 2;
+                const nodeCy = positions['pact_aa'].y + nodeSize / 2;
+                setPan(clampPan(vw / 2 - nodeCx * newScale, vh / 2 - nodeCy * newScale, newScale));
+              } else {
+                setPan({ x: 0, y: 0 });
+              }
+            }} title="Reset zoom">{Math.round(scale * 100)}%</button>
             <button className="pact-zoom-btn" onClick={() => zoom(0.8)} title="Zoom out">−</button>
             <div className="pact-zoom-divider" />
             <input

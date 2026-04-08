@@ -230,8 +230,8 @@ export const RELICS = {
           'Raw fish: Shrimp ↔ Sardine ↔ Herring ↔ Anchovies ↔ Mackerel ↔ Trout ↔ Cod ↔ Pike ↔ Salmon ↔ Tuna ↔ Lobster ↔ Bass ↔ Swordfish ↔ Karambwan ↔ Shark ↔ Anglerfish ↔ Dark Crab',
         ],
       },
-      skills: { magic: 1 },
-      extras: {  },
+      skills: { magic: 1, crafting: 1, herblore: 1, farming: 1, prayer: 1, },
+      extras: { gp_source: 1, white_berries: 1 },
     },
     {
       name: "Butler's Bell",
@@ -247,7 +247,7 @@ export const RELICS = {
         ],
         notes: [],
       },
-      skills: { mining: 1, fishing: 1, woodcutting: 1, farming: 1, smithing: 1, cooking: 1, fletching: 1, herblore: 1 },
+      skills: { mining: 1, fishing: 1, woodcutting: 1, farming: 1, smithing: 1, cooking: 1, fletching: 1, herblore: 1, construction: 1 },
       extras: { },
     },
     {

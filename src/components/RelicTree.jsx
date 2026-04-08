@@ -226,9 +226,39 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
   const hasCustomWeights = Object.keys(weights).length > 0;
   const isReloaded = relic.special === 'reloaded';
   const wrapperRef = useRef(null);
+  const isHovered = useRef(false);
+
+  const buildReloadedContrib = () => {
+    if (!wrapperRef.current) return null;
+    const rect = wrapperRef.current.getBoundingClientRect();
+    if (reloadedRelic) {
+      return {
+        pos: { left: rect.left, top: rect.bottom + 6 },
+        title: `${reloadedRelic.name} (Copied)`,
+        skills: reloadedRelic.skills || {},
+        extras: reloadedRelic.extras || {},
+        spellbooks: reloadedRelic.spellbook,
+        prayerBooks: reloadedRelic.prayer,
+        prayerUnlocks: reloadedRelic.prayerUnlocks,
+      };
+    }
+    return {
+      pos: { left: rect.left, top: rect.bottom + 6 },
+      description: 'Select a relic to see its bonuses',
+    };
+  };
+
+  // Update tooltip live when reloadedRelic changes while hovering
+  const prevReloadedRelic = useRef(reloadedRelic);
+  if (isReloaded && isHovered.current && prevReloadedRelic.current !== reloadedRelic) {
+    prevReloadedRelic.current = reloadedRelic;
+    const data = buildReloadedContrib();
+    if (data) onShowContrib(data);
+  }
 
   const handleMouseEnter = () => {
     if (!wrapperRef.current) return;
+    isHovered.current = true;
     const rect = wrapperRef.current.getBoundingClientRect();
     const passiveSkills = {};
     (TIER_PASSIVES[tier] || []).forEach(p => {
@@ -236,6 +266,11 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
         passiveSkills[id] = (passiveSkills[id] || 0) + v;
       });
     });
+    if (isReloaded) {
+      const data = buildReloadedContrib();
+      if (data) onShowContrib(data);
+      return;
+    }
     onShowContrib({
       pos: { left: rect.left, top: rect.bottom + 6 },
       skills: relic.skills || {},
@@ -254,7 +289,7 @@ function RelicButton({ relic, tier, selected, onSelect, weights, onWeightsChange
         ref={wrapperRef}
         className={`relic-btn-wrapper ${selected && isReloaded ? 'relic-btn-wrapper-reloaded' : ''}`}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={onHideContrib}
+        onMouseLeave={() => { isHovered.current = false; onHideContrib(); }}
       >
         <div className="relic-card-wrap">
           <button
