@@ -1,3 +1,15 @@
+const GLOBAL_TASKS = [
+  { name: "Complete the Leagues Tutorial", tier: "Easy", points: 10, global: true },
+  { name: "Open the Leagues Menu", tier: "Easy", points: 10, global: true },
+  { name: "Defeat a Hill Giant", tier: "Easy", points: 10, global: true },
+  { name: "Reach Combat Level 50", tier: "Medium", points: 30, global: true },
+  { name: "Use the Protect from Melee Prayer", tier: "Medium", points: 30, global: true },
+  { name: "Kill 1 unique Echo Boss", tier: "Hard", points: 80, global: true },
+  { name: "Kill 2 unique Echo Bosses", tier: "Hard", points: 80, global: true },
+  { name: "Kill 3 unique Echo Bosses", tier: "Hard", points: 80, global: true },
+  { name: "Kill 4 unique Echo Bosses", tier: "Elite", points: 200, global: true },
+];
+
 export const UNIVERSAL_REGIONS = [
   {
     name: "Varlamore",
@@ -56,6 +68,13 @@ export const UNIVERSAL_REGIONS = [
     extras: { seed_access: 1, ammo_source: 1, limpwurt: 3, eye_of_newt: 3, prayer_pot_primary: 2, prayer_pot_secondary: 1, anti_venoms_primary: 2, allotment_patches: 2, tree_patches: 1, hardwood_patches: 1 },
     spellbook: [],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "1 Hueycoatl Kill", tier: "Hard", points: 80 },
+      { name: "Complete Wave 12 of Fortis Colosseum", tier: "Elite", points: 200 },
+      { name: "Defeat Awakened Vardorvis", tier: "Elite", points: 200 },
+      { name: "Equip Avernic Treads", tier: "Elite", points: 200 },
+    ],
   },
   {
     name: "Karamja",
@@ -117,6 +136,15 @@ export const UNIVERSAL_REGIONS = [
     extras: { food_source: 1, limpwurt: 1, prayer_pot_primary: 1, prayer_pot_secondary: 1 },
     spellbook: [],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Defeat a Steel Dragon on Karamja", tier: "Medium", points: 30 },
+      { name: "Defeat a TzHaar", tier: "Medium", points: 30 },
+      { name: "Complete Tzhaar-Ket-Rek's third challenge", tier: "Hard", points: 80 },
+      { name: "Equip a Fire Cape", tier: "Elite", points: 200 },
+      { name: "Complete Tzhaar-Ket-Rek's Special challenge", tier: "Master", points: 400 },
+      { name: "Equip an Infernal Cape", tier: "Master", points: 400 },
+    ],
   },
 ];
 
@@ -208,6 +236,16 @@ export const UNLOCKABLE_REGIONS = [
     spellbook: [],
     prayer: [],
     prayerUnlocks: ['Chivalry', 'Piety', 'Deadeye', 'Mystic Vigour'],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Defeat a Troll in Asgarnia", tier: "Easy", points: 10 },
+      { name: "Defeat the Royal Titans solo", tier: "Hard", points: 80 },
+      { name: "Equip a Dragon Defender", tier: "Hard", points: 80 },
+      { name: "Defeat Awakened Whisperer", tier: "Elite", points: 200 },
+      { name: "Equip a Godsword", tier: "Elite", points: 200 },
+      { name: "Equip the Bellator Ring", tier: "Elite", points: 200 },
+      { name: "Defeat Nex Solo", tier: "Master", points: 400 },
+    ],
   },
   {
     name: "Fremennik",
@@ -300,6 +338,16 @@ export const UNLOCKABLE_REGIONS = [
     extras: { gp_source: 2, food_source: 2, travel: 2, ammo_source: 3, limpwurt: 3, antifires_secondary: 3, prayer_pot_primary: 1, prayer_pot_secondary: 1, herb_patches: 1, bush_patches: 1 },
     spellbook: ['Lunar'],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Defeat a Cockatrice in the Fremennik Province", tier: "Easy", points: 10 },
+      { name: "Kill 8 penguins within 5 seconds", tier: "Medium", points: 30 },
+      { name: "Defeat Phantom Muspah", tier: "Hard", points: 80 },
+      { name: "Defeat Basilisk Knight", tier: "Hard", points: 80 },
+      { name: "Defeat Awakened Duke Sucellus", tier: "Elite", points: 200 },
+      { name: "Defeat Vorkath 5 Times Without Special Damage", tier: "Elite", points: 200 },
+      { name: "Equip the Magus Ring", tier: "Elite", points: 200 },
+    ],
   },
   {
     name: "Kandarin",
@@ -390,6 +438,16 @@ export const UNLOCKABLE_REGIONS = [
     extras: { food_source: 3, travel: 1, ammo_source: 1, eye_of_newt: 3, prayer_pot_primary: 2, herb_patches: 2, allotment_patches: 4, bush_patches: 1, tree_patches: 1 },
     spellbook: [],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Defeat a Demonic Gorilla", tier: "Hard", points: 80 },
+      { name: "Defeat a Mithril Dragon", tier: "Hard", points: 80 },
+      { name: "Defeat the Kraken Boss 50 Times", tier: "Hard", points: 80 },
+      { name: "Equip a Trident of the Seas", tier: "Hard", points: 80 },
+      { name: "Equip Some Zenyte Jewelry", tier: "Elite", points: 200 },
+      { name: "Equip an Abyssal Tentacle", tier: "Elite", points: 200 },
+      { name: "Equip an Occult Necklace", tier: "Elite", points: 200 },
+    ],
   },
   {
     name: "Desert",
@@ -487,6 +545,16 @@ export const UNLOCKABLE_REGIONS = [
     extras: { travel: 1, ammo_source: 3, mega_rares: 1 },
     spellbook: ['Ancient'],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Set a mummy ablaze", tier: "Easy", points: 10 },
+      { name: "Cast Ice Barrage", tier: "Elite", points: 200 },
+      { name: "Defeat Awakened Leviathan", tier: "Elite", points: 200 },
+      { name: "Equip a Dragon Chainbody in the Kharidian Desert", tier: "Elite", points: 200 },
+      { name: "Equip a Piece of Masori Armour", tier: "Elite", points: 200 },
+      { name: "Equip the Venator Ring", tier: "Elite", points: 200 },
+      { name: "Equip Osmumten's Fang (or)", tier: "Master", points: 400 },
+    ],
   },
   {
     name: "Morytania",
@@ -564,6 +632,16 @@ export const UNLOCKABLE_REGIONS = [
     extras: { limpwurt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 2, prayer_pot_primary: 1, herb_patches: 2, allotment_patches: 2 },
     spellbook: [],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Defeat a Werewolf in Morytania", tier: "Easy", points: 10 },
+      { name: "1 Araxxor Kill", tier: "Hard", points: 80 },
+      { name: "Assemble a Slayer Helm", tier: "Hard", points: 80 },
+      { name: "Create an Amulet of Blood Fury", tier: "Hard", points: 80 },
+      { name: "Equip any Full Barrows Armour Set", tier: "Hard", points: 80 },
+      { name: "Complete the Theatre of Blood 25 Times", tier: "Elite", points: 200 },
+      { name: "Defeat Phosani's Nightmare", tier: "Elite", points: 200 },
+    ],
   },
   {
     name: "Tirannwn",
@@ -629,6 +707,16 @@ export const UNLOCKABLE_REGIONS = [
     extras: { gp_source: 2, ammo_source: 1, white_berries: 1, eye_of_newt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 3, allotment_patches: 2 },
     spellbook: [],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Kill a Black Dragon in Tirannwn", tier: "Medium", points: 30 },
+      { name: "Complete the Corrupted Gauntlet", tier: "Hard", points: 80 },
+      { name: "Defeat Zalcano", tier: "Hard", points: 80 },
+      { name: "Equip a Dark Bow in Tirannwn", tier: "Hard", points: 80 },
+      { name: "Craft a Toxic Blowpipe", tier: "Elite", points: 200 },
+      { name: "Use a prayer altar to restore 90 prayer in Prifddinas", tier: "Elite", points: 200 },
+      { name: "Equip a Corrupted Weapon", tier: "Master", points: 400 },
+    ],
   },
   {
     name: "Wilderness",
@@ -688,6 +776,16 @@ export const UNLOCKABLE_REGIONS = [
     extras: { gp_source: 3, food_source: 2, limpwurt: 2, white_berries: 1, prayer_pot_primary: 2 },
     spellbook: [],
     prayer: [],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Defeat a Chaos Dwarf in the Wilderness", tier: "Easy", points: 10 },
+      { name: "Defeat the Corporeal Beast", tier: "Hard", points: 80 },
+      { name: "Equip a Dragon 2-Handed Sword in the Wilderness", tier: "Hard", points: 80 },
+      { name: "Equip a Malediction Ward", tier: "Hard", points: 80 },
+      { name: "Equip a Piece of the Dagon'Hai Set", tier: "Elite", points: 200 },
+      { name: "Equip the Voidwaker", tier: "Elite", points: 200 },
+      { name: "Imbue a God Cape", tier: "Elite", points: 200 },
+    ],
   },
   {
     name: "Kourend",
@@ -773,6 +871,16 @@ export const UNLOCKABLE_REGIONS = [
     spellbook: ['Arceuus'],
     prayer: [],
     prayerUnlocks: ['Rigour', 'Augury'],
+    tasks: [
+      ...GLOBAL_TASKS,
+      { name: "Open 1 Grubby Chest", tier: "Easy", points: 10 },
+      { name: "150 Lizardmen Shaman Kills", tier: "Medium", points: 30 },
+      { name: "1 Skotizo Kill", tier: "Hard", points: 80 },
+      { name: "25 Chambers of Xeric", tier: "Hard", points: 80 },
+      { name: "Equip a Dragon Hunter Lance", tier: "Elite", points: 200 },
+      { name: "Equip a piece of Radiant Oathplate", tier: "Elite", points: 200 },
+      { name: "Equip any Ancestral Piece", tier: "Elite", points: 200 },
+    ],
   },
 ];
 

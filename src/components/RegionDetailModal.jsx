@@ -114,7 +114,15 @@ export default function RegionDetailModal({ regionName, customWeights = {}, onCl
   const currentShop = (activeShop && allFilteredShops.find(s => s.name === activeShop))
     ?? defaultShop;
 
+  const regionTasks = region.tasks || [];
+  const TIER_ORDER = ['Easy', 'Medium', 'Hard', 'Elite', 'Master'];
+  const tasksByTier = TIER_ORDER.map(tier => ({
+    tier,
+    tasks: regionTasks.filter(t => t.tier === tier).sort((a, b) => (a.global ? 1 : 0) - (b.global ? 1 : 0)),
+  })).filter(g => g.tasks.length > 0);
+
   const tabs = [
+    regionTasks.length && { id: 'tasks',         label: 'Tasks' },
     pvm?.length        && { id: 'pvm',          label: 'PVM' },
     dropTable?.length  && { id: 'drops',         label: 'Drops' },
     (skillEntries.length > 0 || extraEntries.length > 0) && { id: 'weights', label: 'Bonuses' },
@@ -302,6 +310,24 @@ export default function RegionDetailModal({ regionName, customWeights = {}, onCl
                   </>
                 )}
               </div>
+            </div>
+          )}
+          {currentTab === 'tasks' && (
+            <div className="rdm-tasks">
+              {tasksByTier.map(({ tier, tasks }) => (
+                <div key={tier} className="rdm-tasks-group">
+                  <div className={`rdm-tasks-tier rdm-tier-${tier.toLowerCase()}`}>{tier}</div>
+                  {tasks.map((task, i) => (
+                    <div key={i} className="rdm-task-row">
+                      <span className="rdm-task-name">
+                        {task.name}
+                        {task.global && <span className="rdm-task-global-badge">Global</span>}
+                      </span>
+                      <span className="rdm-task-points">{task.points} pts</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           )}
           {currentTab === 'weights' && (
