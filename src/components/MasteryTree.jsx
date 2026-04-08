@@ -153,31 +153,38 @@ function readLayout(pacts, nodeSize) {
 
 }
 
-function shortestPath(pacts, targetId) {
+function shortestPathToSelected(pacts, targetId, selected) {
   if (!targetId) return new Set();
-  const requiresMap = Object.fromEntries(pacts.map(p => [p.id, p.requires || []]));
 
-  // BFS backwards from target through requires edges
+  // Build undirected adjacency
+  const adj = {};
+  pacts.forEach(p => {
+    if (!adj[p.id]) adj[p.id] = [];
+    (p.requires || []).forEach(pid => {
+      adj[p.id].push(pid);
+      if (!adj[pid]) adj[pid] = [];
+      adj[pid].push(p.id);
+    });
+  });
+
+  // BFS from target until we hit any selected node
   const prev = { [targetId]: null };
   const queue = [targetId];
-  let rootId = null;
+  let foundId = null;
 
   outer: while (queue.length) {
     const curr = queue.shift();
-    const parents = requiresMap[curr] || [];
-    if (parents.length === 0 && curr !== targetId) { rootId = curr; break; }
-    for (const parent of parents) {
-      if (!(parent in prev)) {
-        prev[parent] = curr;
-        if ((requiresMap[parent] || []).length === 0) { rootId = parent; break outer; }
-        queue.push(parent);
-      }
+    for (const nb of (adj[curr] || [])) {
+      if (nb in prev) continue;
+      prev[nb] = curr;
+      if (selected[nb]) { foundId = nb; break outer; }
+      queue.push(nb);
     }
   }
 
-  if (!rootId) return new Set([targetId]);
+  if (!foundId) return new Set([targetId]);
   const path = new Set();
-  let cur = rootId;
+  let cur = foundId;
   while (cur !== null) { path.add(cur); cur = prev[cur]; }
   return path;
 }
@@ -248,34 +255,38 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
 
   const togglePact = (id) => {
     if (selected[id]) {
-      // Cascade deselect: only remove descendants that lose ALL their requires
+      // Build undirected adjacency from requires edges
+      const adj = {};
+      PACTS.forEach(p => {
+        if (!adj[p.id]) adj[p.id] = [];
+        (p.requires || []).forEach(pid => {
+          adj[p.id].push(pid);
+          if (!adj[pid]) adj[pid] = [];
+          adj[pid].push(p.id);
+        });
+      });
+
       const next = { ...selected, [id]: false };
-      const queue = PACTS.filter(p => p.requires.includes(id)).map(p => p.id);
-      const visited = new Set();
+
+      // BFS from pact_aa through the remaining selected subgraph
+      const reachable = new Set();
+      const queue = ['pact_aa'];
       while (queue.length) {
         const cid = queue.shift();
-        if (visited.has(cid)) continue;
-        visited.add(cid);
-        const pact = PACTS.find(p => p.id === cid);
-        if (!pact) continue;
-        const stillUnlocked = pact.requires.some(pid => pid !== id && next[pid]);
-        if (!stillUnlocked && next[cid]) {
-          next[cid] = false;
-          PACTS.filter(p => p.requires.includes(cid)).forEach(c => queue.push(c.id));
-        }
+        if (reachable.has(cid) || !next[cid]) continue;
+        reachable.add(cid);
+        (adj[cid] || []).forEach(nid => { if (!reachable.has(nid) && next[nid]) queue.push(nid); });
       }
+
+      // Deselect anything no longer reachable from root
+      Object.keys(next).forEach(k => { if (next[k] && !reachable.has(k)) next[k] = false; });
+
       onSelectMastery(next);
     } else {
-      const pact = PACTS.find(p => p.id === id);
-      const isAdjacentToSelected = pact && pact.requires.some(rid => selected[rid]);
-      if (isAdjacentToSelected) {
-        onSelectMastery({ ...selected, [id]: true });
-      } else {
-        const path = shortestPath(PACTS, id);
-        const next = { ...selected };
-        path.forEach(pid => { next[pid] = true; });
-        onSelectMastery(next);
-      }
+      const path = shortestPathToSelected(PACTS, id, selected);
+      const next = { ...selected };
+      path.forEach(pid => { next[pid] = true; });
+      onSelectMastery(next);
     }
   };
 
@@ -396,6 +407,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                       draggable={false}
                     />
                   </div>
+                  <div className="pact-node-label">{pact.wikiCode}</div>
                 </button>
               );
             })}
