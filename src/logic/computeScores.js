@@ -27,6 +27,10 @@ export function computeScores(selectedRelics, settings, relicWeights = {}, reloa
   const skillScores = {};
   const extraScores = {};
 
+  // Base score of 2 for all combat skills except prayer
+  SKILLS.filter(s => s.category === 'combat' && s.id !== 'prayer')
+        .forEach(s => { skillScores[s.id] = 2; });
+
   const relicsToScore = [...Object.values(selectedRelics), reloadedRelic].filter(Boolean);
 
   relicsToScore.forEach(relic => {

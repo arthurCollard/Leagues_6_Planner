@@ -418,7 +418,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                   if (m) entry.total += parseFloat(m[1]);
                 } else {
                   const m = p.summary.match(/(\d+(?:\.\d+)?)/);
-                  seen.set(key, { summary: p.summary, pacts: [p], total: m ? parseFloat(m[1]) : null });
+                  seen.set(key, { summary: p.summary, desc: p.desc, pacts: [p], total: m ? parseFloat(m[1]) : null });
                   groups.push(seen.get(key));
                 }
               });
@@ -443,9 +443,10 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                   <div key={label}>
                     {si > 0 && <div className="pact-summary-divider" />}
                     <div className={`pact-summary-section-title pact-summary-section-${label.toLowerCase()}`}>{label}</div>
-                    {groups.map(({ summary, total }) => (
+                    {groups.map(({ summary, desc, total }) => (
                       <div key={summary} className="pact-selected-summary-row">
                         <span className="pact-selected-summary-text">{renderText(summary, total)}</span>
+                        {desc && <span className="pact-selected-summary-desc">{desc}</span>}
                       </div>
                     ))}
                   </div>
@@ -459,6 +460,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
         <div className="pact-custom-tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
           {tooltip.pact.name !== '????????' && <div className="pact-custom-tooltip-code">{tooltip.pact.name}</div>}
           <div className="pact-custom-tooltip-summary">{tooltip.pact.summary}</div>
+          {tooltip.pact.desc && <div className="pact-custom-tooltip-desc">{tooltip.pact.desc}</div>}
         </div>
       )}
     </main>
