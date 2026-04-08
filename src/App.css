@@ -2272,6 +2272,12 @@ body {
 .pact-summary-section-melee { color: #e07848; }
 .pact-summary-section-range { color: #70b870; }
 .pact-spent-count { font-size: 0.7rem; font-weight: 600; color: #c8b48a; background: rgba(74, 63, 46, 0.5); border: 1px solid #4a3f2e; border-radius: 999px; padding: 0.15rem 0.55rem; }
+.pact-spent-flash { animation: pact-cap-flash 0.6s ease-out forwards; }
+@keyframes pact-cap-flash {
+  0%   { background: rgba(180, 40, 40, 0.8); border-color: #d94040; color: #fff; }
+  60%  { background: rgba(180, 40, 40, 0.4); border-color: #d94040; color: #fff; }
+  100% { background: rgba(74, 63, 46, 0.5);  border-color: #4a3f2e; color: #c8b48a; }
+}
 .pact-summary-divider {
   border: none;
   border-top: 1px solid #3a3020;

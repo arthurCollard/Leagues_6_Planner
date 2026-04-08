@@ -189,6 +189,34 @@ function shortestPathToSelected(pacts, targetId, selected) {
   return path;
 }
 
+function ConfirmProgressionModal({ onConfirm, onCancel }) {
+  useEffect(() => {
+    const handler = e => { if (e.key === 'Escape') onCancel(); };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [onCancel]);
+
+  return (
+    <div className="relic-modal-backdrop" onMouseDown={onCancel}>
+      <div className="relic-modal" onMouseDown={e => e.stopPropagation()}>
+        <div className="relic-modal-header">
+          <strong className="relic-modal-title">Switch to Progression Mode?</strong>
+          <button className="close-btn" onClick={onCancel}>✕</button>
+        </div>
+        <div className="relic-modal-body">
+          <p style={{ color: '#c8b896', marginBottom: '1.2rem' }}>
+            You have more than 40 points spent. Switching to progression mode will reset your pact selections.
+          </p>
+          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'flex-end' }}>
+            <button className="close-btn" onClick={onCancel}>Cancel</button>
+            <button className="confirm-btn" onClick={onConfirm}>Reset &amp; Switch</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function MasteryTree({ selectedMasteries, onSelectMastery, onReset }) {
   const [isOpen, setIsOpen] = useState(true);
   const selected = { ...(selectedMasteries || {}), pact_aa: true };
@@ -205,6 +233,9 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
   const [scale, setScale] = useState(0.4);
   const [isDragging, setIsDragging] = useState(false);
   const [hoveredId, setHoveredId] = useState(null);
+  const [capFlash, setCapFlash] = useState(false);
+  const [progressionMode, setProgressionMode] = useState(true);
+  const [showProgressionConfirm, setShowProgressionConfirm] = useState(false);
   const [tooltip, setTooltip] = useState(null); // { pact, x, y }
 
   const clampPan = (px, py, sc) => {
@@ -310,9 +341,17 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
 
       onSelectMastery(next);
     } else {
+      if (progressionMode && totalSpent >= 40) { setCapFlash(true); setTimeout(() => setCapFlash(false), 600); return; }
       const path = shortestPathToSelected(PACTS, id, selected);
       const next = { ...selected };
-      path.forEach(pid => { next[pid] = true; });
+      let remaining = progressionMode ? 40 - totalSpent : Infinity;
+      for (const pid of path) {
+        if (!next[pid]) {
+          if (remaining <= 0) break;
+          next[pid] = true;
+          remaining--;
+        }
+      }
       onSelectMastery(next);
     }
   };
@@ -322,13 +361,44 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
 
   return (
     <main className="relic-tree">
+      {showProgressionConfirm && (
+        <ConfirmProgressionModal
+          onConfirm={() => { onReset(); setProgressionMode(true); setShowProgressionConfirm(false); }}
+          onCancel={() => setShowProgressionConfirm(false)}
+        />
+      )}
       <h2 className="section-header" onClick={() => setIsOpen(o => !o)}>
         <div>
           Pacts
           <p className="relic-tree-desc">Choose pacts to enhance your combat style</p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-          <span className="pact-spent-count">{totalSpent} pts spent</span>
+          <span className={`pact-spent-count${capFlash ? ' pact-spent-flash' : ''}`}>{totalSpent}{progressionMode ? '/40' : ''} pts spent</span>
+          <label
+            className="tier-lock-toggle"
+            data-tooltip={progressionMode ? 'Progression mode' : 'Free pick mode'}
+            onClick={e => e.stopPropagation()}
+          >
+            <span
+              className={`toggle-track ${progressionMode ? 'toggle-on' : 'toggle-off'}`}
+              onClick={() => {
+                if (!progressionMode && totalSpent > 40) {
+                  setShowProgressionConfirm(true);
+                } else {
+                  setProgressionMode(m => !m);
+                }
+              }}
+            >
+              <span className="toggle-thumb">
+                <svg viewBox="0 0 24 24" className="toggle-icon">
+                  {progressionMode
+                    ? <path d="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z" />
+                    : <path d="M18 1C15.24 1 13 3.24 13 6V8H4C2.9 8 2 8.89 2 10V20C2 21.11 2.9 22 4 22H16C17.11 22 18 21.11 18 20V10C18 8.9 17.11 8 16 8H15V6C15 4.34 16.34 3 18 3C19.66 3 21 4.34 21 6V8H23V6C23 3.24 20.76 1 18 1M10 13C11.1 13 12 13.89 12 15C12 16.11 11.11 17 10 17C8.9 17 8 16.11 8 15C8 13.9 8.9 13 10 13Z" />
+                  }
+                </svg>
+              </span>
+            </span>
+          </label>
           <button className="close-btn" disabled={totalSpent === 0} onClick={e => { e.stopPropagation(); onReset(); }}>Reset</button>
           <div className={`collapse-chevron ${isOpen ? 'open' : ''}`} />
         </div>
