@@ -312,4 +312,15 @@ export const BODY = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 10 },
     },
   },
+  {
+    name: "Oathplate chest",
+    slot: 'body',
+    regions: ['Kourend'],
+    requirements: [{ skill: 'Defence', level: 78 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 16, crush: 0, magic: -16, ranged: -18 },
+      defence: { stab: 105, slash: 128, crush: 100, magic: -5, ranged: 112 },
+      other:   { meleeStrength: 4, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
 ];

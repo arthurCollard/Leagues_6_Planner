@@ -406,4 +406,15 @@ export const HEAD = [
     },
     sets: ['elite_void_melee'],
   },
+  {
+    name: "Oathplate helm",
+    slot: 'head',
+    regions: ['Kourend'],
+    requirements: [{ skill: 'Defence', level: 78 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 10, crush: 0, magic: -2, ranged: -7 },
+      defence: { stab: 50, slash: 72, crush: 45, magic: 0, ranged: 50 },
+      other:   { meleeStrength: 6, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
 ];

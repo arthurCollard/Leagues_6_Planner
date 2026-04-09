@@ -301,4 +301,15 @@ export const LEGS = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 6 },
     },
   },
+  {
+    name: "Oathplate legs",
+    slot: 'legs',
+    regions: ['Kourend'],
+    requirements: [{ skill: 'Defence', level: 78 }],
+    bonuses: {
+      attack:  { stab: 0, slash: 12, crush: 0, magic: -12, ranged: -14 },
+      defence: { stab: 75, slash: 100, crush: 73, magic: -3, ranged: 81 },
+      other:   { meleeStrength: 2, rangedStrength: 0, magicDamage: 0, prayer: 0 },
+    },
+  },
 ];
