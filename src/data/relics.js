@@ -186,6 +186,23 @@ export const RELICS = {
       skills: {},
       extras: { travel: 2 },
     },
+    {
+      name: 'Bank Heist',
+      icon: `${process.env.PUBLIC_URL}/relics/Bank_Heist.png`,
+      desc: "Banker's briefcase: teleport to any deposit box, bank, or bank chest, ignores Wilderness restrictions",
+      description: {
+        grant: "Upon choosing this relic you will receive the banker's briefcase.",
+        effects: [
+          "The banker's briefcase can teleport you to any deposit box, bank, or bank chest.",
+          "The briefcase ignores Wilderness teleport restrictions.",
+        ],
+        notes: [
+          'The briefcase cannot be used to teleport to an area which is not unlocked.',
+        ],
+      },
+      skills: {},
+      extras: { travel: 2 },
+    },
   ],
   4: [
     {
@@ -393,7 +410,29 @@ export const RELICS = {
       skills: {},
       extras: {},
       special: 'reloaded',
-    }
+    },
+    {
+      name: 'Flow State',
+      icon: `${process.env.PUBLIC_URL}/relics/Flow_State.png`,
+      desc: 'All listed skilling actions occur at 2 ticks (1.2s), stacks with Fletching Knife and Diabolical Worms',
+      description: {
+        effects: [
+          'The following all occur at a rate of 2 ticks (1.2 seconds):',
+          'Mining, Woodcutting, Fishing, Cooking.',
+          'Firemaking any logs or adding to a bonfire.',
+          'Offering bones at a Prayer altar.',
+          'Fletching (arrows, bruma roots, bows, shields, stocks, javelins, battlestaves, hunter spears).',
+          'Smelting & Crafting (ores, bars & cannonballs | glassblowing, leather items, pottery, gold/silver items, spinning wheel).',
+          'Farming & Magic (harvesting herbs & allotments, planting seeds | low & high alch, superheat, Transmutation spells).',
+          'Minigame interactions (Wintertodt roots & brazier lighting, Tempoross fishing, stealing valuables).',
+        ],
+        notes: [
+          'This effect stacks with the Fletching Knife and Diabolical Worms.',
+        ],
+      },
+      skills: { mining: 2, woodcutting: 2, fishing: 2, cooking: 2, firemaking: 2, prayer: 2, fletching: 2, smithing: 2, crafting: 2, farming: 1, magic: 1 },
+      extras: {},
+    },
   ],
   8: [
     {
