@@ -77,6 +77,34 @@ function getRegionFiltered(slot, selectedRegions) {
       });
 }
 
+const defAggregate = item => item ? Object.values(item.bonuses?.defence || {}).reduce((s, v) => s + (v || 0), 0) : 0;
+const betterItem = (item, val, best, bestVal) =>
+  val > bestVal || (val === bestVal && defAggregate(item) > defAggregate(best));
+
+const accuracyFallback = (item, stat) => {
+  const atk = item.bonuses?.attack || {};
+  if (stat === 'meleeStrength') return Math.max(atk.stab || 0, atk.slash || 0, atk.crush || 0);
+  if (stat === 'rangedStrength') return atk.ranged || 0;
+  if (stat === 'magicDamage')    return atk.magic  || 0;
+  return 0;
+};
+
+const pickBestItem = (items, primaryVal, stat) => {
+  let best = null, bestVal = 0;
+  items.forEach(item => {
+    const val = primaryVal(item);
+    if (betterItem(item, val, best, bestVal)) { bestVal = val; best = item; }
+  });
+  // Fallback to accuracy if no item provides the primary stat
+  if (bestVal === 0 && stat !== 'prayer') {
+    items.forEach(item => {
+      const val = accuracyFallback(item, stat);
+      if (betterItem(item, val, best, bestVal)) { bestVal = val; best = item; }
+    });
+  }
+  return best;
+};
+
 function getOptimizedGear(stat, selectedRegions) {
   const result = {};
 
@@ -87,13 +115,9 @@ function getOptimizedGear(stat, selectedRegions) {
     Object.keys(ITEMS_BY_SLOT).forEach(s => {
       if (s === 'weapon' || s === 'ammo') return;
       const items = getRegionFiltered(s, selectedRegions);
-      let best = null, bestVal = 0;
-      items.forEach(item => {
-        const val = item.bonuses.other.magicDamage || 0;
-        if (val > bestVal) { bestVal = val; best = item; }
-      });
+      const best = pickBestItem(items, item => item.bonuses.other.magicDamage || 0, 'magicDamage');
       nonWeaponGear[s] = best;
-      nonWeaponTotal += bestVal;
+      nonWeaponTotal += best ? (best.bonuses.other.magicDamage || 0) : 0;
     });
 
     // Only consider magic weapons
@@ -109,7 +133,7 @@ function getOptimizedGear(stat, selectedRegions) {
           }
         });
       }
-      if (total > bestTotal) { bestTotal = total; bestWeapon = weapon; }
+      if (total > bestTotal || (total === bestTotal && defAggregate(weapon) > defAggregate(bestWeapon))) { bestTotal = total; bestWeapon = weapon; }
     });
 
     result.weapon = bestWeapon;
@@ -137,11 +161,11 @@ function getOptimizedGear(stat, selectedRegions) {
       let topAmmoVal = 0;
       compatibleAmmo.forEach(ammo => {
         const v = ammo.bonuses.other.rangedStrength || 0;
-        if (v > topAmmoVal) { topAmmoVal = v; topAmmo = ammo; }
+        if (betterItem(ammo, v, topAmmo, topAmmoVal)) { topAmmoVal = v; topAmmo = ammo; }
       });
 
       const combined = weaponVal + topAmmoVal;
-      if (combined > bestCombined) {
+      if (combined > bestCombined || (combined === bestCombined && defAggregate(weapon) > defAggregate(bestWeapon))) {
         bestCombined = combined;
         bestWeapon = weapon;
         bestAmmo = topAmmo;
@@ -154,13 +178,7 @@ function getOptimizedGear(stat, selectedRegions) {
     Object.keys(ITEMS_BY_SLOT).forEach(slot => {
       if (slot === 'weapon' || slot === 'ammo') return;
       const items = getRegionFiltered(slot, selectedRegions);
-      let best = null;
-      let bestVal = 0;
-      items.forEach(item => {
-        const val = item.bonuses.other[stat] || 0;
-        if (val > bestVal) { bestVal = val; best = item; }
-      });
-      result[slot] = best;
+      result[slot] = pickBestItem(items, item => item.bonuses.other[stat] || 0, stat);
     });
   } else {
     // For meleeStrength: only consider melee weapons; prayer has no weapon-type restriction
@@ -168,13 +186,7 @@ function getOptimizedGear(stat, selectedRegions) {
       const items = (slot === 'weapon' && stat === 'meleeStrength')
         ? getRegionFiltered(slot, selectedRegions).filter(isMeleeWeapon)
         : getRegionFiltered(slot, selectedRegions);
-      let best = null;
-      let bestVal = 0;
-      items.forEach(item => {
-        const val = item.bonuses.other[stat] || 0;
-        if (val > bestVal) { bestVal = val; best = item; }
-      });
-      result[slot] = best;
+      result[slot] = pickBestItem(items, item => item.bonuses.other[stat] || 0, stat);
     });
   }
 
@@ -408,6 +420,7 @@ export default function GearPanel({ selectedGear, selectedRegions, onSelectGear,
 
   function applyOptimized(stat) {
     const optimized = getOptimizedGear(stat, selectedRegions);
+    if (optimized.weapon?.twoHanded) optimized.shield = null;
     Object.entries(optimized).forEach(([slot, item]) => onSelectGear(slot, item));
   }
 

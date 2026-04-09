@@ -4585,6 +4585,233 @@
               ]
             }
           ]
+        },
+        {
+          "location": "Tal Teklan",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Tal_Teklan",
+          "shops": [
+            {
+              "name": "Arcuani's Archery Supplies",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Arcuani%27s_Archery_Supplies",
+              "description": "Arcuani's Archery Supplies is a shop in Tal Teklan selling ranged gear, run by Arcuani.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Shortbow", "Number in stock": "4", "Restock time": "1m", "Price sold at": "50", "Price bought at": "27", "GE price": "50" },
+                    { "Item": "Longbow", "Number in stock": "4", "Restock time": "1m", "Price sold at": "80", "Price bought at": "44", "GE price": "20" },
+                    { "Item": "Oak shortbow", "Number in stock": "3", "Restock time": "2m", "Price sold at": "100", "Price bought at": "55", "GE price": "35" },
+                    { "Item": "Oak longbow", "Number in stock": "3", "Restock time": "2m", "Price sold at": "160", "Price bought at": "88", "GE price": "39" },
+                    { "Item": "Willow shortbow", "Number in stock": "2", "Restock time": "2m", "Price sold at": "200", "Price bought at": "110", "GE price": "100" },
+                    { "Item": "Willow longbow", "Number in stock": "2", "Restock time": "2m", "Price sold at": "320", "Price bought at": "176", "GE price": "136" },
+                    { "Item": "Maple shortbow", "Number in stock": "1", "Restock time": "1m", "Price sold at": "400", "Price bought at": "220", "GE price": "191" },
+                    { "Item": "Maple longbow", "Number in stock": "1", "Restock time": "1m", "Price sold at": "640", "Price bought at": "352", "GE price": "315" },
+                    { "Item": "Bronze arrow", "Number in stock": "2000", "Restock time": "6s", "Price sold at": "1", "Price bought at": "0", "GE price": "5" },
+                    { "Item": "Iron arrow", "Number in stock": "1500", "Restock time": "9s", "Price sold at": "3", "Price bought at": "1", "GE price": "8" },
+                    { "Item": "Steel arrow", "Number in stock": "1000", "Restock time": "12s", "Price sold at": "12", "Price bought at": "6", "GE price": "11" },
+                    { "Item": "Mithril arrow", "Number in stock": "800", "Restock time": "9s", "Price sold at": "32", "Price bought at": "17", "GE price": "9" },
+                    { "Item": "Adamant arrow", "Number in stock": "600", "Restock time": "12s", "Price sold at": "80", "Price bought at": "44", "GE price": "40" },
+                    { "Item": "Rune arrow", "Number in stock": "200", "Restock time": "18s", "Price sold at": "400", "Price bought at": "220", "GE price": "72" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dyes to Die For",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Dyes_to_Die_For",
+              "description": "Dyes to Die For is a dye shop run by Xochitl in Tal Teklan, selling a multitude of dyes directly for coins.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Red dye", "Number in stock": "10", "Restock time": "1m (100t)", "Price sold at": "6", "Price bought at": "2", "GE price": "562" },
+                    { "Item": "Yellow dye", "Number in stock": "10", "Restock time": "1m (100t)", "Price sold at": "6", "Price bought at": "2", "GE price": "164" },
+                    { "Item": "Blue dye", "Number in stock": "10", "Restock time": "1m (100t)", "Price sold at": "6", "Price bought at": "2", "GE price": "263" },
+                    { "Item": "Orange dye", "Number in stock": "10", "Restock time": "1m (100t)", "Price sold at": "6", "Price bought at": "2", "GE price": "811" },
+                    { "Item": "Green dye", "Number in stock": "10", "Restock time": "1m (100t)", "Price sold at": "6", "Price bought at": "2", "GE price": "671" },
+                    { "Item": "Purple dye", "Number in stock": "10", "Restock time": "1m (100t)", "Price sold at": "6", "Price bought at": "2", "GE price": "415" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Tal Teklan General Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Tal_Teklan_General_Store",
+              "description": "Tal Teklan General Store is a general store in Tal Teklan run by a shopkeeper.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Bronze pickaxe", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "84" },
+                    { "Item": "Bronze axe", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "20", "Price bought at": "6", "GE price": "65" },
+                    { "Item": "Chisel", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "78" },
+                    { "Item": "Spade", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "3", "Price bought at": "1", "GE price": "122" },
+                    { "Item": "Hammer", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "84" },
+                    { "Item": "Knife", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "7", "Price bought at": "2", "GE price": "88" },
+                    { "Item": "Tinderbox", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "88" },
+                    { "Item": "Pestle and mortar", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "5", "Price bought at": "1", "GE price": "120" },
+                    { "Item": "Needle", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "56" },
+                    { "Item": "Thread", "Number in stock": "30", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "7" },
+                    { "Item": "Rope", "Number in stock": "10", "Restock time": "18s (30t)", "Price sold at": "23", "Price bought at": "7", "GE price": "66" },
+                    { "Item": "Pot", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "30" },
+                    { "Item": "Jug", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "3" },
+                    { "Item": "Bucket", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "2", "Price bought at": "0", "GE price": "7" },
+                    { "Item": "Bowl", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "5", "Price bought at": "1", "GE price": "17" },
+                    { "Item": "Vial", "Number in stock": "15", "Restock time": "1m 30s (150t)", "Price sold at": "2", "Price bought at": "0", "GE price": "3" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Tal Teklan Rune Shop",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Tal_Teklan_Rune_Shop",
+              "description": "Tal Teklan Rune Shop is a members-only shop in Tal Teklan specializing in magical runes and rune packs, run by Teicuh.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Air rune", "Number in stock": "5000", "Restock time": "6s (10t)", "Price sold at": "4", "Price bought at": "2", "GE price": "5" },
+                    { "Item": "Water rune", "Number in stock": "5000", "Restock time": "6s (10t)", "Price sold at": "4", "Price bought at": "2", "GE price": "5" },
+                    { "Item": "Earth rune", "Number in stock": "5000", "Restock time": "6s (10t)", "Price sold at": "4", "Price bought at": "2", "GE price": "5" },
+                    { "Item": "Fire rune", "Number in stock": "5000", "Restock time": "6s (10t)", "Price sold at": "4", "Price bought at": "2", "GE price": "5" },
+                    { "Item": "Mind rune", "Number in stock": "3000", "Restock time": "6s (10t)", "Price sold at": "3", "Price bought at": "1", "GE price": "3" },
+                    { "Item": "Body rune", "Number in stock": "3000", "Restock time": "6s (10t)", "Price sold at": "3", "Price bought at": "1", "GE price": "5" },
+                    { "Item": "Chaos rune", "Number in stock": "250", "Restock time": "9s (15t)", "Price sold at": "90", "Price bought at": "49", "GE price": "104" },
+                    { "Item": "Death rune", "Number in stock": "100", "Restock time": "12s (20t)", "Price sold at": "180", "Price bought at": "99", "GE price": "185" },
+                    { "Item": "Cosmic rune", "Number in stock": "30", "Restock time": "45s (75t)", "Price sold at": "50", "Price bought at": "27", "GE price": "96" },
+                    { "Item": "Nature rune", "Number in stock": "30", "Restock time": "12s (20t)", "Price sold at": "180", "Price bought at": "99", "GE price": "108" },
+                    { "Item": "Air rune pack", "Number in stock": "100", "Restock time": "6s (10t)", "Price sold at": "430", "Price bought at": "236", "GE price": "N/A" },
+                    { "Item": "Water rune pack", "Number in stock": "100", "Restock time": "6s (10t)", "Price sold at": "430", "Price bought at": "236", "GE price": "N/A" },
+                    { "Item": "Earth rune pack", "Number in stock": "100", "Restock time": "6s (10t)", "Price sold at": "430", "Price bought at": "236", "GE price": "N/A" },
+                    { "Item": "Fire rune pack", "Number in stock": "100", "Restock time": "6s (10t)", "Price sold at": "430", "Price bought at": "236", "GE price": "N/A" },
+                    { "Item": "Mind rune pack", "Number in stock": "50", "Restock time": "6s (10t)", "Price sold at": "330", "Price bought at": "181", "GE price": "N/A" },
+                    { "Item": "Chaos rune pack", "Number in stock": "30", "Restock time": "6s (10t)", "Price sold at": "9950", "Price bought at": "5472", "GE price": "N/A" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "The King's Inn",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/The_King%27s_Inn",
+              "description": "The King's Inn is a pub located in Tal Teklan where King sells food and a wide range of alcohol.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Price sold at", "GE price"],
+                  "stock": [
+                    { "Item": "Beer", "Price sold at": "2", "GE price": "71" },
+                    { "Item": "Cider", "Price sold at": "2", "GE price": "106" },
+                    { "Item": "Sunbeam ale", "Price sold at": "8", "GE price": "80" },
+                    { "Item": "Vodka", "Price sold at": "5", "GE price": "144" },
+                    { "Item": "Rum", "Price sold at": "5", "GE price": "193" },
+                    { "Item": "Whisky", "Price sold at": "5", "GE price": "122" },
+                    { "Item": "Gin", "Price sold at": "5", "GE price": "170" },
+                    { "Item": "Moon-lite", "Price sold at": "15", "GE price": "32" },
+                    { "Item": "Jug of wine", "Price sold at": "1", "GE price": "3" },
+                    { "Item": "Metztonalli white", "Price sold at": "500", "GE price": "809" },
+                    { "Item": "Blackbird red", "Price sold at": "300", "GE price": "381" },
+                    { "Item": "Eclipse red", "Price sold at": "1000", "GE price": "749" },
+                    { "Item": "Cup of tea", "Price sold at": "10", "GE price": "106" },
+                    { "Item": "Stew", "Price sold at": "20", "GE price": "96" },
+                    { "Item": "Meat pie", "Price sold at": "15", "GE price": "42" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "location": "Kastori",
+          "wikiUrl": "https://oldschool.runescape.wiki/w/Kastori",
+          "shops": [
+            {
+              "name": "Kastori General Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Kastori_General_Store",
+              "description": "Kastori General Store is a members-only general store run by a shopkeeper in Kastori.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Bronze pickaxe", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "84" },
+                    { "Item": "Bronze axe", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "20", "Price bought at": "6", "GE price": "65" },
+                    { "Item": "Chisel", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "78" },
+                    { "Item": "Spade", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "3", "Price bought at": "1", "GE price": "122" },
+                    { "Item": "Hammer", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "84" },
+                    { "Item": "Knife", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "7", "Price bought at": "2", "GE price": "88" },
+                    { "Item": "Tinderbox", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "88" },
+                    { "Item": "Needle", "Number in stock": "5", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "56" },
+                    { "Item": "Thread", "Number in stock": "30", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "7" },
+                    { "Item": "Rope", "Number in stock": "10", "Restock time": "18s (30t)", "Price sold at": "23", "Price bought at": "7", "GE price": "66" },
+                    { "Item": "Pot", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "30" },
+                    { "Item": "Jug", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "1", "Price bought at": "0", "GE price": "3" },
+                    { "Item": "Bucket", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "2", "Price bought at": "0", "GE price": "7" },
+                    { "Item": "Bowl", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "5", "Price bought at": "1", "GE price": "17" },
+                    { "Item": "Cake tin", "Number in stock": "15", "Restock time": "12s (20t)", "Price sold at": "13", "Price bought at": "4", "GE price": "75" },
+                    { "Item": "Empty jug pack", "Number in stock": "5", "Restock time": "18s (30t)", "Price sold at": "182", "Price bought at": "56", "GE price": "N/A" },
+                    { "Item": "Empty bucket pack", "Number in stock": "5", "Restock time": "18s (30t)", "Price sold at": "650", "Price bought at": "200", "GE price": "N/A" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sulisal's Superb Fishing Store",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Sulisal%27s_Superb_Fishing_Store",
+              "description": "Sulisal's Superb Fishing Store is a shop run by Sulisal in Kastori, featuring fishing bait spawns.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Small fishing net", "Number in stock": "5", "Restock time": "1m", "Price sold at": "5", "Price bought at": "3", "GE price": "138" },
+                    { "Item": "Big fishing net", "Number in stock": "5", "Restock time": "1m", "Price sold at": "20", "Price bought at": "14", "GE price": "100" },
+                    { "Item": "Fishing rod", "Number in stock": "5", "Restock time": "1m", "Price sold at": "5", "Price bought at": "3", "GE price": "99" },
+                    { "Item": "Fly fishing rod", "Number in stock": "5", "Restock time": "1m", "Price sold at": "5", "Price bought at": "3", "GE price": "99" },
+                    { "Item": "Harpoon", "Number in stock": "5", "Restock time": "1m", "Price sold at": "5", "Price bought at": "3", "GE price": "96" },
+                    { "Item": "Lobster pot", "Number in stock": "5", "Restock time": "1m", "Price sold at": "20", "Price bought at": "14", "GE price": "139" },
+                    { "Item": "Fishing bait", "Number in stock": "1000", "Restock time": "0.6s", "Price sold at": "3", "Price bought at": "2", "GE price": "5" },
+                    { "Item": "Bait pack", "Number in stock": "100", "Restock time": "3s", "Price sold at": "300", "Price bought at": "210", "GE price": "N/A" },
+                    { "Item": "Feather", "Number in stock": "1000", "Restock time": "0.6s", "Price sold at": "2", "Price bought at": "1", "GE price": "3" },
+                    { "Item": "Feather pack", "Number in stock": "100", "Restock time": "3s", "Price sold at": "200", "Price bought at": "140", "GE price": "N/A" },
+                    { "Item": "Raw sardine", "Number in stock": "10", "Restock time": "1m 30s", "Price sold at": "10", "Price bought at": "7", "GE price": "36" },
+                    { "Item": "Raw herring", "Number in stock": "10", "Restock time": "1m 30s", "Price sold at": "10", "Price bought at": "7", "GE price": "67" },
+                    { "Item": "Raw mackerel", "Number in stock": "10", "Restock time": "1m 30s", "Price sold at": "15", "Price bought at": "10", "GE price": "21" },
+                    { "Item": "Raw cod", "Number in stock": "10", "Restock time": "1m 30s", "Price sold at": "10", "Price bought at": "7", "GE price": "27" },
+                    { "Item": "Raw tuna", "Number in stock": "10", "Restock time": "1m 30s", "Price sold at": "40", "Price bought at": "28", "GE price": "60" },
+                    { "Item": "Raw bass", "Number in stock": "6", "Restock time": "1m 30s", "Price sold at": "40", "Price bought at": "28", "GE price": "12" },
+                    { "Item": "Raw swordfish", "Number in stock": "4", "Restock time": "1m 30s", "Price sold at": "80", "Price bought at": "56", "GE price": "198" },
+                    { "Item": "Raw lobster", "Number in stock": "4", "Restock time": "1m 30s", "Price sold at": "70", "Price bought at": "49", "GE price": "152" }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Kastori Farming Supplies",
+              "wikiUrl": "https://oldschool.runescape.wiki/w/Kastori_Farming_Supplies",
+              "description": "Kastori Farming Supplies is a farming shop located in Kastori, run by Ameyalli.",
+              "stockTables": [
+                {
+                  "columns": ["Item", "Number in stock", "Restock time", "Price sold at", "Price bought at", "GE price"],
+                  "stock": [
+                    { "Item": "Rake", "Number in stock": "5", "Restock time": "6s (10t)", "Price sold at": "6", "Price bought at": "4", "GE price": "144" },
+                    { "Item": "Seed dibber", "Number in stock": "5", "Restock time": "6s (10t)", "Price sold at": "6", "Price bought at": "4", "GE price": "129" },
+                    { "Item": "Secateurs", "Number in stock": "5", "Restock time": "6s (10t)", "Price sold at": "5", "Price bought at": "3", "GE price": "181" },
+                    { "Item": "Spade", "Number in stock": "5", "Restock time": "6s (10t)", "Price sold at": "3", "Price bought at": "2", "GE price": "122" },
+                    { "Item": "Gardening trowel", "Number in stock": "10", "Restock time": "12s (20t)", "Price sold at": "12", "Price bought at": "8", "GE price": "231" },
+                    { "Item": "Watering can", "Number in stock": "30", "Restock time": "3s (5t)", "Price sold at": "8", "Price bought at": "5", "GE price": "229" },
+                    { "Item": "Filled plant pot", "Number in stock": "100", "Restock time": "6s (10t)", "Price sold at": "1", "Price bought at": "0", "GE price": "4" },
+                    { "Item": "Plant pot pack", "Number in stock": "30", "Restock time": "3s (5t)", "Price sold at": "100", "Price bought at": "70", "GE price": "N/A" },
+                    { "Item": "Compost", "Number in stock": "30", "Restock time": "6s (10t)", "Price sold at": "20", "Price bought at": "14", "GE price": "10" },
+                    { "Item": "Compost pack", "Number in stock": "30", "Restock time": "30s (50t)", "Price sold at": "2000", "Price bought at": "1400", "GE price": "N/A" },
+                    { "Item": "Empty sack", "Number in stock": "30", "Restock time": "1.2s (2t)", "Price sold at": "1", "Price bought at": "0", "GE price": "3" },
+                    { "Item": "Sack pack", "Number in stock": "30", "Restock time": "1.2s (2t)", "Price sold at": "100", "Price bought at": "70", "GE price": "N/A" },
+                    { "Item": "Basket", "Number in stock": "30", "Restock time": "1.2s (2t)", "Price sold at": "1", "Price bought at": "0", "GE price": "3" },
+                    { "Item": "Basket pack", "Number in stock": "30", "Restock time": "1.2s (2t)", "Price sold at": "100", "Price bought at": "70", "GE price": "N/A" },
+                    { "Item": "Bucket", "Number in stock": "30", "Restock time": "6s (10t)", "Price sold at": "2", "Price bought at": "1", "GE price": "7" },
+                    { "Item": "Empty bucket pack", "Number in stock": "30", "Restock time": "6s (10t)", "Price sold at": "500", "Price bought at": "350", "GE price": "N/A" },
+                    { "Item": "Plant cure", "Number in stock": "50", "Restock time": "3s (5t)", "Price sold at": "40", "Price bought at": "28", "GE price": "179" }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },

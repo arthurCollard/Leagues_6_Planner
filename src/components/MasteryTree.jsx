@@ -298,14 +298,18 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
 
   useEffect(() => { centerOnAA(); }, []);
 
+  // Keep a ref to the latest zoom so the wheel listener (mounted once) never goes stale
+  const zoomRef = useRef(zoom);
+  useEffect(() => { zoomRef.current = zoom; });
+
   // Non-passive wheel listener so we can preventDefault (stops page scroll while zooming)
   useEffect(() => {
     const el = viewportRef.current;
     if (!el) return;
     const onWheel = (e) => {
       e.preventDefault();
-      const rect = el.getBoundingClientRect();
-      zoom(e.deltaY < 0 ? 1.1 : 0.9, e.clientX - rect.left, e.clientY - rect.top);
+      const rect = viewportRef.current ? viewportRef.current.getBoundingClientRect() : el.getBoundingClientRect();
+      zoomRef.current(e.deltaY < 0 ? 1.1 : 0.9, e.clientX - rect.left, e.clientY - rect.top);
     };
     el.addEventListener('wheel', onWheel, { passive: false });
     return () => el.removeEventListener('wheel', onWheel);
