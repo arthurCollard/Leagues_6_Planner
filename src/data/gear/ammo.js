@@ -11,10 +11,15 @@ export const AMMO = [
       defence: { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 0, prayer: 5 },
     },
-    effect: { 
-      type: 'multiply_totals',
-      stats: [],
-      description: "expands the accuracy and damage bonus from crystal armour to all melee weapons (Subject to Change)" },
+    effect: {
+      type: 'per_equipped_piece',
+      pieces: ['Crystal Helm', 'Crystal Body', 'Crystal Legs', 'Crystal Shield'],
+      bonusPerPiece: [
+        { category: 'attack', stat: 'magic', value: 20 },
+        { category: 'other', stat: 'magicDamage', value: 2 },
+      ],
+      description: "Crystal Blessing: Crystal Armour bonuses for Accuracy and Damage apply to all Melee weapons and Magic powered weapons whilst equipped. Additionally provides +2% magic damage and +20 Magic attack bonus per Crystal Armour piece equipped.",
+    },
   },
   // ── Arrows ────────────────────────────────────────────────────────────────
   {

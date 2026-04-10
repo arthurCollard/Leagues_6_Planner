@@ -12,9 +12,9 @@ export const SHIELD = [
       other:   { meleeStrength: 0, rangedStrength: 0, magicDamage: 6, prayer: 3 },
     },
     effect: {
-      "type": "multiply_totals",
-      "stats": [],
-      "description": "Devil's Element: doubles elemental weakness"
+      type: 'multiply_totals',
+      stats: [],
+      description: "Devil's Element: Your elemental spells act as if any creature has an additional 30% elemental weakness to that element.",
     },
   },
   // ── Varlamore ──────────────────────────────────────────────────────────────

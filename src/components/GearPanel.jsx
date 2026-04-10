@@ -208,15 +208,25 @@ function sumBonuses(gear) {
     });
   });
 
+  // Apply per-piece bonuses before multipliers so they get scaled (e.g. Crystal Blessing + Tumeken's Shadow)
+  Object.values(gear).forEach(item => {
+    if (item?.effect?.type !== 'per_equipped_piece') return;
+    const count = item.effect.pieces.filter(name => equippedNames.has(name)).length;
+    if (count > 0) {
+      item.effect.bonusPerPiece.forEach(({ category, stat, value }) => {
+        totals[category][stat] += value * count;
+      });
+      activeEffects.push(`${item.effect.description} (${count} piece${count > 1 ? 's' : ''} equipped)`);
+    }
+  });
+
   // Apply item-level multiplier effects (e.g. Tumeken's Shadow)
   Object.values(gear).forEach(item => {
-    if (!item?.effect) return;
-    if (item.effect.type === 'multiply_totals') {
-      item.effect.stats.forEach(({ category, stat, factor }) => {
-        totals[category][stat] = Math.round(totals[category][stat] * factor);
-      });
-      activeEffects.push(item.effect.description);
-    }
+    if (item?.effect?.type !== 'multiply_totals') return;
+    item.effect.stats.forEach(({ category, stat, factor }) => {
+      totals[category][stat] = Math.round(totals[category][stat] * factor);
+    });
+    activeEffects.push(item.effect.description);
   });
 
   // Apply set bonuses
