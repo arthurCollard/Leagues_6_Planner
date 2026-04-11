@@ -354,6 +354,19 @@ export const RELICS = {
   ],
   6: [
     {
+      name: 'Eternal Sustenance',
+      icon: `${process.env.PUBLIC_URL}/relics/Eternal_Sustenance.png`,
+      desc: 'Food is no longer consumed when eaten',
+      description: {
+        effects: [
+          'Food is no longer consumed when eaten.',
+        ],
+        notes: [],
+      },
+      skills: {},
+      extras: { food_source: 3 },
+    },
+    {
       name: 'Culling Spree',
       icon: `${process.env.PUBLIC_URL}/relics/Culling_Spree.png`,
       desc: 'Choose slayer tasks (3 choices, +boss), set kill count (5-200), 50% superior spawn chain, superior drop elite clues, free helmet perks',
