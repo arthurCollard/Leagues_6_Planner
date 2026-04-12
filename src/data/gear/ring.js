@@ -46,7 +46,7 @@ export const RING = [
   {
     name: 'Ring of Suffering (i)',
     slot: 'ring',
-    regions: ['Tirannwn', 'Kourend'],
+    regions: ['Kourend'],
     requirements: [{ skill: 'Defence', level: 75 }],
     bonuses: {
       attack:  { stab: 0, slash: 0, crush: 0, magic: 0, ranged: 0 },
