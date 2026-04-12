@@ -472,6 +472,28 @@ export const RELICS = {
       extras: {},
     },
     {
+      name: 'Executioner',
+      icon: `${process.env.PUBLIC_URL}/relics/Executioner.png`,
+      desc: 'Receive an axe that executes enemies below 20% HP, 6 tile range',
+      description: {
+        grant: "Upon choosing this relic you will receive the Sage's Axe.",
+        effects: [
+          'The axe is a thrown ranged weapon which can be used to execute targets below 20% hitpoints.',
+          'The axe has an attack range of 6 tiles.',
+          'Throwing the axe does not consume it, but the primary hit does trigger regeneration effects from Demonic Pacts.',
+          'Execute damage can hit additional targets with Demonic Pacts.',
+          'This perk will also work inside The Gauntlet.',
+        ],
+        notes: [
+          "The axe's damage respects any ranged damage reduction effects and immunities the target has.",
+          'The axe will not work against Yama.',
+          "The Sage's Axe can be retrieved from the Leagues Tutor in Yama's Lair if lost.",
+        ],
+      },
+      skills: {},
+      extras: {},
+    },
+    {
       name: 'Flask of Fervour',
       icon: `${process.env.PUBLIC_URL}/relics/Flask_of_Fervour.png`,
       desc: 'Restore HP/Prayer/Spec, 3 explosions (60% Prayer dmg), 0 damage taken for 2.4s, 3min cooldown (reduced by damage)',

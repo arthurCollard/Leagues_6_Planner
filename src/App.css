@@ -385,6 +385,137 @@ body {
   height: 0;
 }
 
+/* ── Skill Levels Tab ─────────────────────────────────────────────────────── */
+.skill-levels-tab {
+  padding: 0.5rem 0;
+}
+
+.skill-levels-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  padding: 0 0.1rem;
+}
+
+.skill-levels-total {
+  font-size: 0.78rem;
+  color: #b8a282;
+}
+
+.skill-levels-total strong {
+  color: #d8ccb4;
+  font-size: 0.85rem;
+}
+
+
+.skill-levels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.skill-level-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #1a1612;
+  border: 1px solid #2e2720;
+  border-radius: 5px;
+  padding: 4px 6px;
+  transition: border-color 0.15s;
+  position: relative;
+}
+
+.skill-level-cell:hover {
+  border-color: #b8a282;
+}
+
+.skill-level-cell[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: pre;
+  background: #12100d;
+  color: #f0e6c8;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  padding: 0.4rem 0.65rem;
+  border-radius: 7px;
+  border: 1px solid #5a4a2a;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 100;
+  min-width: max-content;
+}
+
+.skill-level-cell[data-tooltip]:hover::after {
+  opacity: 1;
+}
+
+@keyframes skill-flash {
+  0%   { background: rgba(74, 222, 128, 0.15); box-shadow: 0 0 8px rgba(74, 222, 128, 0.6); }
+  60%  { background: rgba(74, 222, 128, 0.15); box-shadow: 0 0 8px rgba(74, 222, 128, 0.6); }
+  100% { background: transparent; box-shadow: none; }
+}
+
+.skill-level-flash {
+  animation: skill-flash 0.7s ease-out forwards;
+}
+
+.skill-level-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+}
+
+.skill-level-input {
+  width: 0;
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f0e6c8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: right;
+  outline: none;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+
+.skill-level-input::-webkit-outer-spin-button,
+.skill-level-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.skill-level-total-cell {
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  background: #231e18;
+  border-color: #4a3f2f;
+}
+
+.skill-level-total-label {
+  font-size: 0.62rem;
+  color: #b8a282;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.skill-level-total-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #d0bd97;
+}
+
 .panel-header {
   display: flex;
   justify-content: space-between;
@@ -994,6 +1125,8 @@ body {
 
 /* ── Tablet (≤1100px) ─────────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
+  .guide-layout { flex-direction: column; }
+  .guide-left-sidebar { position: static; width: 100%; }
   .main-layout { grid-template-columns: 1fr; }
   .skills-panel { position: static; }
 }
@@ -1570,16 +1703,16 @@ body {
 
 
 .relic-icon {
-  width: 32px !important;
-  height: 32px !important;
+  width: 40px !important;
+  height: 40px !important;
   object-fit: contain;
   image-rendering: pixelated;
   border-radius: 4px;
 }
 
 .relic-fallback {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, #b8a282, #d0bd97);
   border-radius: 4px;
   display: flex;
@@ -3204,4 +3337,608 @@ body {
 .bmc-button img {
   height: 22px;
   width: auto;
+}
+
+/* ── Header nav ── */
+.header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.header-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-nav-link {
+  color: #d4b896;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(212, 184, 150, 0.3);
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.header-nav-link:hover,
+.header-nav-link.active {
+  background: rgba(212, 184, 150, 0.15);
+  color: #f0dfc0;
+}
+
+/* ── Guide Page ── */
+.guide-page {
+  min-height: 100vh;
+  background: #1a1612;
+  color: #d4c4a8;
+  font-family: inherit;
+}
+
+.guide-header {
+  background: linear-gradient(135deg, #1e1a15 0%, #2a2318 100%);
+  border-bottom: 2px solid #5a4a2a;
+  padding: 1.5rem 0;
+}
+
+.guide-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.guide-back-link {
+  display: inline-block;
+  color: #b8a282;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+}
+
+.guide-back-link:hover { opacity: 1; }
+
+.guide-header h1 {
+  font-size: 1.6rem;
+  color: #f0dfc0;
+  margin: 0 0 0.4rem;
+}
+
+.guide-byline {
+  font-size: 0.85rem;
+  color: #8a7a62;
+  margin: 0;
+}
+
+.guide-byline a {
+  color: #b8a282;
+}
+
+.guide-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.guide-left-sidebar {
+  flex-shrink: 0;
+  width: 286px;
+  position: sticky;
+  top: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guide-levels-panel {
+  background: #231e18;
+  border: 1px solid #b8a282;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+/* ── Gold Panel ── */
+.guide-gold-panel {
+  background: #231e18;
+  border: 1px solid #c8a830;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.guide-gold-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-gold-formatted {
+  font-size: 0.72rem;
+  color: #c8a830;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.guide-gold-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.guide-gold-coin-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 6px rgba(200, 168, 48, 0.35));
+  transition: all 0.2s;
+}
+
+.guide-gold-input-row {
+  width: 100%;
+}
+
+.guide-gold-display {
+  width: 100%;
+  background: #1a1612;
+  border: 1px solid #4a3f2f;
+  border-radius: 7px;
+  color: #f0e6c8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.35rem 0.5rem;
+  cursor: text;
+  transition: border-color 0.15s;
+}
+
+.guide-gold-display:hover {
+  border-color: #c8a830;
+}
+
+.guide-gold-input {
+  width: 100%;
+  background: #1a1612;
+  border: 1px solid #c8a830;
+  border-radius: 7px;
+  color: #f0e6c8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.35rem 0.5rem;
+  outline: none;
+}
+
+/* ── Pacts Panel ── */
+.guide-pacts-panel {
+  background: #231e18;
+  border: 1px solid #8b3a3a;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.guide-pacts-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.guide-pacts-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0.65rem;
+}
+
+.guide-pacts-btn {
+  width: 32px;
+  height: 32px;
+  background: #1a1612;
+  border: 1px solid #5a2a2a;
+  border-radius: 7px;
+  color: #d8ccb4;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.guide-pacts-btn:hover:not(:disabled) {
+  background: #8b3a3a;
+  border-color: #c05050;
+  color: #fff;
+}
+
+.guide-pacts-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.guide-pacts-count {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.guide-pacts-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e06060;
+  line-height: 1;
+}
+
+.guide-pacts-max {
+  font-size: 0.78rem;
+  color: #b8a282;
+}
+
+.guide-pacts-pips {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.guide-pacts-pip {
+  flex: 0 0 auto;
+  width: calc(10% - 4px);
+  height: 8px;
+  border-radius: 4px;
+  background: #1a1612;
+  border: 1px solid #5a2a2a;
+  cursor: pointer;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.guide-pacts-pip.filled {
+  background: #c05050;
+  border-color: #e06060;
+}
+
+.guide-pacts-pip:hover {
+  border-color: #e06060;
+  background: #6a2a2a;
+}
+
+.guide-pacts-pip.filled:hover {
+  background: #8b3a3a;
+}
+
+.guide-levels-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.guide-levels-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #d0bd97;
+  flex: 1;
+}
+
+.guide-levels-total {
+  font-size: 0.72rem;
+  color: #b8a282;
+}
+
+.guide-levels-total strong {
+  color: #d8ccb4;
+}
+
+.guide-body {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+}
+
+/* TOC */
+.guide-toc {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2.5rem;
+  display: inline-block;
+  min-width: 260px;
+}
+
+.guide-toc h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: #d4b896;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.guide-toc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.guide-toc li {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+}
+
+.guide-toc a {
+  color: #b8a282;
+  text-decoration: none;
+}
+
+.guide-toc a:hover { color: #f0dfc0; text-decoration: underline; }
+
+/* Sections */
+.guide-body section {
+  margin-bottom: 3rem;
+}
+
+.guide-body h2 {
+  font-size: 1.3rem;
+  color: #f0dfc0;
+  border-bottom: 1px solid #5a4a2a;
+  padding-bottom: 0.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.guide-body h3 {
+  font-size: 1rem;
+  color: #d4b896;
+  margin: 1rem 0 0.5rem;
+}
+
+.guide-body p {
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+  font-size: 0.9rem;
+}
+
+.guide-body a {
+  color: #b8a282;
+}
+
+/* Notes */
+.guide-note {
+  background: rgba(180, 140, 60, 0.1);
+  border-left: 3px solid #b8842a;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.85rem;
+  color: #c8ac78;
+  margin: 0.75rem 0;
+  line-height: 1.5;
+}
+
+/* Collapsible */
+.guide-collapsible {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.guide-collapsible-toggle {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: none;
+  color: #d4b896;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s;
+}
+
+.guide-collapsible-toggle:hover {
+  background: rgba(255,255,255,0.09);
+}
+
+.guide-collapsible-body {
+  padding: 0.75rem 1rem;
+}
+
+/* Checklist */
+.guide-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guide-checklist-item.has-subitems {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.guide-checklist-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.guide-checklist-sub {
+  margin-top: 0.3rem;
+  margin-left: 1.8rem;
+  border-left: 2px solid rgba(255,255,255,0.1);
+  padding-left: 0.6rem;
+}
+
+.guide-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.guide-checklist-item:last-child { border-bottom: none; }
+
+.guide-check-box {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(212, 184, 150, 0.35);
+  border-radius: 3px;
+  margin-top: 2px;
+  background: rgba(255,255,255,0.03);
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.guide-check-box.checked {
+  background: #6a9a5a;
+  border-color: #6a9a5a;
+}
+
+.guide-check-box.checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.guide-checklist-item {
+  cursor: pointer;
+  user-select: none;
+}
+
+.guide-checklist-item.is-checked {
+  opacity: 0.45;
+  text-decoration: line-through;
+  text-decoration-color: rgba(212, 184, 150, 0.4);
+}
+
+.guide-checklist-item.is-pact {
+  color: #e8d0a8;
+}
+
+.guide-checklist-item.is-optional {
+  opacity: 0.7;
+}
+
+.guide-checklist-item.is-optional.is-checked {
+  opacity: 0.3;
+}
+
+.guide-checklist-note {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
+  color: #b89c6a;
+  font-style: italic;
+  background: rgba(180,140,60,0.07);
+  border-radius: 4px;
+  margin: 0.25rem 0;
+  list-style: none;
+}
+
+.guide-optional-tag {
+  flex-shrink: 0;
+  background: rgba(100, 100, 200, 0.2);
+  color: #a0a8d8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+/* Demonic Pact badge */
+.guide-demonic-pact {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(200, 40, 40, 0.18);
+  color: #e06060;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(200,60,60,0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.guide-demonic-pact-inline {
+  color: #e06060;
+  font-weight: 600;
+}
+
+/* Steps list */
+.guide-steps {
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* Weapon progression */
+.guide-weapon-prog {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  color: #c8b890;
+}
+
+/* Runecrafting options */
+.guide-runecraft-options {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+/* Changelog */
+.guide-changelog {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.guide-changelog-entry {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+}
+
+.guide-changelog-entry strong {
+  color: #d4b896;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.guide-changelog-entry ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.guide-changelog-entry li {
+  margin: 0.2rem 0;
+  color: #a89878;
 }

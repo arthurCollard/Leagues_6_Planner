@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import GuidePage from './pages/GuidePage';
 
 import { computeScores } from './logic/computeScores';
 import Header from './components/Header';
@@ -191,7 +193,16 @@ export default function App() {
     return prayers;
   })();
 
+  const guideEnabled = process.env.REACT_APP_ENABLE_GUIDE === 'true';
+
   return (
+    <Routes>
+      {guideEnabled && <Route path="/guide" element={<GuidePage />} />}
+      <Route path="*" element={<PlannerPage />} />
+    </Routes>
+  );
+
+  function PlannerPage() { return (
     <div className="app">
 <Header
         relicCount={Object.keys(selectedRelics).length}
@@ -272,5 +283,5 @@ export default function App() {
         </a>
       </footer>
     </div>
-  );
+  ); }
 }
