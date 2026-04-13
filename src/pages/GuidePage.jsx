@@ -604,14 +604,17 @@ function TasksPanel({ guideChecked = {} }) {
   const doneCount = completedNames.size;
 
   // Determine current relic breakpoint based on which relics have been selected in the guide
+  const t4Unlocked = !!guideChecked['t4-relic-unlock_0']?.checked;
   const relicBreakpoint = (() => {
-    if (guideChecked['t4-relic-unlock_0']?.checked) return RELIC_BREAKPOINTS[2];
+    if (t4Unlocked) return null;
     if (guideChecked['t3-relic-unlock_0']?.checked) return RELIC_BREAKPOINTS[2];
     if (guideChecked['t1-woodsman-unlock_0']?.checked) return RELIC_BREAKPOINTS[1];
     return RELIC_BREAKPOINTS[0];
   })();
-  const pointsUntilRelic = Math.max(0, relicBreakpoint.points - donePoints);
-  const relicBarPct = Math.min(100, Math.round((donePoints / relicBreakpoint.points) * 100));
+  const pointsUntilRelic = relicBreakpoint ? Math.max(0, relicBreakpoint.points - donePoints) : 0;
+  const relicBarPct = relicBreakpoint
+    ? Math.min(100, Math.round((donePoints / relicBreakpoint.points) * 100))
+    : 100;
 
   // Determine current region breakpoint — advances past Karamja once that step is checked
   const karamjaUnlocked = !!guideChecked['karamja-unlock_0']?.checked;
@@ -627,7 +630,10 @@ function TasksPanel({ guideChecked = {} }) {
       </div>
       <div className="guide-tasks-until">
         <span><strong>{tasksUntilRegion}</strong> tasks until {regionBreakpoint.label}.</span>
-        <span><strong>{pointsUntilRelic.toLocaleString()}</strong> points until next Relic.</span>
+        {t4Unlocked
+          ? <span>All relics unlocked.</span>
+          : <span><strong>{pointsUntilRelic.toLocaleString()}</strong> points until next Relic.</span>
+        }
       </div>
       <div className="guide-tasks-bar-bg">
         <div className="guide-tasks-bar-fill" style={{ width: `${relicBarPct}%` }} />
@@ -1358,8 +1364,8 @@ export default function GuidePage() {
             <CheckList id="skill-brim" checked={guideChecked} onToggle={handleToggle} items={[
               { text: 'Kill a TzHaar', pact: true, tasks: ['Defeat a TzHaar'] },
               'Leave the TzHaar City and run through the hidden wall to Isle of Crandor',
-              'Defeat a Lesser demon',
-              'Cast a Blast Spell',
+
+              { text: 'Cast an Earth Blast Spell', tasks: ['Cast an Earth Blast Spell'] },
               'Lodestone to Karamja',
               'Run NW and use the ropeswing to travel to Moss Giant Island and back',
               'Mine some Gold ore at the Horseshoe mine and drop it',
@@ -1373,6 +1379,7 @@ export default function GuidePage() {
               'Down the stairs and past the Moss giants',
               'Kill a Fire giant',
               'Run all the way south',
+              { text: 'Defeat a Black Demon', tasks: ['Defeat a Black Demon on Karamja'] },
               { text: 'Kill a Steel dragon', pact: true, tasks: ['Defeat a Steel Dragon on Karamja'] },
               'Lodestone to Karamja',
               "Use Vigroy's cart to travel to Shilo Village",
@@ -1383,8 +1390,7 @@ export default function GuidePage() {
               'Burn some Logs near the bank',
               { text: 'Cook 20 Pike (82 XP each, 656 with 8x multiplier)', xp: { cooking: 13120 } },
               'Catch Trout until 30 Fishing',
-              { text: 'Catch a Salmon on Karamja', tasks: ['Catch a Salmon on Karamja'] },
-              { text: 'Catch 50 Salmon (72 XP each, 576 with 8x multiplier)', xp: { fishing: 28800 } },
+              { text: 'Catch 75 Trout (52 XP each, 416 with 8x multiplier)', xp: { fishing: 31200 }, tasks: ['Catch 75 Trout'] },
               'Bank everything, withdraw coins, Chisel, Quetzal whistle, Teasing stick, Knife, Tinderbox, runes',
             ]} />
           </CollapsibleSection>
@@ -1414,13 +1420,13 @@ export default function GuidePage() {
               'Charter a ship to Civitas illa Fortis from Karamja',
               'Buy 100 Soda ash/Bucket of sand from Trader Crewmember',
               { text: 'Make 100 Molten glass (22 Crafting XP each, 176 with 8x multiplier)', xp: { crafting: 17600 } },
-              { text: 'Blow 100 Lantern lenses/Unpowered orbs (57 Crafting XP each, 456 with 8x multiplier)', xp: { crafting: 45600 } },
+              { text: 'Blow 100 Unpowered orbs (57 Crafting XP each, 456 with 8x multiplier)', xp: { crafting: 45600 }, tasks: ['Craft 100 Unpowered Orbs'] },
               'Bank south, grab your Graahk furs and coins',
               "Quetzal to Hunter Guild and make full Graahk armour using Pellem's Fur Store",
               'Equip full Graahk hunter gear',
               { text: 'Run south and complete 10 laps of the Colossal Wyrm Agility Course', tasks: ['Complete 10 laps of the Varlamore Agility Course'] },
               'Quetzal to Quetzacalli Gorge and run north to The Darkfrost',
-              { text: 'Kill The Hueycoatl using earth spells', pact: true, tasks: ['Defeat Hueycoatl 1 Time', '1 Hueycoatl Kill'] },
+              { text: 'Kill The Hueycoatl using earth spells', pact: true, tasks: ['Defeat Hueycoatl 1 Time'] },
               { type: 'note', text: 'Use a mass world for an easy kill.' },
             ]} />
           </CollapsibleSection>
@@ -1525,7 +1531,7 @@ export default function GuidePage() {
           <CollapsibleSection title="Gem Rocks & Tai Bwo Wannai Trio">
             <CheckList id="t4-gem" checked={guideChecked} onToggle={handleToggle} items={[
               'Mine and cut Gem rocks until you get a full inventory of cut Opal, Jade and Red topaz',
-              'Get at least 3 cut Red topaz',
+              { text: 'Get at least 3 cut Red topaz', tasks: ['Successfully Cut a Red Topaz'] },
               'Exit Shilo Village and run north to Tai Bwo Wannai',
               'Sell gems to Safta Doc one at a time until you get 1300 Trading sticks',
               { type: 'note', text: 'If you have the Transmutation relic, you can transmute Red topaz to get more.' },
@@ -1537,11 +1543,8 @@ export default function GuidePage() {
               'Cut some Mahogany logs',
               'Earn 100% favour in Tai Bwo Wannai Cleanup',
               { text: 'You can do this by cutting Dense Jungle', tasks: ['Chop a dense jungle'] },
-              'Keep doing this until you get a Gout Tuber Plant, then dig it up',
-              'Talk to Safta Doc and exchange 3 Red topaz, 1200 Trading sticks and Gout tuber for Red topaz machete',
-              'Equip a Red Topaz Machete',
               'Start the Tai Bwo Wannai Trio quest and do the Tiadeche part until you can catch Karambwan',
-              'Catch a Karambwan',
+              { text: 'Catch 50 Karambwan', tasks: ['Catch 50 Karambwan'] },
               { type: 'note', text: 'Your Apple tree should take another 1–2 hours to grow, which is the only task left to complete the Karamja Medium Diary.' },
             ]} />
           </CollapsibleSection>
