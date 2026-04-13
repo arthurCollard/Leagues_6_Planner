@@ -1151,6 +1151,7 @@ export default function GuidePage() {
             <CheckList id="t3-gear" checked={guideChecked} onToggle={handleToggle} items={[
               'Bank and withdraw Quetzal whistle, 10 Quetzal feed, 4 Jug of wine and coins (and a pickaxe, if not Barbarian Gathering)',
               'Run SE to the Stonecutter Outpost, drinking the wine and filling jugs with water at Locus Oasis',
+              { text: 'Defeat a Scorpion', tasks: ['Defeat a scorpion'] },
               { text: 'Complete The Ribbiting Tale of a Lily Pad Labour Dispute (2,000 Woodcutting XP reward before 8x)', xp: { woodcutting: 16000 }, tasks: ['Complete a Ribbiting Tale'] },
               { text: 'Mine 4 Clay (7 Mining XP each, 224 with 8x multiplier)', xp: { mining: 224 }, tasks: ['Mine some Clay'] },
               { text: 'Buy 3 Limestone brick from Stonecutter Supplies', gold: -78 },
