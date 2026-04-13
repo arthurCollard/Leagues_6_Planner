@@ -739,8 +739,6 @@ export default function GuidePage() {
           <h3>Contents</h3>
           <ol>
             <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#route-map">Route Map</a></li>
-            <li><a href="#runelite">RuneLite Plugin</a></li>
             <li><a href="#tier1">Starting Out: Money and Early Hunter (Tier I)</a></li>
             <li><a href="#tier2">Hunter Rumours and Wealthy Citizens (Tier II)</a></li>
             <li><a href="#tier3">Prayer and High Alchemy (Tier III)</a></li>
@@ -778,49 +776,7 @@ export default function GuidePage() {
           </p>
         </section>
 
-        {/* Route Map */}
-        <section id="route-map">
-          <h2>Route Map</h2>
-          <div className="guide-section-with-image">
-            <div className="guide-section-text">
-              <p>
-                There is a map version of this guide available. While the map lists all tasks, some long notes have been
-                removed/reduced for a comfortable user experience.
-              </p>
-              <p>
-                View the visual map route{' '}
-                <a href="https://runeleagues.com/r/8523B03AFC86" target="_blank" rel="noopener noreferrer">here</a>.
-              </p>
-              <p>
-                You can check for route updates by clicking <strong>Build mode</strong> (Hammer) and <strong>Download updates</strong>.
-              </p>
-              <p className="guide-note">
-                Some tasks that have been removed from this guide may not yet be reflected in the map.
-              </p>
-            </div>
-            <img src="/guide/Guide_-_Laef_Demonic_pacts_map_route.png" alt="Demonic Pacts map route" className="guide-section-img" />
-          </div>
-        </section>
 
-        {/* RuneLite Plugin */}
-        <section id="runelite">
-          <h2>RuneLite Plugin</h2>
-          <div className="guide-section-with-image">
-            <div className="guide-section-text">
-              <p>
-                To use this route in RuneLite, you need the <strong>Tasks Tracker plugin</strong> from the RuneLite Plugin Hub.
-              </p>
-              <ol className="guide-steps">
-                <li>Click <strong>Export to Tasks Tracker Plugin</strong> (in the Map Route)</li>
-                <li>Save the .JSON file on your computer</li>
-                <li>Open it and copy the contents to clipboard</li>
-                <li>Paste into Tasks Tracker Plugin (<em>Route &gt; ... &gt; Import Route from Clipboard</em>)</li>
-              </ol>
-              <Note>This works with the Shortest Path plugin in RuneLite.</Note>
-            </div>
-            <img src="/guide/Guide_-_Laef_Demonic_pacts_task_tracker.png" alt="Tasks Tracker plugin" className="guide-section-img" />
-          </div>
-        </section>
 
         {/* Tier I */}
         <section id="tier1">
@@ -913,6 +869,7 @@ export default function GuidePage() {
                   { text: 'Run south and pet Xolo east of the Fortis temple', tasks: ['Pet Xolo in Civitas'] },
                   { text: 'Salute next to a statue of Quoatlos', tasks: ['Salute next to a statue of Quoatlos'] },
                   { text: 'Activate a prayer near an altar', tasks: ['Activate a prayer near an altar'] },
+                  { text: 'Defeat 5 Bunnies', tasks: ['Defeat 5 Bunnies'] },
                   { text: 'Drink from a bird bath', tasks: ['Drink from a bird bath'] },
                   { text: 'Chop 2 trees at the park near the Bird bath (54 Woodcutting XP, 270 with 5x multiplier)', xp: { woodcutting: 270 } },
                   { text: 'Use 1 log to fletch some arrow shafts and drop them (7 Fletching XP, 35 with 5x multiplier)', xp: { fletching: 35 }, tasks: ['Fletch Some Arrow Shafts'] },
@@ -920,6 +877,7 @@ export default function GuidePage() {
                   { text: 'Pick some Sweetcorn from a Field', tasks: ['Pick some Sweetcorn from a Field'] },
                   { text: 'Pick 6 wheat and 6 cabbages', tasks: ['Pick 6 wheat, 6 cabbages and 6 potatoes'] },
                   { text: 'Defeat a Rat', tasks: ['Defeat a Rat'] },
+                  { text: 'Defeat a Thief', tasks: ['Defeat a thief'] },
                   { text: 'Defeat a Chicken (keep bones)', tasks: ['Defeat a Chicken'] },
                   { text: 'Feed a dog some bones', tasks: ['Feed a dog some bones'] },
                   { text: 'Smelt 9 Bronze bars using the Furnace close to the Fortis Colosseum (126 Smithing XP, 630 with 5x multiplier)', xp: { smithing: 630 }, tasks: ['Smelt a Bronze Bar'] },
@@ -929,7 +887,7 @@ export default function GuidePage() {
                 <CheckList id="t1-buffalo-2" checked={guideChecked} onToggle={handleToggle} items={[
               { text: <><b style={{whiteSpace: 'nowrap'}}>Bank 2:</b> Bank south, deposit everything and withdraw coins</> },
               { text: 'Buy Glassblowing pipe, Shears and Banana from Trader Crewmember at Fortis Cothon', gold: -12 },
-              { text: 'Buy 10 buckets of sand and 10 Soda ash', gold: -100 },
+              { text: 'Buy 10 buckets of sand and 10 Soda ash, and a Tyras helm', gold: -100 },
               'Eat a Banana',
               { text: 'Run SE and make Molten glass at the furnace (220 Crafting XP, 1,100 with 5x multiplier)', xp: { crafting: 1100 } },
               { text: "Buy an Amulet mould and Ring mould from Artima's Crafting Supplies", gold: -10 },
@@ -950,7 +908,7 @@ export default function GuidePage() {
           <CollapsibleSection title="Fishing, Cooking & Crafting">
             <CheckList id="t1-fishing" checked={guideChecked} onToggle={handleToggle} items={[
               { text: "Run south to Spike's Spikes and make 7 Bronze maces and 1 Bronze full helm (124 Smithing XP, 620 with 5x multiplier)", xp: { smithing: 620 } },
-              { text: 'Sell the bronze maces to the mace shop, keep the helm', gold: 45 },
+              { text: 'Sell the bronze maces to the mace shop, keep the helm and one mace', gold: 45 },
               'Run south to the anchovy fishing spot',
               { text: 'Catch 49 Shrimp until 15 Fishing (2,460 Fishing XP with 5x multiplier)', xp: { fishing: 2460 }, tasks: ['Catch a Shrimp'] },
               { text: 'Reach Total Level 100', tasks: ['Reach Total Level 100'] },
@@ -1065,6 +1023,7 @@ export default function GuidePage() {
                   'Run west to Embertailed jerboa',
                   { text: 'Catch 32 Embertailed Jerboas to 50 Hunter (276 Hunter XP each, 2,208 with 8x multiplier, 70,656 total)', xp: { hunter: 70656 }, tasks: ['Catch a Jerboa'] },
                   { text: 'Enter the dark cave to the east', tasks: ['Enter a dark cave in Varlamore'] },
+                  { text: 'Catch a Pyre Fox (east of the Hunter Guild)', tasks: ['Catch a Pyre fox'] },
                 ]} />
               </div>
               <figure style={{margin: 0, flexShrink: 0, alignSelf: 'flex-start', marginTop: '-5rem'}}>
@@ -1095,7 +1054,7 @@ export default function GuidePage() {
 
           <CollapsibleSection title="Stealing Valuables & Quests">
             <CheckList id="t2-stealing" checked={guideChecked} onToggle={handleToggle} items={[
-              'Run east to Hunter Guild and quetzal to Civitas illa Fortis',
+              'Run north to Hunter Guild and quetzal to Civitas illa Fortis',
               { text: "Enter Yama's Lair and get 32 Agility (around 20 laps, 110 Agility XP each, 880 with 8x multiplier)", xp: { agility: 17600 } },
               { type: 'note', text: 'XP assumes Gnome Stronghold agility course rates.' },
               { text: 'Leave and run south to Silk stall to get 34 Thieving (85 thieves, 26 XP each, 208 with 8x multiplier)', xp: { thieving: 17680 } },
@@ -1110,8 +1069,10 @@ export default function GuidePage() {
               'Search the south-west fountain on the villa grounds',
               'Use the icon on the statue north of the Aldarin market',
               { text: 'Buy 10 Ixcoztic white from Moonrise Wines (16 heals for a Demonic pact later)', gold: -1000 },
+              { text: 'Pick up an onion in the storeroom near Mistrock bank and eat it', tasks: ['Eat an Onion'] },
               { text: 'Buy a Steel pickaxe from Mistrock Mining Supplies and run east', gold: -500 },
               { text: 'Mine some Ore With a Steel Pickaxe (19 Mining XP, 152 with 8x multiplier)', xp: { mining: 152 }, tasks: ['Mine some Ore With a Steel Pickaxe'] },
+              { text: 'Mine 10 Silver', tasks: ['Mine 10 Silver'] },
               'Run NW fairy ring to Zanaris',
               { text: 'Run to Chaeldar and buy an Enchanted gem, Spiny helmet and Anti-dragon shield', gold: -700 },
               'Pick and check your Slayer Task, then drop the Enchanted gem',
