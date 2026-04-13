@@ -58,7 +58,9 @@
       "Bash(sort -k5 -n)",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(awk '$1 > 1 {print}')",
+      "Bash(bash /tmp/extract_tasks.sh)"
     ]
   }
 }

@@ -1036,8 +1036,8 @@ export default function GuidePage() {
 
           <CollapsibleSection title="Woodcutting, Fletching & Hunter to 46">
             <CheckList id="t1-wc-fletch" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Chop and burn 10 logs to get 15 Firemaking (42 Firemaking XP, 27 Woodcutting XP each, 3,360 / 2,160 with 8x multiplier)', xp: { firemaking: 3360, woodcutting: 2160 }, tasks: ['Burn Some Normal Logs'] },
-              { text: 'Chop 10 logs and fletch into arrow shafts (27 Woodcutting XP, 7 Fletching XP each, 2,160 / 560 with 8x multiplier)', xp: { woodcutting: 2160, fletching: 560 }, tasks: ['Fletch Some Arrow Shafts'] },
+              { text: 'Chop and burn 10 logs to get 15 Firemaking (42 Firemaking XP, 27 Woodcutting XP each, 3,360 / 2,160 with 8x multiplier)', xp: { firemaking: 3360, woodcutting: 2160 } },
+              { text: 'Chop 10 logs and fletch into arrow shafts (27 Woodcutting XP, 7 Fletching XP each, 2,160 / 560 with 8x multiplier)', xp: { woodcutting: 2160, fletching: 560 } },
 
               { text: 'At 23 Hunter, catch two Wild Kebbits and keep one Kebbit claws (128 Hunter XP each, 2,064 with 8x/Woodsman/Abundance, 4,128 total)', xp: { hunter: 4128 } },
               'At 25 Hunter, run south to Nemus Retreat',
@@ -1064,6 +1064,7 @@ export default function GuidePage() {
                   'Run north to Auburnvale and take the quetzal',
                   'Run west to Embertailed jerboa',
                   { text: 'Catch 32 Embertailed Jerboas to 50 Hunter (276 Hunter XP each, 2,208 with 8x multiplier, 70,656 total)', xp: { hunter: 70656 }, tasks: ['Catch a Jerboa'] },
+                  { text: 'Enter the dark cave to the east', tasks: ['Enter a dark cave in Varlamore'] },
                 ]} />
               </div>
               <figure style={{margin: 0, flexShrink: 0, alignSelf: 'flex-start', marginTop: '-5rem'}}>
@@ -1135,6 +1136,8 @@ export default function GuidePage() {
 
               { text: 'Steal from the Fortis Spice Stall', tasks: ['Steal from the Fortis Spice Stall'] },
               'Get at least 66 Thieving for the Final Dawn',
+              { text: 'Steal from a Gem Stall', tasks: ['Steal From a Gem Stall'] },
+              { text: 'Run north and pickpocket a Knight of Varlamore 20 times', tasks: ['Pickpocket a knight of varlamore 20 times'] },
             ]} />
           </CollapsibleSection>
 
@@ -1179,7 +1182,7 @@ export default function GuidePage() {
           <CollapsibleSection title="Early Gear & Setup">
             <Note>You should now have 1650 points (1380 if skipped optional tasks). If you did all of the optional tasks, you should also have 80 tasks complete and unlock Karamja.</Note>
             <CheckList id="t3-relic-unlock" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Unlock your Tier III relic and get the slayer perks', icon: '/relics/Evil_Eye.png' },
+              { text: 'Unlock your Tier III relic. Take Evil Eye.', icon: '/relics/Evil_Eye.png' },
             ]} />
             <CheckList id="karamja-unlock" checked={guideChecked} onToggle={handleToggle} items={[
               { text: 'Unlock Karamja' },

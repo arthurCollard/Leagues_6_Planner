@@ -290,6 +290,7 @@ export const TASKS = [
   { name: "Kill 2 unique Echo Bosses",                              difficulty: "Hard",   points: 80,  region: "General" },
   { name: "Kill 3 unique Echo Bosses",                              difficulty: "Hard",   points: 80,  region: "General" },
   { name: "Craft 100 Unpowered Orbs",                               difficulty: "Hard",   points: 80,  region: "General" },
+  { name: "Steal From a Gem Stall",                                 difficulty: "Hard",   points: 80,  region: "General" },
 
   // ── General ─ Elite ──────────────────────────────────────────────────────────
   { name: "Kill 4 unique Echo Bosses",                              difficulty: "Elite",  points: 200, region: "General" },
