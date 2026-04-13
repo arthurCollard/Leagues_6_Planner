@@ -3369,6 +3369,44 @@ body {
   color: #f0dfc0;
 }
 
+/* ── Guide FAB ── */
+@keyframes guide-fab-glow {
+  0%, 100% { box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 0 1px #b8a282, 0 0 0 3px rgba(184,162,130,0.15); }
+  50%       { box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 0 1px #d4b896, 0 0 14px rgba(184,162,130,0.5); }
+}
+.guide-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  background: linear-gradient(135deg, #2a2318 0%, #1e1a15 100%);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #f0dfc0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5), 0 0 0 1px #b8a282, 0 0 0 3px rgba(184,162,130,0.15);
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.guide-fab--pulsing {
+  animation: guide-fab-glow 2.5s ease-in-out infinite;
+}
+.guide-fab-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.guide-fab:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6), 0 0 0 1px #f0dfc0, 0 0 0 3px rgba(240,223,192,0.2);
+  transform: translateY(-2px);
+  animation: none;
+}
+
 /* ── Guide Page ── */
 .guide-page {
   --guide-header-height: 80px;
@@ -3810,7 +3848,7 @@ body {
 .guide-relic-item::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: calc(100% + 6px);
+  top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
   background: #1a1410;
@@ -3885,6 +3923,7 @@ body {
   display: flex;
   gap: 4px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .guide-pacts-pip {

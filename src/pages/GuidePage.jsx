@@ -696,6 +696,9 @@ export default function GuidePage() {
               <p>
                 You can check for route updates by clicking <strong>Build mode</strong> (Hammer) and <strong>Download updates</strong>.
               </p>
+              <p className="guide-note">
+                Some tasks that have been removed from this guide may not yet be reflected in the map.
+              </p>
             </div>
             <img src="/guide/Guide_-_Laef_Demonic_pacts_map_route.png" alt="Demonic Pacts map route" className="guide-section-img" />
           </div>

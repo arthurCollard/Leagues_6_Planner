@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import GuidePage from './pages/GuidePage';
@@ -52,6 +52,18 @@ export default function App() {
   const [reloadedRelic, setReloadedRelic] = useLocalStorage('ls6_reloadedRelic', null);
   const [settings, setSettings] = useLocalStorage('ls6_settings', DEFAULT_SETTINGS);
   const [showSettings, setShowSettings] = useState(false);
+  const [fabPulsing, setFabPulsing] = useState(true);
+  useEffect(() => {
+    const stop = () => setFabPulsing(false);
+    window.addEventListener('click', stop, { once: true });
+    window.addEventListener('keydown', stop, { once: true });
+    window.addEventListener('scroll', stop, { once: true, capture: true });
+    return () => {
+      window.removeEventListener('click', stop);
+      window.removeEventListener('keydown', stop);
+      window.removeEventListener('scroll', stop, { capture: true });
+    };
+  }, []);
   const [relicWeights, setRelicWeights] = useLocalStorage('ls6_relicWeights', {});
   const [regionWeights, setRegionWeights] = useLocalStorage('ls6_regionWeights', {});
   const [selectedMasteries, setSelectedMasteries] = useLocalStorage('ls6_selectedMasteries', {});
@@ -283,6 +295,12 @@ export default function App() {
           <span>Buy me a coffee</span>
         </a>
       </footer>
+      {guideEnabled && (
+        <a href="/guide" className={`guide-fab${fabPulsing ? ' guide-fab--pulsing' : ''}`} title="Open Guide" onMouseEnter={() => setFabPulsing(false)}>
+          <img src="/guide/Yama_chathead.png" alt="" className="guide-fab-icon" />
+          Guide
+        </a>
+      )}
     </div>
   ); }
 }
