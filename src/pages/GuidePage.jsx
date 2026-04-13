@@ -5,6 +5,7 @@ import { SKILLS } from '../data/skills';
 import { levelToXp, xpToLevel, xpToNextLevel } from '../data/xp';
 import { RelicDescModal } from '../components/RelicTree';
 import { RELICS } from '../data/relics';
+import { TASKS } from '../data/tasks';
 
 // OSRS in-game skills panel order (3 columns, row by row)
 const SKILLS_GRID = [
@@ -33,6 +34,16 @@ function useLocalStorage(key, defaultValue) {
       return next;
     });
   }, [key]);
+  useEffect(() => {
+    const onStorage = (e) => {
+      if (e.key !== key) return;
+      try {
+        setValue(e.newValue !== null ? JSON.parse(e.newValue) : defaultValue);
+      } catch { setValue(defaultValue); }
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+  }, [key, defaultValue]);
   return [value, set];
 }
 
@@ -366,7 +377,7 @@ function CheckList({ id, items, checked, onToggle }) {
           <li
             key={i}
             className={`guide-checklist-item${isPact ? ' is-pact' : ''}${isOptional ? ' is-optional' : ''}${effectiveChecked ? ' is-checked' : ''}${subitems ? ' has-subitems' : ''}`}
-            onClick={subitems ? (e) => {
+            onClick={subitems ? () => {
               const target = !allSubsChecked;
               subitems.forEach((sub, j) => {
                 const subKey = `${id}_${i}_sub_${j}`;
@@ -562,6 +573,80 @@ function ResetModal({ onClose, onConfirm }) {
   );
 }
 
+const TASK_POINTS_MAP = Object.fromEntries(TASKS.map(t => [t.name, t.points]));
+
+const RELIC_BREAKPOINTS = [
+  { tier: 1, label: 'T2 Relic', points: 600 },
+  { tier: 2, label: 'T3 Relic', points: 1650 },
+  { tier: 3, label: 'T4 Relic', points: 2650 },
+];
+
+const REGION_BREAKPOINTS = [
+  { label: 'Karamja', tasks: 80 },
+  { label: 'next region unlock', tasks: 200 },
+  { label: 'next region unlock', tasks: 400 },
+  { label: 'next region unlock', tasks: 600 },
+];
+
+function TasksPanel({ guideChecked = {} }) {
+
+  const { completedNames, donePoints } = useMemo(() => {
+    const names = new Set();
+    for (const v of Object.values(guideChecked)) {
+      if (v?.checked && Array.isArray(v.tasks)) {
+        v.tasks.forEach(n => names.add(n));
+      }
+    }
+    const pts = [...names].reduce((s, n) => s + (TASK_POINTS_MAP[n] ?? 0), 0);
+    return { completedNames: names, donePoints: pts };
+  }, [guideChecked]);
+
+  const doneCount = completedNames.size;
+
+  // Determine current relic breakpoint based on which relics have been selected in the guide
+  const relicBreakpoint = (() => {
+    if (guideChecked['t4-relic-unlock_0']?.checked) return RELIC_BREAKPOINTS[2];
+    if (guideChecked['t3-relic-unlock_0']?.checked) return RELIC_BREAKPOINTS[2];
+    if (guideChecked['t1-woodsman-unlock_0']?.checked) return RELIC_BREAKPOINTS[1];
+    return RELIC_BREAKPOINTS[0];
+  })();
+  const pointsUntilRelic = Math.max(0, relicBreakpoint.points - donePoints);
+  const relicBarPct = Math.min(100, Math.round((donePoints / relicBreakpoint.points) * 100));
+
+  // Determine current region breakpoint — advances past Karamja once that step is checked
+  const karamjaUnlocked = !!guideChecked['karamja-unlock_0']?.checked;
+  const regionBreakpoint = karamjaUnlocked
+    ? (REGION_BREAKPOINTS.slice(1).find(b => doneCount < b.tasks) ?? REGION_BREAKPOINTS[REGION_BREAKPOINTS.length - 1])
+    : REGION_BREAKPOINTS[0];
+  const tasksUntilRegion = Math.max(0, regionBreakpoint.tasks - doneCount);
+
+  return (
+    <div className="guide-tasks-panel">
+      <div className="guide-gold-header">
+        <span className="guide-levels-title">Leagues VI</span>
+      </div>
+      <div className="guide-tasks-until">
+        <span><strong>{tasksUntilRegion}</strong> tasks until {regionBreakpoint.label}.</span>
+        <span><strong>{pointsUntilRelic.toLocaleString()}</strong> points until next Relic.</span>
+      </div>
+      <div className="guide-tasks-bar-bg">
+        <div className="guide-tasks-bar-fill" style={{ width: `${relicBarPct}%` }} />
+        <img src="/icon_tasks.png" alt="" className="guide-tasks-bar-icon" />
+      </div>
+      <div className="guide-tasks-stats">
+        <div className="guide-tasks-stat">
+          <span className="guide-tasks-stat-label">Tasks completed:</span>
+          <span className="guide-tasks-stat-value">{doneCount}</span>
+        </div>
+        <div className="guide-tasks-stat">
+          <span className="guide-tasks-stat-label">Total points:</span>
+          <span className="guide-tasks-stat-value">{donePoints.toLocaleString()}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function GuidePage() {
   const [guideChecked, setGuideChecked] = useLocalStorage('ls6_guide_checked', {});
   const [flashingSkills, setFlashingSkills] = useState(new Set());
@@ -591,8 +676,9 @@ export default function GuidePage() {
 
   const handleToggle = useCallback((key, item) => {
     const isPact = typeof item === 'object' && !!item.pact;
-    const xp = (typeof item === 'object' && item.xp) ? item.xp : null;
-    const gold = (typeof item === 'object' && item.gold) ? item.gold : null;
+    const xp    = (typeof item === 'object' && item.xp)    ? item.xp    : null;
+    const gold  = (typeof item === 'object' && item.gold)  ? item.gold  : null;
+    const tasks = (typeof item === 'object' && item.tasks) ? item.tasks : null;
     setGuideChecked(prev => {
       const current = prev[key];
       const nowChecked = !(current?.checked);
@@ -606,7 +692,7 @@ export default function GuidePage() {
           }, 700);
         });
       }
-      return { ...prev, [key]: { checked: nowChecked, isPact, xp, gold } };
+      return { ...prev, [key]: { checked: nowChecked, isPact, xp, gold, tasks } };
     });
   }, [setGuideChecked]);
 
@@ -627,6 +713,9 @@ export default function GuidePage() {
 
       <GuideStateContext.Provider value={{ checked: guideChecked, onToggle: handleToggle }}>
       <div className="guide-layout">
+        <div className="guide-tasks-sidebar">
+          <TasksPanel guideChecked={guideChecked} />
+        </div>
         <div className="guide-left-sidebar">
           <SkillLevelsPanel guideChecked={guideChecked} flashingSkills={flashingSkills} />
           <GoldPanel guideChecked={guideChecked} />
@@ -734,18 +823,19 @@ export default function GuidePage() {
 
           <CollapsibleSection title="Setup & Early Thieving">
             <CheckList id="t1-thieving" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Open the Leagues Menu', pact: true },
-              { text: 'Complete the Leagues Tutorial', pact: true },
+              { text: 'Open the Leagues Menu', pact: true, tasks: ['Open the Leagues Menu'] },
+              { text: 'Complete the Leagues Tutorial', pact: true, tasks: ['Complete the Leagues Tutorial'] },
               { text: 'Pick the Abundance Relic', icon: '/relics/Abundance.png' },
+              { text: 'Turn off your run and back on', tasks: ['Turn off your run'] },
               "Claim a free Spade, Impling jar and two Strange devices from the Leagues Tutor in Yama's Lair",
               'Equip your Dramen staff and starting arrows',
               { text: 'Complete a lap of the Yama Agility Course (110 XP, 550 with 5x multiplier)', xp: { agility: 550 } },
               { type: 'note', text: 'XP assumes Gnome Stronghold agility course rates.' },
-              'Achieve Your First Level Up',
+              { text: 'Achieve Your First Level Up', tasks: ['Achieve Your First Level Up'] },
               "Visit Death's Domain west of Civitas illa Fortis fountain",
               'Run south and bank everything at Fortis west bank',
-              { text: 'Pickpocket a Citizen near the Bazaar 10 times to reach 5 Thieving and get 30 coins', xp: { thieving: 500 }, gold: 30 },
-              'Achieve Your First Level 5',
+              { text: 'Pickpocket a Citizen near the Bazaar 10 times to reach 5 Thieving and get 30 coins', xp: { thieving: 500 }, gold: 30, tasks: ['Pickpocket a Citizen'] },
+              { text: 'Achieve Your First Level 5', tasks: ['Achieve Your First Level 5'] },
             ]} />
           </CollapsibleSection>
 
@@ -756,9 +846,11 @@ export default function GuidePage() {
                 <CheckList id="t1-bakery" checked={guideChecked} onToggle={handleToggle} items={[
                   { text: 'Switch to Bakery stall until 20 Thieving, keeping all of the cakes', xp: { thieving: 4050 } },
                   'This should take 51 thieving actions',
+                  { text: 'Steal some bread', tasks: ['Steal some bread'] },
                   'Steal a Chocolate slice',
-                  'Achieve Your First Level 10',
-                  'Achieve Your First Level 20',
+                  { text: 'Achieve Your First Level 10', tasks: ['Achieve Your First Level 10'] },
+                  { text: 'Achieve Your First Level 20', tasks: ['Achieve Your First Level 20'] },
+                  { text: 'Cry near a child', tasks: ['Cry near a child'] },
                   { text: 'Sell 26 cakes at Fortis General Store and keep 1 — this should give you ~550 coins', gold: 550 },
                   { type: 'note', text: 'This should be enough for: 3 Box traps, Bird snare, Plank, Glassblowing pipe, 20 Soda ash/sand, Banana, Knife, Shears, Uncut sapphire, Rake, Chisel, Hammer, Stew and Enchanted gem.' },
                 ]} />
@@ -779,8 +871,10 @@ export default function GuidePage() {
                 <CheckList id="t1-bakery-2" checked={guideChecked} onToggle={handleToggle} items={[
                   { text: 'Buy Hammer, Chisel and Knife from Fortis General Store', gold: -10 },
                   { text: 'Steal some Silk (26 XP, 130 with 5x multiplier)', xp: { thieving: 130 } },
-                  { text: 'Buy a Stew and 8 Jug of wine from The Flaming Arrow', gold: -30 },
-                  "Give Oli some Stew",
+                  { text: 'Sell some silk to a silk trader', tasks: ['Sell some silk to a silk trader'] },
+                  { text: 'Buy a Stew, 8 Jugs of wine, moon-lite and a Cup of tea from The Flaming Arrow', gold: -30 },
+                  { text: 'Drink some moon-lite', tasks: ['Drink some moon-lite'] },
+                  { text: 'Give Oli some Stew', tasks: ['Give Oli some Stew'] },
                   { text: 'Buy a Green cape from Floria\'s Fashion and equip it', gold: -32 },
                   { text: <><b style={{whiteSpace: 'nowrap'}}>Bank 1:</b> Bank at Fortis west bank, withdraw coins, Knife, Bucket, 1 Cake, starting runes and starting bow (and Bronze pickaxe and Bronze axe if your relic isn't Barbarian Gathering)</> },
                 ]} />
@@ -795,22 +889,31 @@ export default function GuidePage() {
           <CollapsibleSection title="Buffalo, Mining & Smithing">
             <CheckList id="t1-buffalo" checked={guideChecked} onToggle={handleToggle} items={[
                   'Run West to Buffalos',
-                  'Milk a Buffalo and drop the bucket',
-                  { text: 'Kill a Buffalo using starting runes and arrows, drop these after the kill (610 Magic XP + 140 Hitpoints XP with 5x multiplier)', xp: { magic: 610, hitpoints: 140 } },
+                  { text: 'Milk a Buffalo and drop the bucket', tasks: ['Milk a Buffalo'] },
+                  { text: 'Kill a Buffalo using starting runes and arrows, drop these after the kill (610 Magic XP + 140 Hitpoints XP with 5x multiplier)', xp: { magic: 610, hitpoints: 140 }, tasks: ['Defeat a Buffalo'] },
+                  'Pick 6 potatoes',
                   { text: 'Pick up its bones and bury them (4 Prayer XP, 20 with 5x multiplier)', xp: { prayer: 20 } },
                   { text: "Buy a Rake from Agelus' Farm Shop", gold: -6 },
-                  { text: 'Rake a Farming patch and deposit Rake at the Tool Leprechaun (18 Farming XP, 90 with 5x multiplier)', xp: { farming: 90 } },
+                  { text: 'Rake a Flower patch and deposit Rake at the Tool Leprechaun (18 Farming XP, 90 with 5x multiplier)', xp: { farming: 90 }, tasks: ['Rake a Flower Patch'] },
                   'Run to the mine NW of Hunter Guild',
+                  { text: 'Dance near a bard (just north-east of the mine)', tasks: ['Dance near a bard'] },
                   { text: 'Mine 14 Copper ore and drop 5, keeping 9 (266 Mining XP, 1,330 with 5x multiplier)', xp: { mining: 1330 } },
-                  { text: 'Mine 14 Tin ore and drop 5, keeping 9 (266 Mining XP, 1,330 with 5x multiplier)', xp: { mining: 1330 } },
+                  { text: 'Mine 14 Tin ore and drop 5, keeping 9 (266 Mining XP, 1,330 with 5x multiplier)', xp: { mining: 1330 }, tasks: ['Mine 5 Tin Ore'] },
                   { text: 'Run to Hunter Guild, buy 3 Box traps and a Bird snare from the shop, then quetzal to Civitas illa Fortis', gold: -130 },
-                  'Pet Renu',
-                  'Run south and pet Xolo east of the Fortis temple',
-                  'Activate a prayer near an altar',
-                  'Drink from a Bird bath',
+                  { text: 'Pet Renu', tasks: ['Pet Renu'] },
+                  { text: 'Run south and pet Xolo east of the Fortis temple', tasks: ['Pet Xolo in Civitas'] },
+                  { text: 'Salute next to a statue of Quoatlos', tasks: ['Salute next to a statue of Quoatlos'] },
+                  { text: 'Activate a prayer near an altar', tasks: ['Activate a prayer near an altar'] },
+                  { text: 'Drink from a bird bath', tasks: ['Drink from a bird bath'] },
                   { text: 'Chop 2 trees at the park near the Bird bath (54 Woodcutting XP, 270 with 5x multiplier)', xp: { woodcutting: 270 } },
-                  { text: 'Use 1 log to fletch some arrow shafts and drop them (7 Fletching XP, 35 with 5x multiplier)', xp: { fletching: 35 } },
-                  { text: 'Smelt 9 Bronze bars using the Furnace close to the Fortis Colosseum (126 Smithing XP, 630 with 5x multiplier)', xp: { smithing: 630 } },
+                  { text: 'Use 1 log to fletch some arrow shafts and drop them (7 Fletching XP, 35 with 5x multiplier)', xp: { fletching: 35 }, tasks: ['Fletch Some Arrow Shafts'] },
+                  'Run south to the fields and vegetable patches in outer Civitas illa Fortis',
+                  { text: 'Pick some Sweetcorn from a Field', tasks: ['Pick some Sweetcorn from a Field'] },
+                  { text: 'Pick 6 wheat and 6 cabbages', tasks: ['Pick 6 wheat, 6 cabbages and 6 potatoes'] },
+                  { text: 'Defeat a Rat', tasks: ['Defeat a Rat'] },
+                  { text: 'Defeat a Chicken (keep bones)', tasks: ['Defeat a Chicken'] },
+                  { text: 'Feed a dog some bones', tasks: ['Feed a dog some bones'] },
+                  { text: 'Smelt 9 Bronze bars using the Furnace close to the Fortis Colosseum (126 Smithing XP, 630 with 5x multiplier)', xp: { smithing: 630 }, tasks: ['Smelt a Bronze Bar'] },
             ]} />
             <div className="guide-section-with-image" style={{marginTop: '1rem'}}>
               <div className="guide-section-text">
@@ -822,6 +925,7 @@ export default function GuidePage() {
               { text: 'Run SE and make Molten glass at the furnace (220 Crafting XP, 1,100 with 5x multiplier)', xp: { crafting: 1100 } },
               { text: "Buy an Amulet mould and Ring mould from Artima's Crafting Supplies", gold: -10 },
               'Bank and withdraw coins',
+              { text: 'Talk to the Port Master', tasks: ['Talk to any Port master'] },
               { text: 'Run back to the Trader Crewmember, buy 10 more Sand/Soda ash and 1 Seaweed', gold: -105 },
               { text: 'Run SE and make Molten glass at the furnace (220 Crafting XP, 1,100 with 5x multiplier)', xp: { crafting: 1100 } },
               "Bank south, deposit all, withdraw 9 Bronze bars, Hammer, Logs, Tinderbox and Small fishing net if not Barbarian Gathering",
@@ -839,21 +943,21 @@ export default function GuidePage() {
               { text: "Run south to Spike's Spikes and make 7 Bronze maces and 1 Bronze full helm (124 Smithing XP, 620 with 5x multiplier)", xp: { smithing: 620 } },
               { text: 'Sell the bronze maces to the mace shop, keep the helm', gold: 45 },
               'Run south to the anchovy fishing spot',
-              { text: 'Catch 49 Shrimp until 15 Fishing (2,460 Fishing XP with 5x multiplier)', xp: { fishing: 2460 } },
-              'Reach Total Level 100',
-              { text: 'After your first inventory is full, burn some logs (42 Firemaking XP, 210 with 5x multiplier)', xp: { firemaking: 210 } },
-              { text: 'Cook Shrimp (32 Cooking XP, 160 with 5x multiplier)', xp: { cooking: 160 } },
-              'Burn Some Food',
-              { text: 'Successfully Cook 5 Pieces of Food (160 Cooking XP, 800 with 5x multiplier)', xp: { cooking: 800 } },
-              { text: 'Catch an Anchovy (42 Fishing XP, 210 with 5x multiplier)', xp: { fishing: 210 } },
+              { text: 'Catch 49 Shrimp until 15 Fishing (2,460 Fishing XP with 5x multiplier)', xp: { fishing: 2460 }, tasks: ['Catch a Shrimp'] },
+              { text: 'Reach Total Level 100', tasks: ['Reach Total Level 100'] },
+              { text: 'After your first inventory is full, burn some logs (42 Firemaking XP, 210 with 5x multiplier)', xp: { firemaking: 210 }, tasks: ['Burn Some Normal Logs'] },
+              { text: 'Cook Shrimp (32 Cooking XP, 160 with 5x multiplier)', xp: { cooking: 160 }, tasks: ['Cook Shrimp'] },
+              { text: 'Burn Some Food', tasks: ['Burn Some Food'] },
+              { text: 'Successfully Cook 5 Pieces of Food (160 Cooking XP, 800 with 5x multiplier)', xp: { cooking: 800 }, tasks: ['Successfully Cook 5 Pieces of Food'] },
+              { text: 'Catch an Anchovy (42 Fishing XP, 210 with 5x multiplier)', xp: { fishing: 210 }, tasks: ['Catch an Anchovy'] },
             ]} />
             <div className="guide-section-with-image" style={{marginTop: '1rem'}}>
               <div className="guide-section-text">
                 <CheckList id="t1-fishing-2" checked={guideChecked} onToggle={handleToggle} items={[
-              'Cast Home Teleport',
-              'Quetzal to Aldarin',
-              'Cry in a Wheat Field',
-              'Run west and fill a Grape barrel for the Vineyard foreman',
+              { text: 'Cast Home Teleport', tasks: ['Cast Home Teleport'] },
+              { text: 'Quetzal to Aldarin', tasks: ['Travel using the Quetzal Transport System'] },
+              { text: 'Bow near a Quetzal', tasks: ['Bow near a quetzal'] },
+              { text: 'Run west and fill a Grape barrel for the Vineyard foreman', tasks: ['Fill a Grape Barrel for the Foreman'] },
               'Investigate Meztlan and find out why he was banished from the lab (3rd floor of the Mastering Mixology lab)',
               { text: <><b style={{whiteSpace: 'nowrap'}}>Bank 3:</b> Bank everything, withdraw coins, Chisel, Glassblowing pipe and 20 Molten glass</> },
               { text: "Run north to Toci's Gem Store, make Oil lamps on your way for 20 Crafting, drop them (540 Crafting XP, 2,700 with 5x multiplier)", xp: { crafting: 2700 } },
@@ -862,13 +966,14 @@ export default function GuidePage() {
               { text: 'Sell the gems back and work your way up to Ruby', subitems: [
                 { text: 'Cut and sell Sapphires to level 27 Crafting (1,092 Crafting XP, 5,460 with 5x multiplier, +3,675 coins, cost: 546 coins)', xp: { crafting: 5460 }, gold: 3675 - 546 },
                 { text: 'Cut and sell Emeralds to level 34 Crafting (2,208 Crafting XP, 11,040 with 5x multiplier, +11,680 coins, cost: 1,696 coins)', xp: { crafting: 11040 }, gold: 11680 - 1696 },
-                { text: 'Cut and sell Rubies to level 60 Crafting (50,895 Crafting XP, 254,475 with 5x multiplier, +409,500 coins, cost: 60,255 coins)', xp: { crafting: 254475 }, gold: 409500 - 60255 },
+                { text: 'Cut and sell Rubies to level 60 Crafting (50,895 Crafting XP, 254,475 with 5x multiplier, +409,500 coins, cost: 60,255 coins)', xp: { crafting: 254475 }, gold: 409500 - 60255, tasks: ['Cut a Ruby'] },
               ]},
               { type: 'note', text: 'Do this for 10 minutes to get 356k coins and 60 Crafting, without Abundance: 21 Sapphire, 32 Emerald, 573 Ruby. Keep one of each gem for a task later.' },
-              'Achieve Your First Level 30',
-              'Achieve Your First Level 40',
-              'Achieve Your First Level 50',
-              'Achieve Your First Level 60',
+              { text: 'Achieve Your First Level 30', tasks: ['Achieve Your First Level 30'] },
+              { text: 'Achieve Your First Level 40', tasks: ['Achieve Your First Level 40'] },
+              { text: 'Achieve Your First Level 50', tasks: ['Achieve Your First Level 50'] },
+              { text: 'Achieve Your First Level 60', tasks: ['Achieve Your First Level 60'] },
+              { text: 'Run east and defeat a Seagull', tasks: ['Defeat a Seagull'] },
               'Run south and quetzal to Auburnvale',
                 ]} />
                 <CheckList id="t1-fishing-3" checked={guideChecked} onToggle={handleToggle} items={[
@@ -891,12 +996,12 @@ export default function GuidePage() {
           <CollapsibleSection title="Auburnvale & Tier II Unlock">
             <CheckList id="t1-auburnvale-a" checked={guideChecked} onToggle={handleToggle} items={[
               { text: "Buy a Staff of fire from Sebamo's Sublime Staffs", gold: -1500 },
-              'Equip an Elemental Staff',
+              { text: 'Equip an Elemental Staff', tasks: ['Equip an Elemental Staff'] },
               { text: 'Buy a Torch from Auburnvale General Store', gold: -5 },
-              'Light A Torch and drop it',
+              { text: 'Light A Torch and drop it', tasks: ['Light a Torch'] },
               { text: 'Buy a Steel axe from Lunami', gold: -200 },
-              { text: 'Chop one of the 8 dead trees around the Auburnvale sawmill (27 Woodcutting XP, 135 with 5x multiplier)', xp: { woodcutting: 135 } },
-              { text: 'Turn any Logs Into a Plank at the Auburnvale sawmill and drop it', gold: -100 },
+              { text: 'Chop one of the 8 dead trees around the Auburnvale sawmill (27 Woodcutting XP, 135 with 5x multiplier)', xp: { woodcutting: 135 }, tasks: ['Chop Some Logs With a Steel Axe'] },
+              { text: 'Turn any Logs Into a Plank at the Auburnvale sawmill and drop it', gold: -100, tasks: ['Turn any Logs Into a Plank'] },
             ]} />
             <Note>You should now have 600 points.</Note>
             <CheckList id="t1-woodsman-unlock" checked={guideChecked} onToggle={handleToggle} items={[
@@ -904,16 +1009,17 @@ export default function GuidePage() {
             ]} />
             <Note>There are 3 trees west and north of Crimson swifts, 5 north of Copper longtails and many at Gloomthorn Trail. You need to catch half as many creatures with Woodsman. Bury all bones from Hunter — you need 11 now or 8 later at Tier III.</Note>
             <CheckList id="t1-auburnvale-b" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Run and catch 5 Copper longtails north of Nemus Retreat to 17 Hunter (620 Hunter XP, 4,960 with 8x multiplier)', xp: { hunter: 4960 } },
+              { text: 'Run and catch 5 Copper longtails north of Nemus Retreat to 17 Hunter (620 Hunter XP, 4,960 with 8x multiplier)', xp: { hunter: 4960 }, tasks: ['Snare a Bird'] },
               { type: 'note', text: 'If the spot is crowded, consider quetzal to Aldarin and catching Copper longtails there, then taking the fairy ring to Zanaris.' },
               'Run east across the bridge and fairy ring to Zanaris',
               'Shear a sheep',
               'Enter Puro Puro and get a Butterfly net, 7 Impling jars and Impling scroll from Elnock Inquisitor',
               'Drop the scroll',
-              { text: 'Catch a Baby Impling (38 Hunter XP, 190 with 5x multiplier)', xp: { hunter: 190 } },
+              { text: 'Catch a Baby Impling (38 Hunter XP, 190 with 5x multiplier)', xp: { hunter: 190 }, tasks: ['Catch a Baby Impling'] },
               'Travel back to Zanaris',
               'Pick some Wheat',
-              'Make Some Flour at the Zanaris windmill',
+              { text: 'Make Some Flour at the Zanaris windmill', tasks: ['Make some Flour'] },
+              { text: 'Fairy ring to Aldarin', tasks: ['Travel to Aldarin via Fairy ring'] },
               'Fairy ring AIS and run back to Auburnvale',
               'Bank everything, withdraw coins, Steel axe, Tinderbox, Wool, Knife, Butterfly net (and Bronze axe if Endless Harvest)',
             ]} />
@@ -921,32 +1027,34 @@ export default function GuidePage() {
 
           <CollapsibleSection title="Woodcutting, Fletching & Hunter to 46">
             <CheckList id="t1-wc-fletch" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Chop and burn 10 logs to get 15 Firemaking (42 Firemaking XP, 27 Woodcutting XP each, 3,360 / 2,160 with 8x multiplier)', xp: { firemaking: 3360, woodcutting: 2160 } },
-              { text: 'Chop 10 logs and fletch into arrow shafts (27 Woodcutting XP, 7 Fletching XP each, 2,160 / 560 with 8x multiplier)', xp: { woodcutting: 2160, fletching: 560 } },
+              { text: 'Chop and burn 10 logs to get 15 Firemaking (42 Firemaking XP, 27 Woodcutting XP each, 3,360 / 2,160 with 8x multiplier)', xp: { firemaking: 3360, woodcutting: 2160 }, tasks: ['Burn Some Normal Logs'] },
+              { text: 'Chop 10 logs and fletch into arrow shafts (27 Woodcutting XP, 7 Fletching XP each, 2,160 / 560 with 8x multiplier)', xp: { woodcutting: 2160, fletching: 560 }, tasks: ['Fletch Some Arrow Shafts'] },
 
               { text: 'At 23 Hunter, catch two Wild Kebbits and keep one Kebbit claws (128 Hunter XP each, 2,064 with 8x/Woodsman/Abundance, 4,128 total)', xp: { hunter: 4128 } },
               'At 25 Hunter, run south to Nemus Retreat',
               'Grab a Forestry kit from the Friendly Forester on your way (gnome hat icon)',
-              { text: 'Chop and Burn an Oak log (39 Woodcutting XP, 62 Firemaking XP, 312 / 496 with 8x multiplier)', xp: { woodcutting: 312, firemaking: 496 } },
-              { text: 'Chop 35 Oak logs and fletch 1,050 arrow shafts (39 Woodcutting XP, 7 Fletching XP per 30 shafts, 10,920 / 1,960 with 8x multiplier)', xp: { woodcutting: 10920, fletching: 1960 } },
+              { text: 'Chop and Burn an Oak log (39 Woodcutting XP, 62 Firemaking XP, 312 / 496 with 8x multiplier)', xp: { woodcutting: 312, firemaking: 496 }, tasks: ['Burn Some Oak Logs'] },
+              { text: 'Chop 35 Oak logs and fletch 1,050 arrow shafts (39 Woodcutting XP, 7 Fletching XP per 30 shafts, 10,920 / 1,960 with 8x multiplier)', xp: { woodcutting: 10920, fletching: 1960 }, tasks: ['Fletch 1000 arrow shafts'] },
               { type: 'note', text: 'Toggle auto-burn off before fletching.' },
-              { text: 'Fletch an Oak shortbow (18 Fletching XP, 144 with 8x multiplier)', xp: { fletching: 144 } },
+              { text: 'Fletch an Oak shortbow (18 Fletching XP, 144 with 8x multiplier)', xp: { fletching: 144 }, tasks: ['Fletch an Oak Shortbow'] },
               { text: 'Chop 25 Oak logs (39 Woodcutting XP each, 7,800 with 8x multiplier)', xp: { woodcutting: 7800 } },
-              { text: 'Fletch 25 Oak stocks (18 Fletching XP each, 3,600 with 8x multiplier)', xp: { fletching: 3600 } },
-              { text: 'Spin a Ball of wool (5 Crafting XP, 40 with 8x multiplier)', xp: { crafting: 40 } },
+              { text: 'Fletch 25 Oak stocks (18 Fletching XP each, 3,600 with 8x multiplier)', xp: { fletching: 3600 }, tasks: ['Fletch 25 Oak Stocks'] },
+              { text: 'Spin a Ball of wool (5 Crafting XP, 40 with 8x multiplier)', xp: { crafting: 40 }, tasks: ['Spin a Ball of Wool'] },
               { text: 'Chop and bank 1 Willow log (69 Woodcutting XP, 552 with 8x multiplier)', xp: { woodcutting: 552 } },
-              'Achieve Total Level 250',
+              { text: 'Achieve Total Level 250', tasks: ['Reach Total Level 250'] },
+              { text: 'Pick 6 flax', tasks: ['Pick 6 flax'] },
             ]} />
             <div className="guide-section-with-image" style={{marginTop: '1rem'}}>
               <div className="guide-section-text">
                 <CheckList id="t1-wc-fletch-2" checked={guideChecked} onToggle={handleToggle} items={[
                   { text: <><b style={{whiteSpace: 'nowrap'}}>Bank 5:</b> Bank using Bank buffalo, withdraw coins, Butterfly net and 3 Box traps</> },
+                  { text: 'Drink a cup of tea in Auburnvale', tasks: ['Drink a cup of tea in auburn valley'] },
                   'Follow Mountain Guide to Quetzacalli Gorge',
                   'Run south to Snowy Knights',
                   { text: 'Catch 32 Snowy Knights to 38 Hunter (90 Hunter XP each, 720 with 8x multiplier)', xp: { hunter: 32 * 720 } },
                   'Run north to Auburnvale and take the quetzal',
                   'Run west to Embertailed jerboa',
-                  { text: 'Catch 32 Embertailed Jerboas to 50 Hunter (276 Hunter XP each, 2,208 with 8x multiplier, 70,656 total)', xp: { hunter: 70656 } },
+                  { text: 'Catch 32 Embertailed Jerboas to 50 Hunter (276 Hunter XP each, 2,208 with 8x multiplier, 70,656 total)', xp: { hunter: 70656 }, tasks: ['Catch a Jerboa'] },
                 ]} />
               </div>
               <figure style={{margin: 0, flexShrink: 0, alignSelf: 'flex-start', marginTop: '-5rem'}}>
@@ -983,40 +1091,40 @@ export default function GuidePage() {
               { text: 'Leave and run south to Silk stall to get 34 Thieving (85 thieves, 26 XP each, 208 with 8x multiplier)', xp: { thieving: 17680 } },
               'Bank everything, withdraw coins, Bronze full helm, Shears and Spade',
               'Run north and quetzal to Aldarin',
-              { text: 'Complete Death on the Isle quest (7,500 Agility, 10,000 Thieving, 5,000 Crafting XP rewards before 8x)', xp: { agility: 60000, thieving: 80000, crafting: 40000 } },
-              'During or after the quest, use the Bronze full helm on a Hat stand in the Backstage entrance of Villa Lucens',
+              { text: 'Complete Death on the Isle quest (7,500 Agility, 10,000 Thieving, 5,000 Crafting XP rewards before 8x)', xp: { agility: 60000, thieving: 80000, crafting: 40000 }, tasks: ['Complete Death on the Isle'] },
+
               'You should now be 50 Thieving',
-              "Activate Statue of Ates on Aldarin",
+              { text: 'Activate Statue of Ates on Aldarin', tasks: ['Activate the Statue of Ates'] },
               "Pick-pocket Constantinius for the Chest key (Fancy chest)",
               "Open and search the Fancy chest in the Villa Lucens Wine cellar to see the note 'Taken for a clean. Be back soon.'",
               'Search the south-west fountain on the villa grounds',
               'Use the icon on the statue north of the Aldarin market',
               { text: 'Buy 10 Ixcoztic white from Moonrise Wines (16 heals for a Demonic pact later)', gold: -1000 },
               { text: 'Buy a Steel pickaxe from Mistrock Mining Supplies and run east', gold: -500 },
-              { text: 'Mine some Ore With a Steel Pickaxe (19 Mining XP, 152 with 8x multiplier)', xp: { mining: 152 } },
+              { text: 'Mine some Ore With a Steel Pickaxe (19 Mining XP, 152 with 8x multiplier)', xp: { mining: 152 }, tasks: ['Mine some Ore With a Steel Pickaxe'] },
               'Run NW fairy ring to Zanaris',
               { text: 'Run to Chaeldar and buy an Enchanted gem, Spiny helmet and Anti-dragon shield', gold: -700 },
               'Pick and check your Slayer Task, then drop the Enchanted gem',
               'Fairy ring AJP to Avium Savannah',
-              'Run north and pick some Sweetcorn',
+
               'Run north-west to Ortus Farm',
-              { text: 'Pickpocket a Master Farmer near the farming patches 10 times to get 3 potato seeds (45 XP each, 360 with 8x multiplier)', xp: { thieving: 3600 } },
+              { text: 'Pickpocket a Master Farmer near the farming patches 10 times to get 3 potato seeds (45 XP each, 360 with 8x multiplier)', xp: { thieving: 3600 }, tasks: ['Pickpocket a Master Farmer'] },
               'Take Rake from Tool Leprechaun',
               { text: 'Buy 2 Compost and Seed dibber from Harminia', gold: -60 },
-              'Plant Seeds in an Allotment Patch',
-              'Protect Your Crops',
+              { text: 'Plant Seeds in an Allotment Patch', tasks: ['Plant Seeds in an Allotment Patch'] },
+              { text: 'Protect Your Crops', tasks: ['Protect Your Crops'] },
               'Deposit rake and dibber at Tool Leprechaun',
-              'Run north and shear an Alpaca',
+              { text: 'Run north and shear an Alpaca', tasks: ['Shear an Alpaca'] },
               { text: 'Run east to Civitas illa Fortis and pickpocket Guards 28 times (49 XP each, 392 with 8x multiplier)', xp: { thieving: 10976 } },
-              { text: 'Open 28 Coin Pouches At Once', gold: 840 },
-              'Obtain 800 Coins From Coin Pouches At Once',
+              { text: 'Open 28 Coin Pouches At Once', gold: 840, tasks: ['Open 28 Coin Pouches At Once'] },
+              { text: 'Obtain 800 Coins From Coin Pouches At Once', tasks: ['Obtain 800 Coins From Coin Pouches At Once'] },
               'Bank at Fortis west bank, deposit all and withdraw coins',
-              'Run south to Bazaar and pay an Urchin for Information',
+              { text: 'Run south to Bazaar and pay an Urchin for Information', tasks: ['Pay an Urchin for Information'] },
               { text: 'Steal 15 House keys (450 pickpockets, 98 XP each, 784 with 8x multiplier)', xp: { thieving: 352800 }, gold: 38250 },
-              'Steal 15 House Keys',
-              { text: 'Steal 100 Valuables (47 XP each, 376 with 8x multiplier)', xp: { thieving: 37600 }, gold: 5500 },
-              'Steal a Blessed bone statuette',
-              'Steal from the Fortis Spice Stall',
+              { text: 'Steal 15 House Keys', tasks: ['Steal a House Key', 'Steal 15 House Keys'] },
+              { text: 'Steal 100 Valuables (47 XP each, 376 with 8x multiplier)', xp: { thieving: 37600 }, gold: 5500, tasks: ['Steal 25 Valuables', 'Steal 100 Valuables'] },
+
+              { text: 'Steal from the Fortis Spice Stall', tasks: ['Steal from the Fortis Spice Stall'] },
               'Get at least 66 Thieving for the Final Dawn',
             ]} />
           </CollapsibleSection>
@@ -1024,19 +1132,19 @@ export default function GuidePage() {
           <CollapsibleSection title="Hunter Rumours to Tier III">
             <CheckList id="t2-rumours" checked={guideChecked} onToggle={handleToggle} items={[
               'Quetzal to Hunter Guild and bank everything. Withdraw Bird snare, 3 Box traps and Butterfly net',
-              { text: 'Complete a Hunter Rumour', pact: false },
+              { text: 'Complete a Hunter Rumour', pact: false, tasks: ['Complete a Hunter Rumour'] },
               'For Adept Rumours at 57 Hunter, you are using Ornus until he assigns Pyre fox, then switch to Cervus (only assigns Black warlock and Red chinchompa)',
-              { text: 'Complete 10 Hunter Rumours (6,200 XP each, 49,600 with 8x multiplier)', xp: { hunter: 496000 } },
+              { text: 'Complete 10 Hunter Rumours (6,200 XP each, 49,600 with 8x multiplier)', xp: { hunter: 496000 }, tasks: ['Complete 10 Hunter Rumours'] },
               { type: 'note', text: 'We need at least 617 Blessed bone shards for 43 Prayer later. You should get 632 on average from 4 Novice and 6 Adept rumours.' },
-              'Claim Basic quetzal whistle blueprint from Soar Leader Pitri and craft the Quetzal whistle using Willow logs from your bank',
-              { text: '(Optional) Complete 25 Hunter Rumours (15 more rumours, 6,200 XP each, 49,600 with 8x multiplier)', xp: { hunter: 744000 }, optional: true },
+              { text: 'Claim Basic quetzal whistle blueprint from Soar Leader Pitri and craft the Quetzal whistle using Willow logs from your bank', tasks: ['Create a Quetzal Whistle'] },
+              { text: '(Optional) Complete 25 Hunter Rumours (15 more rumours, 6,200 XP each, 49,600 with 8x multiplier)', xp: { hunter: 744000 }, optional: true, tasks: ['Complete 25 Hunter Rumours', 'Achieve Your First Level 70'] },
               "For Expert Rumours, you are using Aco until he assigns Sunlight antelope, then switch to Teco (only assigns Red chinchompa and Moonlight moth at 75 Hunter)",
               "Buy a Teasing stick from Imia's Supplies",
               { text: '(Optional) 100 Butterfly jars upon getting your first Moonlight moth task', optional: true },
               { text: '(Optional) Bank a full inventory of Moonlight moth after every task until you run out of jars (85 XP each, 1,360 with 8x multiplier)', xp: { hunter: 136000 }, optional: true },
-              { text: '(Optional) Complete 50 Hunter Rumours (25 more rumours, 8,470 XP each, 67,760 with 8x multiplier)', xp: { hunter: 1694000 }, optional: true },
+              { text: '(Optional) Complete 50 Hunter Rumours (25 more rumours, 8,470 XP each, 67,760 with 8x multiplier)', xp: { hunter: 1694000 }, optional: true, tasks: ['Complete 25 Hunter Rumours', 'Achieve Your First Level 80'] },
               { text: '(Optional) Catch 25 Sunlight antelope (381 XP each, 6,096 with 8x multiplier)', xp: { hunter: 152400 }, optional: true },
-              { text: '(Optional) Keep doing Hunter Rumours to reach 99 Hunter (~100 Master rumours, 11,520 XP each, 92,160 with 8x multiplier)', xp: { hunter: 9709057 }, optional: true },
+              { text: '(Optional) Keep doing Hunter Rumours to reach 99 Hunter (~100 Master rumours, 11,520 XP each, 92,160 with 8x multiplier)', xp: { hunter: 9709057 }, optional: true, tasks: ['Achieve Your First Level 90', 'Achieve Your First Level 95', 'Reach Level 99 Hunter'] },
               'Craft an Enchanted quetzal if you were lucky to get Enhanced quetzal whistle blueprint and Yew logs from the rewards',
               'Recharge your whistle at Soar Leader Pitri on your last charge (using meat from rewards) if you are about to use it to travel elsewhere',
             ]} />
@@ -1064,23 +1172,26 @@ export default function GuidePage() {
             <CheckList id="t3-relic-unlock" checked={guideChecked} onToggle={handleToggle} items={[
               { text: 'Unlock your Tier III relic and get the slayer perks', icon: '/relics/Evil_Eye.png' },
             ]} />
+            <CheckList id="karamja-unlock" checked={guideChecked} onToggle={handleToggle} items={[
+              { text: 'Unlock Karamja' },
+            ]} />
             <CheckList id="t3-gear" checked={guideChecked} onToggle={handleToggle} items={[
               'Bank and withdraw Quetzal whistle, 10 Quetzal feed, 4 Jug of wine and coins (and a pickaxe, if not Barbarian Gathering)',
               'Run SE to the Stonecutter Outpost, drinking the wine and filling jugs with water at Locus Oasis',
-              { text: 'Complete The Ribbiting Tale of a Lily Pad Labour Dispute (2,000 Woodcutting XP reward before 8x)', xp: { woodcutting: 16000 } },
-              { text: 'Mine 4 Clay (7 Mining XP each, 224 with 8x multiplier)', xp: { mining: 224 } },
+              { text: 'Complete The Ribbiting Tale of a Lily Pad Labour Dispute (2,000 Woodcutting XP reward before 8x)', xp: { woodcutting: 16000 }, tasks: ['Complete a Ribbiting Tale'] },
+              { text: 'Mine 4 Clay (7 Mining XP each, 224 with 8x multiplier)', xp: { mining: 224 }, tasks: ['Mine some Clay'] },
               { text: 'Buy 3 Limestone brick from Stonecutter Supplies', gold: -78 },
               'Make 4 Soft clay and drop the jugs',
               'Run to Sunset Coast',
               "Buy a Mithril full helm and Adamant full helm from Thurid's Brain Buckets",
               { type: 'note', text: "You should have enough GP at this point — small purchases aren't being subtracted from the tracker." },
-              'Charter a ship to Civitas illa Fortis',
+              { text: 'Charter a ship to Civitas illa Fortis', tasks: ['Charter a Ship From Sunset Coast to Civitas'] },
               'Buy 15 pineapples from Trader Crewmember',
               'Run south and bank pineapples and helmets, keep coins, Quetzal whistle, 10 Quetzal feed, 3 Limestone brick and 4 Soft clay',
               "Run through the gate to Spike's Spikes and buy a Rune mace",
               'Home teleport/Lodestone to Civitas illa Fortis',
               'Run NW to Kualti Headquarters and punch the combat Dummy for 8 Attack',
-              'Attack a Dummy',
+              { text: 'Attack a Dummy', tasks: ['Attack a dummy'] },
               'Purchase the following items from Fortis Blacksmith: Steel platelegs, Mithril platelegs, Adamant platelegs, Mithril platebody, Adamant platebody, Mithril spear, Adamant spear, Adamant scimitar',
               'Bank armour and weapons south',
               'Drain your Prayer to zero',
@@ -1088,8 +1199,10 @@ export default function GuidePage() {
               "Run west and buy 2 bucket packs from Agelus' Farm Shop",
               'Deposit them at Tool Leprechaun',
               'Put your pineapples in the Compost Bin and close it',
-              'Run west to Cam Torum and build the Quetzal site',
-              "Enter Cam Torum, buy a Steel and Rune pickaxe from Tizoro's Pickaxes",
+              { text: 'Run west to Cam Torum and build the Quetzal site', tasks: ['Build a Quetzal Landing Site'] },
+              { text: "Enter Cam Torum, trim your beard at the barber", tasks: ['Trim your beard in Cam torum'] },
+              "Buy a Steel and Rune pickaxe from Tizoro's Pickaxes",
+              { text: 'Fill a bucket from a water pump', tasks: ['Fill something up from a water pump'] },
               'Buy 50 Law runes from The Runic Emporium',
             ]} />
           </CollapsibleSection>
@@ -1119,44 +1232,41 @@ export default function GuidePage() {
               'Restore 5 Prayer Points at an Altar',
               { type: 'note', text: 'If you skipped all optional tasks, you would unlock Karamja now.' },
               'Buy the following runes: 500 Mind rune and Chaos rune; 800 Nature rune; 1500 Air, Water, Earth and Fire runes; 100 Cosmic rune and 50 Death runes',
-              { text: 'Run east and kill 16 Blue dragons using defensive cast water spells at Dragon Nest and bury their bones for 30 Prayer (107 Defence, 143 HP, 342 Magic, 74 Prayer XP each, 12x combat multiplier)', xp: { defence: 20544, hitpoints: 27456, magic: 65664, prayer: 14208 } },
-              '(Alacrity: E: Tlatli rainforest: Log balance with 40 Agility)',
+              { text: 'Run east and kill 16 Blue dragons using defensive cast water spells at Dragon Nest and bury their bones for 30 Prayer (107 Defence, 143 HP, 342 Magic, 74 Prayer XP each, 12x combat multiplier)', xp: { defence: 20544, hitpoints: 27456, magic: 65664, prayer: 14208 }, tasks: ['Bury 6 bones', 'Bury Some Wyvern or Dragon Bones'] },
               'Keep at least 6 Blue dragon hide for a task later',
-              'Cast Low Level Alchemy between hits on Nature rune when you reach 21 Magic',
+              { text: 'Cast Low Level Alchemy between hits on Nature rune when you reach 21 Magic', tasks: ['Cast Low Level Alchemy'] },
               'This should get you 36 Magic and 33 Defence',
-              'When you reach 5 Defence, equip Steel platelegs, Spiny helmet and alch them',
-              'Equip some Steel armour',
+              { text: 'When you reach 5 Defence, equip Steel platelegs, Spiny helmet and alch them', tasks: ['Equip some Steel armour'] },
               'When you reach 20 Defence, equip Mithril full helm, Mithril platebody and Mithril platelegs and alch them',
-              'Equip a Full Mithril Set',
               'When you reach 30 Defence, equip Adamant full helm, Adamant platebody and Adamant platelegs — keep this',
-              'Equip a Full Adamant Set',
+              { text: 'Equip a Full Adamant Set', tasks: ['Equip a Full Adamant Set'] },
               'Reach Combat Level 10',
-              'Reach Combat Level 25',
+              { text: 'Reach Combat Level 25', tasks: ['Reach Combat Level 25'] },
               { text: 'Quetzal to The Teomat, bless your wine and use the Libation bowl to get 43–50 Prayer for Antler guard', xp: { prayer: 87125 } },
               'Pray at the Shrine of Ralos',
-              { text: 'Use the Protect from Melee Prayer', pact: true },
-              'Activate Superhuman Strength and Improved Reflexes',
-              'Kill an Icefiend in Varlamore north by the bridge',
+              { text: 'Use the Protect from Melee Prayer', pact: true, tasks: ['Use the Protect from Melee Prayer'] },
+
+              { text: 'Kill an Icefiend in Varlamore north by the bridge', tasks: ['Defeat an Icefiend in Varlamore'] },
               'Keep casting Low Level Alchemy until 55 Magic',
               'Quetzal to Cam Torum and run east to the Wolf Den',
-              'Defeat a Dire Wolf',
-              'Run to Ortus Farm and fill a bucket with Supercompost from the bin',
+              { text: 'Defeat a Dire Wolf', tasks: ['Defeat a Dire Wolf'] },
+              { text: 'Run to Ortus Farm and fill a bucket with Supercompost from the bin', tasks: ['Fill a Bucket With Supercompost'] },
               'Grab the bucket from Tool Leprechaun and deposit back',
-              { text: 'Run south of Avium Savannah and kill a Hill Giant', pact: true },
-              'Travel to Zanaris (Alacrity: I: Zanaris: Cosmic altar path)',
+              { text: 'Run south of Avium Savannah and kill a Hill Giant', pact: true, tasks: ['Defeat a Hill Giant'] },
+              'Travel to Zanaris',
               'Enter Puro-Puro and hunt Eclectic implings for a Gold bar',
               'Hunt Magpie implings for Mystic gloves or Mystic boots',
-              'Equip a piece of Mystic set',
-              'Fairy ring BKQ to Enchanted Valley and kill 5 bunnies',
+              { text: 'Equip a piece of Mystic set', tasks: ['Equip a Piece of a Mystic Set'] },
+              { text: 'Fairy ring BKQ to Enchanted Valley and kill 5 bunnies', tasks: ['Defeat 5 Bunnies'] },
               { text: '(Optional) Kill Tree spirits for a Rune axe — they are weak to fire spells', optional: true },
               'Bank in Zanaris, withdraw Ring mould, Amulet mould and Ball of wool',
-              'Craft an Emerald ring and Ruby amulet at the Furnace to the east',
-              'Run to Kualti Headquarters and kill a Guard in the underground using defensive casting',
-              "Run SE to the Estate agent and purchase a Player-owned house",
+              { text: 'Craft an Emerald ring and Sapphire amulet at the Furnace to the east', tasks: ['Craft an Emerald Ring', 'Craft a Sapphire Amulet'] },
+              { text: 'Run to Kualti Headquarters and kill a Guard in the underground using defensive casting', tasks: ['Defeat a Guard in Varlamore underground'] },
+              { text: 'Run SE to the Estate agent and purchase a Player-owned house', tasks: ['Purchase a Player Owned House'] },
               'Cast Teleport to House',
-              'Teleport using Law Runes',
+              { text: 'Teleport using Law Runes', tasks: ['Teleport Using Law Runes'] },
               'Enter your Player-owned house',
-              'Enter build mode and build any room',
+              { text: 'Enter build mode and build any room', tasks: ['Build a Room in Your Player Owned House'] },
               'Exit the house and run south to the bank in Aldarin',
               'Grab an Adamant scimitar',
               'Run south and climb on top of the Aldarin windmill',
@@ -1164,7 +1274,7 @@ export default function GuidePage() {
               'Hop worlds or relog',
               'Claim a Cake from the Nest',
               { text: 'At 49 Magic enchant an Amulet of strength', xp: { magic: 25447 } },
-              { text: 'At 54 Magic cast Civitas illa Fortis Teleport', xp: { magic: 59151 } },
+              { text: 'At 54 Magic cast Civitas illa Fortis Teleport', xp: { magic: 59151 }, tasks: ['Teleport to Civitas illa Fortis'] },
               { text: 'At 55 Magic cast High Level Alchemy', xp: { magic: 15764 } },
               'We should be close to 50 Combat now to unlock another Demonic pact',
             ]} />
@@ -1188,37 +1298,37 @@ export default function GuidePage() {
             <CheckList id="skill-mfk" checked={guideChecked} onToggle={handleToggle} items={[
               'Bank and withdraw coins, Steel pickaxe, Rune pickaxe, Tinderbox, Seaweed',
               'Equip the Staff of air',
-              'Quetzal to Sunset Coast (Tal Teklan if Barbarian Gathering, or F: Tlatli rainforest: Rock climb if you also have Alacrity)',
+              'Quetzal to Sunset Coast (Tal Teklan if Barbarian Gathering)',
               'Buy Fishing rod, Fly fishing rod, Lobster pot, Harpoon, Big fishing net, 100 Bait and 2000 Feathers from Picaria\'s Fishing Shop, then quetzal to Tal Teklan',
               'Run to the mine south of Tal Teklan',
               { text: 'Mine Iron ore to 40 Mining, switching to Coal after (~116 actions, 37 XP each, 296 with 8x multiplier)', xp: { mining: 34336 } },
-              { text: 'Mine 50 Iron rocks, keeping 4 (37 XP each, 296 with 8x multiplier)', xp: { mining: 14800 } },
+              { text: 'Mine 50 Iron rocks, keeping 4 (37 XP each, 296 with 8x multiplier)', xp: { mining: 14800 }, tasks: ['Mine 50 Iron Ore'] },
               { text: 'Mine 15 Coal rocks (52 XP each, 416 with 8x multiplier)', xp: { mining: 6240 } },
               'This gets you 41 Mining for Karamja diary',
-              'Mine some ore with a Rune pickaxe, drop your Steel pickaxe',
-              'Run north to Tal Teklan and smelt an Iron bar',
+              { text: 'Mine some ore with a Rune pickaxe, drop your Steel pickaxe', tasks: ['Mine some Ore With a Rune Pickaxe'] },
+              { text: 'Run north to Tal Teklan and smelt an Iron bar', tasks: ['Smelt an Iron Bar'] },
               'Chop 3 Logs along the way',
               'Quetzal to Cam Torum',
               'Enter the gates, run east and mine a Calcified deposit',
-              'Mine 250 Blessed bone shards',
-              'Teleport to Cam Torum using a Calcified moth',
+              { text: 'Mine 250 Blessed bone shards', tasks: ['Mine 250 Blessed Bone Shards'] },
+              { text: 'Teleport to Cam Torum using a Calcified moth', tasks: ['Teleport to Cam Torum using a Calcified Moth'] },
               'Quetzal to Civitas illa Fortis',
-              "Fish a House key in the park",
-              'Obtain a Casket from Fishing',
+              { text: 'Fish a House key in the park', tasks: ['Fish a House Key'] },
+              { text: 'Obtain a Casket from Fishing', tasks: ['Obtain a Casket from Fishing'] },
               'Find a Cosmic talisman in a Casket',
               'Locate a Runecrafting altar using a talisman',
               'Lodestone to Karamja',
               'Enter Brimhaven Agility Arena and get 10 Brimhaven vouchers',
-              'Receive an Agility arena ticket',
+              { text: 'Receive an Agility arena ticket', tasks: ['Receive an Agility Arena Ticket'] },
               { text: '(Optional) Get 50 Agility for the Final Dawn and Colossal Wyrm Agility Course', xp: { agility: 23183 }, optional: true },
-              'Buy a Snapdragon from Pirate Jackie the Fruit',
+              { text: 'Buy a Snapdragon from Pirate Jackie the Fruit', tasks: ['Buy a Snapdragon From Pirate Jackie the Fruit'] },
               { text: 'Exchange your 10 Agility arena tickets for XP (345 XP each, 2,760 with 8x multiplier)', xp: { agility: 27600 } },
               'Run east through the gate and kill an Imp on the Karamja Volcano',
               'Scatter some Ashes',
               'Pick and drop your Seaweed 5 times',
-              'Run east and fill a crate with Bananas for Luthas at Musa Point',
+              { text: 'Run east and fill a crate with Bananas for Luthas at Musa Point', tasks: ['Fill a Crate With Bananas'] },
               'Run to the fishing docks north of the Banana plantation',
-              'Catch a Herring',
+              { text: 'Catch a Herring', tasks: ['Catch a Herring'] },
               'Catch 25 Sardines',
               { text: 'Get 20 Fishing', xp: { fishing: 1800 } },
               'Light some Logs and cook all the fish',
@@ -1246,7 +1356,7 @@ export default function GuidePage() {
 
           <CollapsibleSection title="Brimhaven Dungeon & Fishing">
             <CheckList id="skill-brim" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Kill a TzHaar', pact: true },
+              { text: 'Kill a TzHaar', pact: true, tasks: ['Defeat a TzHaar'] },
               'Leave the TzHaar City and run through the hidden wall to Isle of Crandor',
               'Defeat a Lesser demon',
               'Cast a Blast Spell',
@@ -1254,16 +1364,16 @@ export default function GuidePage() {
               'Run NW and use the ropeswing to travel to Moss Giant Island and back',
               'Mine some Gold ore at the Horseshoe mine and drop it',
               'Run south of the House Portal',
-              'Kill a Snake',
-              'Pick a Pineapple',
-              'Enter the Brimhaven Dungeon',
+              { text: 'Kill a Snake', tasks: ['Defeat a Snake in Karamja'] },
+              { text: 'Pick a Pineapple', tasks: ['Pick a Pineapple on Karamja'] },
+              { text: 'Enter the Brimhaven Dungeon', tasks: ['Enter the Brimhaven Dungeon'] },
               'Kill a Moss giant',
               'Run west past the 22 Agility pipe shortcut and use the stepping stones',
               'Run up the south stairs and kill a Greater demon',
               'Down the stairs and past the Moss giants',
               'Kill a Fire giant',
               'Run all the way south',
-              { text: 'Kill a Steel dragon', pact: true },
+              { text: 'Kill a Steel dragon', pact: true, tasks: ['Defeat a Steel Dragon on Karamja'] },
               'Lodestone to Karamja',
               "Use Vigroy's cart to travel to Shilo Village",
               'Bank everything, withdraw Fly fishing rod, Fishing rod, Feathers and Bait',
@@ -1273,7 +1383,7 @@ export default function GuidePage() {
               'Burn some Logs near the bank',
               { text: 'Cook 20 Pike (82 XP each, 656 with 8x multiplier)', xp: { cooking: 13120 } },
               'Catch Trout until 30 Fishing',
-              'Catch a Salmon on Karamja',
+              { text: 'Catch a Salmon on Karamja', tasks: ['Catch a Salmon on Karamja'] },
               { text: 'Catch 50 Salmon (72 XP each, 576 with 8x multiplier)', xp: { fishing: 28800 } },
               'Bank everything, withdraw coins, Chisel, Quetzal whistle, Teasing stick, Knife, Tinderbox, runes',
             ]} />
@@ -1282,15 +1392,15 @@ export default function GuidePage() {
           <CollapsibleSection title="Shilo Village, Tai Bwo Wannai & Karamja Easy Diary">
             <CheckList id="skill-shilo" checked={guideChecked} onToggle={handleToggle} items={[
               'Run NW and mine a Red topaz from a Gem rock',
-              'Obtain a Gem While Mining',
-              'Run east and sleep in the Paramaya Inn',
-              'Use the stepping stones across the river',
+              { text: 'Obtain a Gem While Mining', tasks: ['Obtain a Gem While Mining'] },
+              { text: 'Run east and sleep in the Paramaya Inn', tasks: ['Sleep in Paramaya Inn'] },
+              { text: 'Use the stepping stones across the river', tasks: ['Take a Shortcut Across the Shilo Village River'] },
               'Exit Shilo village',
               'Run west and visit the Cairn Isle',
               'Travel back across the bridge and trap a Horned graahk',
               'Obtain 2 Tatty graahk fur and 1 Graahk fur',
               'Chop two Logs and fletch one of them into arrowshafts',
-              'Catch some Karambwanji',
+              { text: 'Catch some Karambwanji', tasks: ['Catch a Karambwanji'] },
               'Run north to Tai Bwo Wannai',
               'Kill a Jungle spider and make a Spider on shaft',
               'Burn some logs and cook it (don\'t burn this one)',
@@ -1299,7 +1409,7 @@ export default function GuidePage() {
               'Make a Bronze plateskirt on an anvil nearby',
               'Run SE to the dungeon sign and enter the Pothole Dungeon',
               'Kill a Jogre (keep the bones)',
-              'You have now completed the Karamja Easy diary',
+              { text: 'You have now completed the Karamja Easy diary', tasks: ['Complete the Easy Karamja Diary'] },
               "Lodestone to Karamja and claim the diary lamp, using it to get 27 Farming",
               'Charter a ship to Civitas illa Fortis from Karamja',
               'Buy 100 Soda ash/Bucket of sand from Trader Crewmember',
@@ -1308,9 +1418,9 @@ export default function GuidePage() {
               'Bank south, grab your Graahk furs and coins',
               "Quetzal to Hunter Guild and make full Graahk armour using Pellem's Fur Store",
               'Equip full Graahk hunter gear',
-              'Run south and complete 10 laps of the Colossal Wyrm Agility Course',
+              { text: 'Run south and complete 10 laps of the Colossal Wyrm Agility Course', tasks: ['Complete 10 laps of the Varlamore Agility Course'] },
               'Quetzal to Quetzacalli Gorge and run north to The Darkfrost',
-              { text: 'Kill The Hueycoatl using earth spells', pact: true },
+              { text: 'Kill The Hueycoatl using earth spells', pact: true, tasks: ['Defeat Hueycoatl 1 Time', '1 Hueycoatl Kill'] },
               { type: 'note', text: 'Use a mass world for an easy kill.' },
             ]} />
           </CollapsibleSection>
@@ -1334,7 +1444,7 @@ export default function GuidePage() {
               <strong>Melee weapon progression:</strong> Rune mace → Adamant spear → Mithril spear → Dramen staff
             </p>
             <CheckList id="combat-slayer" checked={guideChecked} onToggle={handleToggle} items={[
-              { text: 'Start Chaeldar slayer using melee until you reach 48 Slayer', xp: { slayer: 83014 } },
+              { text: 'Start Chaeldar slayer using melee until you reach 48 Slayer', xp: { slayer: 83014 }, tasks: ['Complete 1 Slayer Task'] },
               { type: 'note', text: 'You only need 38 to kill Sulphur Naguas with Abundance, but consider still getting 48 for Heart of Darkness.' },
               { text: 'You should have the following stats after you\'re done: 55 Attack, 55 Strength, 55 Defence', xp: { attack: 166636, strength: 166636, defence: 146412 } },
               'Quetzal to Cam Torum and run north to Neypotzli',
@@ -1347,9 +1457,9 @@ export default function GuidePage() {
               { text: '(Optional) Keep killing Sulphur Nagua until 60 Attack and 60 Strength', xp: { attack: 107106, strength: 107106 }, optional: true },
               { type: 'note', text: 'If you would like a punish weapon for the Eclipse Moon, you can do 25 minutes of Toci\'s Gem Store rubies for 765k coins and buy 8350 Chaos runes, sell it for Tokkul and get the Tzhaar-ket-om.' },
               { text: '(Optional) Get a Tzhaar-ket-om for the Eclipse Moon', gold: -835800, optional: true },
-              'Subdue the Moons of Peril',
-              { text: '(Optional) Subdue the Moons of Peril 10 times', optional: true },
-              { text: '(Optional) Subdue the Moons of Peril 25 times', optional: true },
+              { text: 'Subdue the Moons of Peril', tasks: ['Defeat the Moons of Peril'] },
+              { text: '(Optional) Subdue the Moons of Peril 10 times', optional: true, tasks: ['Defeat the Moons of Peril 10 times'] },
+              { text: '(Optional) Subdue the Moons of Peril 25 times', optional: true, tasks: ['Defeat the Moons of Peril 25 times'] },
               { text: '(Optional) Subdue the Moons of Peril 50 times', optional: true },
             ]} />
           </CollapsibleSection>
@@ -1373,17 +1483,17 @@ export default function GuidePage() {
               { text: 'Unlock your Tier IV relic. Take Transmutation.', icon: '/relics/Transmutation.png' },
             ]} />
             <CheckList id="t4-mining" checked={guideChecked} onToggle={handleToggle} items={[
-              'Quetzal to Tal Teklan (F: Tlatli rainforest: Rock climb with Alacrity)',
+              'Quetzal to Tal Teklan',
               'Run to the mine south of Tal Teklan',
               { text: 'Get 55 Mining using Iron rocks', xp: { mining: 110987 } },
               "Get 48 Slayer if you've only gotten 38 with Abundance",
-              { text: 'Complete The Heart of Darkness, this should get you 53 Slayer (8,000 Mining, Slayer, Agility, Thieving XP rewards before 8x)', xp: { mining: 64000, slayer: 64000, agility: 64000, thieving: 64000 } },
-              'Defeat Amoxliatl',
+              { text: 'Complete The Heart of Darkness, this should get you 53 Slayer (8,000 Mining, Slayer, Agility, Thieving XP rewards before 8x)', xp: { mining: 64000, slayer: 64000, agility: 64000, thieving: 64000 }, tasks: ['Complete the Heart of Darkness'] },
+              { text: 'Defeat Amoxliatl', tasks: ['Defeat Amoxliatl 1 Time'] },
               { text: '(Optional) Keep killing Amoxliatl until you receive: Pendant of ates, Glacial temotli, Rune platebody, Rune platelegs, Varlamore echo orb', optional: true },
               'Quetzal to Auburnvale',
               "Chop Willow logs in Auburnvale south of Lunami's Axe Shop by the totem to spawn Forestry events",
               'Maple trees are slightly north of the totem',
-              "Complete the Vale Totems miniquest if you haven't already",
+              { text: "Complete the Vale Totems miniquest if you haven't already", tasks: ['Complete the Vale totems miniquest'] },
               { text: '(Optional) Buy an Adamant axe if not Barbarian Gathering OR if you got a Rune axe', optional: true },
               { text: 'Get 52 Fletching and 50 Woodcutting via Vale Totems', xp: { fletching: 118036, woodcutting: 64109 } },
             ]} />
@@ -1406,7 +1516,7 @@ export default function GuidePage() {
               'It should take 192 minutes (~3 hours) for it to grow',
               { text: '(Optional) Set a timer for 192 minutes to know when to get back and check on the tree', optional: true },
               'Deposit farming tools using Tool Leprechaun',
-              "Use Vigroy to travel to Shilo Village (Shilo: Stepping stones with Alacrity)",
+              "Use Vigroy to travel to Shilo Village",
               'Bank, withdraw Fly fishing rod and Feathers (skip with Barbarian Gathering)',
               { text: 'Get 65 Fishing catching Trout and Salmon', xp: { fishing: 393779 } },
             ]} />
@@ -1422,11 +1532,11 @@ export default function GuidePage() {
               'IMPORTANT: Keep 3 Red topaz — you can sell the rest of the gems',
               'Repair one village fence until you get some favour',
               'Talk to Murcaily and tell him you have been helping around the village until he gives you some Trading sticks',
-              'Pay 100 Trading sticks to enter the Hardwood Grove',
+              { text: 'Pay 100 Trading sticks to enter the Hardwood Grove', tasks: ['Enter the Tai Bwo Wannai Hardwood Grove'] },
               'Cut some Teak logs',
               'Cut some Mahogany logs',
               'Earn 100% favour in Tai Bwo Wannai Cleanup',
-              'You can do this by cutting Dense Jungle',
+              { text: 'You can do this by cutting Dense Jungle', tasks: ['Chop a dense jungle'] },
               'Keep doing this until you get a Gout Tuber Plant, then dig it up',
               'Talk to Safta Doc and exchange 3 Red topaz, 1200 Trading sticks and Gout tuber for Red topaz machete',
               'Equip a Red Topaz Machete',
@@ -1461,7 +1571,7 @@ export default function GuidePage() {
               { text: 'Get 74 Fletching using Vale Totems', xp: { fletching: 793990 } },
               'Get the Sunlight crossbow and ~2000 Sunlight bolts (requires catching 167 Sunlight antelopes)',
               'Complete the Fight Caves',
-              { text: 'Equip a Fire cape', pact: true },
+              { text: 'Equip a Fire cape', pact: true, tasks: ['Equip a Fire Cape'] },
             ]} />
             <Note>If you made it all the way here, you are the GOAT! Enjoy the rest of your journey.</Note>
           </CollapsibleSection>

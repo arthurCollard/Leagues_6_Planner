@@ -629,7 +629,7 @@ export const UNLOCKABLE_REGIONS = [
       "Werewolf Agility Course",
     ],
     skills: { slayer: 1 },
-    extras: { limpwurt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 2, prayer_pot_primary: 1, herb_patches: 2, allotment_patches: 2 },
+    extras: { limpwurt: 3, anti_venoms_primary: 2, anti_venoms_secondary: 2, prayer_pot_primary: 1, herb_patches: 2, allotment_patches: 2, mega_rares: 1 },
     spellbook: [],
     prayer: [],
     tasks: [

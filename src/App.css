@@ -1126,6 +1126,7 @@ body {
 /* ── Tablet (≤1100px) ─────────────────────────────────────────────────────── */
 @media (max-width: 1100px) {
   .guide-layout { flex-direction: column; }
+  .guide-tasks-sidebar { position: static; width: 100%; }
   .guide-left-sidebar { position: static; width: 100%; }
   .main-layout { grid-template-columns: 1fr; }
   .skills-panel { position: static; }
@@ -3657,9 +3658,9 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 1rem 0.25rem 2rem 0.25rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
 }
 
 .guide-section-with-image {
@@ -3682,6 +3683,14 @@ body {
 
 @media (max-width: 1300px) {
   .guide-section-img { display: none; }
+}
+
+.guide-tasks-sidebar {
+  flex-shrink: 0;
+  width: 240px;
+  position: sticky;
+  top: calc(var(--guide-header-height) + 1rem);
+  align-self: flex-start;
 }
 
 .guide-left-sidebar {
@@ -4330,4 +4339,78 @@ body {
 .guide-changelog-entry li {
   margin: 0.2rem 0;
   color: #a89878;
+}
+
+/* ── Tasks Panel ── */
+.guide-tasks-panel {
+  background: #3b2a1a;
+  border: 1px solid #4a7a4a;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.guide-tasks-until {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0.4rem 0 0.5rem;
+  font-size: 0.82rem;
+  color: #c8b888;
+}
+
+.guide-tasks-until strong {
+  color: #e8d0a0;
+}
+
+.guide-tasks-bar-bg {
+  position: relative;
+  height: 14px;
+  background: #1a1612;
+  border-radius: 3px;
+  border: 1px solid #3a4a3a;
+  overflow: visible;
+  margin-bottom: 0.5rem;
+}
+
+.guide-tasks-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b0000, #cc2200);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.guide-tasks-bar-icon {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.guide-tasks-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.guide-tasks-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guide-tasks-stat-label {
+  font-size: 0.8rem;
+  color: #a89878;
+}
+
+.guide-tasks-stat-value {
+  font-size: 0.8rem;
+  color: #e8d0a0;
+  font-weight: 600;
 }
