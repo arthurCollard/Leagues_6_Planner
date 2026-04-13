@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect, createContext, useContext } from 'react';
+import { useState, useCallback, useRef, useEffect, createContext, useContext, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { SKILLS } from '../data/skills';
@@ -166,8 +166,10 @@ function CollapsibleSection({ title, defaultOpen = true, children }) {
     });
   };
 
+  const sectionCtxValue = useMemo(() => ({ register, unregister }), [register, unregister]);
+
   return (
-    <SectionContext.Provider value={{ register, unregister }}>
+    <SectionContext.Provider value={sectionCtxValue}>
       <div className="guide-collapsible">
         <button className="guide-collapsible-toggle" onClick={() => setOpen(o => !o)}>
           <span>{open ? '▼' : '▶'}</span> {title}
@@ -615,7 +617,7 @@ export default function GuidePage() {
       <header ref={headerRef} className={`guide-header${headerScrolled ? ' guide-header--compact' : ''}`}>
         <div className="guide-header-inner">
           <div className="guide-header-title-row">
-            <Link to="/" className="guide-back-link">← Back to Planner</Link>
+            <a href="/" className="guide-back-link">← Back to Planner</a>
             <h1>Demonic Pacts League Starting Guide</h1>
             <p className="guide-byline">By Laef &mdash; originally published on the <a href="https://oldschool.runescape.wiki/w/Guide:Leagues:_Demonic_pacts_starting_guide_by_Laef" target="_blank" rel="noopener noreferrer">OSRS Wiki</a></p>
             <button className="guide-reset-btn" onClick={() => setShowResetModal(true)}>Reset All</button>
