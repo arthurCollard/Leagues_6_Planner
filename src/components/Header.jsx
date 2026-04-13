@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import { FLAGS } from '../featureFlags';
 
-const guideEnabled = process.env.REACT_APP_ENABLE_GUIDE === 'true';
+const guideEnabled = FLAGS.guide;
 
 export default function Header({ relicCount, solvedCount, masteryPoints, regionCount }) {
   return (
@@ -15,7 +16,7 @@ export default function Header({ relicCount, solvedCount, masteryPoints, regionC
       <div className="header-stats">
         <span>{relicCount}/8 Relics</span>
         <span>{solvedCount}/23 Skills Solved</span>
-        <span>{masteryPoints}/10 Pact pts</span>
+        <span>{masteryPoints}/40 Pact pts</span>
         <span>{regionCount}/3 Regions</span>
       </div>
     </header>

@@ -51,7 +51,7 @@ function TierPassiveTooltip({ passives, tier }) {
   );
 }
 
-function RelicDescModal({ relic, onClose }) {
+export function RelicDescModal({ relic, onClose }) {
   const d = relic.description;
   const toggles = d.toggles ?? (d.toggle ? [d.toggle] : []);
 

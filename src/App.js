@@ -17,6 +17,7 @@ import MasteryTree from './components/MasteryTree';
 import RegionTree from './components/RegionTree';
 import GearPanel from './components/GearPanel';
 import { UNIVERSAL_REGIONS, UNLOCKABLE_REGIONS } from './data/region/regions';
+import { FLAGS } from './featureFlags';
 
 function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -193,7 +194,7 @@ export default function App() {
     return prayers;
   })();
 
-  const guideEnabled = process.env.REACT_APP_ENABLE_GUIDE === 'true';
+  const guideEnabled = FLAGS.guide;
 
   return (
     <Routes>
