@@ -16,10 +16,8 @@ export const DEV_FLAGS = {
   guide: isDev,
 };
 
-const unlocked = getUnlocked();
-
 export const FLAGS = {
-  guide: isDev || !!unlocked.guide,
+  guide: true,
 };
 
 // Expose to browser console
