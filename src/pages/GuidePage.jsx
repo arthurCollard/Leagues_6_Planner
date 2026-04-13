@@ -1115,7 +1115,7 @@ export default function GuidePage() {
               "Buy a Teasing stick from Imia's Supplies",
               { text: '(Optional) 100 Butterfly jars upon getting your first Moonlight moth task', optional: true },
               { text: '(Optional) Bank a full inventory of Moonlight moth after every task until you run out of jars (85 XP each, 1,360 with 8x multiplier)', xp: { hunter: 136000 }, optional: true },
-              { text: '(Optional) Complete 50 Hunter Rumours (25 more rumours, 8,470 XP each, 67,760 with 8x multiplier)', xp: { hunter: 1694000 }, optional: true, tasks: ['Complete 25 Hunter Rumours', 'Achieve Your First Level 80'] },
+              { text: '(Optional) Complete 50 Hunter Rumours (25 more rumours, 8,470 XP each, 67,760 with 8x multiplier)', xp: { hunter: 1694000 }, optional: true, tasks: ['Achieve Your First Level 80'] },
               { text: '(Optional) Catch 25 Sunlight antelope (381 XP each, 6,096 with 8x multiplier)', xp: { hunter: 152400 }, optional: true },
               { text: '(Optional) Keep doing Hunter Rumours to reach 99 Hunter (~100 Master rumours, 11,520 XP each, 92,160 with 8x multiplier)', xp: { hunter: 9709057 }, optional: true, tasks: ['Achieve Your First Level 90', 'Achieve Your First Level 95', 'Reach Level 99 Hunter'] },
               'Craft an Enchanted quetzal if you were lucky to get Enhanced quetzal whistle blueprint and Yew logs from the rewards',
