@@ -629,9 +629,12 @@ function TasksPanel({ guideChecked = {} }) {
         <span className="guide-levels-title">Leagues VI</span>
       </div>
       <div className="guide-tasks-until">
-        <span><strong>{tasksUntilRegion}</strong> tasks until {regionBreakpoint.label}.</span>
+        {karamjaUnlocked
+          ? <span>All guide regions unlocked.</span>
+          : <span><strong>{tasksUntilRegion}</strong> tasks until {regionBreakpoint.label}.</span>
+        }
         {t4Unlocked
-          ? <span>All relics unlocked.</span>
+          ? <span>All guide relics unlocked.</span>
           : <span><strong>{pointsUntilRelic.toLocaleString()}</strong> points until next Relic.</span>
         }
       </div>
