@@ -3621,8 +3621,7 @@ body {
   gap: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0.25rem 2rem 0.25rem;
-  margin-top: 1rem;
+  padding: 1rem 0.25rem 2rem 0.25rem;
 }
 
 .guide-section-with-image {
@@ -3949,7 +3948,8 @@ body {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 6px;
-  padding: 1rem 1.25rem;
+  padding: 0 1.25rem 1rem;
+  margin-top: 0;
   margin-bottom: 2.5rem;
   display: inline-block;
   min-width: 260px;
@@ -4047,6 +4047,56 @@ body {
 
 .guide-collapsible-toggle:hover {
   background: rgba(255,255,255,0.09);
+}
+
+.guide-section-check {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(212, 184, 150, 0.35);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.guide-section-check:hover {
+  border-color: rgba(212, 184, 150, 0.7);
+  background: rgba(212, 184, 150, 0.1);
+}
+
+.guide-section-check.is-partial {
+  background: rgba(76, 175, 112, 0.25);
+  border-color: rgba(76, 175, 112, 0.5);
+}
+
+.guide-section-check.is-checked {
+  background: #4caf70;
+  border-color: #4caf70;
+}
+
+.guide-section-check.is-checked::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+.guide-section-check.is-partial::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 2px;
+  background: rgba(76, 175, 112, 0.9);
+  border-radius: 1px;
 }
 
 .guide-collapsible-body {

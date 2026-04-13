@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, createContext, useContext } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { SKILLS } from '../data/skills';
@@ -115,15 +115,71 @@ function Pact() {
   return <span className="guide-demonic-pact">Demonic Pact</span>;
 }
 
+const GuideStateContext = createContext(null);
+const SectionContext = createContext(null);
+
 function CollapsibleSection({ title, defaultOpen = true, children }) {
   const [open, setOpen] = useState(defaultOpen);
+  const [, forceUpdate] = useState(0);
+  const { checked, onToggle } = useContext(GuideStateContext) || {};
+  const registryRef = useRef(new Map());
+
+  const register = useCallback((id, getter) => {
+    registryRef.current.set(id, getter);
+    forceUpdate(n => n + 1);
+  }, []);
+
+  const unregister = useCallback((id) => {
+    registryRef.current.delete(id);
+  }, []);
+
+  const getAllPairs = () => {
+    const pairs = [];
+    registryRef.current.forEach((getter, id) => {
+      const items = getter();
+      items.forEach((item, i) => {
+        if (typeof item === 'object' && (item.type === 'note')) return;
+        if (typeof item === 'string' && item.startsWith('NOTE:')) return;
+        pairs.push({ key: `${id}_${i}`, item });
+        if (item?.subitems) {
+          item.subitems.forEach((sub, j) => {
+            pairs.push({ key: `${id}_${i}_sub_${j}`, item: sub });
+          });
+        }
+      });
+    });
+    return pairs;
+  };
+
+  const pairs = checked ? getAllPairs() : [];
+  const checkedCount = pairs.filter(({ key }) => !!(checked?.[key]?.checked)).length;
+  const allChecked = pairs.length > 0 && checkedCount === pairs.length;
+  const someChecked = checkedCount > 0 && !allChecked;
+
+  const handleToggleAll = (e) => {
+    e.stopPropagation();
+    if (!onToggle) return;
+    const target = !allChecked;
+    pairs.forEach(({ key, item }) => {
+      const isChecked = !!(checked?.[key]?.checked);
+      if (isChecked !== target) onToggle(key, item);
+    });
+  };
+
   return (
-    <div className="guide-collapsible">
-      <button className="guide-collapsible-toggle" onClick={() => setOpen(o => !o)}>
-        <span>{open ? '▼' : '▶'}</span> {title}
-      </button>
-      {open && <div className="guide-collapsible-body">{children}</div>}
-    </div>
+    <SectionContext.Provider value={{ register, unregister }}>
+      <div className="guide-collapsible">
+        <button className="guide-collapsible-toggle" onClick={() => setOpen(o => !o)}>
+          <span>{open ? '▼' : '▶'}</span> {title}
+          <span
+            className={`guide-section-check${allChecked ? ' is-checked' : someChecked ? ' is-partial' : ''}`}
+            onClick={handleToggleAll}
+            title={allChecked ? 'Uncheck all' : 'Check all'}
+          />
+        </button>
+        <div className="guide-collapsible-body" style={open ? undefined : {display: 'none'}}>{children}</div>
+      </div>
+    </SectionContext.Provider>
   );
 }
 
@@ -276,6 +332,15 @@ function Note({ children }) {
 }
 
 function CheckList({ id, items, checked, onToggle }) {
+  const sectionCtx = useContext(SectionContext);
+  const itemsRef = useRef(items);
+  itemsRef.current = items;
+  useEffect(() => {
+    if (!sectionCtx) return;
+    sectionCtx.register(id, () => itemsRef.current);
+    return () => sectionCtx.unregister(id);
+  }, [id, sectionCtx]);
+
   return (
     <ul className="guide-checklist">
       {items.map((item, i) => {
@@ -558,6 +623,7 @@ export default function GuidePage() {
         </div>
       </header>
 
+      <GuideStateContext.Provider value={{ checked: guideChecked, onToggle: handleToggle }}>
       <div className="guide-layout">
         <div className="guide-left-sidebar">
           <SkillLevelsPanel guideChecked={guideChecked} flashingSkills={flashingSkills} />
@@ -567,11 +633,6 @@ export default function GuidePage() {
         </div>
 
       <div className="guide-body">
-
-        <div style={{borderLeft: '3px solid var(--accent, #f0a500)', paddingLeft: '0.75em', marginBottom: '1em'}}>
-          <p style={{fontSize: '1.1em', fontWeight: 'bold', margin: '0 0 0.25em 0'}}>Demonic Pacts Starting Guide — Designed by Laef</p>
-          <p style={{fontSize: '0.85em', color: 'var(--text-muted, #aaa)', margin: 0}}>Only small modifications have been made to specify a particular relic path. All credit for the core guide goes to Laef.</p>
-        </div>
 
         {/* TOC */}
         <nav className="guide-toc">
@@ -588,6 +649,11 @@ export default function GuidePage() {
             <li><a href="#tier4">Fire Cape (Tier IV)</a></li>
           </ol>
         </nav>
+
+        <div style={{borderLeft: '3px solid var(--accent, #f0a500)', paddingLeft: '0.75em', marginBottom: '1em'}}>
+          <p style={{fontSize: '1.1em', fontWeight: 'bold', margin: '0 0 0.25em 0'}}>Demonic Pacts Starting Guide — Designed by Laef</p>
+          <p style={{fontSize: '0.85em', color: 'var(--text-muted, #aaa)', margin: 0}}>Only small modifications have been made to specify a particular relic path. All credit for the core guide goes to Laef.</p>
+        </div>
 
         {/* Introduction */}
         <section id="introduction">
@@ -1401,6 +1467,7 @@ export default function GuidePage() {
 
 
       </div>{/* end guide-layout */}
+      </GuideStateContext.Provider>
 
       <footer className="app-footer">
         <span>© 2026 Leagues Plan. Guide content by Laef, originally published on the OSRS Wiki (CC BY-NC-SA 3.0).</span>
