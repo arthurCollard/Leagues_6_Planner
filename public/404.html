@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 — Leagues Planner</title>
+    <link rel="icon" href="/Demonic_Pacts_League_Stylized_Logo.png" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        background: #1a1612;
+        color: #d8ccb4;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 480px;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+        opacity: 0.85;
+      }
+
+      .code {
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(135deg, #b8a282, #d0bd97);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+        color: #f0dfc0;
+        margin-bottom: 0.75rem;
+      }
+
+      .dialogue-box {
+        background: #231e18;
+        border: 1px solid #b8a282;
+        border-radius: 10px;
+        padding: 1rem 1.25rem 1rem 1rem;
+        margin-bottom: 2rem;
+        text-align: left;
+        min-height: 4.5rem;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+      }
+
+      .dialogue-portrait {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+
+      .dialogue-portrait.idle {
+        animation: none;
+        transform: rotate(0deg);
+      }
+
+      .dialogue-body {
+        flex: 1;
+      }
+
+      .dialogue-text {
+        font-size: 0.9rem;
+        color: #d8ccb4;
+        line-height: 1.7;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        background: #b8a282;
+        margin-left: 2px;
+        vertical-align: text-bottom;
+        animation: blink 0.7s step-end infinite;
+      }
+
+      .cursor.hidden { display: none; }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0; }
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.6rem 1.4rem;
+        background: linear-gradient(135deg, #b8a282, #d0bd97);
+        color: #1a1612;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: opacity 0.15s, transform 0.15s;
+        box-shadow: 0 4px 16px rgba(184, 162, 130, 0.3);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+
+      .back-link.visible { opacity: 1; }
+
+      .back-link:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      .yama {
+        animation: yama-talk 0.5s ease-in-out infinite alternate;
+        transform-origin: bottom center;
+        transition: transform 0.3s ease;
+      }
+
+      .yama.idle {
+        animation: none;
+        transform: rotate(0deg);
+      }
+
+      @keyframes yama-talk {
+        0%   { transform: rotate(-6deg); }
+        100% { transform: rotate(6deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/Demonic_Pacts_League_Stylized_Logo.png" alt="" class="logo" />
+      <div class="code">404</div>
+      <h1>Lost in the Void</h1>
+      <div class="dialogue-box">
+        <img src="/guide/Yama_chathead.png" alt="Yama" class="yama dialogue-portrait" id="yama" />
+        <div class="dialogue-body">
+          <span class="dialogue-text" id="dialogue"></span><span class="cursor" id="cursor"></span>
+        </div>
+      </div>
+      <a href="/" class="back-link" id="back-link">Back to Planner</a>
+    </div>
+
+    <script>
+      const lines = [
+        "Ah... a mortal who has strayed too far from the path.",
+        "This place does not exist — not in your world, nor in mine.",
+        "Perhaps you sought power beyond what was written... or simply mistyped a URL.",
+        "Either way, your journey ends here. Return to the planner, and we shall speak again."
+      ];
+
+      const dialogue = document.getElementById('dialogue');
+      const cursor = document.getElementById('cursor');
+      const yama = document.getElementById('yama');
+      const backLink = document.getElementById('back-link');
+
+      const fullText = lines.join('\n\n');
+      let i = 0;
+
+      function type() {
+        if (i < fullText.length) {
+          dialogue.textContent += fullText[i] === '\n' ? '\n' : fullText[i];
+          // preserve line breaks
+          dialogue.style.whiteSpace = 'pre-wrap';
+          i++;
+          setTimeout(type, i === fullText.length ? 0 : 28 + Math.random() * 18);
+        } else {
+          // Done typing
+          cursor.classList.add('hidden');
+          yama.classList.add('idle');
+          backLink.classList.add('visible');
+        }
+      }
+
+      type();
+    </script>
+  </body>
+</html>

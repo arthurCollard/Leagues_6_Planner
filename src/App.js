@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import GuidePage from './pages/GuidePage';
 
@@ -296,10 +296,10 @@ export default function App() {
         </a>
       </footer>
       {guideEnabled && (
-        <a href="/guide" className={`guide-fab${fabPulsing ? ' guide-fab--pulsing' : ''}`} title="Open Guide" onMouseEnter={() => setFabPulsing(false)}>
+        <Link to="/guide" className={`guide-fab${fabPulsing ? ' guide-fab--pulsing' : ''}`} title="Open Guide" onMouseEnter={() => { if (fabPulsing) setFabPulsing(false); }}>
           <img src="/guide/Yama_chathead.png" alt="" className="guide-fab-icon" />
           Guide
-        </a>
+        </Link>
       )}
     </div>
   ); }
