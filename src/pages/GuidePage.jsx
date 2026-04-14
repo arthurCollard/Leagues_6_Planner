@@ -1477,6 +1477,21 @@ export default function GuidePage() {
 
           <Note>If you want to rush combat now, get 52 Runecrafting from Sulphurous essence and skip to the Final Dawn step.</Note>
 
+          <CollapsibleSection title="Woodsman Fletching Giga Boost">
+            <Note>300 Slayer points are required to unlock Broader Fletching.</Note>
+            <Note>If you are unlocking Kandarin after Karamja, it may be more efficient to wait and fletch when you can buy arrow shafts from the Ranging Guild.</Note>
+            <CheckList id="t4-woodsman-fletch" checked={guideChecked} onToggle={handleToggle} items={[
+              "Detour to Picaria's fishing shop in Sunset Coast or Sulisal's Superb Fishing Store in Kastori",
+              { text: 'Buy 15 inventories of feather packs (100 feathers per pack, 27 packs per inventory = 40,500 feathers)', gold: -81000 },
+              'Travel to Chaeldar via fairy ring',
+              'Unlock Broader Fletching from Chaeldar for 300 slayer points',
+              { text: 'Buy 15 inventories of broad bolt packs (100 bolts per pack, 27 packs per inventory = 40,500 bolts)', gold: -2389500 },
+              { text: 'Fletch 40,500 Broad bolts (3 Fletching XP each, 24 with 8x multiplier = 972,000 XP total)', xp: { fletching: 972000 } },
+              { type: 'note', text: 'Do this while running around and completing other tasks.' },
+              'Repeat this section as you run out',
+            ]} />
+          </CollapsibleSection>
+
           <CollapsibleSection title="Apple Tree & Fishing">
             <CheckList id="t4-apple" checked={guideChecked} onToggle={handleToggle} items={[
               'Get an Apple tree seed from Vale offerings',
