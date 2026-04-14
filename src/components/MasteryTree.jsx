@@ -509,6 +509,7 @@ export default function MasteryTree({ selectedMasteries, onSelectMastery, onRese
                     '--node-size': `${nodeSize}px`,
                   }}
                   onClick={() => !dragMoved.current && isUnlocked && togglePact(pact.id)}
+                  onMouseDown={(e) => e.preventDefault()}
                   onMouseEnter={(e) => { setHoveredId(pact.id); if (pact.summary) setTooltip({ pact, x: e.clientX, y: e.clientY }); }}
                   onMouseMove={(e) => { if (tooltip) setTooltip(t => t ? { ...t, x: e.clientX, y: e.clientY } : null); }}
                   onMouseLeave={() => { setHoveredId(null); setTooltip(null); }}

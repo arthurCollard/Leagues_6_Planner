@@ -211,7 +211,7 @@ export default function App() {
   return (
     <Routes>
       {guideEnabled && <Route path="/guide" element={<GuidePage />} />}
-      <Route path="*" element={<PlannerPage />} />
+      <Route path="*" element={PlannerPage()} />
     </Routes>
   );
 
