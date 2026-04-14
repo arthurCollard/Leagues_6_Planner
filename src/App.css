@@ -1162,8 +1162,12 @@ body {
 /* ── Mobile (≤600px) ──────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
   /* Global */
+  body {
+    overflow-x: hidden;
+  }
   .app {
     padding: 0.75rem;
+    overflow-x: hidden;
   }
 
   /* Header */
@@ -1177,12 +1181,13 @@ body {
   /* Info bar */
   .info-bar {
     position: static;
-  }
-  .info-bar-body {
     flex-direction: column;
+    overflow-x: hidden;
   }
   .info-bar-section {
     width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
   }
 
   /* Main layout */
@@ -1217,6 +1222,30 @@ body {
   /* Relic / Region / Mastery panels */
   .relic-tree {
     padding: 1rem;
+  }
+  .relic-info small {
+    display: none;
+  }
+  /* Tooltips — disable hover cards on touch devices */
+  .contrib-tooltip {
+    display: none !important;
+  }
+
+  /* Regions split panel — stack selected above available */
+  .region-split-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .reloaded-picker-label {
+    display: none;
+  }
+  .reloaded-picker {
+    padding: 0.4rem 0.3rem;
+  }
+  .reloaded-picker-select {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.65rem;
   }
   .relic-row {
     gap: 0.4rem;
@@ -3395,6 +3424,19 @@ body {
 .header-nav-link.active {
   background: rgba(212, 184, 150, 0.15);
   color: #f0dfc0;
+}
+
+/* ── Gear panel mobile ── */
+@media (max-width: 600px) {
+  .gear-panel-inner {
+    flex-direction: column;
+  }
+  .paperdoll {
+    align-self: center;
+  }
+  .gear-right-col {
+    width: 100%;
+  }
 }
 
 /* ── Guide FAB ── */
