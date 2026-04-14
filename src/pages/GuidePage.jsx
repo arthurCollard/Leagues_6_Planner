@@ -677,8 +677,6 @@ export default function GuidePage() {
   const [showResetModal, setShowResetModal] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const headerRef = useRef(null);
-  const normalHeightRef = useRef(80);
-  const compactHeightRef = useRef(50);
 
   useEffect(() => {
     const onScroll = () => setHeaderScrolled(window.scrollY > 60);
@@ -686,23 +684,18 @@ export default function GuidePage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Measure both header heights once on mount so transitions can be driven directly.
+  // Keep --guide-header-height in sync with the actual rendered header height,
+  // including during the compact CSS transition, so the sticky bar tracks it exactly.
   useEffect(() => {
     const el = headerRef.current;
-    if (!el) return;
-    normalHeightRef.current = el.offsetHeight;
-    el.classList.add('guide-header--compact');
-    compactHeightRef.current = el.offsetHeight;
-    el.classList.remove('guide-header--compact');
-    document.querySelector('.guide-page')?.style.setProperty('--guide-header-height', `${normalHeightRef.current}px`);
+    const page = document.querySelector('.guide-page');
+    if (!el || !page) return;
+    const update = () => page.style.setProperty('--guide-header-height', `${el.offsetHeight}px`);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
-
-  // Update the CSS variable in sync with the compact state flip so the sticky
-  // bar's `transition: top` starts at the same time as the header's padding transition.
-  useEffect(() => {
-    const h = headerScrolled ? compactHeightRef.current : normalHeightRef.current;
-    document.querySelector('.guide-page')?.style.setProperty('--guide-header-height', `${h}px`);
-  }, [headerScrolled]);
   const flashTimers = useRef({});
 
   const handleToggle = useCallback((key, item) => {
