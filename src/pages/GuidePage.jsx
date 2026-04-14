@@ -126,6 +126,21 @@ function Pact() {
   return <span className="guide-demonic-pact">Demonic Pact</span>;
 }
 
+function MobileCollapsible({ title, children, defaultOpen = false, align = 'left' }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="mobile-collapsible">
+      <button className="mobile-collapsible-header" onClick={() => setOpen(o => !o)}>
+        <span>{title}</span>
+        <span className={`mobile-collapse-chevron${open ? ' open' : ''}`}>▼</span>
+      </button>
+      <div className={`mobile-collapsible-body${open ? ' open' : ''}${align === 'right' ? ' align-right' : ''}`}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 const GuideStateContext = createContext(null);
 const SectionContext = createContext(null);
 
@@ -662,6 +677,8 @@ export default function GuidePage() {
   const [showResetModal, setShowResetModal] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const headerRef = useRef(null);
+  const normalHeightRef = useRef(80);
+  const compactHeightRef = useRef(50);
 
   useEffect(() => {
     const onScroll = () => setHeaderScrolled(window.scrollY > 60);
@@ -669,18 +686,23 @@ export default function GuidePage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Measure both header heights once on mount so transitions can be driven directly.
   useEffect(() => {
-    if (!headerRef.current) return;
-    const update = () => {
-      if (!headerRef.current) return;
-      const h = headerRef.current.offsetHeight;
-      document.querySelector('.guide-page')?.style.setProperty('--guide-header-height', `${h}px`);
-    };
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(headerRef.current);
-    return () => ro.disconnect();
+    const el = headerRef.current;
+    if (!el) return;
+    normalHeightRef.current = el.offsetHeight;
+    el.classList.add('guide-header--compact');
+    compactHeightRef.current = el.offsetHeight;
+    el.classList.remove('guide-header--compact');
+    document.querySelector('.guide-page')?.style.setProperty('--guide-header-height', `${normalHeightRef.current}px`);
   }, []);
+
+  // Update the CSS variable in sync with the compact state flip so the sticky
+  // bar's `transition: top` starts at the same time as the header's padding transition.
+  useEffect(() => {
+    const h = headerScrolled ? compactHeightRef.current : normalHeightRef.current;
+    document.querySelector('.guide-page')?.style.setProperty('--guide-header-height', `${h}px`);
+  }, [headerScrolled]);
   const flashTimers = useRef({});
 
   const handleToggle = useCallback((key, item) => {
@@ -722,14 +744,26 @@ export default function GuidePage() {
 
       <GuideStateContext.Provider value={{ checked: guideChecked, onToggle: handleToggle }}>
       <div className="guide-layout">
-        <div className="guide-tasks-sidebar">
-          <TasksPanel guideChecked={guideChecked} />
-        </div>
-        <div className="guide-left-sidebar">
-          <SkillLevelsPanel guideChecked={guideChecked} flashingSkills={flashingSkills} />
-          <GoldPanel guideChecked={guideChecked} />
-          <PactsPanel count={pactsCount} />
-          <RelicsPanel guideChecked={guideChecked} />
+        <div className="guide-sidebars-sticky">
+          <div className="guide-tasks-sidebar">
+            <MobileCollapsible title="Tasks">
+              <TasksPanel guideChecked={guideChecked} />
+            </MobileCollapsible>
+          </div>
+          <div className="guide-left-sidebar">
+            <MobileCollapsible title="Skills" defaultOpen={true}>
+              <SkillLevelsPanel guideChecked={guideChecked} flashingSkills={flashingSkills} />
+            </MobileCollapsible>
+            <MobileCollapsible title="Gold" align="right">
+              <GoldPanel guideChecked={guideChecked} />
+            </MobileCollapsible>
+            <MobileCollapsible title="Pacts" align="right">
+              <PactsPanel count={pactsCount} />
+            </MobileCollapsible>
+            <MobileCollapsible title="Relics">
+              <RelicsPanel guideChecked={guideChecked} />
+            </MobileCollapsible>
+          </div>
         </div>
 
       <div className="guide-body">
@@ -738,13 +772,13 @@ export default function GuidePage() {
         <nav className="guide-toc">
           <h3>Contents</h3>
           <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#tier1">Starting Out: Money and Early Hunter (Tier I)</a></li>
-            <li><a href="#tier2">Hunter Rumours and Wealthy Citizens (Tier II)</a></li>
-            <li><a href="#tier3">Prayer and High Alchemy (Tier III)</a></li>
-            <li><a href="#skilling">Skilling Route</a></li>
-            <li><a href="#combat">Combat Route</a></li>
-            <li><a href="#tier4">Fire Cape (Tier IV)</a></li>
+            <li><a href="#introduction" onClick={e => { e.preventDefault(); document.getElementById('introduction')?.scrollIntoView({ behavior: 'smooth' }); }}>Introduction</a></li>
+            <li><a href="#tier1" onClick={e => { e.preventDefault(); document.getElementById('tier1')?.scrollIntoView({ behavior: 'smooth' }); }}>Starting Out: Money and Early Hunter (Tier I)</a></li>
+            <li><a href="#tier2" onClick={e => { e.preventDefault(); document.getElementById('tier2')?.scrollIntoView({ behavior: 'smooth' }); }}>Hunter Rumours and Wealthy Citizens (Tier II)</a></li>
+            <li><a href="#tier3" onClick={e => { e.preventDefault(); document.getElementById('tier3')?.scrollIntoView({ behavior: 'smooth' }); }}>Prayer and High Alchemy (Tier III)</a></li>
+            <li><a href="#skilling" onClick={e => { e.preventDefault(); document.getElementById('skilling')?.scrollIntoView({ behavior: 'smooth' }); }}>Skilling Route</a></li>
+            <li><a href="#combat" onClick={e => { e.preventDefault(); document.getElementById('combat')?.scrollIntoView({ behavior: 'smooth' }); }}>Combat Route</a></li>
+            <li><a href="#tier4" onClick={e => { e.preventDefault(); document.getElementById('tier4')?.scrollIntoView({ behavior: 'smooth' }); }}>Fire Cape (Tier IV)</a></li>
           </ol>
         </nav>
 
