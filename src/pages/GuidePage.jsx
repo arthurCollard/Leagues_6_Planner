@@ -840,7 +840,7 @@ export default function GuidePage() {
                   { text: 'Buy a Stew, 8 Jugs of wine, moon-lite and a Cup of tea from The Flaming Arrow', gold: -30 },
                   { text: 'Drink some moon-lite', tasks: ['Drink some moon-lite'] },
                   { text: 'Give Oli some Stew', tasks: ['Give Oli some Stew'] },
-                  { text: 'Buy a Green cape from Floria\'s Fashion and equip it', gold: -32 },
+                  { text: 'Buy a Green cape and White apron from Floria\'s Fashion and equip it', gold: -32 },
                   { text: <><b style={{whiteSpace: 'nowrap'}}>Bank 1:</b> Bank at Fortis west bank, withdraw coins, Knife, Bucket, 1 Cake, starting runes and starting bow (and Bronze pickaxe and Bronze axe if your relic isn't Barbarian Gathering)</> },
                 ]} />
               </div>
@@ -1192,7 +1192,7 @@ export default function GuidePage() {
                     'Mithril full helm, Mithril platebody and Mithril platelegs',
                     'Steel platelegs',
                     'Adamant full helm, Adamant platebody and Adamant platelegs',
-                    'Spiny helmet and Dramen staff',
+                    'Tyras Helm and Dramen staff',
                   ]},
                 ]} />
               </div>
@@ -1203,6 +1203,8 @@ export default function GuidePage() {
             </div>
             <CheckList id="t3-prayer" checked={guideChecked} onToggle={handleToggle} items={[
               'Quetzal to Tal Teklan',
+              { text: 'Buy a Purple dye and Green dye from Dyes to Die For to the west', gold: -0 },
+              { text: 'Unequip your cape, dye it purple, then dye it green again', tasks: ['Dye a cape Purple'] },
               'Restore 5 Prayer Points at an Altar',
               { type: 'note', text: 'If you skipped all optional tasks, you would unlock Karamja now.' },
               'Buy the following runes: 500 Mind rune and Chaos rune; 800 Nature rune; 1500 Air, Water, Earth and Fire runes; 100 Cosmic rune and 50 Death runes',
@@ -1210,7 +1212,7 @@ export default function GuidePage() {
               'Keep at least 6 Blue dragon hide for a task later',
               { text: 'Cast Low Level Alchemy between hits on Nature rune when you reach 21 Magic', tasks: ['Cast Low Level Alchemy'] },
               'This should get you 36 Magic and 33 Defence',
-              { text: 'When you reach 5 Defence, equip Steel platelegs, Spiny helmet and alch them', tasks: ['Equip some Steel armour'] },
+              { text: 'When you reach 5 Defence, equip Steel platelegs, Tyras Helm and alch them', tasks: ['Equip some Steel armour', 'Equip a Tyras helm'] },
               'When you reach 20 Defence, equip Mithril full helm, Mithril platebody and Mithril platelegs and alch them',
               'When you reach 30 Defence, equip Adamant full helm, Adamant platebody and Adamant platelegs — keep this',
               { text: 'Equip a Full Adamant Set', tasks: ['Equip a Full Adamant Set'] },
